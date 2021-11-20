@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "perfect-freehand": "^1.0.16",
+    "pressure": "^2.2.0"
+  }
+}
