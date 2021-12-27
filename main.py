@@ -6,7 +6,9 @@ serverSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 ADDR = ('', 80)
 serverSocket.bind(ADDR)
 serverSocket.listen()
-print(f"[INIT] Server running on {ADDR}")
+hostname = socket.gethostname()
+local_ip = socket.gethostbyname(hostname)
+print(f"[INIT] Server running on {local_ip, hostname = }")
 
 class client(socket.socket):
     def __init__(self, clientSocket, addr):

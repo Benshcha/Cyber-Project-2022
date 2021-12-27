@@ -5,8 +5,19 @@ html,
   margin: 0;
 }
 
-h {
+h1 {
   color: blue
+}
+
+canvas {
+  border: 1em solid rgba(102, 102, 255, 0.849);
+}
+
+button {
+  background-color: #627e62;
+  opacity: 0.8;
+  border-radius: 1em;
+  /* border: 0 */
 }
 
 svg {

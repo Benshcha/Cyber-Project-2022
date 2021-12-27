@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@svgdotjs/svg.js": "^3.1.1",
     "perfect-freehand": "^1.0.16",
     "pressure": "^2.2.0"
   }
