@@ -20,12 +20,17 @@ button {
   /* border: 0 */
 }
 
-svg {
-  position: fixed;
+#drawing {
+  border: 1em solid rgb(139, 139, 243);
+  /* position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: green;
-  touch-action: none;
+  touch-action: none; */
+}
+
+path {
+  fill: none;
+  opacity: 1;
 }
