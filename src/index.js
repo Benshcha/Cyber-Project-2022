@@ -1,9 +1,10 @@
 
 class Notebook
 {
-    constructor(drawer)
+    constructor(drawer, div)
     {
         this.draw = drawer
+        this.div = div
         this.cPath = undefined
         this.cGroup = undefined
         this.groups = []
@@ -13,7 +14,7 @@ class Notebook
     DrawPos(e)
     {
         lastPos = pos
-        pos = getPos(e)
+        pos = getPos(e, this.div)
         var lastPoint = `${lastPos.x},${lastPos.y}`
         var newPoint = `${pos.x},${pos.y} `
         nb.cPath = nb.cGroup.path(`M${lastPoint} L${newPoint}`)
@@ -27,7 +28,7 @@ function init()
     canvas = $("#drawing")
     draw = SVG().addTo('#drawing').size("100%", 700)
     doDraw = false
-    nb = new Notebook(draw);
+    nb = new Notebook(draw, canvas);
 
     let clearButton = document.createElement("button");
     clearButton.innerHTML = "Clear";
@@ -44,7 +45,7 @@ function init()
 
 init()
 
-function getPos(e)
+function getPos(e, div)
 {
     pos = {x: undefined, y: undefined, width: undefined}
     if (!e.touches)
@@ -57,10 +58,11 @@ function getPos(e)
         if (e.touches.length == 1) { // Only deal with one finger
             var touch = e.touches[0]; // Get the information for finger #1
             touch.target.offsetLeft;
-            borderWidths = {x: parseInt(nb.drawer.css("border-left-width")), y: parseInt(nb.drawer.css("border-top-width"))}
-            pos.x=touch.pageX-touch.target.offsetLeft-borderWidths.x;
-            pos.y=touch.pageY-touch.target.offsetTop-borderWidths.y;
-            console.log(borderWidths)
+            borderWidths = {x: parseInt(nb.div.css("border-left-width")), y: parseInt(nb.div.css("border-top-width"))}
+            var br = div[0].getBoundingClientRect();
+            pos.x=touch.pageX - br.left - borderWidths.x;
+            pos.y=touch.pageY - br.top - borderWidths.y;
+            console.log(pos)
         }
     }
     pos.width = width;
@@ -90,7 +92,7 @@ canvas.on('touchmove', e => {
 canvas.pressure({
     start: function(event){
         doDraw = true;
-        pos = getPos(event)
+        pos = getPos(event, nb.div)
 
         console.log(nb.draw)
         g = nb.draw.group()
