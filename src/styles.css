@@ -33,4 +33,7 @@ button {
 path {
   fill: none;
   opacity: 1;
+  stroke: #000;
+  stroke-linejoin: round;
+  stroke-linecap: round;
 }

@@ -1,17 +1,38 @@
 
+class Notebook
+{
+    constructor(drawer)
+    {
+        this.draw = drawer
+        this.cPath = undefined
+        this.cGroup = undefined
+        this.groups = []
+    }
 
+    // drawing on canvas ctx given touch/click event e
+    DrawPos(e)
+    {
+        lastPos = pos
+        pos = getPos(e)
+        var lastPoint = `${lastPos.x},${lastPos.y}`
+        var newPoint = `${pos.x},${pos.y} `
+        nb.cPath = nb.cGroup.path(`M${lastPoint} L${newPoint}`)
+        nb.cPath.attr('stroke-width', width)
+        console.log(newPoint)
+    }
+}
 
 function init()
 {
     canvas = $("#drawing")
-    draw = SVG().addTo('#drawing').size(300, 300)
+    draw = SVG().addTo('#drawing').size("100%", 700)
     doDraw = false
-    svg = new mySVG(draw);
+    nb = new Notebook(draw);
 
     let clearButton = document.createElement("button");
     clearButton.innerHTML = "Clear";
     clearButton.onclick = function () {
-        svg.ClearCanvas()
+        nb.ClearCanvas()
     };
     clearButton.name = "Clear"
     $('#drawing-container').append(clearButton);
@@ -19,14 +40,9 @@ function init()
     lastPos = {x: undefined, y: undefined, width: undefined};
     pos = {x: undefined, y: undefined, width: undefined};
     width = undefined;
-
-    currentPath = undefined;
-
-    svg.addPath(currentPath)
 }
 
 init()
-
 
 function getPos(e)
 {
@@ -41,7 +57,7 @@ function getPos(e)
         if (e.touches.length == 1) { // Only deal with one finger
             var touch = e.touches[0]; // Get the information for finger #1
             touch.target.offsetLeft;
-            borderWidths = {x: parseInt(svg.drawer.css("border-left-width")), y: parseInt(svg.drawer.css("border-top-width"))}
+            borderWidths = {x: parseInt(nb.drawer.css("border-left-width")), y: parseInt(nb.drawer.css("border-top-width"))}
             pos.x=touch.pageX-touch.target.offsetLeft-borderWidths.x;
             pos.y=touch.pageY-touch.target.offsetTop-borderWidths.y;
             console.log(borderWidths)
@@ -51,20 +67,12 @@ function getPos(e)
     return pos
 }
 
-// drawing on canvas ctx given touch/click event e
-function FDraw(svg, cPath, e)
-{
-    pos = getPos(pos, e)
-    newPoint = `L${pos.x} ${pos.y} `
-    newPath = svg.draw.
-    cPath.addPath()
-    console.log(newPoint)
-}
+
 
 canvas.on('mousemove', e => {
     if (doDraw) 
     {
-        FDraw(svg, currentPath, e)
+        nb.DrawPos(e)
     }
 })
 
@@ -74,7 +82,7 @@ canvas.on('touchmove', e => {
     {
         // Prevents an additional mousedown event being triggered
         e.preventDefault();
-        FDraw(svg, currentPath, e)
+        nb.DrawPos(e)
     }
 })
 
@@ -83,13 +91,20 @@ canvas.pressure({
     start: function(event){
         doDraw = true;
         pos = getPos(event)
-        currentPath = svg.draw.path(pos)
+
+        console.log(nb.draw)
+        g = nb.draw.group()
+        nb.cGroup = g
+        nb.cPath = nb.cGroup.path(`M${pos.x} ${pos.y} `)
     },
     end: function(event){
         doDraw = false;
         
         lastPos = {x: undefined, y: undefined, width: undefined};
         pos = {x: undefined, y: undefined, width: undefined};
+
+
+        nb.groups.push(nb.cGroup)
     },
     change: function(force, event){
         // width = Pressure.map(force, 0, 1, 3, 10);
