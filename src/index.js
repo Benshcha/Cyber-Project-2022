@@ -26,7 +26,8 @@ class Notebook
 function init()
 {
     canvas = $("#drawing")
-    draw = SVG().addTo('#drawing').size("100%", 700)
+    draw = SVG('#drawingSvg').addTo('#drawing').size("100%", 700)
+    svg = $("#drawingSvg")
     doDraw = false
     nb = new Notebook(draw, canvas);
 
@@ -60,8 +61,8 @@ function getPos(e, div)
             touch.target.offsetLeft;
             borderWidths = {x: parseInt(nb.div.css("border-left-width")), y: parseInt(nb.div.css("border-top-width"))}
             var br = div[0].getBoundingClientRect();
-            pos.x=touch.pageX - br.left - borderWidths.x;
-            pos.y=touch.pageY - br.top - borderWidths.y;
+            pos.x=touch.clientX - br.left - borderWidths.x;
+            pos.y=touch.clientY - br.top - borderWidths.y;
             console.log(pos)
         }
     }
