@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Log in</title> 
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="src/Scripts/login.js"></script>
+        <link rel="stylesheet" href="src/Styles/main.css"/>  
+        <link rel="icon" href="src/Images/favicon.ico"/>
+    </head>
+    <body>
+        <h>Hello Please Enter The Following Information:</h>
+        <br>
+        <br>
+        <div class="center" id="login_box">
+            <div class="login-input-box">Username: <input title="Username" placeholder="Username" type="text" id="username"> </div><br>
+            <div class="login-input-box">Password: <input title="Password" placeholder="Password" type="text" id="password"> </div><br>
+            <button onclick="Login($('#username')[0], $('#password')[0])">Log in</button>
+        </div>
+    </body>
+</html>

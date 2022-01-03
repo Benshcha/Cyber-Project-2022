@@ -5,6 +5,35 @@ html,
   margin: 0;
 }
 
+.center
+{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.login_box button {
+
+}
+
+#login_box {
+    background: #b58686;
+    width: 20%;
+    border-radius: 0.5em;
+}
+
+#login_box div {
+    position: relative;
+    padding: 10px;
+}
+
+input {
+    border-radius: 0.3em;
+    /* border: thick; */
+    background: #cad5aead;
+}
+
 h1 {
   color: blue
 }
@@ -17,7 +46,7 @@ button {
   background-color: #627e62;
   opacity: 0.8;
   border-radius: 1em;
-  /* border: 0 */
+  /* border: 0; */
 }
 
 #drawing {
