@@ -22,15 +22,16 @@ class client(socket.socket):
 
     def postResponse(self, msg, file):
         print(f"=================================", end='\n\n')
-        pprint(msg)
+        pprint([file, msg])
         print("\n\n=================================")
+        print(msg[0]['User-Agent'])
 
 
     def getResponse(self, msg, file):
         try:
             if file == '/':
                 file = "index.html"
-            filePath = join("public", file[1:])
+            filePath = "public/" + file
             self.socket.send(HTML.FileResponse(filePath))
             print(f"Sent {filePath} to {self.addr}")
         except Exception as e:
@@ -48,15 +49,21 @@ class client(socket.socket):
                 msgHeaderPayloadList = self.socket.recv(2040).decode().split("\r\n\r\n")
                 msgHeaderString = msgHeaderPayloadList[0].split("\r\n")
                 
-                if len(msgHeaderPayloadList) >= 1:
+                if len(msgHeaderPayloadList) > 1:
                     msgPayload = msgHeaderPayloadList[1].split("\r\n")
                 
                 commandLine = msgHeaderString[0]
                 
                 HeaderNamesAndAttr = [Header.split(": ") for Header in msgHeaderString[1:]]
-                msgHeader = {h[0]: h[1] for h in msgHeaderString[1:]}
+                msgHeader = {h[0]: h[1] for h in HeaderNamesAndAttr[1:]}
                 
-                command, file, httpver = commandLine.split()
+                resp =  commandLine.split()
+                if len(resp) >= 1:
+                    command = resp[0]
+                    if len(resp) >= 2:
+                        file = resp[1]
+                        ow = resp[2]
+                        
                 msg = [msgHeader, msgPayload]
                 actions[command](msg, file)
             except Exception as e:
