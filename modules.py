@@ -3,6 +3,8 @@ def getType(string):
         return "image/x-icon"
     elif string == "js":
         return "text/javascript"
+    elif string == "css":
+        return "text/css"
 
 def FileResponse(filePath):
     with open(filePath, 'rb') as FILE:

@@ -1,6 +1,7 @@
 import socket, threading
 from pprint import pprint
 import modules as HTML
+from os.path import join
 
 serverSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 ADDR = ('', 80)
@@ -27,7 +28,7 @@ class client(socket.socket):
                         self.socket.send(HTML.FileResponse("public/index.html"))
                         print(f"Sent html file to {self.addr}")
                     else:
-                        filePath = FirstLine[1][1:]
+                        filePath = join("public", FirstLine[1][1:])
                         self.socket.send(HTML.FileResponse(filePath))
                         print(f"Sent {filePath} to {self.addr}")
                 # pprint(msg)

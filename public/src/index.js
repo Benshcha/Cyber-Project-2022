@@ -19,7 +19,6 @@ class Notebook
         var newPoint = `${pos.x},${pos.y} `
         nb.cPath = nb.cGroup.path(`M${lastPoint} L${newPoint}`)
         nb.cPath.attr('stroke-width', width)
-        console.log(newPoint)
     }
 }
 
@@ -63,7 +62,6 @@ function getPos(e, div)
             var br = div[0].getBoundingClientRect();
             pos.x=touch.clientX - br.left - borderWidths.x;
             pos.y=touch.clientY - br.top - borderWidths.y;
-            console.log(pos)
         }
     }
     pos.width = width;
@@ -84,8 +82,10 @@ canvas.on('touchmove', e => {
     if (doDraw) 
     {
         // Prevents an additional mousedown event being triggered
-        e.preventDefault();
-        nb.DrawPos(e)
+        if (e.touches.length == 1){
+            e.preventDefault();
+            nb.DrawPos(e)
+        }
     }
 })
 
@@ -94,8 +94,6 @@ canvas.pressure({
     start: function(event){
         doDraw = true;
         pos = getPos(event, nb.div)
-
-        console.log(nb.draw)
         g = nb.draw.group()
         nb.cGroup = g
         nb.cPath = nb.cGroup.path(`M${pos.x} ${pos.y} `)
