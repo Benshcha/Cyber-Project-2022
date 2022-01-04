@@ -1,5 +1,6 @@
 import socket, threading
-from pprint import pprint
+from pprint import pprint, pformat
+from modules import myLogger
 import modules as HTML
 from os.path import join
 import json
@@ -10,9 +11,9 @@ serverSocket.bind(ADDR)
 serverSocket.listen()
 hostname = socket.gethostname()
 local_ip = socket.gethostbyname(hostname)
-print(f"[INIT] Server running on {local_ip, hostname = }")
+logger = myLogger("mainLogger")
 
-# Define all actions:
+logger.info(f"[INIT] Server running on {local_ip, hostname = }")
 
 class client(socket.socket):
     def __init__(self, clientSocket, addr):
@@ -20,58 +21,45 @@ class client(socket.socket):
         self.addr = addr
         self.thread = threading.Thread(target=self.manage)
 
-    def postResponse(self, msg, file):
-        print(f"=================================", end='\n\n')
-        pprint([file, msg])
-        print("\n\n=================================")
+    def postResponse(self, packet):
+        logger.debug(f"=================================\n")
+        logger.debug("\n" + pformat([f"{packet.command} {packet.filename}", packet.Headers, packet.Payload]))
+        logger.debug("\n\n=================================")
 
-    def getResponse(self, msg, file):
+    def getResponse(self, packet):
         try:
+            file = packet.filename
             if file == '/':
                 file = "index.html"
             filePath = "public/" + file
             self.socket.send(HTML.FileResponse(filePath))
-            print(f"Sent {filePath} to {self.addr}")
+            logger.info(f"Sent {filePath} to {self.addr}")
         except Exception as e:
             if isinstance(e, FileNotFoundError):
-                print(f"404:\n{e}")
+                logger.error(f"404:\n{e}")
                 self.socket.send(HTML.FileNotFoundMsg(str(e).split()[-1][1:-1]))
             else:
-                print(e)
+                logger.error(e)
         
     def manage(self):
+        # Define all actions
         actions = {"GET": self.getResponse, "POST": self.postResponse}
         
         while True:
             try:
-                msgHeaderPayloadList = self.socket.recv(2040).decode().split("\r\n\r\n")
-                msgHeaderString = msgHeaderPayloadList[0].split("\r\n")
-                
-                if len(msgHeaderPayloadList) > 1:
-                    msgPayload = msgHeaderPayloadList[1].split("\r\n")
-                
-                commandLine = msgHeaderString[0]
-                
-                HeaderNamesAndAttr = [Header.split(": ") for Header in msgHeaderString[1:]]
-                msgHeader = {h[0]: h[1] for h in HeaderNamesAndAttr[1:]}
-                
-                resp =  commandLine.split()
-                if len(resp) >= 1:
-                    command = resp[0]
-                    if len(resp) >= 2:
-                        file = resp[1]
-                        ow = resp[2]
-                        
-                msg = [msgHeader, msgPayload]
-                actions[command](msg, file)
+                packetStr = self.socket.recv(2040).decode()
+                packet = HTML.extractDataFromPacket(packetStr)
+                command = packet.command
+                if command:
+                    actions[command](packet)
             except Exception as e:
                 if isinstance(e, KeyError):
-                    print(f"Command {command} not built in to server")
+                    logger.error(f"Command {command} not built in to server")
                 else:
-                    print(e)
-                print(f"=================================", end='\n\n')
-                pprint([file, msg])
-                print("\n\n=================================")
+                    logger.error(e)
+                logger.debug(f"\n=================================\n\n")
+                logger.debug("\n" + pformat([packet.filename, packet.Headers, packet.Payload]))
+                logger.debug("\n\n=================================")
             
         
     def start(self):
