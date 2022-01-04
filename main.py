@@ -24,8 +24,6 @@ class client(socket.socket):
         print(f"=================================", end='\n\n')
         pprint([file, msg])
         print("\n\n=================================")
-        print(msg[0]['User-Agent'])
-
 
     def getResponse(self, msg, file):
         try:
@@ -71,6 +69,9 @@ class client(socket.socket):
                     print(f"Command {command} not built in to server")
                 else:
                     print(e)
+                print(f"=================================", end='\n\n')
+                pprint([file, msg])
+                print("\n\n=================================")
             
         
     def start(self):
