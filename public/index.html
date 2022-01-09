@@ -9,21 +9,37 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="../node_modules/pressure/dist/jquery.pressure.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@svgdotjs/svg.js@3.0/dist/svg.min.js"></script>
+  <script src="src/Scripts/modules.js"></script>
   <link rel="icon" type="image/ico" href="src/Images/favicon.ico"/>
 	<title>Gal's Cyber Project 2022</title>
 </head>
 
 
 <body>
-  <h1>Test</h1>
-  <br/>
-  <button onclick="window.location.href='login.html'"" id="loginButton">Log in</button>
-  <div id="drawing-container">
-    <div id="drawing">
-      <!-- <svg id="myCanvas", width="300", height="300">Your browser does not support the svg element.</svg> -->
-      <!-- <button onclick="ClearCanvas('myCanvas')">Clear</button> -->
-      <svg id="drawingSvg"></svg>
-      <script src="src/Scripts/index.js"></script>
+  <div id="sidebar">
+    <div id="sidebarHeaders">
+      <p id="welcome"></p>
+      
+      <h id="sidebarTitle">Notebooks:</h> <br>
+    </div>
+    <div id="notebookList">
+      <div class="notebook-block" onclick='console.log("Pressed Notebook 1")'>
+        <div class="notebook-title">Notebook 1:</div>
+        <div class="notebook-discription">This is a cool notebook</div>
+      </div>
+    </div>
+    <button onclick="window.location.href='login.html'" id="loginButton">Log in</button>
+    <button onclick="deleteCookie('user_auth'); window.location.replace('/')" id="logoutButton" style="display: none">Log out</button><br>
+
+  </div>
+  <div id="mainbody">
+    <div id="drawing-container">
+      <div id="drawing">
+        <!-- <svg id="myCanvas", width="300", height="300">Your browser does not support the svg element.</svg> -->
+        <!-- <button onclick="ClearCanvas('myCanvas')">Clear</button> -->
+        <svg id="drawingSvg"></svg>
+        <script src="src/Scripts/index.js"></script>
+      </div>
     </div>
   </div>
 

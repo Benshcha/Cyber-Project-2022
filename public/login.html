@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <title>Log in</title> 
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="src/Scripts/login.js"></script>
+        <script src="src/Scripts/modules.js"></script>
         <link rel="stylesheet" href="src/Styles/main.css"/>  
+        <link rel="stylesheet" href="src/Styles/login.css"/> 
         <link rel="icon" href="src/Images/favicon.ico"/>
     </head>
     <body>
@@ -12,9 +13,11 @@
         <br>
         <br>
         <div class="center" id="login_box">
-            <div class="login-input-box">Username: <input title="Username" placeholder="Username" type="text" id="username"> </div><br>
-            <div class="login-input-box">Password: <input title="Password" placeholder="Password" type="text" id="password"> </div><br>
-            <button onclick="Login($('#username')[0], $('#password')[0])">Log in</button>
+            <div class="login-input-box">Username: <br><input title="Username" placeholder="Username" type="text" id="username"> </div><br>
+            <div class="login-input-box">Password: <br><input title="Password" placeholder="Password" type="text" id="password"><p id="signin_instructions"></p> </div><br>
+            
+            <button onclick="Login($('#username')[0].value, $('#password')[0].value) ? window.location.replace(`/`) : $('#signin_instructions').html('Error Username and Password do not match')">Log in</button>
+            <button onclick="window.location.href='signUp.html'">Sign up</button>
         </div>
     </body>
 </html>

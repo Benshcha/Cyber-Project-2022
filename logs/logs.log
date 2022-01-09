@@ -1,199 +1,606 @@
-01-04-2022 21:41:38 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.155', 'Gal-PC')
-01-04-2022 21:41:56 | INFO | Sent public/index.html to ('127.0.0.1', 53045)
-01-04-2022 21:41:56 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 53045)
-01-04-2022 21:41:56 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 53046)
-01-04-2022 21:41:56 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 53045)
-01-04-2022 21:42:03 | INFO | Sent public//login.html to ('127.0.0.1', 53045)
-01-04-2022 21:42:03 | INFO | Sent public//src/Scripts/login.js to ('127.0.0.1', 53045)
-01-04-2022 21:42:03 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 53046)
-01-04-2022 21:42:08 | ERROR | 'Packet' object has no attribute 'file'
-01-04-2022 21:42:56 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.155', 'Gal-PC')
-01-04-2022 21:43:05 | INFO | Sent public//login.html to ('127.0.0.1', 56066)
-01-04-2022 21:43:05 | INFO | Sent public//src/Scripts/login.js to ('127.0.0.1', 56066)
-01-04-2022 21:43:05 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 56066)
-01-04-2022 21:43:06 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 56066)
-01-04-2022 21:44:13 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.155', 'Gal-PC')
-01-04-2022 21:44:17 | INFO | Sent public//login.html to ('127.0.0.1', 56169)
-01-04-2022 21:44:17 | INFO | Sent public//src/Scripts/login.js to ('127.0.0.1', 56169)
-01-04-2022 21:44:17 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 56170)
-01-04-2022 21:44:17 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 56170)
-01-04-2022 21:47:15 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.155', 'Gal-PC')
-01-04-2022 21:47:20 | INFO | Sent public//login.html to ('127.0.0.1', 65165)
-01-04-2022 21:47:20 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 65166)
-01-04-2022 21:47:20 | INFO | Sent public//src/Scripts/login.js to ('127.0.0.1', 65165)
-01-04-2022 21:47:21 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 65165)
-01-04-2022 21:47:30 | ERROR | Logger._log() got an unexpected keyword argument 'end'
-01-04-2022 21:48:08 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.155', 'Gal-PC')
-01-04-2022 21:48:08 | DEBUG | =================================
-
-
-01-04-2022 21:48:08 | DEBUG | ['POST /Login%20Attempt',
- {'Accept': '*/*',
-  'Accept-Encoding': 'gzip, deflate, br',
-  'Accept-Language': 'en-US,en;q=0.9,he;q=0.8',
-  'Connection': 'keep-alive',
-  'Content-Length': '32',
-  'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
-  'Origin': 'http://localhost',
-  'Referer': 'http://localhost/login.html',
-  'Sec-Fetch-Dest': 'empty',
-  'Sec-Fetch-Mode': 'cors',
-  'Sec-Fetch-Site': 'same-origin',
-  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
-                '(KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36',
-  'X-Requested-With': 'XMLHttpRequest',
-  'sec-ch-ua': '" Not A;Brand";v="99", "Chromium";v="96", "Google '
-               'Chrome";v="96"',
-  'sec-ch-ua-mobile': '?0',
-  'sec-ch-ua-platform': '"Windows"'},
- ['"Username": "T"\n"Password" = "t"']]
-01-04-2022 21:48:08 | DEBUG | 
-
-=================================
-01-04-2022 21:48:08 | INFO | Sent public//login.html to ('127.0.0.1', 65186)
-01-04-2022 21:48:08 | INFO | Sent public//src/Scripts/login.js to ('127.0.0.1', 65186)
-01-04-2022 21:48:08 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 65186)
-01-04-2022 21:48:09 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 65192)
-01-04-2022 21:48:11 | DEBUG | =================================
-
-
-01-04-2022 21:48:11 | DEBUG | ['POST /Login%20Attempt',
- {'Accept': '*/*',
-  'Accept-Encoding': 'gzip, deflate, br',
-  'Accept-Language': 'en-US,en;q=0.9,he;q=0.8',
-  'Connection': 'keep-alive',
-  'Content-Length': '32',
-  'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
-  'Origin': 'http://localhost',
-  'Referer': 'http://localhost/login.html',
-  'Sec-Fetch-Dest': 'empty',
-  'Sec-Fetch-Mode': 'cors',
-  'Sec-Fetch-Site': 'same-origin',
-  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
-                '(KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36',
-  'X-Requested-With': 'XMLHttpRequest',
-  'sec-ch-ua': '" Not A;Brand";v="99", "Chromium";v="96", "Google '
-               'Chrome";v="96"',
-  'sec-ch-ua-mobile': '?0',
-  'sec-ch-ua-platform': '"Windows"'},
- ['"Username": "t"\n"Password" = "t"']]
-01-04-2022 21:48:11 | DEBUG | 
-
-=================================
-01-04-2022 21:48:32 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.155', 'Gal-PC')
-01-04-2022 21:48:32 | DEBUG | 
-=================================
-
-
-01-04-2022 21:48:32 | DEBUG | ['POST /Login%20Attempt',
- {'Accept': '*/*',
-  'Accept-Encoding': 'gzip, deflate, br',
-  'Accept-Language': 'en-US,en;q=0.9,he;q=0.8',
-  'Connection': 'keep-alive',
-  'Content-Length': '32',
-  'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
-  'Origin': 'http://localhost',
-  'Referer': 'http://localhost/login.html',
-  'Sec-Fetch-Dest': 'empty',
-  'Sec-Fetch-Mode': 'cors',
-  'Sec-Fetch-Site': 'same-origin',
-  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
-                '(KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36',
-  'X-Requested-With': 'XMLHttpRequest',
-  'sec-ch-ua': '" Not A;Brand";v="99", "Chromium";v="96", "Google '
-               'Chrome";v="96"',
-  'sec-ch-ua-mobile': '?0',
-  'sec-ch-ua-platform': '"Windows"'},
- ['"Username": "t"\n"Password" = "t"']]
-01-04-2022 21:48:32 | DEBUG | 
-
-=================================
-01-04-2022 21:48:55 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.155', 'Gal-PC')
-01-04-2022 21:49:20 | DEBUG | 
-=================================
-
-
-01-04-2022 21:49:20 | DEBUG | ['POST /Login%20Attempt',
- {'Accept': '*/*',
-  'Accept-Encoding': 'gzip, deflate, br',
-  'Accept-Language': 'en-US,en;q=0.9,he;q=0.8',
-  'Connection': 'keep-alive',
-  'Content-Length': '32',
-  'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
-  'Origin': 'http://localhost',
-  'Referer': 'http://localhost/login.html',
-  'Sec-Fetch-Dest': 'empty',
-  'Sec-Fetch-Mode': 'cors',
-  'Sec-Fetch-Site': 'same-origin',
-  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
-                '(KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36',
-  'X-Requested-With': 'XMLHttpRequest',
-  'sec-ch-ua': '" Not A;Brand";v="99", "Chromium";v="96", "Google '
-               'Chrome";v="96"',
-  'sec-ch-ua-mobile': '?0',
-  'sec-ch-ua-platform': '"Windows"'},
- ['"Username": "t"\n"Password" = "t"']]
-01-04-2022 21:49:20 | DEBUG | 
-
-=================================
-01-04-2022 21:49:21 | INFO | Sent public//login.html to ('127.0.0.1', 55507)
-01-04-2022 21:49:21 | INFO | Sent public//src/Scripts/login.js to ('127.0.0.1', 55507)
-01-04-2022 21:49:21 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 55507)
-01-04-2022 21:49:21 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 55507)
-01-04-2022 21:49:24 | DEBUG | 
-=================================
-
-
-01-04-2022 21:49:24 | DEBUG | ['POST /Login%20Attempt',
- {'Accept': '*/*',
-  'Accept-Encoding': 'gzip, deflate, br',
-  'Accept-Language': 'en-US,en;q=0.9,he;q=0.8',
-  'Connection': 'keep-alive',
-  'Content-Length': '32',
-  'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
-  'Origin': 'http://localhost',
-  'Referer': 'http://localhost/login.html',
-  'Sec-Fetch-Dest': 'empty',
-  'Sec-Fetch-Mode': 'cors',
-  'Sec-Fetch-Site': 'same-origin',
-  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
-                '(KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36',
-  'X-Requested-With': 'XMLHttpRequest',
-  'sec-ch-ua': '" Not A;Brand";v="99", "Chromium";v="96", "Google '
-               'Chrome";v="96"',
-  'sec-ch-ua-mobile': '?0',
-  'sec-ch-ua-platform': '"Windows"'},
- ['"Username": "a"\n"Password" = "n"']]
-01-04-2022 21:49:24 | DEBUG | 
-
-=================================
-01-04-2022 21:50:56 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.155', 'Gal-PC')
-01-04-2022 21:51:02 | INFO | Sent public//login.html to ('127.0.0.1', 61599)
-01-04-2022 21:51:02 | INFO | Sent public//src/Scripts/login.js to ('127.0.0.1', 61599)
-01-04-2022 21:51:02 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 61600)
-01-04-2022 21:51:03 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 61600)
-01-04-2022 21:51:05 | DEBUG | =================================
-
-01-04-2022 21:51:05 | DEBUG | ['POST /Login%20Attempt',
- {'Accept': '*/*',
-  'Accept-Encoding': 'gzip, deflate, br',
-  'Accept-Language': 'en-US,en;q=0.9,he;q=0.8',
-  'Connection': 'keep-alive',
-  'Content-Length': '32',
-  'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
-  'Origin': 'http://localhost',
-  'Referer': 'http://localhost/login.html',
-  'Sec-Fetch-Dest': 'empty',
-  'Sec-Fetch-Mode': 'cors',
-  'Sec-Fetch-Site': 'same-origin',
-  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
-                '(KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36',
-  'X-Requested-With': 'XMLHttpRequest',
-  'sec-ch-ua': '" Not A;Brand";v="99", "Chromium";v="96", "Google '
-               'Chrome";v="96"',
-  'sec-ch-ua-mobile': '?0',
-  'sec-ch-ua-platform': '"Windows"'},
- ['"Username": "t"\n"Password" = "a"']]
-01-04-2022 21:51:05 | DEBUG | 
-
-=================================
+01-08-2022 23:38:35 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.155', 'Gal-PC')
+01-08-2022 23:38:39 | INFO | Sent public/index.html to ('127.0.0.1', 64586)
+01-08-2022 23:38:39 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 64586)
+01-08-2022 23:38:39 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 64587)
+01-08-2022 23:38:39 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 64586)
+01-08-2022 23:38:57 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.155', 'Gal-PC')
+01-08-2022 23:38:59 | INFO | Sent public/index.html to ('127.0.0.1', 56052)
+01-08-2022 23:38:59 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 56052)
+01-08-2022 23:38:59 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 56053)
+01-08-2022 23:38:59 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 56052)
+01-08-2022 23:38:59 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 56052)
+01-08-2022 23:39:34 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.155', 'Gal-PC')
+01-08-2022 23:39:42 | INFO | Sent public/index.html to ('127.0.0.1', 55119)
+01-08-2022 23:39:48 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 65441)
+01-08-2022 23:39:48 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 55119)
+01-08-2022 23:41:07 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.155', 'Gal-PC')
+01-08-2022 23:41:10 | INFO | Sent public/index.html to ('127.0.0.1', 65527)
+01-08-2022 23:41:10 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 65527)
+01-08-2022 23:41:10 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 65528)
+01-08-2022 23:41:10 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 65527)
+01-08-2022 23:41:10 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 65530)
+01-08-2022 23:41:12 | INFO | Sent public//login.html to ('127.0.0.1', 65530)
+01-08-2022 23:41:12 | INFO | Sent public//src/Scripts/login.js to ('127.0.0.1', 65530)
+01-08-2022 23:41:12 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 65530)
+01-08-2022 23:41:15 | DEBUG | Sent login response packet
+01-08-2022 23:41:32 | DEBUG | Sent login response packet
+01-08-2022 23:41:32 | INFO | Sent public/index.html to ('127.0.0.1', 51938)
+01-08-2022 23:41:32 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 51938)
+01-08-2022 23:41:32 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 51938)
+01-08-2022 23:41:32 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 51938)
+01-08-2022 23:46:18 | INFO | Sent public/index.html to ('127.0.0.1', 54162)
+01-08-2022 23:46:18 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 54162)
+01-08-2022 23:46:18 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 54163)
+01-08-2022 23:46:18 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 54162)
+01-08-2022 23:46:18 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 54162)
+01-08-2022 23:46:21 | INFO | Sent public//login.html to ('127.0.0.1', 54170)
+01-08-2022 23:46:21 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 54170)
+01-08-2022 23:46:21 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 54170)
+01-08-2022 23:46:21 | INFO | Sent public//src/Scripts/login.js to ('127.0.0.1', 54171)
+01-08-2022 23:46:25 | DEBUG | Sent login response packet
+01-08-2022 23:47:04 | INFO | Sent public//login.html to ('127.0.0.1', 57116)
+01-08-2022 23:47:05 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 57117)
+01-08-2022 23:47:05 | INFO | Sent public//src/Scripts/login.js to ('127.0.0.1', 57116)
+01-08-2022 23:47:05 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 57117)
+01-08-2022 23:47:05 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 57117)
+01-08-2022 23:47:08 | DEBUG | Sent login response packet
+01-08-2022 23:47:13 | INFO | Sent public//signUp.html to ('127.0.0.1', 57133)
+01-08-2022 23:47:13 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 57134)
+01-08-2022 23:47:13 | INFO | Sent public//src/Scripts/signUp.js to ('127.0.0.1', 57133)
+01-08-2022 23:47:13 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 57134)
+01-08-2022 23:47:32 | DEBUG | Sent login response packet
+01-08-2022 23:49:29 | INFO | Sent public//login.html to ('127.0.0.1', 62843)
+01-08-2022 23:49:29 | INFO | Sent public//src/Scripts/login.js to ('127.0.0.1', 62843)
+01-08-2022 23:49:29 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 62844)
+01-08-2022 23:49:29 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 62843)
+01-08-2022 23:49:29 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 62843)
+01-08-2022 23:49:32 | DEBUG | Sent login response packet
+01-08-2022 23:57:29 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.155', 'Gal-PC')
+01-08-2022 23:57:31 | INFO | Sent public/index.html to ('127.0.0.1', 54043)
+01-08-2022 23:57:31 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 54044)
+01-08-2022 23:57:31 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 54043)
+01-08-2022 23:57:31 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 54044)
+01-09-2022 00:01:07 | INFO | Sent public/index.html to ('127.0.0.1', 51426)
+01-09-2022 00:01:07 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 51427)
+01-09-2022 00:01:07 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 51426)
+01-09-2022 00:01:08 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 51426)
+01-09-2022 00:01:08 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 51426)
+01-09-2022 00:01:53 | INFO | Sent public/index.html to ('127.0.0.1', 63102)
+01-09-2022 00:01:53 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 63103)
+01-09-2022 00:01:53 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 63102)
+01-09-2022 00:01:53 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 63103)
+01-09-2022 00:01:54 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 63103)
+01-09-2022 00:02:06 | INFO | Sent public/index.html to ('127.0.0.1', 54119)
+01-09-2022 00:02:06 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 54120)
+01-09-2022 00:02:06 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 54119)
+01-09-2022 00:02:06 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 54120)
+01-09-2022 00:02:06 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 54120)
+01-09-2022 00:03:54 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 51351)
+01-09-2022 00:05:06 | INFO | Sent public/index.html to ('127.0.0.1', 59603)
+01-09-2022 00:05:06 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 59603)
+01-09-2022 00:05:06 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 59603)
+01-09-2022 00:05:06 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 59604)
+01-09-2022 00:05:07 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 59604)
+01-09-2022 00:06:27 | INFO | Sent public/index.html to ('127.0.0.1', 61183)
+01-09-2022 00:06:27 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 61184)
+01-09-2022 00:06:27 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 61183)
+01-09-2022 00:06:27 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 61183)
+01-09-2022 00:06:27 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 61183)
+01-09-2022 00:08:25 | INFO | Sent public/index.html to ('127.0.0.1', 63367)
+01-09-2022 00:08:25 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 63368)
+01-09-2022 00:08:25 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 63367)
+01-09-2022 00:08:25 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 63367)
+01-09-2022 00:08:25 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 63367)
+01-09-2022 00:12:26 | INFO | Sent public/index.html to ('127.0.0.1', 60457)
+01-09-2022 00:12:26 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 60457)
+01-09-2022 00:12:26 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 60457)
+01-09-2022 00:12:26 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 60458)
+01-09-2022 00:12:26 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 60458)
+01-09-2022 00:12:55 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 56903)
+01-09-2022 00:19:21 | INFO | Sent public/index.html to ('127.0.0.1', 64515)
+01-09-2022 00:19:21 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 64516)
+01-09-2022 00:19:21 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 64515)
+01-09-2022 00:19:21 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 64516)
+01-09-2022 00:19:21 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 64516)
+01-09-2022 00:20:05 | INFO | Sent public/index.html to ('127.0.0.1', 49794)
+01-09-2022 00:20:05 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 49795)
+01-09-2022 00:20:05 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 49794)
+01-09-2022 00:20:05 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 49794)
+01-09-2022 00:20:06 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 49794)
+01-09-2022 00:21:40 | INFO | Sent public/index.html to ('127.0.0.1', 52026)
+01-09-2022 00:21:40 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 52027)
+01-09-2022 00:21:40 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 52026)
+01-09-2022 00:21:40 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 52027)
+01-09-2022 00:21:40 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 52027)
+01-09-2022 00:22:51 | INFO | Sent public/index.html to ('127.0.0.1', 59643)
+01-09-2022 00:22:51 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 59643)
+01-09-2022 00:22:51 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 59644)
+01-09-2022 00:22:51 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 59643)
+01-09-2022 00:22:51 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 59643)
+01-09-2022 00:26:55 | INFO | Sent public/index.html to ('127.0.0.1', 58583)
+01-09-2022 00:26:55 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 58584)
+01-09-2022 00:26:55 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 58583)
+01-09-2022 00:26:55 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 58583)
+01-09-2022 00:26:56 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 58583)
+01-09-2022 00:30:46 | INFO | Sent public/index.html to ('127.0.0.1', 54254)
+01-09-2022 00:30:46 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 54255)
+01-09-2022 00:30:46 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 54254)
+01-09-2022 00:30:46 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 54254)
+01-09-2022 00:30:47 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 54254)
+01-09-2022 00:37:53 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 64523)
+01-09-2022 00:38:50 | INFO | Sent public/index.html to ('127.0.0.1', 51001)
+01-09-2022 00:38:50 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 51001)
+01-09-2022 00:38:50 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 51002)
+01-09-2022 00:38:50 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 51003)
+01-09-2022 00:38:50 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 51003)
+01-09-2022 00:40:20 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 63350)
+01-09-2022 00:42:45 | INFO | Sent public/index.html to ('127.0.0.1', 62811)
+01-09-2022 00:42:45 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 62811)
+01-09-2022 00:42:45 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 62812)
+01-09-2022 00:42:45 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 62811)
+01-09-2022 00:42:45 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 62811)
+01-09-2022 00:45:15 | INFO | Sent public/index.html to ('127.0.0.1', 63595)
+01-09-2022 00:45:15 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 63596)
+01-09-2022 00:45:15 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 63595)
+01-09-2022 00:45:15 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 63597)
+01-09-2022 00:45:15 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 63597)
+01-09-2022 00:45:51 | INFO | Sent public/index.html to ('127.0.0.1', 59680)
+01-09-2022 00:45:51 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 59680)
+01-09-2022 00:45:51 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 59681)
+01-09-2022 00:45:51 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 59680)
+01-09-2022 00:45:52 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 59685)
+01-09-2022 00:52:35 | INFO | Sent public/index.html to ('127.0.0.1', 56708)
+01-09-2022 00:52:35 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 56708)
+01-09-2022 00:52:35 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 56709)
+01-09-2022 00:52:35 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 56708)
+01-09-2022 00:52:35 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 56708)
+01-09-2022 01:05:29 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.155', 'Gal-PC')
+01-09-2022 01:05:31 | INFO | Sent public/index.html to ('127.0.0.1', 63700)
+01-09-2022 01:05:31 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 63700)
+01-09-2022 01:05:31 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 63701)
+01-09-2022 01:05:31 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 63700)
+01-09-2022 01:05:31 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 63700)
+01-09-2022 01:05:33 | INFO | Sent public//login.html to ('127.0.0.1', 63700)
+01-09-2022 01:05:33 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 63701)
+01-09-2022 01:05:33 | INFO | Sent public//src/Scripts/login.js to ('127.0.0.1', 63702)
+01-09-2022 01:05:33 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 63700)
+01-09-2022 01:08:13 | INFO | Sent public//login.html to ('127.0.0.1', 64599)
+01-09-2022 01:08:13 | INFO | Sent public//src/Scripts/login.js to ('127.0.0.1', 64599)
+01-09-2022 01:08:13 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 64600)
+01-09-2022 01:08:13 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 64599)
+01-09-2022 01:08:13 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 64599)
+01-09-2022 01:08:19 | DEBUG | Sent login response packet
+01-09-2022 01:08:19 | INFO | Sent public/index.html to ('127.0.0.1', 64607)
+01-09-2022 01:08:19 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 64607)
+01-09-2022 01:08:19 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 64607)
+01-09-2022 01:08:19 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 64607)
+01-09-2022 01:14:12 | INFO | Sent public/index.html to ('127.0.0.1', 62964)
+01-09-2022 01:14:12 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 62965)
+01-09-2022 01:14:12 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 62964)
+01-09-2022 01:14:12 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 62965)
+01-09-2022 01:14:27 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 62964)
+01-09-2022 01:14:27 | ERROR | 404:
+[Errno 2] No such file or directory: 'public//userdata'
+01-09-2022 01:14:48 | INFO | Sent public/index.html to ('127.0.0.1', 65444)
+01-09-2022 01:14:48 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 65444)
+01-09-2022 01:14:48 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 65445)
+01-09-2022 01:14:48 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 65444)
+01-09-2022 01:14:48 | ERROR | 404:
+[Errno 2] No such file or directory: 'public//userdata'
+01-09-2022 01:16:10 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.155', 'Gal-PC')
+01-09-2022 01:16:11 | ERROR | 404:
+[Errno 2] No such file or directory: 'publicindex.html'
+01-09-2022 01:16:11 | ERROR | 404:
+[Errno 2] No such file or directory: 'public/src/styles.css'
+01-09-2022 01:16:11 | ERROR | 404:
+[Errno 2] No such file or directory: 'public/favicon.ico'
+01-09-2022 01:17:25 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.155', 'Gal-PC')
+01-09-2022 01:17:27 | INFO | Sent public/index.html to ('127.0.0.1', 60485)
+01-09-2022 01:17:27 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 60485)
+01-09-2022 01:17:27 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 60486)
+01-09-2022 01:17:27 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 60485)
+01-09-2022 01:17:27 | DEBUG | None Requested userdata
+01-09-2022 01:17:27 | ERROR | 404:
+[Errno 2] No such file or directory: 'public//userdata'
+01-09-2022 01:17:27 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 60485)
+01-09-2022 01:19:26 | INFO | Sent public/index.html to ('127.0.0.1', 55344)
+01-09-2022 01:19:27 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 55344)
+01-09-2022 01:19:27 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 55345)
+01-09-2022 01:19:27 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 55344)
+01-09-2022 01:19:27 | DEBUG | None Requested userdata
+01-09-2022 01:19:27 | ERROR | 404:
+[Errno 2] No such file or directory: 'public//userdata'
+01-09-2022 01:19:27 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 55344)
+01-09-2022 01:19:40 | INFO | Sent public//login.html to ('127.0.0.1', 55357)
+01-09-2022 01:19:40 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 55357)
+01-09-2022 01:19:40 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 55357)
+01-09-2022 01:19:40 | INFO | Sent public//src/Scripts/login.js to ('127.0.0.1', 55358)
+01-09-2022 01:19:42 | DEBUG | Sent login response packet
+01-09-2022 01:19:42 | INFO | Sent public/index.html to ('127.0.0.1', 55358)
+01-09-2022 01:19:42 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 55358)
+01-09-2022 01:19:42 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 55357)
+01-09-2022 01:19:42 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 55360)
+01-09-2022 01:19:42 | DEBUG | None Requested userdata
+01-09-2022 01:19:42 | ERROR | 404:
+[Errno 2] No such file or directory: 'public//userdata'
+01-09-2022 01:21:16 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.155', 'Gal-PC')
+01-09-2022 01:21:18 | INFO | Sent public/index.html to ('127.0.0.1', 61594)
+01-09-2022 01:21:18 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 61594)
+01-09-2022 01:21:18 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 61595)
+01-09-2022 01:21:18 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 61594)
+01-09-2022 01:21:18 | DEBUG | None Requested userdata
+01-09-2022 01:21:18 | ERROR | 404:
+[Errno 2] No such file or directory: 'public//userdata'
+01-09-2022 01:21:19 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 61595)
+01-09-2022 01:21:24 | INFO | Sent public//login.html to ('127.0.0.1', 61595)
+01-09-2022 01:21:24 | INFO | Sent public//src/Scripts/login.js to ('127.0.0.1', 61595)
+01-09-2022 01:21:24 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 61594)
+01-09-2022 01:21:24 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 61597)
+01-09-2022 01:21:26 | DEBUG | Sent login response packet: [0]
+01-09-2022 01:21:26 | INFO | Sent public/index.html to ('127.0.0.1', 61597)
+01-09-2022 01:21:26 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 61597)
+01-09-2022 01:21:26 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 61594)
+01-09-2022 01:21:26 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 61595)
+01-09-2022 01:21:27 | DEBUG | None Requested userdata
+01-09-2022 01:21:27 | ERROR | 404:
+[Errno 2] No such file or directory: 'public//userdata'
+01-09-2022 01:43:02 | INFO | Sent public/index.html to ('127.0.0.1', 50917)
+01-09-2022 01:43:02 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 50918)
+01-09-2022 01:43:02 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 50917)
+01-09-2022 01:43:02 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 50918)
+01-09-2022 01:43:03 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 50918)
+01-09-2022 01:43:22 | INFO | Sent public//login.html to ('127.0.0.1', 50918)
+01-09-2022 01:43:22 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 50917)
+01-09-2022 01:43:22 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 50919)
+01-09-2022 01:43:22 | INFO | Sent public//src/Scripts/login.js to ('127.0.0.1', 50918)
+01-09-2022 01:43:26 | DEBUG | Sent login response packet: [0]
+01-09-2022 01:43:26 | INFO | Sent public/index.html to ('127.0.0.1', 50918)
+01-09-2022 01:43:26 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 50918)
+01-09-2022 01:43:26 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 50919)
+01-09-2022 01:43:26 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 50917)
+01-09-2022 01:48:06 | INFO | Sent public/index.html to ('127.0.0.1', 58301)
+01-09-2022 01:48:06 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 58301)
+01-09-2022 01:48:06 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 58302)
+01-09-2022 01:48:06 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 58301)
+01-09-2022 01:48:06 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 58301)
+01-09-2022 01:48:18 | INFO | Sent public//login.html to ('127.0.0.1', 58321)
+01-09-2022 01:48:18 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 58322)
+01-09-2022 01:48:18 | INFO | Sent public//src/Scripts/login.js to ('127.0.0.1', 58321)
+01-09-2022 01:48:18 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 58322)
+01-09-2022 01:48:21 | DEBUG | Sent login response packet: [0]
+01-09-2022 01:48:21 | INFO | Sent public/index.html to ('127.0.0.1', 58322)
+01-09-2022 01:48:21 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 58322)
+01-09-2022 01:48:21 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 58321)
+01-09-2022 01:48:21 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 58323)
+01-09-2022 01:54:02 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.155', 'Gal-PC')
+01-09-2022 01:54:04 | INFO | Sent public/index.html to ('127.0.0.1', 61137)
+01-09-2022 01:54:04 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 61137)
+01-09-2022 01:54:04 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 61138)
+01-09-2022 01:54:04 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 61137)
+01-09-2022 01:54:04 | INFO | Sent public/index.html to ('127.0.0.1', 61137)
+01-09-2022 01:54:04 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 61137)
+01-09-2022 01:54:06 | INFO | Sent public//login.html to ('127.0.0.1', 61137)
+01-09-2022 01:54:06 | INFO | Sent public//src/Scripts/login.js to ('127.0.0.1', 61137)
+01-09-2022 01:54:06 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 61138)
+01-09-2022 01:54:06 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 61140)
+01-09-2022 01:54:08 | DEBUG | Sent login response packet: [0]
+01-09-2022 01:54:08 | INFO | Sent public/index.html to ('127.0.0.1', 61140)
+01-09-2022 01:54:08 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 61140)
+01-09-2022 01:54:08 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 61138)
+01-09-2022 01:54:08 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 61137)
+01-09-2022 01:54:08 | INFO | Sent public/index.html to ('127.0.0.1', 61137)
+01-09-2022 02:16:03 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.155', 'Gal-PC')
+01-09-2022 02:16:33 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.155', 'Gal-PC')
+01-09-2022 02:17:37 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.155', 'Gal-PC')
+01-09-2022 02:20:41 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.155', 'Gal-PC')
+01-09-2022 02:21:13 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.155', 'Gal-PC')
+01-09-2022 02:21:13 | INFO | Sent public/index.html to ('127.0.0.1', 64546)
+01-09-2022 02:21:28 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.155', 'Gal-PC')
+01-09-2022 02:21:28 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 64572)
+01-09-2022 02:21:28 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 64571)
+01-09-2022 02:21:29 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 64588)
+01-09-2022 02:22:16 | INFO | Sent public/index.html to ('127.0.0.1', 51415)
+01-09-2022 02:22:16 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 51415)
+01-09-2022 02:22:16 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 51415)
+01-09-2022 02:22:16 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 51415)
+01-09-2022 02:22:17 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 51416)
+01-09-2022 02:22:17 | DEBUG | Sent login response packet: [0]
+01-09-2022 02:22:17 | INFO | Sent public/index.html to ('127.0.0.1', 51415)
+01-09-2022 02:22:17 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 51415)
+01-09-2022 02:22:17 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 51418)
+01-09-2022 02:22:17 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 51419)
+01-09-2022 02:22:17 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 51415)
+01-09-2022 02:22:17 | DEBUG | Sent login response packet: [0]
+01-09-2022 02:22:17 | INFO | Sent public/index.html to ('127.0.0.1', 51415)
+01-09-2022 02:22:17 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 51415)
+01-09-2022 02:22:17 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 51419)
+01-09-2022 02:22:17 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 51424)
+01-09-2022 02:22:17 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 51415)
+01-09-2022 02:22:17 | DEBUG | Sent login response packet: [0]
+01-09-2022 02:22:17 | INFO | Sent public/index.html to ('127.0.0.1', 51419)
+01-09-2022 02:22:17 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 51419)
+01-09-2022 02:22:17 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 51424)
+01-09-2022 02:22:17 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 51419)
+01-09-2022 02:22:17 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 51424)
+01-09-2022 02:22:18 | DEBUG | Sent login response packet: [0]
+01-09-2022 02:22:18 | INFO | Sent public/index.html to ('127.0.0.1', 51419)
+01-09-2022 02:22:18 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 51428)
+01-09-2022 02:22:18 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 51419)
+01-09-2022 02:22:18 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 51430)
+01-09-2022 02:22:18 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 51431)
+01-09-2022 02:22:18 | DEBUG | Sent login response packet: [0]
+01-09-2022 02:22:18 | INFO | Sent public/index.html to ('127.0.0.1', 51439)
+01-09-2022 02:22:18 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 51439)
+01-09-2022 02:22:18 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 51439)
+01-09-2022 02:22:18 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 51439)
+01-09-2022 02:22:18 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 51439)
+01-09-2022 02:22:18 | DEBUG | Sent login response packet: [0]
+01-09-2022 02:22:19 | INFO | Sent public/index.html to ('127.0.0.1', 51446)
+01-09-2022 02:22:19 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 51446)
+01-09-2022 02:22:19 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 51446)
+01-09-2022 02:22:19 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 51448)
+01-09-2022 02:22:19 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 51449)
+01-09-2022 02:22:19 | DEBUG | Sent login response packet: [0]
+01-09-2022 02:22:19 | INFO | Sent public/index.html to ('127.0.0.1', 51448)
+01-09-2022 02:22:19 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 51448)
+01-09-2022 02:22:19 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 51452)
+01-09-2022 02:22:19 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 51450)
+01-09-2022 02:22:19 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 51446)
+01-09-2022 02:22:19 | DEBUG | Sent login response packet: [0]
+01-09-2022 02:22:19 | INFO | Sent public/index.html to ('127.0.0.1', 51452)
+01-09-2022 02:22:19 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 51448)
+01-09-2022 02:22:19 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 51452)
+01-09-2022 02:22:19 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 51454)
+01-09-2022 02:22:19 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 51450)
+01-09-2022 02:22:19 | DEBUG | Sent login response packet: [0]
+01-09-2022 02:22:19 | INFO | Sent public/index.html to ('127.0.0.1', 51454)
+01-09-2022 02:22:20 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 51454)
+01-09-2022 02:22:20 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 51448)
+01-09-2022 02:22:20 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 51452)
+01-09-2022 02:22:20 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 51454)
+01-09-2022 02:22:20 | DEBUG | Sent login response packet: [0]
+01-09-2022 02:22:20 | INFO | Sent public/index.html to ('127.0.0.1', 51448)
+01-09-2022 02:22:20 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 51448)
+01-09-2022 02:22:20 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 51452)
+01-09-2022 02:22:20 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 51459)
+01-09-2022 02:22:20 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 51448)
+01-09-2022 02:22:20 | DEBUG | Sent login response packet: [0]
+01-09-2022 02:22:20 | INFO | Sent public/index.html to ('127.0.0.1', 51459)
+01-09-2022 02:22:20 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 51459)
+01-09-2022 02:22:20 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 51452)
+01-09-2022 02:22:20 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 51463)
+01-09-2022 02:22:20 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 51459)
+01-09-2022 02:22:21 | DEBUG | Sent login response packet: [0]
+01-09-2022 02:22:21 | INFO | Sent public/index.html to ('127.0.0.1', 51463)
+01-09-2022 02:22:21 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 51463)
+01-09-2022 02:22:21 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 51466)
+01-09-2022 02:22:21 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 51452)
+01-09-2022 02:22:21 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 51463)
+01-09-2022 02:22:21 | DEBUG | Sent login response packet: [0]
+01-09-2022 02:22:21 | INFO | Sent public/index.html to ('127.0.0.1', 51452)
+01-09-2022 02:22:21 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 51452)
+01-09-2022 02:22:21 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 51466)
+01-09-2022 02:22:21 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 51452)
+01-09-2022 02:22:21 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 51469)
+01-09-2022 02:22:26 | INFO | Sent public/index.html to ('127.0.0.1', 51469)
+01-09-2022 02:22:26 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 51469)
+01-09-2022 02:22:26 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 51452)
+01-09-2022 02:22:26 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 51471)
+01-09-2022 02:22:26 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 51466)
+01-09-2022 02:22:26 | DEBUG | Sent login response packet: [0]
+01-09-2022 02:22:26 | INFO | Sent public/index.html to ('127.0.0.1', 51471)
+01-09-2022 02:22:27 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 51471)
+01-09-2022 02:22:27 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 51452)
+01-09-2022 02:22:27 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 51469)
+01-09-2022 02:22:27 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 51471)
+01-09-2022 02:22:27 | DEBUG | Sent login response packet: [0]
+01-09-2022 02:22:27 | INFO | Sent public/index.html to ('127.0.0.1', 51452)
+01-09-2022 02:22:27 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 51452)
+01-09-2022 02:22:27 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 51469)
+01-09-2022 02:22:27 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 51481)
+01-09-2022 02:22:27 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 51452)
+01-09-2022 02:23:31 | INFO | Sent public/index.html to ('127.0.0.1', 51452)
+01-09-2022 02:23:31 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 51452)
+01-09-2022 02:23:31 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 51469)
+01-09-2022 02:23:31 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 51481)
+01-09-2022 02:23:31 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 51452)
+01-09-2022 02:23:31 | DEBUG | Sent login response packet: [0]
+01-09-2022 02:23:31 | INFO | Sent public/index.html to ('127.0.0.1', 51481)
+01-09-2022 02:23:31 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 51469)
+01-09-2022 02:23:31 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 51481)
+01-09-2022 02:23:31 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 51481)
+01-09-2022 02:23:31 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 53319)
+01-09-2022 02:23:46 | DEBUG | Sent login response packet: [0]
+01-09-2022 02:24:10 | INFO | Sent public/index.html to ('127.0.0.1', 51481)
+01-09-2022 02:24:11 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 51481)
+01-09-2022 02:24:11 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 51469)
+01-09-2022 02:24:11 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 53322)
+01-09-2022 02:24:11 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 53321)
+01-09-2022 02:24:42 | DEBUG | Sent login response packet: [0]
+01-09-2022 02:24:42 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 64312)
+01-09-2022 02:25:09 | DEBUG | Sent login response packet: [0]
+01-09-2022 02:25:38 | INFO | Sent public/index.html to ('127.0.0.1', 50030)
+01-09-2022 02:25:38 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 50030)
+01-09-2022 02:25:38 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 50030)
+01-09-2022 02:25:39 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 50030)
+01-09-2022 02:25:39 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 50030)
+01-09-2022 02:25:39 | DEBUG | Sent login response packet: [0]
+01-09-2022 02:25:39 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 50035)
+01-09-2022 02:30:04 | INFO | Sent public/index.html to ('127.0.0.1', 58510)
+01-09-2022 02:30:04 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 58510)
+01-09-2022 02:30:04 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 58510)
+01-09-2022 02:30:04 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 58510)
+01-09-2022 02:30:04 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 58510)
+01-09-2022 02:30:04 | DEBUG | Sent login response packet: [0]
+01-09-2022 02:30:04 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 58510)
+01-09-2022 02:30:12 | INFO | Sent public/index.html to ('127.0.0.1', 58510)
+01-09-2022 02:30:12 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 58510)
+01-09-2022 02:30:12 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 58514)
+01-09-2022 02:30:12 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 58515)
+01-09-2022 02:30:12 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 58516)
+01-09-2022 02:30:12 | DEBUG | Sent login response packet: [0]
+01-09-2022 02:33:16 | INFO | Sent public/index.html to ('127.0.0.1', 65275)
+01-09-2022 02:33:16 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 65275)
+01-09-2022 02:33:16 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 65276)
+01-09-2022 02:33:16 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 65275)
+01-09-2022 02:33:16 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 65276)
+01-09-2022 02:33:16 | DEBUG | Sent login response packet: [0]
+01-09-2022 02:33:17 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 65276)
+01-09-2022 02:33:31 | INFO | Sent public/index.html to ('127.0.0.1', 59912)
+01-09-2022 02:33:31 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 59912)
+01-09-2022 02:33:31 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 59913)
+01-09-2022 02:33:31 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 59912)
+01-09-2022 02:33:31 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 59915)
+01-09-2022 02:33:31 | DEBUG | Sent login response packet: [0]
+01-09-2022 02:33:31 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 59915)
+01-09-2022 02:33:32 | INFO | Sent public/index.html to ('127.0.0.1', 59915)
+01-09-2022 02:33:32 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 59915)
+01-09-2022 02:33:32 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 59912)
+01-09-2022 02:33:32 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 59918)
+01-09-2022 02:33:32 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 59913)
+01-09-2022 02:33:35 | INFO | Sent public/index.html to ('127.0.0.1', 59918)
+01-09-2022 02:33:35 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 59913)
+01-09-2022 02:33:35 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 59918)
+01-09-2022 02:33:35 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 59915)
+01-09-2022 02:33:35 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 59912)
+01-09-2022 02:33:36 | INFO | Sent public/index.html to ('127.0.0.1', 59915)
+01-09-2022 02:33:36 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 59915)
+01-09-2022 02:33:36 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 59918)
+01-09-2022 02:33:36 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 59912)
+01-09-2022 02:33:36 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 59913)
+01-09-2022 02:33:36 | INFO | Sent public/index.html to ('127.0.0.1', 59913)
+01-09-2022 02:33:36 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 59912)
+01-09-2022 02:33:36 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 59913)
+01-09-2022 02:33:36 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 59918)
+01-09-2022 02:33:36 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 59915)
+01-09-2022 02:33:37 | INFO | Sent public/index.html to ('127.0.0.1', 59915)
+01-09-2022 02:33:37 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 59918)
+01-09-2022 02:33:37 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 59915)
+01-09-2022 02:33:37 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 59913)
+01-09-2022 02:33:37 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 59912)
+01-09-2022 02:33:38 | INFO | Sent public/index.html to ('127.0.0.1', 59913)
+01-09-2022 02:33:38 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 59918)
+01-09-2022 02:33:38 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 59912)
+01-09-2022 02:33:38 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 59913)
+01-09-2022 02:33:38 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 59915)
+01-09-2022 02:34:20 | INFO | Sent public/index.html to ('127.0.0.1', 54286)
+01-09-2022 02:34:20 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 54286)
+01-09-2022 02:34:20 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 54287)
+01-09-2022 02:34:20 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 54286)
+01-09-2022 02:34:20 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 54287)
+01-09-2022 02:34:21 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 54287)
+01-09-2022 02:34:22 | INFO | Sent public//login.html to ('127.0.0.1', 54287)
+01-09-2022 02:34:22 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 54287)
+01-09-2022 02:34:22 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 54286)
+01-09-2022 02:34:22 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 54286)
+01-09-2022 02:34:24 | DEBUG | Sent login response packet: [0]
+01-09-2022 02:34:49 | INFO | Sent public//login.html to ('127.0.0.1', 54286)
+01-09-2022 02:34:49 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 54287)
+01-09-2022 02:34:49 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 54286)
+01-09-2022 02:34:49 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 54289)
+01-09-2022 02:34:50 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 54286)
+01-09-2022 02:34:52 | DEBUG | Sent login response packet: [0]
+01-09-2022 02:34:52 | INFO | Sent public/index.html to ('127.0.0.1', 54286)
+01-09-2022 02:34:52 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 54289)
+01-09-2022 02:34:52 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 54286)
+01-09-2022 02:34:52 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 54290)
+01-09-2022 02:34:52 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 54287)
+01-09-2022 02:34:52 | DEBUG | Sent login response packet: [0]
+01-09-2022 02:37:19 | INFO | Sent public/index.html to ('127.0.0.1', 58064)
+01-09-2022 02:37:19 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 58064)
+01-09-2022 02:37:19 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 58065)
+01-09-2022 02:37:19 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 58064)
+01-09-2022 02:37:19 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 58065)
+01-09-2022 02:37:19 | DEBUG | Sent login response packet: [0]
+01-09-2022 02:37:19 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 58065)
+01-09-2022 02:37:26 | INFO | Sent public/index.html to ('127.0.0.1', 54033)
+01-09-2022 02:37:26 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 54034)
+01-09-2022 02:37:26 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 54033)
+01-09-2022 02:37:26 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 54033)
+01-09-2022 02:37:26 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 54034)
+01-09-2022 02:37:26 | DEBUG | Sent login response packet: [0]
+01-09-2022 02:37:26 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 54034)
+01-09-2022 02:37:28 | INFO | Sent public/index.html to ('127.0.0.1', 54034)
+01-09-2022 02:37:28 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 54037)
+01-09-2022 02:37:28 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 54033)
+01-09-2022 02:37:28 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 54036)
+01-09-2022 02:37:28 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 54034)
+01-09-2022 02:37:30 | INFO | Sent public//login.html to ('127.0.0.1', 54033)
+01-09-2022 02:37:30 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 54034)
+01-09-2022 02:37:30 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 54033)
+01-09-2022 02:37:30 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 54037)
+01-09-2022 02:37:33 | DEBUG | Sent login response packet: [0]
+01-09-2022 02:37:33 | INFO | Sent public/index.html to ('127.0.0.1', 54037)
+01-09-2022 02:37:33 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 54034)
+01-09-2022 02:37:33 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 54036)
+01-09-2022 02:37:33 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 54037)
+01-09-2022 02:37:33 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 54033)
+01-09-2022 02:37:33 | DEBUG | Sent login response packet: [0]
+01-09-2022 02:37:53 | INFO | Sent public/index.html to ('127.0.0.1', 49798)
+01-09-2022 02:37:53 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 49799)
+01-09-2022 02:37:53 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 49798)
+01-09-2022 02:37:53 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 49798)
+01-09-2022 02:37:53 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 49799)
+01-09-2022 02:37:54 | INFO | Sent public//login.html to ('127.0.0.1', 49808)
+01-09-2022 02:37:54 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 49809)
+01-09-2022 02:37:54 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 49808)
+01-09-2022 02:37:54 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 49809)
+01-09-2022 02:38:00 | DEBUG | Sent login response packet: [0]
+01-09-2022 02:38:00 | INFO | Sent public/index.html to ('127.0.0.1', 49809)
+01-09-2022 02:38:00 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 49809)
+01-09-2022 02:38:00 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 49808)
+01-09-2022 02:38:00 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 49811)
+01-09-2022 02:38:01 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 49809)
+01-09-2022 02:38:01 | DEBUG | Sent login response packet: [0]
+01-09-2022 02:38:46 | INFO | Sent public/index.html to ('127.0.0.1', 51099)
+01-09-2022 02:38:46 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 51099)
+01-09-2022 02:38:46 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 51100)
+01-09-2022 02:38:46 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 51100)
+01-09-2022 02:38:46 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 51099)
+01-09-2022 02:38:46 | DEBUG | Sent login response packet: [0]
+01-09-2022 02:38:47 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 51100)
+01-09-2022 02:38:55 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 51100)
+01-09-2022 02:38:59 | INFO | Sent public/index.html to ('127.0.0.1', 51100)
+01-09-2022 02:38:59 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 51103)
+01-09-2022 02:38:59 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 51104)
+01-09-2022 02:38:59 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 51099)
+01-09-2022 02:38:59 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 51100)
+01-09-2022 02:38:59 | DEBUG | Sent login response packet: [0]
+01-09-2022 02:38:59 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 51100)
+01-09-2022 02:39:05 | INFO | Sent public/index.html to ('127.0.0.1', 51100)
+01-09-2022 02:39:05 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 51099)
+01-09-2022 02:39:05 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 51104)
+01-09-2022 02:39:05 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 51103)
+01-09-2022 02:39:05 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 51100)
+01-09-2022 02:39:05 | DEBUG | Sent login response packet: [0]
+01-09-2022 02:39:07 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 51103)
+01-09-2022 02:44:49 | INFO | Sent public/index.html to ('127.0.0.1', 54877)
+01-09-2022 02:44:49 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 54878)
+01-09-2022 02:44:49 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 54877)
+01-09-2022 02:44:49 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 54878)
+01-09-2022 02:44:49 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 54877)
+01-09-2022 02:44:49 | DEBUG | Sent login response packet: [0]
+01-09-2022 02:44:49 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 54877)
+01-09-2022 02:48:41 | INFO | Sent public/index.html to ('127.0.0.1', 55873)
+01-09-2022 02:48:41 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 55874)
+01-09-2022 02:48:41 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 55873)
+01-09-2022 02:48:41 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 55874)
+01-09-2022 02:48:41 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 55873)
+01-09-2022 02:48:41 | DEBUG | Sent login response packet: [0]
+01-09-2022 02:48:41 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 55873)
+01-09-2022 02:49:52 | INFO | Sent public/index.html to ('127.0.0.1', 53214)
+01-09-2022 02:49:52 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 53215)
+01-09-2022 02:49:52 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 53214)
+01-09-2022 02:49:52 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 53214)
+01-09-2022 02:49:52 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 53215)
+01-09-2022 02:49:55 | INFO | Sent public//login.html to ('127.0.0.1', 53225)
+01-09-2022 02:49:55 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 53225)
+01-09-2022 02:49:55 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 53226)
+01-09-2022 02:49:55 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 53225)
+01-09-2022 02:50:03 | DEBUG | Sent login response packet: [0]
+01-09-2022 02:50:03 | INFO | Sent public/index.html to ('127.0.0.1', 53225)
+01-09-2022 02:50:03 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 53226)
+01-09-2022 02:50:03 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 53225)
+01-09-2022 02:50:03 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 53228)
+01-09-2022 02:50:03 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 53225)
+01-09-2022 02:50:03 | DEBUG | Sent login response packet: [0]

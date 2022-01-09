@@ -5,33 +5,67 @@ html,
   margin: 0;
 }
 
-.center
-{
+:root {
+  --mainbody-width: 90%;
+  --sidebar-width: calc(100% - var(--mainbody-width))
+}
+
+#mainbody{
   position: absolute;
+  width: var(--mainbody-width);
+  left: var(--sidebar-width);
+}
+
+#sidebar{
+  --border-rad: 0px 10px 10px 0px;
+  border-radius: var(--border-rad);
+  position: fixed;
+  background-color: rgba(90, 68, 150, 0.849);
+  width: 10%;
+  height: 100%;
+}
+
+#notebookList{
+  height: 100%;
+  border-radius: 0px 0px 10px 0px;
+  border: 2px solid rgb(24, 24, 24);
+  width: 100%;
+  background-color: rgb(53, 53, 53);
+  display: flexbox;
+  flex-direction: column;
+}
+
+.notebook-title{
+  background-color: rgb(80, 79, 79);
+}
+
+.notebook-block{
+  cursor: pointer;
+  background-color: rgb(65, 64, 64);
+  color: #fff;
+  opacity: 1;
+}
+
+#sidebarTitle{
+  color: #fff
+}
+
+#sidebar button{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+#sidebarHeaders{
+
+flex: 0;
+}
+
+.center {
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-
-.login_box button {
-
-}
-
-#login_box {
-    background: #b58686;
-    width: 20%;
-    border-radius: 0.5em;
-}
-
-#login_box div {
-    position: relative;
-    padding: 10px;
-}
-
-input {
-    border-radius: 0.3em;
-    /* border: thick; */
-    background: #cad5aead;
 }
 
 h1 {
@@ -43,11 +77,13 @@ canvas {
 }
 
 button {
+  cursor: pointer;
   background-color: #627e62;
   opacity: 0.8;
   border-radius: 1em;
   /* border: 0; */
 }
+
 
 #drawing {
   border: 1em solid rgb(139, 139, 243);

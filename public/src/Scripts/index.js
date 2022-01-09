@@ -5,8 +5,8 @@ class Notebook
     {
         this.draw = drawer
         this.div = div
-        this.cPath = undefined
-        this.cGroup = undefined
+        this.cPath = null
+        this.cGroup = null
         this.groups = []
     }
 
@@ -22,32 +22,67 @@ class Notebook
     }
 }
 
+function getCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function BuildNotebookList(userID)
+{
+    username = userID['username'];
+    password = userID['password'];
+    $.ajax({
+        url: `Protected/${username}`,
+        type: "GET",
+        dataType: "text/json",
+
+    })
+}
+
 function init()
 {
-    canvas = $("#drawing")
-    draw = SVG('#drawingSvg').addTo('#drawing').size("100%", 700)
-    svg = $("#drawingSvg")
-    doDraw = false
+    userIDstring = getCookie('user_auth');
+
+    if (userIDstring != null)
+    {
+        userID = JSON.parse(userIDstring)
+        isLoggedIn = Login(userID['username'], userID['password'])
+        if (isLoggedIn)
+        {
+            $("#loginButton").hide()
+            $("#logoutButton").show()
+            $("#welcome").html(`Hi ${userID['username']}!`)
+            // BuildNotebookList(userID);
+        }
+    }
+    canvas = $("#drawing");
+    draw = SVG('#drawingSvg').addTo('#drawing').size("100%", 700);
+    svg = $("#drawingSvg");
+    doDraw = false;
     nb = new Notebook(draw, canvas);
 
     let clearButton = document.createElement("button");
     clearButton.innerHTML = "Clear";
     clearButton.onclick = function () {
-        nb.ClearCanvas()
+        nb.ClearCanvas();
     };
-    clearButton.name = "Clear"
+    clearButton.name = "Clear";
     $('#drawing-container').append(clearButton);
 
-    lastPos = {x: undefined, y: undefined, width: undefined};
-    pos = {x: undefined, y: undefined, width: undefined};
-    width = undefined;
+    lastPos = {x: null, y: null, width: null};
+    pos = {x: null, y: null, width: null};
+    width = null;
 }
-
-init()
 
 function getPos(e, div)
 {
-    pos = {x: undefined, y: undefined, width: undefined}
+    pos = {x: null, y: null, width: null}
     if (!e.touches)
     {
         pos.x = e.offsetX;
@@ -68,50 +103,54 @@ function getPos(e, div)
     return pos
 }
 
+$(document).ready(function() {
+    
 
+    init()
 
-canvas.on('mousemove', e => {
-    if (doDraw) 
-    {
-        nb.DrawPos(e)
-    }
-})
-
-
-canvas.on('touchmove', e => {
-    if (doDraw) 
-    {
-        // Prevents an additional mousedown event being triggered
-        if (e.touches.length == 1){
-            e.preventDefault();
+    canvas.on('mousemove', e => {
+        if (doDraw) 
+        {
             nb.DrawPos(e)
         }
-    }
+    })
+
+
+    canvas.on('touchmove', e => {
+        if (doDraw) 
+        {
+            // Prevents an additional mousedown event being triggered
+            if (e.touches.length == 1){
+                e.preventDefault();
+                nb.DrawPos(e)
+            }
+        }
+    })
+
+    // Regular
+    canvas.pressure({
+        start: function(event){
+            doDraw = true;
+            pos = getPos(event, nb.div)
+            g = nb.draw.group()
+            nb.cGroup = g
+            nb.cPath = nb.cGroup.path(`M${pos.x} ${pos.y} `)
+        },
+        end: function(event){
+            doDraw = false;
+            
+            lastPos = {x: null, y: null, width: null};
+            pos = {x: null, y: null, width: null};
+
+
+            nb.groups.push(nb.cGroup)
+        },
+        change: function(force, event){
+            // width = Pressure.map(force, 0, 1, 3, 10);
+            width = force*10
+        },
+        unsupported: function(){
+            this.innerHTML = 'Sorry! Check the devices and browsers'
+        }
+    });
 })
-
-// Regular
-canvas.pressure({
-    start: function(event){
-        doDraw = true;
-        pos = getPos(event, nb.div)
-        g = nb.draw.group()
-        nb.cGroup = g
-        nb.cPath = nb.cGroup.path(`M${pos.x} ${pos.y} `)
-    },
-    end: function(event){
-        doDraw = false;
-        
-        lastPos = {x: undefined, y: undefined, width: undefined};
-        pos = {x: undefined, y: undefined, width: undefined};
-
-
-        nb.groups.push(nb.cGroup)
-    },
-    change: function(force, event){
-        // width = Pressure.map(force, 0, 1, 3, 10);
-        width = force*10
-    },
-    unsupported: function(){
-        this.innerHTML = 'Sorry! Check the devices and browsers'
-    }
-});

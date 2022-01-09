@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Sign Up</title> 
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="src/Scripts/signUp.js"></script>
+        <link rel="stylesheet" href="src/Styles/main.css"/>  
+        <link rel="stylesheet" href="src/Styles/login.css"/> 
+        <link rel="icon" href="src/Images/favicon.ico"/>
+    </head>
+    <body>
+        <strong>Hello Please Enter The Following Information:</strong>
+        <br>
+        <br>
+        <div class="center" id="login_box">
+            <div class="login-input-box">
+                Username: <br><input title="Username" placeholder="Username" type="text" id="username"> 
+            </div><br>
+            <div class="login-input-box">
+                Password: <br><input title="Password" placeholder="Password" type="text" id="password"> 
+            </div><br>
+            <div class="login-input-box">
+                Confirm Password: <br><input title="Password" placeholder="Password" type="text" id="confirm_password">
+                <p id="signup_instructions"></p>
+             </div><br>
+            <button onclick="SignUp($('#username')[0].value, $('#password')[0].value, $('#confirm_password')[0].value)">Sign up</button>
+        </div>
+    </body>
+</html>
