@@ -3,6 +3,7 @@
     <head>
         <title>Sign Up</title> 
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="src/Scripts/modules.js"></script>
         <script src="src/Scripts/signUp.js"></script>
         <link rel="stylesheet" href="src/Styles/main.css"/>  
         <link rel="stylesheet" href="src/Styles/login.css"/> 
@@ -23,7 +24,7 @@
                 Confirm Password: <br><input title="Password" placeholder="Password" type="text" id="confirm_password">
                 <p id="signup_instructions"></p>
              </div><br>
-            <button onclick="SignUp($('#username')[0].value, $('#password')[0].value, $('#confirm_password')[0].value)">Sign up</button>
+            <button onclick="signUpPress('username', 'password', 'confirm_password', 'signup_instructions')">Sign up</button>
         </div>
     </body>
 </html>

@@ -27,7 +27,7 @@ class client(HTML.GeneralClient):
         # logger.debug("\n\n=================================")
         
         resp = self.POSTActions[packet.filename](packet.Payload)
-        resp = json.dumps([resp])
+        resp = json.dumps(resp)
         respPacket = HTML.Packet()
         respPacket.Headers['Content-Length'] = len(resp)
         respPacket.Headers['Content-Type'] = "text/json"
@@ -37,10 +37,21 @@ class client(HTML.GeneralClient):
     
     def SignUp(self, payload):
         payloadDict = json.loads(payload)
-        Username = payloadDict['Username']
-        Password = payloadDict['Password']
-        logger.debug(f"{Username, Password = }")
-    
+        attemptUsername = payloadDict['username']
+        attemptPassword = payloadDict['password']
+        
+        with open('Protected/UsersLoginData.json', "r+") as loginDataFile:
+            loginData = json.load(loginDataFile)
+            for username in loginData:
+                if username == attemptUsername:
+                    return {"errCode": 1, "discription": "Username already exists!"}
+            
+            newLoginData = {attemptUsername: attemptPassword}
+            loginData.update(newLoginData)
+            loginDataFile.seek(0)
+            json.dump(loginData, loginDataFile, indent=4)
+        
+        return {"errCode": 0, "discription": "Signed Up successfuly"}
     
     def LoginAttempt(self, loginData):
         payloadDict = json.loads(loginData)
@@ -57,7 +68,7 @@ class client(HTML.GeneralClient):
                 self.username = Username
                 self.isLoggedIn = True
         
-        return resp
+        return [resp]
         
     def PublicResponse(self, file):
         if file == '/':

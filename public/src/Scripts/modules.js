@@ -22,22 +22,32 @@ function Login(Username, Password)
         data: `{"username":  "${Username}", "password": "${Password}"}`,
     })
     respJson = JSON.parse(resp.responseText)
-    ans = respJson[0]
-    if (ans == 0)
+    errCode = !respJson[0]
+    if (errCode)
     {
         setCookie('user_auth', {'username': Username, 'password': Password}, 10)
     }
 
-    return !ans
+    return errCode
 
 }
 
-function SignUp(Username, Password, confirmPass)
-{
+function SignUp(Username, Password, confirmPass){
+    /**
+     * Takes username, password and confirm password and tries to sign up.
+     * returns: A json file containing the error code at "errCode" and the discription of the error at "discription"
+     */
     if (confirmPass === Password)
     {
-        $.post(`Login Attempt`, `"Username": "${Username}"\n"Password" = "${Password}"`);
-        console.log(Username, Password);
+        resp = $.ajax({
+            type: "POST",
+            url: `SIGNUP`,
+            async: false,
+            dataType: "text/json",
+            data: `{"username":  "${Username}", "password": "${Password}"}`,
+        });
+        respJson = JSON.parse(resp.responseText)
+        return (respJson)
     }
     else
     {
