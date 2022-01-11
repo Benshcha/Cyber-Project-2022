@@ -1,0 +1,3714 @@
+01-11-2022 01:38:19 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.155', 'Gal-PC')
+01-11-2022 01:38:19 | INFO | Sent public/index.html to ('127.0.0.1', 64440)
+01-11-2022 01:38:19 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 64441)
+01-11-2022 01:38:19 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 64441)
+01-11-2022 01:38:19 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 64442)
+01-11-2022 01:38:19 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 64441)
+01-11-2022 01:38:19 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 64442)
+01-11-2022 01:38:20 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:20 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:20 | DEBUG | 
+
+=================================
+01-11-2022 01:38:20 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:20 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:20 | DEBUG | 
+
+=================================
+01-11-2022 01:38:20 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:20 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:20 | DEBUG | 
+
+=================================
+01-11-2022 01:38:20 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:20 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:20 | DEBUG | 
+
+=================================
+01-11-2022 01:38:20 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:20 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:20 | DEBUG | 
+
+=================================
+01-11-2022 01:38:20 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:20 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:20 | DEBUG | 
+
+=================================
+01-11-2022 01:38:20 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:20 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:20 | DEBUG | 
+
+=================================
+01-11-2022 01:38:20 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:20 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:20 | DEBUG | 
+
+=================================
+01-11-2022 01:38:20 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:20 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:20 | DEBUG | 
+
+=================================
+01-11-2022 01:38:20 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:20 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:20 | DEBUG | 
+
+=================================
+01-11-2022 01:38:20 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:20 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:20 | DEBUG | 
+
+=================================
+01-11-2022 01:38:20 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:20 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:20 | DEBUG | 
+
+=================================
+01-11-2022 01:38:20 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:20 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:20 | DEBUG | 
+
+=================================
+01-11-2022 01:38:20 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:20 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:20 | DEBUG | 
+
+=================================
+01-11-2022 01:38:20 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:20 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:20 | DEBUG | 
+
+=================================
+01-11-2022 01:38:21 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:21 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:21 | DEBUG | 
+
+=================================
+01-11-2022 01:38:21 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:21 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:21 | DEBUG | 
+
+=================================
+01-11-2022 01:38:21 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:21 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:21 | DEBUG | 
+
+=================================
+01-11-2022 01:38:21 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:21 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:21 | DEBUG | 
+
+=================================
+01-11-2022 01:38:21 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:21 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:21 | DEBUG | 
+
+=================================
+01-11-2022 01:38:21 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:21 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:21 | DEBUG | 
+
+=================================
+01-11-2022 01:38:21 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:21 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:21 | DEBUG | 
+
+=================================
+01-11-2022 01:38:21 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:21 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:21 | DEBUG | 
+
+=================================
+01-11-2022 01:38:21 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:21 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:21 | DEBUG | 
+
+=================================
+01-11-2022 01:38:21 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:21 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:21 | DEBUG | 
+
+=================================
+01-11-2022 01:38:21 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:21 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:21 | DEBUG | 
+
+=================================
+01-11-2022 01:38:21 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:21 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:21 | DEBUG | 
+
+=================================
+01-11-2022 01:38:21 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:21 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:21 | DEBUG | 
+
+=================================
+01-11-2022 01:38:21 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:21 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:21 | DEBUG | 
+
+=================================
+01-11-2022 01:38:21 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:21 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:21 | DEBUG | 
+
+=================================
+01-11-2022 01:38:21 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:21 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:21 | DEBUG | 
+
+=================================
+01-11-2022 01:38:21 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:21 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:21 | DEBUG | 
+
+=================================
+01-11-2022 01:38:21 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:21 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:21 | DEBUG | 
+
+=================================
+01-11-2022 01:38:21 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:21 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:21 | DEBUG | 
+
+=================================
+01-11-2022 01:38:21 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:21 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:21 | DEBUG | 
+
+=================================
+01-11-2022 01:38:21 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:21 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:21 | DEBUG | 
+
+=================================
+01-11-2022 01:38:21 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:21 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:21 | DEBUG | 
+
+=================================
+01-11-2022 01:38:21 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:21 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:21 | DEBUG | 
+
+=================================
+01-11-2022 01:38:21 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:21 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:21 | DEBUG | 
+
+=================================
+01-11-2022 01:38:21 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:21 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:21 | DEBUG | 
+
+=================================
+01-11-2022 01:38:21 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:21 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:21 | DEBUG | 
+
+=================================
+01-11-2022 01:38:21 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:21 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:21 | DEBUG | 
+
+=================================
+01-11-2022 01:38:21 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:21 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:21 | DEBUG | 
+
+=================================
+01-11-2022 01:38:21 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:21 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:21 | DEBUG | 
+
+=================================
+01-11-2022 01:38:21 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:21 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:21 | DEBUG | 
+
+=================================
+01-11-2022 01:38:21 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:21 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:21 | DEBUG | 
+
+=================================
+01-11-2022 01:38:21 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:21 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:21 | DEBUG | 
+
+=================================
+01-11-2022 01:38:21 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:21 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:21 | DEBUG | 
+
+=================================
+01-11-2022 01:38:21 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:21 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:21 | DEBUG | 
+
+=================================
+01-11-2022 01:38:21 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:21 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:21 | DEBUG | 
+
+=================================
+01-11-2022 01:38:21 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:21 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:21 | DEBUG | 
+
+=================================
+01-11-2022 01:38:21 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:21 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:21 | DEBUG | 
+
+=================================
+01-11-2022 01:38:21 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:21 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:21 | DEBUG | 
+
+=================================
+01-11-2022 01:38:21 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:21 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:21 | DEBUG | 
+
+=================================
+01-11-2022 01:38:21 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:21 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:21 | DEBUG | 
+
+=================================
+01-11-2022 01:38:21 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:21 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:21 | DEBUG | 
+
+=================================
+01-11-2022 01:38:21 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:21 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:21 | DEBUG | 
+
+=================================
+01-11-2022 01:38:22 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:22 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:22 | DEBUG | 
+
+=================================
+01-11-2022 01:38:22 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:22 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:22 | DEBUG | 
+
+=================================
+01-11-2022 01:38:22 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:22 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:22 | DEBUG | 
+
+=================================
+01-11-2022 01:38:22 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:22 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:22 | DEBUG | 
+
+=================================
+01-11-2022 01:38:22 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:22 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:22 | DEBUG | 
+
+=================================
+01-11-2022 01:38:22 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:22 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:22 | DEBUG | 
+
+=================================
+01-11-2022 01:38:22 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:22 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:22 | DEBUG | 
+
+=================================
+01-11-2022 01:38:22 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:22 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:22 | DEBUG | 
+
+=================================
+01-11-2022 01:38:22 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:22 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:22 | DEBUG | 
+
+=================================
+01-11-2022 01:38:22 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:22 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:22 | DEBUG | 
+
+=================================
+01-11-2022 01:38:22 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:22 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:22 | DEBUG | 
+
+=================================
+01-11-2022 01:38:22 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:22 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:22 | DEBUG | 
+
+=================================
+01-11-2022 01:38:22 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:22 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:22 | DEBUG | 
+
+=================================
+01-11-2022 01:38:22 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:22 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:22 | DEBUG | 
+
+=================================
+01-11-2022 01:38:22 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:22 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:22 | DEBUG | 
+
+=================================
+01-11-2022 01:38:22 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:22 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:22 | DEBUG | 
+
+=================================
+01-11-2022 01:38:22 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:22 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:22 | DEBUG | 
+
+=================================
+01-11-2022 01:38:22 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:22 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:22 | DEBUG | 
+
+=================================
+01-11-2022 01:38:22 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:22 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:22 | DEBUG | 
+
+=================================
+01-11-2022 01:38:22 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:22 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:22 | DEBUG | 
+
+=================================
+01-11-2022 01:38:22 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:22 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:22 | DEBUG | 
+
+=================================
+01-11-2022 01:38:22 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:22 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:22 | DEBUG | 
+
+=================================
+01-11-2022 01:38:22 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:22 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:22 | DEBUG | 
+
+=================================
+01-11-2022 01:38:22 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:22 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:22 | DEBUG | 
+
+=================================
+01-11-2022 01:38:22 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:22 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:22 | DEBUG | 
+
+=================================
+01-11-2022 01:38:22 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:22 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:22 | DEBUG | 
+
+=================================
+01-11-2022 01:38:22 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:22 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:22 | DEBUG | 
+
+=================================
+01-11-2022 01:38:22 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:22 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:22 | DEBUG | 
+
+=================================
+01-11-2022 01:38:22 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:22 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:22 | DEBUG | 
+
+=================================
+01-11-2022 01:38:22 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:22 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:22 | DEBUG | 
+
+=================================
+01-11-2022 01:38:22 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:22 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:22 | DEBUG | 
+
+=================================
+01-11-2022 01:38:22 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:22 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:22 | DEBUG | 
+
+=================================
+01-11-2022 01:38:22 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:22 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:22 | DEBUG | 
+
+=================================
+01-11-2022 01:38:22 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:22 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:22 | DEBUG | 
+
+=================================
+01-11-2022 01:38:22 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:22 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:22 | DEBUG | 
+
+=================================
+01-11-2022 01:38:22 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:22 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:22 | DEBUG | 
+
+=================================
+01-11-2022 01:38:22 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:22 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:22 | DEBUG | 
+
+=================================
+01-11-2022 01:38:22 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:22 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:22 | DEBUG | 
+
+=================================
+01-11-2022 01:38:22 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:22 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:22 | DEBUG | 
+
+=================================
+01-11-2022 01:38:22 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:22 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:22 | DEBUG | 
+
+=================================
+01-11-2022 01:38:22 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:22 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:22 | DEBUG | 
+
+=================================
+01-11-2022 01:38:22 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:22 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:22 | DEBUG | 
+
+=================================
+01-11-2022 01:38:22 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:22 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:22 | DEBUG | 
+
+=================================
+01-11-2022 01:38:22 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:22 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:22 | DEBUG | 
+
+=================================
+01-11-2022 01:38:22 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:22 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:22 | DEBUG | 
+
+=================================
+01-11-2022 01:38:22 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:22 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:22 | DEBUG | 
+
+=================================
+01-11-2022 01:38:22 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:22 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:22 | DEBUG | 
+
+=================================
+01-11-2022 01:38:22 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:22 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:22 | DEBUG | 
+
+=================================
+01-11-2022 01:38:22 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:22 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:22 | DEBUG | 
+
+=================================
+01-11-2022 01:38:23 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:23 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:23 | DEBUG | 
+
+=================================
+01-11-2022 01:38:23 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:23 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:23 | DEBUG | 
+
+=================================
+01-11-2022 01:38:23 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:23 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:23 | DEBUG | 
+
+=================================
+01-11-2022 01:38:23 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:23 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:23 | DEBUG | 
+
+=================================
+01-11-2022 01:38:23 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:23 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:23 | DEBUG | 
+
+=================================
+01-11-2022 01:38:23 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:23 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:23 | DEBUG | 
+
+=================================
+01-11-2022 01:38:23 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:23 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:23 | DEBUG | 
+
+=================================
+01-11-2022 01:38:23 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:23 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:23 | DEBUG | 
+
+=================================
+01-11-2022 01:38:23 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:23 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:23 | DEBUG | 
+
+=================================
+01-11-2022 01:38:23 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:23 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:23 | DEBUG | 
+
+=================================
+01-11-2022 01:38:23 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:23 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:23 | DEBUG | 
+
+=================================
+01-11-2022 01:38:23 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:23 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:23 | DEBUG | 
+
+=================================
+01-11-2022 01:38:23 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:23 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:23 | DEBUG | 
+
+=================================
+01-11-2022 01:38:23 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:23 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:23 | DEBUG | 
+
+=================================
+01-11-2022 01:38:23 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:23 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:23 | DEBUG | 
+
+=================================
+01-11-2022 01:38:23 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:23 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:23 | DEBUG | 
+
+=================================
+01-11-2022 01:38:23 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:23 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:23 | DEBUG | 
+
+=================================
+01-11-2022 01:38:23 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:23 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:23 | DEBUG | 
+
+=================================
+01-11-2022 01:38:23 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:23 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:23 | DEBUG | 
+
+=================================
+01-11-2022 01:38:23 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:23 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:23 | DEBUG | 
+
+=================================
+01-11-2022 01:38:23 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:23 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:23 | DEBUG | 
+
+=================================
+01-11-2022 01:38:23 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:23 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:23 | DEBUG | 
+
+=================================
+01-11-2022 01:38:23 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:23 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:23 | DEBUG | 
+
+=================================
+01-11-2022 01:38:23 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:23 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:23 | DEBUG | 
+
+=================================
+01-11-2022 01:38:23 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:23 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:23 | DEBUG | 
+
+=================================
+01-11-2022 01:38:23 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:23 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:23 | DEBUG | 
+
+=================================
+01-11-2022 01:38:23 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:23 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:23 | DEBUG | 
+
+=================================
+01-11-2022 01:38:23 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:23 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:23 | DEBUG | 
+
+=================================
+01-11-2022 01:38:23 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:23 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:23 | DEBUG | 
+
+=================================
+01-11-2022 01:38:23 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:23 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:23 | DEBUG | 
+
+=================================
+01-11-2022 01:38:23 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:23 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:23 | DEBUG | 
+
+=================================
+01-11-2022 01:38:23 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:23 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:23 | DEBUG | 
+
+=================================
+01-11-2022 01:38:24 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:24 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:24 | DEBUG | 
+
+=================================
+01-11-2022 01:38:24 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:24 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:24 | DEBUG | 
+
+=================================
+01-11-2022 01:38:24 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:24 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:24 | DEBUG | 
+
+=================================
+01-11-2022 01:38:24 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:24 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:24 | DEBUG | 
+
+=================================
+01-11-2022 01:38:24 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:24 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:24 | DEBUG | 
+
+=================================
+01-11-2022 01:38:24 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:24 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:24 | DEBUG | 
+
+=================================
+01-11-2022 01:38:24 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:24 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:24 | DEBUG | 
+
+=================================
+01-11-2022 01:38:24 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:24 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:24 | DEBUG | 
+
+=================================
+01-11-2022 01:38:24 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:24 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:24 | DEBUG | 
+
+=================================
+01-11-2022 01:38:24 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:24 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:24 | DEBUG | 
+
+=================================
+01-11-2022 01:38:24 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:24 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:24 | DEBUG | 
+
+=================================
+01-11-2022 01:38:24 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:24 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:24 | DEBUG | 
+
+=================================
+01-11-2022 01:38:24 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:24 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:24 | DEBUG | 
+
+=================================
+01-11-2022 01:38:24 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:24 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:24 | DEBUG | 
+
+=================================
+01-11-2022 01:38:24 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:24 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:24 | DEBUG | 
+
+=================================
+01-11-2022 01:38:24 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:24 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:24 | DEBUG | 
+
+=================================
+01-11-2022 01:38:24 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:24 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:24 | DEBUG | 
+
+=================================
+01-11-2022 01:38:24 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:24 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:24 | DEBUG | 
+
+=================================
+01-11-2022 01:38:24 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:24 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:24 | DEBUG | 
+
+=================================
+01-11-2022 01:38:24 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:24 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:24 | DEBUG | 
+
+=================================
+01-11-2022 01:38:24 | DEBUG | 
+=================================
+
+
+01-11-2022 01:38:24 | DEBUG | 
+['/src/Images/favicon.ico',
+ {'Accept': 'image/avif,image/webp,*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/',
+  'Sec-Fetch-Dest': 'image',
+  'Sec-Fetch-Mode': 'no-cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0'},
+ '']
+01-11-2022 01:38:24 | DEBUG | 
+
+=================================
+01-11-2022 01:40:34 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.155', 'Gal-PC')
+01-11-2022 01:40:38 | INFO | Sent public/index.html to ('127.0.0.1', 50399)
+01-11-2022 01:40:38 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 50399)
+01-11-2022 01:40:38 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 50401)
+01-11-2022 01:40:38 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 50400)
+01-11-2022 01:40:38 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 50402)
+01-11-2022 01:40:42 | INFO | Sent public//login.html to ('127.0.0.1', 50400)
+01-11-2022 01:40:42 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 50400)
+01-11-2022 01:40:42 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 50400)
+01-11-2022 01:40:42 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 50402)
+01-11-2022 01:40:55 | DEBUG | Sent login response packet: [0]
+01-11-2022 01:40:55 | INFO | Sent public/index.html to ('127.0.0.1', 50400)
+01-11-2022 01:40:55 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 50400)
+01-11-2022 01:40:55 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 50402)
+01-11-2022 01:40:55 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 50401)
+01-11-2022 01:40:55 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 50400)
+01-11-2022 01:40:55 | DEBUG | Sent login response packet: [0]
+01-11-2022 01:41:14 | INFO | Sent public/index.html to ('127.0.0.1', 50400)
+01-11-2022 01:41:14 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 50402)
+01-11-2022 01:41:14 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 50400)
+01-11-2022 01:41:14 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 50401)
+01-11-2022 01:41:14 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 50402)
+01-11-2022 01:41:14 | DEBUG | Sent login response packet: [0]
+01-11-2022 01:42:39 | INFO | Sent public/index.html to ('127.0.0.1', 50402)
+01-11-2022 01:42:39 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 50400)
+01-11-2022 01:42:39 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 50402)
+01-11-2022 01:42:39 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 50401)
+01-11-2022 01:42:39 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 50400)
+01-11-2022 01:42:39 | DEBUG | Sent login response packet: [0]
+01-11-2022 01:43:33 | INFO | Sent public/index.html to ('127.0.0.1', 50400)
+01-11-2022 01:43:33 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 50402)
+01-11-2022 01:43:33 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 50400)
+01-11-2022 01:43:33 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 50402)
+01-11-2022 01:43:33 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 50400)
+01-11-2022 01:43:33 | DEBUG | Sent login response packet: [0]
+01-11-2022 01:44:17 | INFO | Sent public/index.html to ('127.0.0.1', 50400)
+01-11-2022 01:44:17 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 50402)
+01-11-2022 01:44:17 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 50400)
+01-11-2022 01:44:17 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 50402)
+01-11-2022 01:44:17 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 50400)
+01-11-2022 01:44:24 | INFO | Sent public//login.html to ('127.0.0.1', 50402)
+01-11-2022 01:44:24 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 50400)
+01-11-2022 01:44:24 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 50402)
+01-11-2022 01:44:24 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 50400)
+01-11-2022 01:44:25 | INFO | Sent public//signUp.html to ('127.0.0.1', 50402)
+01-11-2022 01:44:25 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 50400)
+01-11-2022 01:44:25 | INFO | Sent public//src/Scripts/signUp.js to ('127.0.0.1', 50400)
+01-11-2022 01:44:25 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 50402)
+01-11-2022 01:44:25 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 50401)
+01-11-2022 01:44:40 | DEBUG | 
+=================================
+
+
+01-11-2022 01:44:40 | DEBUG | 
+['/SIGNUP',
+ {'Accept': '*/*',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,en;q=0.5',
+  'Connection': 'keep-alive',
+  'Content-Length': '65',
+  'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+  'Origin': 'http://localhost',
+  'Referer': 'http://localhost/signUp.html',
+  'Sec-Fetch-Dest': 'empty',
+  'Sec-Fetch-Mode': 'cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) '
+                'Gecko/20100101 Firefox/96.0',
+  'X-Requested-With': 'XMLHttpRequest'},
+ '{"username":  "<script>alert("error")</script>", "password": "t"}']
+01-11-2022 01:44:40 | DEBUG | 
+
+=================================
+01-11-2022 01:44:48 | INFO | Sent public//signUp.html to ('127.0.0.1', 50402)
+01-11-2022 01:44:49 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 50402)
+01-11-2022 01:44:49 | INFO | Sent public//src/Scripts/signUp.js to ('127.0.0.1', 50401)
+01-11-2022 01:44:49 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 64654)
+01-11-2022 01:44:49 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 64655)
+01-11-2022 01:44:56 | DEBUG | Sent login response packet: {"errCode": 0, "discription": "Signed Up successfuly"}
+01-11-2022 01:44:56 | INFO | Sent public/index.html to ('127.0.0.1', 50402)
+01-11-2022 01:44:56 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 64654)
+01-11-2022 01:44:56 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 50401)
+01-11-2022 01:44:56 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 50402)
+01-11-2022 01:44:56 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 64655)
+01-11-2022 01:45:02 | INFO | Sent public//login.html to ('127.0.0.1', 50402)
+01-11-2022 01:45:02 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 50401)
+01-11-2022 01:45:02 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 50402)
+01-11-2022 01:45:02 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 50401)
+01-11-2022 01:45:13 | DEBUG | Sent login response packet: [0]
+01-11-2022 01:45:14 | INFO | Sent public/index.html to ('127.0.0.1', 50401)
+01-11-2022 01:45:14 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 50402)
+01-11-2022 01:45:14 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 50401)
+01-11-2022 01:45:14 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 50402)
+01-11-2022 01:45:14 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 64655)
+01-11-2022 01:45:14 | DEBUG | Sent login response packet: [0]
+01-11-2022 01:47:33 | INFO | Sent public/index.html to ('127.0.0.1', 52454)
+01-11-2022 01:47:33 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 52454)
+01-11-2022 01:47:33 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 52454)
+01-11-2022 01:47:33 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 52455)
+01-11-2022 01:47:33 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 52461)
+01-11-2022 01:47:33 | DEBUG | Sent login response packet: [0]
+01-11-2022 01:49:05 | INFO | Sent public/index.html to ('127.0.0.1', 65209)
+01-11-2022 01:49:05 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 65210)
+01-11-2022 01:49:05 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 65209)
+01-11-2022 01:49:05 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 65209)
+01-11-2022 01:49:05 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 65210)
+01-11-2022 01:49:05 | DEBUG | Sent login response packet: [0]
+01-11-2022 01:49:05 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 65210)
+01-11-2022 01:49:10 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 65210)
+01-11-2022 01:49:22 | INFO | Sent public/index.html to ('127.0.0.1', 49717)
+01-11-2022 01:49:22 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 49717)
+01-11-2022 01:49:22 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 49718)
+01-11-2022 01:49:22 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 49717)
+01-11-2022 01:49:22 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 49718)
+01-11-2022 01:49:22 | DEBUG | Sent login response packet: [0]
+01-11-2022 01:49:22 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 49718)
+01-11-2022 01:50:01 | INFO | Sent public/index.html to ('127.0.0.1', 55828)
+01-11-2022 01:50:01 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 55828)
+01-11-2022 01:50:01 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 55829)
+01-11-2022 01:50:01 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 55828)
+01-11-2022 01:50:01 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 55829)
+01-11-2022 01:50:02 | DEBUG | Sent login response packet: [0]
+01-11-2022 01:50:02 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 55829)
+01-11-2022 01:50:55 | INFO | Sent public/index.html to ('127.0.0.1', 49695)
+01-11-2022 01:50:55 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 49695)
+01-11-2022 01:50:55 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 49696)
+01-11-2022 01:50:55 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 49695)
+01-11-2022 01:50:55 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 49696)
+01-11-2022 01:50:56 | DEBUG | Sent login response packet: [0]
+01-11-2022 01:50:56 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 49696)
+01-11-2022 01:52:56 | INFO | Sent public/index.html to ('127.0.0.1', 57295)
+01-11-2022 01:52:56 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 57295)
+01-11-2022 01:52:56 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 57296)
+01-11-2022 01:52:56 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 57295)
+01-11-2022 01:52:56 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 57296)
+01-11-2022 01:52:58 | INFO | Sent public//login.html to ('127.0.0.1', 57296)
+01-11-2022 01:52:58 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 57296)
+01-11-2022 01:52:58 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 57295)
+01-11-2022 01:52:58 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 57298)
+01-11-2022 01:53:02 | DEBUG | Sent login response packet: [0]
+01-11-2022 01:53:02 | INFO | Sent public/index.html to ('127.0.0.1', 57298)
+01-11-2022 01:53:02 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 57295)
+01-11-2022 01:53:02 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 57298)
+01-11-2022 01:53:02 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 57296)
+01-11-2022 01:53:02 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 57299)
+01-11-2022 01:53:02 | DEBUG | Sent login response packet: [0]
+01-11-2022 01:53:27 | INFO | Sent public/index.html to ('127.0.0.1', 62888)
+01-11-2022 01:53:27 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 62889)
+01-11-2022 01:53:27 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 62888)
+01-11-2022 01:53:27 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 62888)
+01-11-2022 01:53:27 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 62889)
+01-11-2022 02:06:18 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.155', 'Gal-PC')
+01-11-2022 02:06:18 | INFO | Sent public/index.html to ('127.0.0.1', 51442)
+01-11-2022 02:06:18 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 51442)
+01-11-2022 02:06:18 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 51442)
+01-11-2022 02:06:18 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 51442)
+01-11-2022 02:06:18 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 51442)
+01-11-2022 02:06:18 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 51442)
+01-11-2022 02:06:31 | INFO | Sent public/index.html to ('127.0.0.1', 51473)
+01-11-2022 02:06:31 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 51473)
+01-11-2022 02:06:31 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 51474)
+01-11-2022 02:06:31 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 51473)
+01-11-2022 02:06:31 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 51474)
+01-11-2022 02:06:31 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 51474)
+01-11-2022 02:07:02 | INFO | Sent public/index.html to ('127.0.0.1', 51500)
+01-11-2022 02:07:02 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 51500)
+01-11-2022 02:07:02 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 51501)
+01-11-2022 02:07:02 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 51500)
+01-11-2022 02:07:02 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 51501)
+01-11-2022 02:07:02 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 51501)
+01-11-2022 02:07:21 | INFO | Sent public/index.html to ('127.0.0.1', 51501)
+01-11-2022 02:07:21 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 51501)
+01-11-2022 02:07:21 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 51500)
+01-11-2022 02:07:21 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 51503)
+01-11-2022 02:07:21 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 51504)
+01-11-2022 02:07:21 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 51504)
+01-11-2022 02:08:16 | INFO | Sent public/index.html to ('127.0.0.1', 51504)
+01-11-2022 02:08:17 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 51504)
+01-11-2022 02:08:17 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 51500)
+01-11-2022 02:08:17 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 51503)
+01-11-2022 02:08:17 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 51501)
+01-11-2022 02:08:17 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 51501)
+01-11-2022 02:08:35 | INFO | Sent public/index.html to ('127.0.0.1', 56429)
+01-11-2022 02:08:35 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 56429)
+01-11-2022 02:08:35 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 56430)
+01-11-2022 02:08:35 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 56429)
+01-11-2022 02:08:35 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 56430)
+01-11-2022 02:08:35 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 56429)
+01-11-2022 02:08:42 | INFO | Sent public/index.html to ('127.0.0.1', 56447)
+01-11-2022 02:08:42 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 56447)
+01-11-2022 02:08:42 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 56448)
+01-11-2022 02:08:42 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 56447)
+01-11-2022 02:08:42 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 56448)
+01-11-2022 02:09:58 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 55486)
+01-11-2022 02:11:36 | INFO | Sent public/index.html to ('127.0.0.1', 58495)
+01-11-2022 02:11:36 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 58495)
+01-11-2022 02:11:36 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 58495)
+01-11-2022 02:11:36 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 58496)
+01-11-2022 02:11:36 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 58495)
+01-11-2022 02:11:37 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 58495)
+01-11-2022 02:12:57 | INFO | Sent public/index.html to ('127.0.0.1', 62591)
+01-11-2022 02:12:57 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 62591)
+01-11-2022 02:12:57 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 62592)
+01-11-2022 02:12:57 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 62591)
+01-11-2022 02:12:57 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 62592)
+01-11-2022 02:12:58 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 62591)
+01-11-2022 02:13:30 | INFO | Sent public/index.html to ('127.0.0.1', 55738)
+01-11-2022 02:13:30 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 55739)
+01-11-2022 02:13:30 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 55738)
+01-11-2022 02:13:30 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 55739)
+01-11-2022 02:13:30 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 55738)
+01-11-2022 02:13:31 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 55738)
+01-11-2022 02:13:38 | INFO | Sent public/index.html to ('127.0.0.1', 55738)
+01-11-2022 02:13:38 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 55739)
+01-11-2022 02:13:38 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 55741)
+01-11-2022 02:13:38 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 55738)
+01-11-2022 02:13:38 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 55742)
+01-11-2022 02:15:19 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 60542)
+01-11-2022 02:15:24 | INFO | Sent public/index.html to ('127.0.0.1', 60542)
+01-11-2022 02:15:25 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 60542)
+01-11-2022 02:15:25 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 60542)
+01-11-2022 02:15:25 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 60543)
+01-11-2022 02:15:25 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 60542)
+01-11-2022 02:18:07 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 60542)
+01-11-2022 02:18:09 | INFO | Sent public/index.html to ('127.0.0.1', 60542)
+01-11-2022 02:18:09 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 60542)
+01-11-2022 02:18:09 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 60543)
+01-11-2022 02:18:09 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 60542)
+01-11-2022 02:18:09 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 60543)
+01-11-2022 02:18:09 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 60543)
+01-11-2022 02:18:11 | INFO | Sent public/index.html to ('127.0.0.1', 60543)
+01-11-2022 02:18:11 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 57031)
+01-11-2022 02:18:11 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 60542)
+01-11-2022 02:18:11 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 60543)
+01-11-2022 02:18:11 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 57030)
+01-11-2022 02:18:11 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 57030)
+01-11-2022 02:19:14 | INFO | Sent public/index.html to ('127.0.0.1', 57073)
+01-11-2022 02:19:14 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 57073)
+01-11-2022 02:19:14 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 57074)
+01-11-2022 02:19:14 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 57073)
+01-11-2022 02:19:14 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 57074)
+01-11-2022 02:19:15 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 57074)
+01-11-2022 02:19:53 | INFO | Sent public/index.html to ('127.0.0.1', 55267)
+01-11-2022 02:19:53 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 55267)
+01-11-2022 02:19:53 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 55268)
+01-11-2022 02:19:53 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 55267)
+01-11-2022 02:19:53 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 55268)
+01-11-2022 02:19:53 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 55268)
+01-11-2022 02:20:43 | INFO | Sent public/index.html to ('127.0.0.1', 55268)
+01-11-2022 02:20:43 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 55268)
+01-11-2022 02:20:43 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 55267)
+01-11-2022 02:20:43 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 55271)
+01-11-2022 02:20:43 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 55270)
+01-11-2022 02:20:43 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 55270)
+01-11-2022 02:20:52 | INFO | Sent public/index.html to ('127.0.0.1', 55270)
+01-11-2022 02:20:52 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 55271)
+01-11-2022 02:20:52 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 55270)
+01-11-2022 02:20:52 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 55268)
+01-11-2022 02:20:52 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 55267)
+01-11-2022 02:20:52 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 55267)
+01-11-2022 02:21:37 | INFO | Sent public//login.html to ('127.0.0.1', 55267)
+01-11-2022 02:21:37 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 55267)
+01-11-2022 02:21:37 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 55268)
+01-11-2022 02:21:37 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 55270)
+01-11-2022 02:21:44 | DEBUG | Sent login response packet: [0]
+01-11-2022 02:21:44 | INFO | Sent public/index.html to ('127.0.0.1', 55270)
+01-11-2022 02:21:44 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 55270)
+01-11-2022 02:21:44 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 55267)
+01-11-2022 02:21:44 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 55271)
+01-11-2022 02:21:44 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 55268)
+01-11-2022 02:21:44 | DEBUG | Sent login response packet: [0]
+01-11-2022 02:25:09 | INFO | Sent public/index.html to ('127.0.0.1', 57150)
+01-11-2022 02:25:09 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 57150)
+01-11-2022 02:25:09 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 57151)
+01-11-2022 02:25:09 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 57150)
+01-11-2022 02:25:09 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 57151)
+01-11-2022 02:25:10 | DEBUG | Sent login response packet: [0]
+01-11-2022 02:25:10 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 57150)
+01-11-2022 02:25:10 | INFO | Sent public/index.html to ('127.0.0.1', 57150)
+01-11-2022 02:25:10 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 57150)
+01-11-2022 02:25:10 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 57153)
+01-11-2022 02:25:10 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 57154)
+01-11-2022 02:25:10 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 57151)
+01-11-2022 02:25:11 | INFO | Sent public//login.html to ('127.0.0.1', 57151)
+01-11-2022 02:25:11 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 57151)
+01-11-2022 02:25:11 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 57154)
+01-11-2022 02:25:11 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 57153)
+01-11-2022 02:25:51 | INFO | Sent public//login.html to ('127.0.0.1', 57181)
+01-11-2022 02:25:51 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 57182)
+01-11-2022 02:25:51 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 57181)
+01-11-2022 02:25:51 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 57181)
+01-11-2022 02:25:51 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 57181)
+01-11-2022 02:26:15 | INFO | Sent public//login.html to ('127.0.0.1', 57181)
+01-11-2022 02:26:16 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 57181)
+01-11-2022 02:26:16 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 57182)
+01-11-2022 02:26:16 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 57184)
+01-11-2022 02:26:16 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 57184)
+01-11-2022 02:27:00 | INFO | Sent public//login.html to ('127.0.0.1', 51211)
+01-11-2022 02:27:00 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 51211)
+01-11-2022 02:27:00 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 51212)
+01-11-2022 02:27:00 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 51211)
+01-11-2022 02:27:00 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 51211)
+01-11-2022 02:27:35 | INFO | Sent public//login.html to ('127.0.0.1', 64513)
+01-11-2022 02:27:35 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 64513)
+01-11-2022 02:27:35 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 64514)
+01-11-2022 02:27:35 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 64513)
+01-11-2022 02:27:35 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 64513)
+01-11-2022 02:28:47 | INFO | Sent public//login.html to ('127.0.0.1', 64513)
+01-11-2022 02:28:47 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 64513)
+01-11-2022 02:28:47 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 64514)
+01-11-2022 02:28:47 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 64513)
+01-11-2022 02:28:48 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 64513)
+01-11-2022 02:28:51 | DEBUG | Sent login response packet: [0]
+01-11-2022 02:28:51 | INFO | Sent public/index.html to ('127.0.0.1', 64513)
+01-11-2022 02:28:51 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 64514)
+01-11-2022 02:28:51 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 64513)
+01-11-2022 02:28:51 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 53815)
+01-11-2022 02:28:51 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 64514)
+01-11-2022 02:28:51 | DEBUG | Sent login response packet: [0]
+01-11-2022 02:30:04 | INFO | Sent public/index.html to ('127.0.0.1', 58018)
+01-11-2022 02:30:04 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 58019)
+01-11-2022 02:30:04 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 58018)
+01-11-2022 02:30:04 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 58019)
+01-11-2022 02:30:04 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 58018)
+01-11-2022 02:30:04 | DEBUG | Sent login response packet: [0]
+01-11-2022 02:30:04 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 58018)
+01-11-2022 02:30:54 | INFO | Sent public/index.html to ('127.0.0.1', 58018)
+01-11-2022 02:30:54 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 58018)
+01-11-2022 02:30:54 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 58019)
+01-11-2022 02:30:54 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 58021)
+01-11-2022 02:30:54 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 58022)
+01-11-2022 02:30:54 | DEBUG | Sent login response packet: [0]
+01-11-2022 02:30:54 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 58021)
+01-11-2022 02:30:57 | INFO | Sent public/index.html to ('127.0.0.1', 58021)
+01-11-2022 02:30:57 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 58021)
+01-11-2022 02:30:57 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 58019)
+01-11-2022 02:30:57 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 58018)
+01-11-2022 02:30:57 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 58022)
+01-11-2022 02:30:58 | INFO | Sent public//login.html to ('127.0.0.1', 58019)
+01-11-2022 02:30:58 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 58019)
+01-11-2022 02:30:58 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 58018)
+01-11-2022 02:30:58 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 58022)
+01-11-2022 02:31:03 | DEBUG | Sent login response packet: [0]
+01-11-2022 02:31:03 | INFO | Sent public/index.html to ('127.0.0.1', 58022)
+01-11-2022 02:31:03 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 58021)
+01-11-2022 02:31:03 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 58022)
+01-11-2022 02:31:03 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 58019)
+01-11-2022 02:31:03 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 58018)
+01-11-2022 02:31:04 | DEBUG | Sent login response packet: [0]
+01-11-2022 02:33:03 | INFO | Sent public/index.html to ('127.0.0.1', 63466)
+01-11-2022 02:33:03 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 63467)
+01-11-2022 02:33:03 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 63466)
+01-11-2022 02:33:03 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 63467)
+01-11-2022 02:33:03 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 63466)
+01-11-2022 02:33:03 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 63466)
+01-11-2022 02:35:07 | INFO | Sent public/index.html to ('127.0.0.1', 64288)
+01-11-2022 02:35:07 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 64288)
+01-11-2022 02:35:07 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 64289)
+01-11-2022 02:35:07 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 64288)
+01-11-2022 02:35:07 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 64289)
+01-11-2022 02:35:07 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 64289)
+01-11-2022 02:35:54 | INFO | Sent public/index.html to ('127.0.0.1', 64289)
+01-11-2022 02:35:54 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 64291)
+01-11-2022 02:35:54 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 64289)
+01-11-2022 02:35:54 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 64288)
+01-11-2022 02:35:54 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 64293)
+01-11-2022 02:35:54 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 64293)
+01-11-2022 02:37:22 | INFO | Sent public/index.html to ('127.0.0.1', 50565)
+01-11-2022 02:37:22 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 50565)
+01-11-2022 02:37:22 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 50566)
+01-11-2022 02:37:22 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 50565)
+01-11-2022 02:37:22 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 50566)
+01-11-2022 02:37:22 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 50566)
+01-11-2022 02:37:25 | INFO | Sent public/index.html to ('127.0.0.1', 50566)
+01-11-2022 02:37:25 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 50565)
+01-11-2022 02:37:25 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 50566)
+01-11-2022 02:37:25 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 50570)
+01-11-2022 02:37:25 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 50568)
+01-11-2022 02:37:25 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 50570)
+01-11-2022 02:38:29 | INFO | Sent public/index.html to ('127.0.0.1', 50570)
+01-11-2022 02:38:29 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 50568)
+01-11-2022 02:38:29 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 50566)
+01-11-2022 02:38:29 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 50570)
+01-11-2022 02:38:29 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 50565)
+01-11-2022 02:38:30 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 50622)
+01-11-2022 02:39:06 | INFO | Sent public/index.html to ('127.0.0.1', 61379)
+01-11-2022 02:39:07 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 61380)
+01-11-2022 02:39:07 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 61379)
+01-11-2022 02:39:07 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 61379)
+01-11-2022 02:39:07 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 61380)
+01-11-2022 02:39:07 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 61380)
+01-11-2022 02:41:47 | INFO | Sent public/index.html to ('127.0.0.1', 53265)
+01-11-2022 02:41:47 | ERROR | 404:
+[Errno 2] No such file or directory: 'public//index.js'
+01-11-2022 02:41:47 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 53266)
+01-11-2022 02:41:47 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 53266)
+01-11-2022 02:41:47 | ERROR | 404:
+[Errno 2] No such file or directory: 'public//index.js'
+01-11-2022 02:41:47 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 53266)
+01-11-2022 02:41:56 | INFO | Sent public/index.html to ('127.0.0.1', 53266)
+01-11-2022 02:41:57 | ERROR | 404:
+[Errno 2] No such file or directory: 'public//src/index.js'
+01-11-2022 02:41:57 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 53267)
+01-11-2022 02:41:57 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 53265)
+01-11-2022 02:41:57 | ERROR | 404:
+[Errno 2] No such file or directory: 'public//src/index.js'
+01-11-2022 02:41:57 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 53266)
+01-11-2022 02:42:08 | INFO | Sent public/index.html to ('127.0.0.1', 53266)
+01-11-2022 02:42:08 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 53267)
+01-11-2022 02:42:08 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 53265)
+01-11-2022 02:42:08 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 53266)
+01-11-2022 02:42:09 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 53267)
+01-11-2022 02:42:55 | INFO | Sent public/index.html to ('127.0.0.1', 51081)
+01-11-2022 02:42:55 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 51082)
+01-11-2022 02:42:55 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 51081)
+01-11-2022 02:42:55 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 51082)
+01-11-2022 02:42:55 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 51083)
+01-11-2022 02:42:55 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 51083)
+01-11-2022 02:43:52 | INFO | Sent public/index.html to ('127.0.0.1', 55165)
+01-11-2022 02:43:52 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 55166)
+01-11-2022 02:43:52 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 55165)
+01-11-2022 02:43:52 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 55166)
+01-11-2022 02:43:52 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 55169)
+01-11-2022 02:43:53 | DEBUG | Sent login response packet: [0]
+01-11-2022 02:43:53 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 55169)
+01-11-2022 02:43:58 | INFO | Sent public/index.html to ('127.0.0.1', 55179)
+01-11-2022 02:43:58 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 55179)
+01-11-2022 02:43:58 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 55180)
+01-11-2022 02:43:58 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 55179)
+01-11-2022 02:43:58 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 55180)
+01-11-2022 02:44:00 | INFO | Sent public//login.html to ('127.0.0.1', 55180)
+01-11-2022 02:44:00 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 55180)
+01-11-2022 02:44:00 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 55179)
+01-11-2022 02:44:00 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 55182)
+01-11-2022 02:44:02 | DEBUG | Sent login response packet: [0]
+01-11-2022 02:44:02 | INFO | Sent public/index.html to ('127.0.0.1', 55182)
+01-11-2022 02:44:02 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 55179)
+01-11-2022 02:44:02 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 55184)
+01-11-2022 02:44:02 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 55180)
+01-11-2022 02:44:02 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 55182)
+01-11-2022 02:44:02 | DEBUG | Sent login response packet: [0]
+01-11-2022 02:44:15 | INFO | Sent public/index.html to ('127.0.0.1', 61673)
+01-11-2022 02:44:15 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 61674)
+01-11-2022 02:44:15 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 61673)
+01-11-2022 02:44:15 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 61674)
+01-11-2022 02:44:15 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 61673)
+01-11-2022 02:44:15 | DEBUG | Sent login response packet: [0]
+01-11-2022 02:44:15 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 61674)
+01-11-2022 02:47:20 | INFO | Sent public/index.html to ('127.0.0.1', 61674)
+01-11-2022 02:47:20 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 61673)
+01-11-2022 02:47:20 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 61674)
+01-11-2022 02:47:20 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 61673)
+01-11-2022 02:47:20 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 61674)
+01-11-2022 02:47:20 | DEBUG | Sent login response packet: [0]
+01-11-2022 02:47:20 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 61673)
+01-11-2022 02:52:40 | INFO | Sent public/index.html to ('127.0.0.1', 50092)
+01-11-2022 02:52:40 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 50093)
+01-11-2022 02:52:40 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 50092)
+01-11-2022 02:52:40 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 50093)
+01-11-2022 02:52:40 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 50092)
+01-11-2022 02:52:40 | DEBUG | Sent login response packet: [0]
+01-11-2022 02:52:40 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 50093)
+01-11-2022 02:54:13 | INFO | Sent public/index.html to ('127.0.0.1', 65182)
+01-11-2022 02:54:13 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 65182)
+01-11-2022 02:54:13 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 65183)
+01-11-2022 02:54:13 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 65182)
+01-11-2022 02:54:13 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 65183)
+01-11-2022 02:54:13 | DEBUG | Sent login response packet: [0]
+01-11-2022 02:54:13 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 65183)
+01-11-2022 02:56:36 | INFO | Sent public/index.html to ('127.0.0.1', 50024)
+01-11-2022 02:56:36 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 50025)
+01-11-2022 02:56:36 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 50024)
+01-11-2022 02:56:36 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 50024)
+01-11-2022 02:56:36 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 50025)
+01-11-2022 02:56:36 | DEBUG | Sent login response packet: [0]
+01-11-2022 02:56:36 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 50025)
+01-11-2022 02:58:55 | INFO | Sent public/index.html to ('127.0.0.1', 49305)
+01-11-2022 02:58:55 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 49306)
+01-11-2022 02:58:55 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 49305)
+01-11-2022 02:58:55 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 49306)
+01-11-2022 02:58:55 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 49305)
+01-11-2022 02:58:55 | DEBUG | Sent login response packet: [0]
+01-11-2022 02:58:55 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 49306)
+01-11-2022 03:01:33 | INFO | Sent public/index.html to ('127.0.0.1', 55840)
+01-11-2022 03:01:33 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 55840)
+01-11-2022 03:01:33 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 55841)
+01-11-2022 03:01:33 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 55840)
+01-11-2022 03:01:33 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 55841)
+01-11-2022 03:01:33 | DEBUG | Sent login response packet: [0]
+01-11-2022 03:01:33 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 55841)
+01-11-2022 03:01:57 | INFO | Sent public/index.html to ('127.0.0.1', 64359)
+01-11-2022 03:01:57 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 64360)
+01-11-2022 03:01:57 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 64359)
+01-11-2022 03:01:57 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 64360)
+01-11-2022 03:01:57 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 64359)
+01-11-2022 03:01:57 | DEBUG | Sent login response packet: [0]
+01-11-2022 03:01:57 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 64360)
+01-11-2022 03:21:55 | INFO | Sent public/index.html to ('127.0.0.1', 65449)
+01-11-2022 03:21:55 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 65449)
+01-11-2022 03:21:55 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 65450)
+01-11-2022 03:21:55 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 65449)
+01-11-2022 03:21:55 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 65450)
+01-11-2022 03:21:55 | DEBUG | Sent login response packet: [0]
+01-11-2022 03:21:55 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 65450)
+01-11-2022 03:26:46 | INFO | Sent public/index.html to ('127.0.0.1', 64727)
+01-11-2022 03:26:47 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 64727)
+01-11-2022 03:26:47 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 64727)
+01-11-2022 03:26:47 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 64728)
+01-11-2022 03:26:47 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 64728)
+01-11-2022 03:26:47 | DEBUG | Sent login response packet: [0]
+01-11-2022 03:26:47 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 64728)
+01-11-2022 03:28:37 | INFO | Sent public/index.html to ('127.0.0.1', 60196)
+01-11-2022 03:28:37 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 60196)
+01-11-2022 03:28:37 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 60197)
+01-11-2022 03:28:37 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 60197)
+01-11-2022 03:28:37 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 60196)
+01-11-2022 03:28:40 | INFO | Sent public//login.html to ('127.0.0.1', 60196)
+01-11-2022 03:28:40 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 60196)
+01-11-2022 03:28:40 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 60199)
+01-11-2022 03:28:40 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 60197)
+01-11-2022 03:28:44 | DEBUG | Sent login response packet: [0]
+01-11-2022 03:28:44 | INFO | Sent public/index.html to ('127.0.0.1', 60197)
+01-11-2022 03:28:44 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 60197)
+01-11-2022 03:28:44 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 60200)
+01-11-2022 03:28:44 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 60196)
+01-11-2022 03:28:44 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 60199)
+01-11-2022 03:28:44 | DEBUG | Sent login response packet: [0]

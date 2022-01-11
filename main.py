@@ -93,6 +93,8 @@ class client(HTML.GeneralClient):
                 logger.error(f"404:\n{e}")
                 errorPacket = self.FileNotFoundMsgPacket(str(e).split()[-1][1:-1])
                 self.SendPacket(errorPacket)
+            elif isinstance(e, ConnectionAbortedError):
+                logger.debug(f"{self.addr} Aborted Connection")
             else:
                 logger.error(e, traceback.format_exc())
         

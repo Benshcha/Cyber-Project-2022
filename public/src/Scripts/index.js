@@ -57,7 +57,7 @@ function init()
         {
             $("#loginButton").hide()
             $("#logoutButton").show()
-            $("#welcome").html(`Hi ${userID['username']}!`)
+            $("#welcome").text(`Hi ${userID['username']}!`);
             // BuildNotebookList(userID);
         }
     }
@@ -66,14 +66,6 @@ function init()
     svg = $("#drawingSvg");
     doDraw = false;
     nb = new Notebook(draw, canvas);
-
-    let clearButton = document.createElement("button");
-    clearButton.innerHTML = "Clear";
-    clearButton.onclick = function () {
-        nb.ClearCanvas();
-    };
-    clearButton.name = "Clear";
-    $('#drawing-container').append(clearButton);
 
     lastPos = {x: null, y: null, width: null};
     pos = {x: null, y: null, width: null};
@@ -93,7 +85,7 @@ function getPos(e, div)
         if (e.touches.length == 1) { // Only deal with one finger
             var touch = e.touches[0]; // Get the information for finger #1
             touch.target.offsetLeft;
-            borderWidths = {x: parseInt(nb.div.css("border-left-width")), y: parseInt(nb.div.css("border-top-width"))}
+            borderWidths = {x: parseInt(div.css("border-left-width")), y: parseInt(div.css("border-top-width"))}
             var br = div[0].getBoundingClientRect();
             pos.x=touch.clientX - br.left - borderWidths.x;
             pos.y=touch.clientY - br.top - borderWidths.y;

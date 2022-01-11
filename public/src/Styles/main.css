@@ -5,6 +5,7 @@ html,
   margin: 0;
 }
 
+
 :root {
   --mainbody-width: 90%;
   --sidebar-width: calc(100% - var(--mainbody-width))
@@ -16,6 +17,12 @@ html,
   left: var(--sidebar-width);
 }
 
+#notebookList-Container {
+  height: 100%;
+  text-align: center;
+  background-color: rgb(53, 53, 53);
+}
+
 #sidebar{
   --border-rad: 0px 10px 10px 0px;
   border-radius: var(--border-rad);
@@ -25,8 +32,8 @@ html,
   height: 100%;
 }
 
+
 #notebookList{
-  height: 100%;
   border-radius: 0px 0px 10px 0px;
   border: 2px solid rgb(24, 24, 24);
   width: 100%;
@@ -50,15 +57,30 @@ html,
   color: #fff
 }
 
-#sidebar button{
+#sidebar button:not(#addNB){
   position: absolute;
   right: 0;
   bottom: 0;
 }
 
-#sidebarHeaders{
+#addNB:hover{
+  background-color: #1d1d1d;
+}
 
-flex: 0;
+#addNB{
+  text-align: center;
+  width: 5vh;
+  background-color: #202020;
+  border: 0;
+  color: white;
+  border-radius: 100%;
+  aspect-ratio: 1 / 1;
+  font-size: x-large;
+}
+
+#sidebarHeaders{
+  
+  flex: 0;
 }
 
 .center {
