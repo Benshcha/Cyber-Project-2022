@@ -1,7 +1,11 @@
+-- @block
+
+DROP TABLE employees
+
+--@block
 START TRANSACTION;
--- SQLINES LICENSE FOR EVALUATION USE ONLY
-CREATE TABLE IF NOT EXISTS `employees` (
-	`employee_id`	integer(3) NOT NULL,
+CREATE TABLE IF NOT EXISTS employees (
+	`employee_id`	integer(3) NOT NULL PRIMARY KEY,
 	`first_name`	varchar(20),
 	`last_name`	varchar(25),
 	`email`	varchar(25),
@@ -12,9 +16,11 @@ CREATE TABLE IF NOT EXISTS `employees` (
 	`commission_pct`	double,
 	`manager_id`	integer(3),
 	`department_id`	integer(3),
-	`Avg_Salary`	NUMERIC(38,0),
-	PRIMARY KEY(`employee_id`)
+	`Avg_Salary`	NUMERIC(38,0)
 );
+
+
+-- @block
 INSERT INTO `employees` VALUES (100,'Steven','King','SKING','515.123.4567','1987-06-17','AD_PRES',24000,0,0,90,NULL);
 INSERT INTO `employees` VALUES (101,'Neena','Kochhar','NKOCHHAR','515.123.4568','1987-06-18','AD_VP',17000,0,100,90,NULL);
 INSERT INTO `employees` VALUES (102,'Lex','De Haan','LDEHAAN','515.123.4569','1987-06-19','AD_VP',17000,0,100,90,NULL);
