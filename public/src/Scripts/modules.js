@@ -15,14 +15,14 @@ function deleteCookie(name) {
 function Login(Username, Password)
 {
     resp = $.ajax({
-        type: 'POST',
+        type: 'GET',
         url: 'LOGIN',
         async: false,
         dataType: "text/json",
-        data: `{"username":  "${Username}", "password": "${Password}"}`,
+        data: `username=${Username}&password=${Password}`,
     })
     respJson = JSON.parse(resp.responseText)
-    errCode = !respJson[0]
+    errCode = !respJson['code']
     if (errCode)
     {
         setCookie('user_auth', {'username': Username, 'password': Password}, 10)

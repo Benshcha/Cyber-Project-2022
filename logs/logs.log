@@ -3798,3 +3798,676 @@
 01-14-2022 22:17:46 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 49656)
 01-14-2022 22:17:46 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 49655)
 01-14-2022 22:17:46 | DEBUG | Sent login response packet: [0]
+01-24-2022 11:52:46 | ERROR | e = ProgrammingError(1049, "1049 (42000): Unknown database 'mama'", '42000')
+type(e) = <class 'mysql.connector.errors.ProgrammingError'>
+01-24-2022 12:05:30 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 12:05:37 | INFO | Sent public/index.html to ('127.0.0.1', 50065)
+01-24-2022 12:05:37 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 50065)
+01-24-2022 12:05:37 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 50066)
+01-24-2022 12:05:37 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 50066)
+01-24-2022 12:05:37 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 50065)
+01-24-2022 12:06:00 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 12:06:10 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 12:06:14 | INFO | Sent public/index.html to ('127.0.0.1', 50104)
+01-24-2022 12:06:14 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 50104)
+01-24-2022 12:06:14 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 50105)
+01-24-2022 12:06:14 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 50104)
+01-24-2022 12:06:14 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 50105)
+01-24-2022 12:06:14 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 50105)
+01-24-2022 12:06:27 | INFO | Sent public/index.html to ('127.0.0.1', 57034)
+01-24-2022 12:06:27 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 57034)
+01-24-2022 12:06:27 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 57035)
+01-24-2022 12:06:27 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 57034)
+01-24-2022 12:06:27 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 57035)
+01-24-2022 12:06:33 | INFO | Sent public//login.html to ('127.0.0.1', 57035)
+01-24-2022 12:06:34 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 57034)
+01-24-2022 12:06:34 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 57035)
+01-24-2022 12:06:34 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 57037)
+01-24-2022 12:10:37 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 12:10:40 | INFO | Sent public//login.html to ('127.0.0.1', 52853)
+01-24-2022 12:10:40 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 52853)
+01-24-2022 12:10:40 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 52854)
+01-24-2022 12:10:40 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 52853)
+01-24-2022 12:10:40 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 52853)
+01-24-2022 12:11:54 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 12:11:54 | INFO | Sent public/index.html to ('127.0.0.1', 65458)
+01-24-2022 12:11:54 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 65458)
+01-24-2022 12:11:54 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 65459)
+01-24-2022 12:11:54 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 65459)
+01-24-2022 12:11:54 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 65458)
+01-24-2022 12:11:54 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 65458)
+01-24-2022 12:11:57 | INFO | Sent public//login.html to ('127.0.0.1', 65469)
+01-24-2022 12:11:57 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 65469)
+01-24-2022 12:11:57 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 65470)
+01-24-2022 12:11:57 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 65470)
+01-24-2022 12:14:22 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 12:14:28 | INFO | Sent public//login.html to ('127.0.0.1', 54086)
+01-24-2022 12:14:28 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 54086)
+01-24-2022 12:14:28 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 54087)
+01-24-2022 12:14:28 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 54086)
+01-24-2022 12:14:29 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 54086)
+01-24-2022 12:18:15 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 12:18:31 | INFO | Sent public/index.html to ('127.0.0.1', 58850)
+01-24-2022 12:18:31 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 58850)
+01-24-2022 12:18:31 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 58851)
+01-24-2022 12:18:31 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 58851)
+01-24-2022 12:18:31 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 58850)
+01-24-2022 12:18:33 | INFO | Sent public//login.html to ('127.0.0.1', 58851)
+01-24-2022 12:18:33 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 58850)
+01-24-2022 12:18:33 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 58851)
+01-24-2022 12:18:33 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 58853)
+01-24-2022 12:22:45 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 12:22:50 | INFO | Sent public//login.html to ('127.0.0.1', 60086)
+01-24-2022 12:22:50 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 60087)
+01-24-2022 12:22:50 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 60087)
+01-24-2022 12:22:50 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 60086)
+01-24-2022 12:22:50 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 60086)
+01-24-2022 12:32:55 | DEBUG | 
+=================================
+
+
+01-24-2022 12:32:55 | DEBUG | 
+['/LOGIN',
+ {'Accept': '*/*',
+  'Accept-Encoding': 'gzip, deflate, br',
+  'Accept-Language': 'en-US,en;q=0.9,he;q=0.8',
+  'Connection': 'keep-alive',
+  'Referer': 'http://localhost/login.html',
+  'Sec-Fetch-Dest': 'empty',
+  'Sec-Fetch-Mode': 'cors',
+  'Sec-Fetch-Site': 'same-origin',
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
+                '(KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36 '
+                'Edg/97.0.1072.69',
+  'X-Requested-With': 'XMLHttpRequest',
+  'sec-ch-ua': '" Not;A Brand";v="99", "Microsoft Edge";v="97", '
+               '"Chromium";v="97"',
+  'sec-ch-ua-mobile': '?0',
+  'sec-ch-ua-platform': '"Windows"'},
+ '']
+01-24-2022 12:32:55 | DEBUG | 
+
+=================================
+01-24-2022 12:34:42 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 12:34:42 | DEBUG | Sent login response packet: [1]
+01-24-2022 12:34:49 | INFO | Sent public//login.html to ('127.0.0.1', 55405)
+01-24-2022 12:34:49 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 55405)
+01-24-2022 12:34:49 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 55406)
+01-24-2022 12:34:49 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 55405)
+01-24-2022 12:34:49 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 55405)
+01-24-2022 12:34:56 | DEBUG | Sent login response packet: [1]
+01-24-2022 12:35:11 | INFO | Sent public//login.html to ('127.0.0.1', 52430)
+01-24-2022 12:35:11 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 52431)
+01-24-2022 12:35:11 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 52431)
+01-24-2022 12:35:11 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 52430)
+01-24-2022 12:35:11 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 52430)
+01-24-2022 12:35:14 | DEBUG | Sent login response packet: [0]
+01-24-2022 12:35:14 | INFO | Sent public/index.html to ('127.0.0.1', 52430)
+01-24-2022 12:35:14 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 52430)
+01-24-2022 12:35:14 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 52431)
+01-24-2022 12:35:14 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 52432)
+01-24-2022 12:35:14 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 52430)
+01-24-2022 12:35:15 | DEBUG | Sent login response packet: [0]
+01-24-2022 12:52:37 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 12:52:44 | INFO | Sent public/index.html to ('127.0.0.1', 64733)
+01-24-2022 12:52:44 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 64733)
+01-24-2022 12:52:44 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 64734)
+01-24-2022 12:52:44 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 64733)
+01-24-2022 12:52:44 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 64734)
+01-24-2022 12:52:46 | DEBUG | Sent login response packet: [0]
+01-24-2022 12:53:08 | INFO | Sent public/index.html to ('127.0.0.1', 64734)
+01-24-2022 12:53:08 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 64734)
+01-24-2022 12:53:08 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 64733)
+01-24-2022 12:53:08 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 64735)
+01-24-2022 12:53:08 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 64734)
+01-24-2022 12:53:09 | INFO | Sent public//login.html to ('127.0.0.1', 64734)
+01-24-2022 12:53:09 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 64734)
+01-24-2022 12:53:09 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 64735)
+01-24-2022 12:53:09 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 64733)
+01-24-2022 12:53:15 | INFO | Sent public//signUp.html to ('127.0.0.1', 64733)
+01-24-2022 12:53:15 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 64733)
+01-24-2022 12:53:15 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 64744)
+01-24-2022 12:53:15 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 64734)
+01-24-2022 12:53:15 | INFO | Sent public//src/Scripts/signUp.js to ('127.0.0.1', 64735)
+01-24-2022 12:53:19 | DEBUG | Sent response packet: {"errCode": 0, "discription": "Signed Up successfuly"}
+01-24-2022 12:53:19 | INFO | Sent public/index.html to ('127.0.0.1', 64735)
+01-24-2022 12:53:19 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 64735)
+01-24-2022 12:53:19 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 64744)
+01-24-2022 12:53:19 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 64734)
+01-24-2022 12:53:19 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 64733)
+01-24-2022 12:53:21 | INFO | Sent public//login.html to ('127.0.0.1', 64734)
+01-24-2022 12:53:21 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 64734)
+01-24-2022 12:53:21 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 64733)
+01-24-2022 12:53:21 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 64744)
+01-24-2022 12:53:23 | DEBUG | Sent login response packet: [0]
+01-24-2022 12:53:23 | INFO | Sent public/index.html to ('127.0.0.1', 64744)
+01-24-2022 12:53:23 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 64744)
+01-24-2022 12:53:23 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 64735)
+01-24-2022 12:53:23 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 64734)
+01-24-2022 12:53:23 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 64733)
+01-24-2022 12:53:24 | DEBUG | Sent login response packet: [0]
+01-24-2022 12:53:35 | INFO | Sent public/index.html to ('127.0.0.1', 64734)
+01-24-2022 12:53:35 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 64734)
+01-24-2022 12:53:35 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 64733)
+01-24-2022 12:53:35 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 64744)
+01-24-2022 12:53:35 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 64735)
+01-24-2022 14:15:57 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 14:15:57 | INFO | Initializing Database...
+01-24-2022 14:16:38 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 14:16:38 | INFO | Initializing Database...
+01-24-2022 14:16:38 | INFO | Uploading users to database...
+01-24-2022 14:17:36 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 14:17:36 | INFO | Initializing Database...
+01-24-2022 14:17:36 | INFO | Uploading users to database...
+01-24-2022 14:17:36 | DEBUG | [(1, None, None)]
+01-24-2022 14:18:46 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 14:18:46 | INFO | Initializing Database...
+01-24-2022 14:18:47 | INFO | Uploading users to database...
+01-24-2022 14:19:58 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 14:19:58 | INFO | Initializing Database...
+01-24-2022 14:19:58 | INFO | Uploading users to database...
+01-24-2022 14:22:20 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 14:22:20 | INFO | Initializing Database...
+01-24-2022 14:22:21 | INFO | Uploading users to database...
+01-24-2022 14:22:41 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 14:22:41 | INFO | Initializing Database...
+01-24-2022 14:22:41 | INFO | Uploading users to database...
+01-24-2022 14:26:38 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 14:26:38 | INFO | Initializing Database...
+01-24-2022 14:26:38 | INFO | Uploading users to database...
+01-24-2022 14:26:54 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 14:26:54 | INFO | Initializing Database...
+01-24-2022 14:26:54 | INFO | Uploading users to database...
+01-24-2022 14:27:32 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 14:27:32 | INFO | Initializing Database...
+01-24-2022 14:27:32 | INFO | Uploading users to database...
+01-24-2022 14:28:06 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 14:28:06 | INFO | Initializing Database...
+01-24-2022 14:28:06 | INFO | Uploading users to database...
+01-24-2022 14:28:06 | DEBUG | [(1, 'Benshcha', 'pass')]
+01-24-2022 14:28:42 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 14:28:42 | INFO | Initializing Database...
+01-24-2022 14:28:42 | INFO | Uploading users to database...
+01-24-2022 14:28:42 | DEBUG | [(1, 'Benshcha', 'pass'), (2, 'a', 'b')]
+01-24-2022 15:42:06 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 15:42:06 | INFO | Initializing Database...
+01-24-2022 15:42:06 | INFO | Uploading users to database...
+01-24-2022 15:43:12 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 15:43:12 | INFO | Initializing Database...
+01-24-2022 15:43:12 | INFO | Uploading users to database...
+01-24-2022 15:43:12 | INFO | Successfully uploaded users to database!
+01-24-2022 15:52:01 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 15:52:01 | INFO | Initializing Database...
+01-24-2022 15:52:01 | INFO | Uploading users to database...
+01-24-2022 15:52:01 | INFO | Successfully uploaded users to database!
+01-24-2022 15:53:08 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 15:53:08 | INFO | Initializing Database...
+01-24-2022 15:53:08 | INFO | Uploading users to database...
+01-24-2022 15:53:08 | INFO | Successfully uploaded users to database!
+01-24-2022 15:53:39 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 15:53:39 | INFO | Initializing Database...
+01-24-2022 15:53:39 | INFO | Uploading users to database...
+01-24-2022 15:53:39 | INFO | Successfully uploaded users to database!
+01-24-2022 15:53:44 | INFO | Executing Server Command: exit
+01-24-2022 15:54:32 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 15:54:32 | INFO | Initializing Database...
+01-24-2022 15:54:32 | INFO | Uploading users to database...
+01-24-2022 15:54:32 | INFO | Successfully uploaded users to database!
+01-24-2022 15:54:41 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 15:54:41 | INFO | Initializing Database...
+01-24-2022 15:54:41 | INFO | Uploading users to database...
+01-24-2022 15:54:41 | INFO | Successfully uploaded users to database!
+01-24-2022 15:54:45 | INFO | Executing Server Command: exit
+01-24-2022 15:55:45 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 15:55:45 | INFO | Initializing Database...
+01-24-2022 15:55:45 | INFO | Uploading users to database...
+01-24-2022 15:55:45 | INFO | Successfully uploaded users to database!
+01-24-2022 15:55:47 | INFO | Executing Server Command: exit
+01-24-2022 15:56:54 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 15:56:54 | INFO | Initializing Database...
+01-24-2022 15:56:54 | INFO | Uploading users to database...
+01-24-2022 15:56:54 | INFO | Successfully uploaded users to database!
+01-24-2022 15:56:56 | INFO | Executing Server Command: exit
+01-24-2022 15:58:16 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 15:58:16 | INFO | Initializing Database...
+01-24-2022 15:58:16 | INFO | Uploading users to database...
+01-24-2022 15:58:16 | INFO | Successfully uploaded users to database!
+01-24-2022 15:58:18 | INFO | Executing Server Command: exit
+01-24-2022 15:59:31 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 15:59:31 | INFO | Initializing Database...
+01-24-2022 15:59:31 | INFO | Uploading users to database...
+01-24-2022 15:59:31 | INFO | Successfully uploaded users to database!
+01-24-2022 15:59:33 | INFO | Executing Server Command: exit
+01-24-2022 16:00:02 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 16:00:02 | INFO | Initializing Database...
+01-24-2022 16:00:02 | INFO | Uploading users to database...
+01-24-2022 16:00:02 | INFO | Successfully uploaded users to database!
+01-24-2022 16:00:05 | INFO | Executing Server Command: exit
+01-24-2022 16:00:05 | INFO | Saving Database to Protected/UsersLoginData.json...
+01-24-2022 16:00:26 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 16:00:26 | INFO | Initializing Database...
+01-24-2022 16:00:26 | INFO | Uploading users to database...
+01-24-2022 16:00:26 | INFO | Successfully uploaded users to database!
+01-24-2022 16:00:30 | INFO | Executing Server Command: exit
+01-24-2022 16:00:30 | INFO | Saving Database to Protected/UsersLoginData.json...
+01-24-2022 16:00:53 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 16:00:54 | INFO | Initializing Database...
+01-24-2022 16:00:54 | INFO | Uploading users to database...
+01-24-2022 16:00:54 | INFO | Successfully uploaded users to database!
+01-24-2022 16:00:56 | INFO | Executing Server Command: exit
+01-24-2022 16:00:56 | INFO | Saving Database to Protected/UsersLoginData.json...
+01-24-2022 16:02:17 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 16:02:17 | INFO | Initializing Database...
+01-24-2022 16:02:18 | INFO | Uploading users to database...
+01-24-2022 16:02:18 | INFO | Successfully uploaded users to database!
+01-24-2022 16:05:51 | INFO | Executing Server Command: exit
+01-24-2022 16:05:51 | INFO | Saving Database to Protected/UsersLoginData.json...
+01-24-2022 16:13:01 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 16:13:13 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 16:13:13 | INFO | Initializing Database...
+01-24-2022 16:13:13 | INFO | Uploading users to database...
+01-24-2022 16:13:55 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 16:13:55 | INFO | Initializing Database...
+01-24-2022 16:13:55 | INFO | Uploading users to database...
+01-24-2022 16:16:07 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 16:16:08 | INFO | Initializing Database...
+01-24-2022 16:16:08 | INFO | Uploading users to database...
+01-24-2022 16:16:18 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 16:16:19 | INFO | Initializing Database...
+01-24-2022 16:16:19 | INFO | Uploading users to database...
+01-24-2022 16:16:19 | INFO | Successfully uploaded users to database!
+01-24-2022 16:16:29 | INFO | Executing Server Command: exit
+01-24-2022 16:16:29 | INFO | Saving Database to Protected/UsersLoginData.json...
+01-24-2022 16:16:47 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 16:16:47 | INFO | Initializing Database...
+01-24-2022 16:16:47 | INFO | Uploading users to database...
+01-24-2022 16:16:47 | INFO | Successfully uploaded users to database!
+01-24-2022 16:16:51 | INFO | Executing Server Command: exit
+01-24-2022 16:16:51 | INFO | Saving Database to Protected/UsersLoginData.json...
+01-24-2022 16:17:24 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 16:17:24 | INFO | Initializing Database...
+01-24-2022 16:17:24 | INFO | Uploading users to database...
+01-24-2022 16:17:24 | INFO | Successfully uploaded users to database!
+01-24-2022 16:18:30 | INFO | Executing Server Command: exit
+01-24-2022 16:18:30 | INFO | Saving Database to Protected/UsersLoginData.json...
+01-24-2022 16:18:30 | INFO | Database saved to Protected/UsersLoginData.json!
+01-24-2022 16:18:30 | INFO | Goodbye
+01-24-2022 16:19:06 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 16:19:06 | INFO | Initializing Database...
+01-24-2022 16:19:06 | INFO | Uploading users to database...
+01-24-2022 16:19:06 | INFO | Successfully uploaded users to database!
+01-24-2022 16:19:11 | INFO | Executing Server Command: exit
+01-24-2022 16:19:11 | INFO | Saving Database to Protected/UsersLoginData.json...
+01-24-2022 16:19:11 | INFO | Database saved to Protected/UsersLoginData.json!
+01-24-2022 16:19:11 | INFO | Goodbye
+01-24-2022 16:19:22 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 16:19:23 | INFO | Initializing Database...
+01-24-2022 16:19:23 | INFO | Uploading users to database...
+01-24-2022 16:19:23 | INFO | Successfully uploaded users to database!
+01-24-2022 16:19:39 | INFO | Executing Server Command: exit
+01-24-2022 16:19:39 | INFO | Saving Database to Protected/UsersLoginData.json...
+01-24-2022 16:19:39 | INFO | Database saved to Protected/UsersLoginData.json!
+01-24-2022 16:19:39 | INFO | Goodbye
+01-24-2022 16:19:54 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 16:19:54 | INFO | Initializing Database...
+01-24-2022 16:19:54 | INFO | Uploading users to database...
+01-24-2022 16:19:54 | INFO | Successfully uploaded users to database!
+01-24-2022 16:26:37 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 16:27:26 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 16:27:26 | INFO | Initializing Database...
+01-24-2022 16:27:26 | INFO | Uploading users to database...
+01-24-2022 16:27:26 | INFO | Successfully uploaded users to database!
+01-24-2022 16:27:33 | INFO | Executing Server Command: remove
+01-24-2022 16:29:45 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 16:29:46 | INFO | Initializing Database...
+01-24-2022 16:29:46 | INFO | Uploading users to database...
+01-24-2022 16:29:46 | INFO | Successfully uploaded users to database!
+01-24-2022 16:29:55 | INFO | Executing Server Command: remove
+01-24-2022 16:29:55 | INFO | Removing User: a...
+01-24-2022 16:29:55 | INFO | Successfully Removed a
+01-24-2022 16:30:05 | INFO | Executing Server Command: exit
+01-24-2022 16:30:05 | INFO | Saving Database to Protected/UsersLoginData.json...
+01-24-2022 16:30:05 | INFO | Database saved to Protected/UsersLoginData.json!
+01-24-2022 16:30:05 | INFO | Goodbye
+01-24-2022 16:39:08 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 16:39:09 | INFO | Initializing Database...
+01-24-2022 16:39:09 | INFO | Uploading users to database...
+01-24-2022 16:39:09 | INFO | Successfully uploaded users to database!
+01-24-2022 16:39:17 | INFO | Sent public/index.html to ('127.0.0.1', 49369)
+01-24-2022 16:39:17 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 49369)
+01-24-2022 16:39:17 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 49370)
+01-24-2022 16:39:17 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 49369)
+01-24-2022 16:39:17 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 49370)
+01-24-2022 16:39:22 | INFO | Sent public//login.html to ('127.0.0.1', 49370)
+01-24-2022 16:39:22 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 49370)
+01-24-2022 16:39:22 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 49372)
+01-24-2022 16:39:22 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 49369)
+01-24-2022 16:39:27 | DEBUG | Sent login response packet: [1]
+01-24-2022 16:39:31 | INFO | Sent public//signUp.html to ('127.0.0.1', 49369)
+01-24-2022 16:39:31 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 49369)
+01-24-2022 16:39:31 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 49373)
+01-24-2022 16:39:31 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 49370)
+01-24-2022 16:39:31 | INFO | Sent public//src/Scripts/signUp.js to ('127.0.0.1', 49372)
+01-24-2022 16:41:39 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 16:41:39 | INFO | Initializing Database...
+01-24-2022 16:41:39 | INFO | Uploading users to database...
+01-24-2022 16:41:39 | INFO | Successfully uploaded users to database!
+01-24-2022 16:41:42 | INFO | Sent public/index.html to ('127.0.0.1', 59805)
+01-24-2022 16:41:42 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 59806)
+01-24-2022 16:41:42 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 59805)
+01-24-2022 16:41:42 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 59806)
+01-24-2022 16:41:42 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 59805)
+01-24-2022 16:41:44 | INFO | Sent public//login.html to ('127.0.0.1', 59805)
+01-24-2022 16:41:44 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 59806)
+01-24-2022 16:41:44 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 59809)
+01-24-2022 16:41:44 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 59805)
+01-24-2022 16:41:45 | INFO | Sent public//signUp.html to ('127.0.0.1', 59805)
+01-24-2022 16:41:45 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 59805)
+01-24-2022 16:41:45 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 59806)
+01-24-2022 16:41:45 | INFO | Sent public//src/Scripts/signUp.js to ('127.0.0.1', 59809)
+01-24-2022 16:41:45 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 59810)
+01-24-2022 16:43:28 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 16:43:28 | INFO | Initializing Database...
+01-24-2022 16:43:29 | INFO | Uploading users to database...
+01-24-2022 16:43:29 | INFO | Successfully uploaded users to database!
+01-24-2022 16:43:32 | INFO | Sent public//signUp.html to ('127.0.0.1', 63012)
+01-24-2022 16:43:32 | INFO | Sent public//src/Scripts/signUp.js to ('127.0.0.1', 63013)
+01-24-2022 16:43:32 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 63012)
+01-24-2022 16:43:32 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 63012)
+01-24-2022 16:43:32 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 63013)
+01-24-2022 16:43:32 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 63013)
+01-24-2022 16:43:38 | DEBUG | Sent response packet: {"errCode": 0, "discription": "Signed Up successfuly"}
+01-24-2022 16:43:38 | INFO | Sent public/index.html to ('127.0.0.1', 63013)
+01-24-2022 16:43:38 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 63012)
+01-24-2022 16:43:38 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 63013)
+01-24-2022 16:43:38 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 63015)
+01-24-2022 16:43:38 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 63016)
+01-24-2022 16:43:43 | INFO | Sent public//login.html to ('127.0.0.1', 63016)
+01-24-2022 16:43:43 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 63016)
+01-24-2022 16:43:43 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 63013)
+01-24-2022 16:43:43 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 63015)
+01-24-2022 16:43:46 | DEBUG | Sent login response packet: [1]
+01-24-2022 16:43:49 | INFO | Sent public//signUp.html to ('127.0.0.1', 63015)
+01-24-2022 16:43:49 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 63015)
+01-24-2022 16:43:49 | INFO | Sent public//src/Scripts/signUp.js to ('127.0.0.1', 63013)
+01-24-2022 16:43:49 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 63012)
+01-24-2022 16:43:49 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 63016)
+01-24-2022 16:44:33 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 16:44:33 | INFO | Initializing Database...
+01-24-2022 16:44:33 | INFO | Uploading users to database...
+01-24-2022 16:44:33 | INFO | Successfully uploaded users to database!
+01-24-2022 16:44:33 | DEBUG | Sent response packet: {"errCode": 0, "discription": "Signed Up successfuly"}
+01-24-2022 16:44:33 | INFO | Sent public/index.html to ('127.0.0.1', 63039)
+01-24-2022 16:44:33 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 63039)
+01-24-2022 16:44:33 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 63038)
+01-24-2022 16:44:33 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 63038)
+01-24-2022 16:44:33 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 63039)
+01-24-2022 16:44:37 | INFO | Sent public//login.html to ('127.0.0.1', 63039)
+01-24-2022 16:44:37 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 63038)
+01-24-2022 16:44:37 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 63039)
+01-24-2022 16:44:37 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 63048)
+01-24-2022 16:44:41 | DEBUG | Sent login response packet: [1]
+01-24-2022 16:44:42 | INFO | Sent public//signUp.html to ('127.0.0.1', 63048)
+01-24-2022 16:44:42 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 63048)
+01-24-2022 16:44:42 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 63049)
+01-24-2022 16:44:42 | INFO | Sent public//src/Scripts/signUp.js to ('127.0.0.1', 63038)
+01-24-2022 16:44:42 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 63039)
+01-24-2022 16:45:32 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 16:45:32 | INFO | Initializing Database...
+01-24-2022 16:45:32 | INFO | Uploading users to database...
+01-24-2022 16:45:32 | INFO | Successfully uploaded users to database!
+01-24-2022 16:45:32 | DEBUG | Sent response packet: {"errCode": 1, "discription": "Username already exists!"}
+01-24-2022 16:45:40 | INFO | Sent public//signUp.html to ('127.0.0.1', 59206)
+01-24-2022 16:45:40 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 59206)
+01-24-2022 16:45:40 | INFO | Sent public//src/Scripts/signUp.js to ('127.0.0.1', 59207)
+01-24-2022 16:45:40 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 59206)
+01-24-2022 16:45:40 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 59207)
+01-24-2022 16:45:41 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 59207)
+01-24-2022 16:45:47 | DEBUG | Sent response packet: {"errCode": 1, "discription": "Username already exists!"}
+01-24-2022 16:46:14 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 16:46:14 | INFO | Initializing Database...
+01-24-2022 16:46:15 | INFO | Uploading users to database...
+01-24-2022 16:46:15 | INFO | Successfully uploaded users to database!
+01-24-2022 16:47:09 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 16:47:09 | INFO | Initializing Database...
+01-24-2022 16:47:09 | INFO | Uploading users to database...
+01-24-2022 16:47:09 | INFO | Successfully uploaded users to database!
+01-24-2022 16:47:12 | INFO | Sent public//signUp.html to ('127.0.0.1', 59256)
+01-24-2022 16:47:12 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 59256)
+01-24-2022 16:47:12 | INFO | Sent public//src/Scripts/signUp.js to ('127.0.0.1', 59257)
+01-24-2022 16:47:12 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 59256)
+01-24-2022 16:47:12 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 59257)
+01-24-2022 16:47:13 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 59257)
+01-24-2022 16:47:23 | DEBUG | Sent response packet: {"errCode": 0, "discription": "Signed Up successfuly"}
+01-24-2022 16:47:23 | INFO | Sent public/index.html to ('127.0.0.1', 59257)
+01-24-2022 16:47:23 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 59257)
+01-24-2022 16:47:23 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 59261)
+01-24-2022 16:47:23 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 59259)
+01-24-2022 16:47:23 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 59256)
+01-24-2022 18:02:48 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 18:02:48 | INFO | Initializing Database...
+01-24-2022 18:02:48 | INFO | Uploading users to database...
+01-24-2022 18:02:48 | INFO | Successfully uploaded users to database!
+01-24-2022 18:02:51 | INFO | Sent public/index.html to ('127.0.0.1', 51158)
+01-24-2022 18:02:51 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 51158)
+01-24-2022 18:02:51 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 51159)
+01-24-2022 18:02:51 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 51158)
+01-24-2022 18:02:51 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 51159)
+01-24-2022 18:02:51 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 51159)
+01-24-2022 18:02:57 | INFO | Sent public//login.html to ('127.0.0.1', 51159)
+01-24-2022 18:02:57 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 51159)
+01-24-2022 18:02:57 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 51158)
+01-24-2022 18:02:57 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 51162)
+01-24-2022 18:03:18 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 18:03:18 | INFO | Initializing Database...
+01-24-2022 18:03:18 | INFO | Uploading users to database...
+01-24-2022 18:03:18 | INFO | Successfully uploaded users to database!
+01-24-2022 18:03:18 | DEBUG | []
+01-24-2022 18:03:18 | DEBUG | Sent login response packet: null
+01-24-2022 18:03:23 | DEBUG | []
+01-24-2022 18:03:23 | DEBUG | Sent login response packet: null
+01-24-2022 18:07:54 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 18:07:54 | INFO | Initializing Database...
+01-24-2022 18:07:54 | INFO | Uploading users to database...
+01-24-2022 18:07:54 | INFO | Successfully uploaded users to database!
+01-24-2022 18:07:57 | DEBUG | Sent login response packet: {"code": 0}
+01-24-2022 18:07:57 | INFO | Sent public/index.html to ('127.0.0.1', 51234)
+01-24-2022 18:07:57 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 51234)
+01-24-2022 18:07:57 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 51234)
+01-24-2022 18:07:57 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 51234)
+01-24-2022 18:07:57 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 51234)
+01-24-2022 18:07:57 | DEBUG | Sent login response packet: {"code": 0}
+01-24-2022 18:08:09 | INFO | Sent public//login.html to ('127.0.0.1', 51234)
+01-24-2022 18:08:09 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 51241)
+01-24-2022 18:08:09 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 51234)
+01-24-2022 18:08:09 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 51242)
+01-24-2022 18:08:17 | DEBUG | Sent login response packet: {"code": 0}
+01-24-2022 18:08:20 | DEBUG | Sent login response packet: {"code": 0}
+01-24-2022 18:08:22 | DEBUG | Sent login response packet: {"code": 0}
+01-24-2022 18:08:45 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 18:08:45 | INFO | Initializing Database...
+01-24-2022 18:08:45 | INFO | Uploading users to database...
+01-24-2022 18:08:45 | INFO | Successfully uploaded users to database!
+01-24-2022 18:08:48 | DEBUG | Sent login response packet: {"code": 1}
+01-24-2022 18:09:03 | DEBUG | Sent login response packet: {"code": 1}
+01-24-2022 18:09:08 | DEBUG | Sent login response packet: {"code": 0, "data": []}
+01-24-2022 18:10:04 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 18:10:04 | INFO | Initializing Database...
+01-24-2022 18:10:04 | INFO | Uploading users to database...
+01-24-2022 18:10:04 | INFO | Successfully uploaded users to database!
+01-24-2022 18:10:06 | INFO | Sent public//login.html to ('127.0.0.1', 50585)
+01-24-2022 18:10:06 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 50586)
+01-24-2022 18:10:06 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 50586)
+01-24-2022 18:10:06 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 50585)
+01-24-2022 18:10:06 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 50585)
+01-24-2022 18:10:12 | DEBUG | Sent login response packet: {"code": 1}
+01-24-2022 18:10:15 | DEBUG | Sent login response packet: {"code": 0, "data": []}
+01-24-2022 18:10:15 | INFO | Sent public/index.html to ('127.0.0.1', 50585)
+01-24-2022 18:10:15 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 50586)
+01-24-2022 18:10:15 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 50585)
+01-24-2022 18:10:15 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 50587)
+01-24-2022 18:10:15 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 50586)
+01-24-2022 18:10:15 | DEBUG | Sent login response packet: {"code": 0, "data": []}
+01-24-2022 18:11:58 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 18:11:58 | INFO | Initializing Database...
+01-24-2022 18:11:58 | INFO | Uploading users to database...
+01-24-2022 18:11:58 | INFO | Successfully uploaded users to database!
+01-24-2022 18:12:01 | INFO | Sent public/index.html to ('127.0.0.1', 50613)
+01-24-2022 18:12:01 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 50614)
+01-24-2022 18:12:01 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 50613)
+01-24-2022 18:12:01 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 50614)
+01-24-2022 18:12:01 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 50613)
+01-24-2022 18:12:19 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 18:12:19 | INFO | Initializing Database...
+01-24-2022 18:12:19 | INFO | Uploading users to database...
+01-24-2022 18:12:19 | INFO | Successfully uploaded users to database!
+01-24-2022 18:12:19 | DEBUG | Sent login response packet: {"code": 0, "data": [["id"]]}
+01-24-2022 18:12:19 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 50625)
+01-24-2022 18:12:20 | INFO | Sent public/index.html to ('127.0.0.1', 50625)
+01-24-2022 18:12:20 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 50625)
+01-24-2022 18:12:20 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 50626)
+01-24-2022 18:12:20 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 50625)
+01-24-2022 18:12:20 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 50626)
+01-24-2022 18:12:21 | DEBUG | Sent login response packet: {"code": 0, "data": [["id"]]}
+01-24-2022 18:12:21 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 50626)
+01-24-2022 18:14:11 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 18:14:12 | INFO | Initializing Database...
+01-24-2022 18:14:12 | INFO | Uploading users to database...
+01-24-2022 18:14:12 | INFO | Successfully uploaded users to database!
+01-24-2022 18:14:14 | INFO | Sent public/index.html to ('127.0.0.1', 50667)
+01-24-2022 18:14:14 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 50668)
+01-24-2022 18:14:14 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 50667)
+01-24-2022 18:14:14 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 50667)
+01-24-2022 18:14:14 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 50668)
+01-24-2022 18:14:15 | DEBUG | Sent login response packet: {"code": 0, "data": [["id"]]}
+01-24-2022 18:14:15 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 50668)
+01-24-2022 18:15:53 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 18:15:53 | INFO | Initializing Database...
+01-24-2022 18:15:53 | INFO | Uploading users to database...
+01-24-2022 18:15:53 | INFO | Successfully uploaded users to database!
+01-24-2022 18:16:00 | INFO | Sent public/index.html to ('127.0.0.1', 59970)
+01-24-2022 18:16:00 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 59970)
+01-24-2022 18:16:00 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 59971)
+01-24-2022 18:16:00 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 59970)
+01-24-2022 18:16:00 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 59971)
+01-24-2022 18:16:00 | DEBUG | Sent login response packet: {"code": 0, "data": [[1]]}
+01-24-2022 18:16:00 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 59971)
+01-24-2022 18:16:23 | INFO | Sent public/index.html to ('127.0.0.1', 59971)
+01-24-2022 18:16:23 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 59971)
+01-24-2022 18:16:23 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 59970)
+01-24-2022 18:16:23 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 59974)
+01-24-2022 18:16:23 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 59975)
+01-24-2022 18:16:25 | INFO | Sent public//login.html to ('127.0.0.1', 59975)
+01-24-2022 18:16:25 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 59975)
+01-24-2022 18:16:25 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 59970)
+01-24-2022 18:16:25 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 59974)
+01-24-2022 18:16:30 | DEBUG | Sent login response packet: {"code": 1}
+01-24-2022 18:16:36 | DEBUG | Sent login response packet: {"code": 1}
+01-24-2022 18:16:39 | INFO | Sent public//signUp.html to ('127.0.0.1', 59970)
+01-24-2022 18:16:39 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 59970)
+01-24-2022 18:16:39 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 59975)
+01-24-2022 18:16:39 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 59971)
+01-24-2022 18:16:39 | INFO | Sent public//src/Scripts/signUp.js to ('127.0.0.1', 59974)
+01-24-2022 18:16:43 | DEBUG | Sent response packet: {"errCode": 0, "discription": "Signed Up successfuly"}
+01-24-2022 18:16:43 | INFO | Sent public/index.html to ('127.0.0.1', 59971)
+01-24-2022 18:16:43 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 59971)
+01-24-2022 18:16:43 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 59974)
+01-24-2022 18:16:43 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 59975)
+01-24-2022 18:16:43 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 59970)
+01-24-2022 18:17:04 | INFO | Sent public//login.html to ('127.0.0.1', 59975)
+01-24-2022 18:17:04 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 59970)
+01-24-2022 18:17:04 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 59974)
+01-24-2022 18:17:04 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 59975)
+01-24-2022 18:17:08 | DEBUG | Sent login response packet: {"code": 0, "data": [[2]]}
+01-24-2022 18:17:08 | INFO | Sent public/index.html to ('127.0.0.1', 59974)
+01-24-2022 18:17:08 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 59974)
+01-24-2022 18:17:08 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 59975)
+01-24-2022 18:17:08 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 59970)
+01-24-2022 18:17:08 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 59971)
+01-24-2022 18:17:08 | DEBUG | Sent login response packet: {"code": 0, "data": [[2]]}
+01-24-2022 18:17:49 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 18:17:49 | INFO | Initializing Database...
+01-24-2022 18:17:49 | INFO | Uploading users to database...
+01-24-2022 18:17:49 | INFO | Successfully uploaded users to database!
+01-24-2022 18:17:51 | INFO | Sent public/index.html to ('127.0.0.1', 60012)
+01-24-2022 18:17:51 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 60012)
+01-24-2022 18:17:51 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 60013)
+01-24-2022 18:17:51 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 60012)
+01-24-2022 18:17:51 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 60013)
+01-24-2022 18:17:52 | DEBUG | Sent login response packet: {"code": 1}
+01-24-2022 18:17:52 | INFO | Sent public//src/Images/favicon.ico to ('127.0.0.1', 60013)
+01-24-2022 18:17:53 | INFO | Sent public//login.html to ('127.0.0.1', 60013)
+01-24-2022 18:17:54 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 60012)
+01-24-2022 18:17:54 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 60015)
+01-24-2022 18:17:54 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 60013)
+01-24-2022 18:18:05 | DEBUG | Sent login response packet: {"code": 1}
+01-24-2022 18:18:06 | INFO | Sent public//signUp.html to ('127.0.0.1', 60013)
+01-24-2022 18:18:06 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 60013)
+01-24-2022 18:18:06 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 60012)
+01-24-2022 18:18:06 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 60016)
+01-24-2022 18:18:06 | INFO | Sent public//src/Scripts/signUp.js to ('127.0.0.1', 60015)
+01-24-2022 18:18:09 | DEBUG | Sent response packet: {"errCode": 0, "discription": "Signed Up successfuly"}
+01-24-2022 18:18:09 | INFO | Sent public//login.html to ('127.0.0.1', 60015)
+01-24-2022 18:18:09 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 60016)
+01-24-2022 18:18:09 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 60015)
+01-24-2022 18:18:09 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 60012)
+01-24-2022 18:18:15 | DEBUG | Sent login response packet: {"code": 0, "data": [[2]]}
+01-24-2022 18:18:15 | INFO | Sent public/index.html to ('127.0.0.1', 60012)
+01-24-2022 18:18:15 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 60012)
+01-24-2022 18:18:15 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 60015)
+01-24-2022 18:18:15 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 60013)
+01-24-2022 18:18:15 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 60016)
+01-24-2022 18:18:15 | DEBUG | Sent login response packet: {"code": 0, "data": [[2]]}
+01-24-2022 18:19:26 | INFO | Executing Server Command: remove
+01-24-2022 18:19:26 | INFO | Removing User: a...
+01-24-2022 18:19:26 | INFO | Successfully Removed a
+01-24-2022 18:20:28 | INFO | [INIT] Server running on local_ip, hostname = ('192.168.1.249', 'DESKTOP-Q1O24US')
+01-24-2022 18:20:28 | INFO | Initializing Database...
+01-24-2022 18:20:28 | INFO | Uploading users to database...
+01-24-2022 18:20:28 | INFO | Successfully uploaded users to database!
+01-24-2022 18:20:36 | INFO | Sent public/index.html to ('127.0.0.1', 60057)
+01-24-2022 18:20:36 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 60057)
+01-24-2022 18:20:36 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 60058)
+01-24-2022 18:20:36 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 60057)
+01-24-2022 18:20:36 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 60058)
+01-24-2022 18:20:38 | INFO | Sent public//login.html to ('127.0.0.1', 60058)
+01-24-2022 18:20:38 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 60057)
+01-24-2022 18:20:38 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 60058)
+01-24-2022 18:20:38 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 60060)
+01-24-2022 18:20:48 | DEBUG | Sent login response packet: {"code": 0, "data": [[1]]}
+01-24-2022 18:20:48 | INFO | Sent public/index.html to ('127.0.0.1', 60060)
+01-24-2022 18:20:48 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 60060)
+01-24-2022 18:20:48 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 60061)
+01-24-2022 18:20:48 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 60057)
+01-24-2022 18:20:48 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 60058)
+01-24-2022 18:20:48 | DEBUG | Sent login response packet: {"code": 0, "data": [[1]]}
+01-24-2022 18:20:50 | INFO | Sent public/index.html to ('127.0.0.1', 60058)
+01-24-2022 18:20:50 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 60058)
+01-24-2022 18:20:50 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 60061)
+01-24-2022 18:20:50 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 60060)
+01-24-2022 18:20:50 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 60057)
+01-24-2022 18:20:51 | INFO | Sent public//login.html to ('127.0.0.1', 60057)
+01-24-2022 18:20:51 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 60061)
+01-24-2022 18:20:51 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 60057)
+01-24-2022 18:20:51 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 60060)
+01-24-2022 18:20:53 | DEBUG | Sent login response packet: {"code": 1}
+01-24-2022 18:20:54 | INFO | Sent public//signUp.html to ('127.0.0.1', 60060)
+01-24-2022 18:20:55 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 60058)
+01-24-2022 18:20:55 | INFO | Sent public//src/Scripts/signUp.js to ('127.0.0.1', 60061)
+01-24-2022 18:20:55 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 60060)
+01-24-2022 18:20:55 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 60057)
+01-24-2022 18:20:57 | DEBUG | Sent response packet: {"errCode": 0, "discription": "Signed Up successfuly"}
+01-24-2022 18:20:57 | INFO | Sent public//login.html to ('127.0.0.1', 60057)
+01-24-2022 18:20:57 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 60057)
+01-24-2022 18:20:57 | INFO | Sent public//src/Styles/main.css to ('127.0.0.1', 60060)
+01-24-2022 18:20:57 | INFO | Sent public//src/Styles/login.css to ('127.0.0.1', 60061)
+01-24-2022 18:21:02 | DEBUG | Sent login response packet: {"code": 0, "data": [[2]]}
+01-24-2022 18:21:02 | INFO | Sent public/index.html to ('127.0.0.1', 60061)
+01-24-2022 18:21:02 | INFO | Sent public//src/styles/main.css to ('127.0.0.1', 60061)
+01-24-2022 18:21:02 | INFO | Sent public//src/Scripts/index.js to ('127.0.0.1', 60058)
+01-24-2022 18:21:02 | INFO | Sent public//src/Scripts/modules.js to ('127.0.0.1', 60060)
+01-24-2022 18:21:02 | INFO | Sent public//node_modules/pressure/dist/jquery.pressure.js to ('127.0.0.1', 60057)
+01-24-2022 18:21:03 | DEBUG | Sent login response packet: {"code": 0, "data": [[2]]}
+01-24-2022 18:21:13 | INFO | Saving Database to Protected/UsersLoginData.json...
+01-24-2022 18:21:13 | INFO | Database saved to Protected/UsersLoginData.json!
+01-24-2022 18:21:13 | INFO | Goodbye

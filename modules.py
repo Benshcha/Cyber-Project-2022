@@ -5,6 +5,7 @@ from dataclasses import dataclass, field
 import logging
 import sys
 from typing import Union
+import urllib.parse
 
 class myLogger(logging.Logger):
     def __init__(self, name: str, level:str = ...) -> None:
@@ -146,6 +147,7 @@ def extractDataFromPacket(packet: str) -> Packet:
     HeaderNamesAndAttr = [Header.split(": ") for Header in msgHeaderString[1:]]
     msgHeader = {h[0]: h[1] for h in HeaderNamesAndAttr[1:]}
     
+    commandLine = urllib.parse.unquote(commandLine)
     resp =  commandLine.split()
     command, file, overflow, attr, status = None, None, None, {}, ""
     if len(resp) >= 1:

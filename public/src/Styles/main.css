@@ -64,12 +64,14 @@ html,
 }
 
 #addNB:hover{
-  background-color: #1d1d1d;
+  background-color: #5c5b5b;
 }
 
 #addNB{
+  --button-radius: 1.11em;
   text-align: center;
-  width: 5vh;
+  width: var(--button-radius);
+  height: var(--button-radius);
   background-color: #202020;
   border: 0;
   color: white;

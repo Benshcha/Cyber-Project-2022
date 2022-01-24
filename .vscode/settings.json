@@ -8,8 +8,8 @@
             "server": "localhost",
             "port": 3306,
             "driver": "MySQL",
-            "name": "Test",
-            "database": "Employees",
+            "name": "Cyber Project 2022 Database",
+            "database": "CyberProject2022",
             "username": "Benshcha",
             "password": "XunxuoTable70705"
         }

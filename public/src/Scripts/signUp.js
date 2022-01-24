@@ -4,7 +4,7 @@ function signUpPress (usernameID, passwordID, con_passwordID, instructionID)
     
     if (!signUpResp['errCode'])
     {
-        window.location.replace('/');
+        window.location.replace('/login.html');
     }
     else
     {
