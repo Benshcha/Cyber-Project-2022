@@ -1,9 +1,9 @@
 import mysql.connector as connector
 import json
 
-from config import logger
+from config import logger, jsonFiles
 
-def __init__(usersfile, nbfile=""):
+def __init__():
     logger.info("Initializing Database...")
     global cursor, mydb
 
@@ -16,39 +16,68 @@ def __init__(usersfile, nbfile=""):
     )
     
     cursor = mydb.cursor()
-    cursor.execute("TRUNCATE `users`")
+    
+def initMainSQL():
+    __init__()
+    createusersQuery = """CREATE TABLE IF NOT EXISTS users(id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,username CHAR(30) NOT NULL UNIQUE, pass CHAR(30) NOT NULL);"""
+    cursor.execute(createusersQuery)
     mydb.commit()
     
-    with open(usersfile) as UsersFILE:
-        usersData = json.load(UsersFILE)
+    createNotebookQuery = """CREATE TABLE IF NOT EXISTS notebooks (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,ownerID INT NOT NULL, NotebookPath CHAR UNIQUE NOT NULL, title CHAR(30) NOT NULL, discription TEXT, FOREIGN KEY (ownerID) REFERENCES users(id));
+    """
+    cursor.execute(createNotebookQuery)
+    mydb.commit()
     
-    logger.info("Uploading users to database...")
+    truncateQuery = (
+    "SET FOREIGN_KEY_CHECKS = 0",
+    "TRUNCATE notebooks",
+    "TRUNCATE users",
+    "SET FOREIGN_KEY_CHECKS = 1"
+    )
+    for q in truncateQuery:
+        cursor.execute(q)
+    mydb.commit()
+    
+    for k, path in jsonFiles.items():
+        loadTableFromJson(k, path)
+
+def loadTableFromJson(table, filename):
+    logger.info(f"Uploading {table} to database...")
+    with open(filename) as FILE:
+        jsonData = json.load(FILE)
+        
+    if len(jsonData) == 0:
+        return 1
     try:
-        cmd = "INSERT INTO users VALUES "
-        for user in usersData:
-            try:
-                id = user['id']
-                username = user['username']
-                password = user['pass']
-            except KeyError as e:
-                logger.error(f"Invalid File!:\n{e}")
-            cmd += f"({id}, '{username}', '{password}'), "
-        cmd = cmd[:-2]
+        cmd = f"INSERT INTO {table} VALUES "
+        for row in jsonData:
+            cmd += str(tuple(row.values())) + ", "
+        cmd = cmd[: -2]
         cursor.execute(cmd)
         mydb.commit()
     except Exception as e:
-        logger.error(f"Failed to load users:\n{e}")
+        logger.error(f"Failed to load {table}:\n{e}")
         raise e
-    
-    logger.info("Successfully uploaded users to database!")
+    else:
+        logger.info(f"Successfully uploaded {table} to database!")
+        return 0
 
-def exitHandler(usersfile):
-    logger.info(f"Saving Database to {usersfile}...")
-    cursor.execute("SELECT * FROM users")
-    data=cursor.fetchall()
-    datadict = [{"id": id, "username": username, "pass": password} for id, username, password in data]
+def saveDBToJson():
+    for table, filename in jsonFiles.items():    
+        logger.info(f"Saving {table} to {filename}...")
+        cursor.execute(f"SELECT * FROM {table}")
+        data=cursor.fetchall()
+        fieldNames = [i[0] for i in cursor.description]
+        
+        datadict = [{name: val for name, val in zip(fieldNames, obj)} for obj in data]
+        
+        with open(filename, "w") as UsersFILE:
+            json.dump(datadict, UsersFILE, indent=4)
+        logger.info(f"Table: {table} saved to {filename}!")
     
-    with open(usersfile, "w") as UsersFILE:
-        json.dump(datadict, UsersFILE, indent=4)
-    logger.info(f"Database saved to {usersfile}!")
-    logger.info(f"Goodbye")
+    
+def exitHandler():
+    __init__()
+    saveDBToJson()
+    logger.info(f"Goodbye :)")
+

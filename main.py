@@ -9,6 +9,11 @@ import traceback
 # import global variables
 from config import logger
 
+# Load SQL
+import SQLModule as SQL
+SQL.initMainSQL()
+from SQLModule import cursor, mydb
+
 serverSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 ADDR = ('', 80)
 serverSocket.bind(ADDR)
@@ -18,16 +23,10 @@ local_ip = socket.gethostbyname(hostname)
 
 logger.info(f"[INIT] Server running on {local_ip, hostname = }")
 
-# Load SQL
-import SQLModule as SQL
-usersFile = "Protected/UsersLoginData.json"
-SQL.__init__(usersFile)
-from SQLModule import cursor, mydb
 
-# TODO (optional) make it that if closed by hand it will save
 def exitFunc(*args):
-    SQL.exitHandler(usersFile)
-    os._exit(1)
+    SQL.exitHandler()
+    os._exit(0)
 
 def removeUser(username, *args):
     logger.info(f"Removing User: {username}...")
@@ -40,7 +39,7 @@ def removeUser(username, *args):
     
     logger.info(f"Successfully Removed {username}")
 
-actions = {"exit": exitFunc, "remove": removeUser}
+actions = {"exit": exitFunc, "remove": removeUser, "save": SQL.saveDBToJson}
 
 # Start console:
 def console():
@@ -88,7 +87,7 @@ class client(HTML.GeneralClient):
         cursor.execute(f"SELECT EXISTS(SELECT 1 FROM users WHERE username='{attemptUsername}')")
         resp = cursor.fetchall()
         
-        if resp[0][0] == "1":
+        if resp[0][0] == 1:
             return {"errCode": 1, "discription": "Username already exists!"}
         
         
@@ -171,10 +170,8 @@ class client(HTML.GeneralClient):
                 if isinstance(e, KeyError):
                     logger.error(f"Command {command} not built in to server")
                 else:
-                    logger.error(e, traceback.format_exc())
-                logger.debug(f"\n=================================\n\n")
+                    logger.error(e, traceback.format_stack())
                 logger.debug("\n" + pformat([packet.filename, packet.Headers, packet.Payload]))
-                logger.debug("\n\n=================================")
             
         
     def start(self):
