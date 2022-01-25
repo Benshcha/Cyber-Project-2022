@@ -51,11 +51,13 @@ function BuildNotebookList(userID)
     nbListDiv = $("#notebookList")
     for (var nbAttr of nbList)
     {
-        nbListDiv.append(`<div class="notebook-block" onclick='console.log("Pressed Notebook ${nbAttr['title']}")' id=${nbAttr['id']}>
+        nbblock = $(`<div class="notebook-block" id=${nbAttr['id']}>
         <div class="notebook-title">${nbAttr['title']}</div>
         <div class="notebook-description">${nbAttr['description']}</div>
     </div>`)
-        
+
+        nbblock.click(() => console.log(`Pressed Notebook ${nbAttr['title']}`))
+        nbListDiv.append(nbblock)
     }
 }
 
