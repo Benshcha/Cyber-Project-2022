@@ -1,1 +1,9 @@
-[]
+[
+    {
+        "id": 1,
+        "ownerID": 1,
+        "NotebookPath": "1.svg",
+        "title": "Great Notebook",
+        "description": "This is a great notebook"
+    }
+]

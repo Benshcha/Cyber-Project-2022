@@ -1,6 +1,6 @@
 import mysql.connector as connector
 import json
-
+from typing import Any
 from config import logger, jsonFiles
 
 def __init__():
@@ -74,7 +74,46 @@ def saveDBToJson():
         with open(filename, "w") as UsersFILE:
             json.dump(datadict, UsersFILE, indent=4)
         logger.info(f"Table: {table} saved to {filename}!")
+
+def DataQuery(Username: str, Password: str, table:str ="", UserIDString: str="id", *attr: tuple[str]) -> dict[int, Any]:
+    """Request data from database using the client's username and password for authentication
+
+    Args:
+        Username (str): user's username for authentication
+        Password (str): user's password for authentication
+        table (str, optional): the name of the table containing the data. Defaults to "".
+        UserIDString (str, optional): the name of the user id as stated in the referenced table
+        *args (tuple[str]): the requested data.
+
+    Raises:
+        Exception: If no attributes were given but the table was
+
+    Returns:
+        dict[int, Any]: dictionary conatining the error code and the data requested
+    """
+    condition = f"username='{Username}' AND pass='{Password}'"
+    checkQuery = f"SELECT id FROM users WHERE {condition}"
+    cursor.execute(checkQuery)
+    attemptRes = cursor.fetchall()
     
+    if attemptRes == []:
+        return {'code': 1}
+    else:
+        id = attemptRes[0][0]
+    
+    dataRes = []
+    if table != "":
+        if len(attr) == 0:
+            raise Exception("No attributes were given but table was")
+        dataQuery = f"SELECT {', '.join(attr)} FROM {table} WHERE {UserIDString}={id}"
+        cursor.execute(dataQuery)
+        
+        vals = cursor.fetchall()
+        cols = cursor.description
+        for val in vals:
+            dataRes.append({col[0]: val[i] for i, col in enumerate(cols)})
+    
+    return {'code': 0, 'data': dataRes}
     
 def exitHandler():
     __init__()

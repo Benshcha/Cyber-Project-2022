@@ -1,6 +1,6 @@
 import socket, threading
 from pprint import pprint, pformat
-import modules as HTML
+import modules as HTTP
 from os.path import join
 import os
 import json
@@ -12,7 +12,7 @@ from config import logger
 # Load SQL
 import SQLModule as SQL
 SQL.initMainSQL()
-from SQLModule import cursor, mydb
+from SQLModule import cursor, mydb, DataQuery
 
 serverSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 ADDR = ('', 80)
@@ -59,7 +59,7 @@ def console():
 consoleThread = threading.Thread(target=console)
 consoleThread.start()
 
-class client(HTML.GeneralClient):
+class client(HTTP.GeneralClient):
     def __init__(self, clientSocket, addr):
         super().__init__(clientSocket, addr)
         self.thread = threading.Thread(target=self.manage)
@@ -72,10 +72,9 @@ class client(HTML.GeneralClient):
         
         resp = self.POSTActions[packet.filename](packet.Payload)
         resp = json.dumps(resp)
-        respPacket = HTML.Packet()
-        respPacket.Headers['Content-Length'] = len(resp)
+        respPacket = HTTP.Packet()
         respPacket.Headers['Content-Type'] = "text/json"
-        respPacket.Payload = resp
+        respPacket.setPayload(resp)
         self.SendPacket(respPacket)
         logger.debug(f"Sent response packet: {resp}")
     
@@ -88,7 +87,7 @@ class client(HTML.GeneralClient):
         resp = cursor.fetchall()
         
         if resp[0][0] == 1:
-            return {"errCode": 1, "discription": "Username already exists!"}
+            return {"errCode": 1, "description": "Username already exists!"}
         
         
         cursor.execute(f"INSERT INTO users (username, pass) VALUES ('{attemptUsername}', '{attemptPassword}')")
@@ -96,33 +95,24 @@ class client(HTML.GeneralClient):
         
         return {"errCode": 0, "discription": "Signed Up successfuly"}
     
-    def RequestData(self, Username, Password, table="", *attr):
-        condition = f"username='{Username}' AND pass='{Password}'"
-        checkQuery = f"SELECT id FROM users WHERE {condition}"
-        cursor.execute(checkQuery)
-        attemptRes = cursor.fetchall()
-        
-        if attemptRes == []:
-            return {'code': 1}
-        else:
-            id = attemptRes[0][0]
-        
-        if table != "":
-            if len(attr) == 0:
-                raise Exception("No attributes were given but table was")
-            dataQuery = f"SELECT {', '.join(attr)} FROM {table} WHERE id={id}"
-            cursor.execute(dataQuery)
-        
-        dataRes = cursor.fetchall()
-        return {'code': 0, 'data': dataRes}
+    def RequestData(self, packet, table="", userIDString="id", *attr):
+        try:
+            cookiesStr = [i.split("=") for i in packet.Headers['Cookie'].split(";")]
+            cookies = {cookieStr[0]: cookieStr[1] for cookieStr in cookiesStr}
+            user_auth = json.loads(cookies['user_auth'])
+            resp = DataQuery(user_auth['username'], user_auth['password'], table, userIDString,  *attr)
+        except KeyError as e:
+            resp = {'code': 1, 'data': "No cookie was sent"}
+
+        return resp
     
     def LoginAttempt(self, packet):
-        resp = self.RequestData(packet.attr["username"], packet.attr["password"], 'users', 'id')
+        # TODO: Make use of the "id" request
+        resp = self.RequestData(packet, "users", "id", "id")
         resp = json.dumps(resp)
-        respPacket = HTML.Packet()
-        respPacket.Headers['Content-Length'] = len(resp)
+        respPacket = HTTP.Packet()
         respPacket.Headers['Content-Type'] = "text/json"
-        respPacket.Payload = resp
+        respPacket.setPayload(resp)
         self.SendPacket(respPacket)
         logger.debug(f"Sent login response packet: {resp}")
         
@@ -140,6 +130,10 @@ class client(HTML.GeneralClient):
             file = packet.filename
             if file == "/LOGIN":
                 self.LoginAttempt(packet)
+            elif file.startswith("/NotebookList"):
+                notebookList = self.RequestData(packet, "notebooks", "ownerID" , "*")
+                nbListPacket = HTTP.Packet(json.dumps(notebookList, indent=4))
+                self.SendPacket(nbListPacket)
             else: # If file is public
                 self.PublicResponse(file)
         except Exception as e:
@@ -159,7 +153,7 @@ class client(HTML.GeneralClient):
         while True:
             try:
                 packetStr = self.socket.recv(2040).decode()
-                packet = HTML.extractDataFromPacket(packetStr)
+                packet = HTTP.extractDataFromPacket(packetStr)
                 command = packet.command
                 if command != None:
                     Actions[command](packet)

@@ -12,23 +12,25 @@ function deleteCookie(name) {
     document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
   }
 
-function Login(Username, Password)
+function GET(file, type)
 {
     resp = $.ajax({
         type: 'GET',
-        url: 'LOGIN',
+        url: file,
         async: false,
-        dataType: "text/json",
-        data: `username=${Username}&password=${Password}`,
-    })
-    respJson = JSON.parse(resp.responseText)
-    errCode = !respJson['code']
-    if (errCode)
-    {
-        setCookie('user_auth', {'username': Username, 'password': Password}, 10)
-    }
+        dataType: type
+    });
+    return resp.responseText;
+}
 
-    return errCode
+function Login(Username, Password)
+{
+    setCookie('user_auth', {'username': Username, 'password': Password}, 10);
+   
+    respJson = JSON.parse(GET('LOGIN', "text/json"));
+    errCode = respJson['code'];
+
+    return !errCode;
 
 }
 

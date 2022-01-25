@@ -33,16 +33,30 @@ function getCookie(name) {
     return null;
 }
 
+
+
 function BuildNotebookList(userID)
 {
-    username = userID['username'];
-    password = userID['password'];
-    $.ajax({
-        url: `Protected/${username}`,
-        type: "GET",
-        dataType: "text/json",
+    /*
+    <div class="notebook-block" onclick='console.log("Pressed Notebook 1")'>
+        <div class="notebook-title">Notebook 1:</div>
+        <div class="notebook-discription">This is a cool notebook</div>
+    </div>
+    */
+    respJson = JSON.parse(GET(`NotebookList/${userID['username']}`, "text/json"));
+    errCode = respJson['code'];
+    nbList = respJson['data'];
+    console.log(nbList);
 
-    })
+    nbListDiv = $("#notebookList")
+    for (var nbAttr of nbList)
+    {
+        nbListDiv.append(`<div class="notebook-block" onclick='console.log("Pressed Notebook ${nbAttr['title']}")' id=${nbAttr['id']}>
+        <div class="notebook-title">${nbAttr['title']}</div>
+        <div class="notebook-description">${nbAttr['description']}</div>
+    </div>`)
+        
+    }
 }
 
 function init()
@@ -58,7 +72,7 @@ function init()
             $("#loginButton").hide()
             $("#logoutButton").show()
             $("#welcome").text(`Hi ${userID['username']}!`);
-            // BuildNotebookList(userID);
+            BuildNotebookList(userID);
         }
     }
     canvas = $("#drawing");

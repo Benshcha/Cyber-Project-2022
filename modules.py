@@ -37,8 +37,8 @@ class Packet:
     status: str = ""
     bytePayload: bytes = b""
     """
-    Headers: dict = field(default_factory=dict)
     Payload: str = ""
+    Headers: dict = field(default_factory=dict)
     command: str = ""
     filename: str = ""
     overflow: str = ""
@@ -46,6 +46,9 @@ class Packet:
     attr: dict = field(default_factory=dict)
     bytePayload: bytes = b''
     
+    def __post_init__(self):
+        if self.Payload != None and self.Payload != "":
+            self.Headers['Content-Length'] = len(self.Payload)
     
     def toBytes(self) -> bytes:
         packetString = ""
@@ -66,6 +69,10 @@ class Packet:
             packetString += self.Payload
             packetString = packetString.encode()
         return packetString
+    
+    def setPayload(self, payload):
+        self.Payload = payload
+        self.Headers['Content-Length'] = len(payload)
     
     def __str__(self):
         bytesObj = self.toBytes()
@@ -162,4 +169,4 @@ def extractDataFromPacket(packet: str) -> Packet:
                 file = resp[1]
             overflow = resp[2:]
     
-    return Packet(msgHeader, msgPayload, command, file, overflow, status=status, attr=attr)
+    return Packet(msgPayload, msgHeader, command, file, overflow, status=status, attr=attr)
