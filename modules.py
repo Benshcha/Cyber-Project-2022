@@ -3,7 +3,7 @@ Module for managing HTML functions and classes
 """
 from dataclasses import dataclass, field
 import logging
-import sys
+import sys, json
 from typing import Union
 import urllib.parse
 
@@ -30,7 +30,7 @@ class Packet:
     """Class for a general Packet
 
     Headers: dict = dict
-    Payload: str = ""
+    Payload: Any Stringable = ""
     command: str = ""
     filename: str = ""
     overflow: str = ""
@@ -47,6 +47,12 @@ class Packet:
     bytePayload: bytes = b''
     
     def __post_init__(self):
+        if not isinstance(self.Payload, str):
+            if isinstance(self.Payload, dict):
+                self.Payload = json.dumps(self.Payload)
+            else:
+                self.Payload = str(self.Payload)
+            
         if self.Payload != None and self.Payload != "":
             self.Headers['Content-Length'] = len(self.Payload)
     

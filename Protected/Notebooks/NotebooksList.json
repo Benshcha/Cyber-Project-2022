@@ -2,7 +2,42 @@
     {
         "id": 1,
         "ownerID": 1,
-        "NotebookPath": "1.svg",
+        "NotebookPath": "Protected/Notebooks/1.svg",
+        "title": "Great Notebook",
+        "description": "This is a great notebook"
+    },
+    {
+        "id": 2,
+        "ownerID": 1,
+        "NotebookPath": "Protected/Notebooks/2.svg",
+        "title": "Great Notebook",
+        "description": "This is a great notebook"
+    },
+    {
+        "id": 3,
+        "ownerID": 1,
+        "NotebookPath": "Protected/Notebooks/1.svg",
+        "title": "Great Notebook",
+        "description": "This is a great notebook"
+    },
+    {
+        "id": 4,
+        "ownerID": 1,
+        "NotebookPath": "Protected/Notebooks/1.svg",
+        "title": "Great Notebook",
+        "description": "This is a great notebook"
+    },
+    {
+        "id": 5,
+        "ownerID": 1,
+        "NotebookPath": "Protected/Notebooks/1.svg",
+        "title": "Great Notebook",
+        "description": "This is a great notebook"
+    },
+    {
+        "id": 6,
+        "ownerID": 4,
+        "NotebookPath": "Protected/Notebooks/6.svg",
         "title": "Great Notebook",
         "description": "This is a great notebook"
     }

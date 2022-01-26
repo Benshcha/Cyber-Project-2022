@@ -34,30 +34,48 @@ function getCookie(name) {
 }
 
 
+function loadNotebook(notebookID)
+{
+    console.log(`pressed ${notebookID}`);
+    if (currentNotebook != "")
+    {
+        $(`#Notebook${currentNotebook}`).css({"background-color": "var(--default-notebookList-background)"});
+        $(`#Notebook${currentNotebook} .notebook-title`).css({"background-color": "var(--default-title)"});
+    }
+    var jsonString = GET(`Notebook/${notebookID}`, "text/json");
+    var notebookData = JSON.parse(jsonString);
+    var data = notebookData['data'];
+    var svgData = data['NotebookData'];
+    draw.clear();
+    draw.svg(svgData);
+    $(`#Notebook${notebookID}`).css({"background-color": "#fd4448"});
+    $(`#Notebook${notebookID} .notebook-title`).css({"background-color": "#f21c21"})
+    currentNotebook = notebookID;
+}
+
 
 function BuildNotebookList(userID)
 {
-    /*
-    <div class="notebook-block" onclick='console.log("Pressed Notebook 1")'>
-        <div class="notebook-title">Notebook 1:</div>
-        <div class="notebook-discription">This is a cool notebook</div>
-    </div>
-    */
-    respJson = JSON.parse(GET(`NotebookList/${userID['username']}`, "text/json"));
+    respJson = JSON.parse(GET(`NotebookList/#id=${userID['username']}`, "text/json"));
     errCode = respJson['code'];
     nbList = respJson['data'];
     console.log(nbList);
 
     nbListDiv = $("#notebookList")
+    currentNotebook = ""
     for (var nbAttr of nbList)
     {
-        nbblock = $(`<div class="notebook-block" id=${nbAttr['id']}>
+        nbblock = $(`<div class="notebook-block" id=Notebook${nbAttr['id']}>
         <div class="notebook-title">${nbAttr['title']}</div>
         <div class="notebook-description">${nbAttr['description']}</div>
-    </div>`)
+    </div>`);
+    
+        nbListDiv.append(nbblock);
 
-        nbblock.click(() => console.log(`Pressed Notebook ${nbAttr['title']}`))
-        nbListDiv.append(nbblock)
+        nbblock.click((e) => {
+            notebookID = e.currentTarget.id.slice(8);
+            loadNotebook(notebookID);
+        })
     }
 }
 
@@ -86,6 +104,13 @@ function init()
     lastPos = {x: null, y: null, width: null};
     pos = {x: null, y: null, width: null};
     width = null;
+
+    $(document).bind('keydown', function(e) {
+        if (e.which === 83 && e.ctrlKey) {
+            e.preventDefault();
+            alert("save");
+        }
+    })
 }
 
 function getPos(e, div)

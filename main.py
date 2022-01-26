@@ -95,12 +95,12 @@ class client(HTTP.GeneralClient):
         
         return {"errCode": 0, "discription": "Signed Up successfuly"}
     
-    def RequestData(self, packet, table="", userIDString="id", *attr):
+    def RequestData(self, packet, *attr, table="", userIDString="id", where=None, **kwargs):
         try:
             cookiesStr = [i.split("=") for i in packet.Headers['Cookie'].split(";")]
             cookies = {cookieStr[0]: cookieStr[1] for cookieStr in cookiesStr}
             user_auth = json.loads(cookies['user_auth'])
-            resp = DataQuery(user_auth['username'], user_auth['password'], table, userIDString,  *attr)
+            resp = DataQuery(user_auth['username'], user_auth['password'],  *attr, table=table, userIDString=userIDString, where=where, **kwargs)
         except KeyError as e:
             resp = {'code': 1, 'data': "No cookie was sent"}
 
@@ -108,7 +108,7 @@ class client(HTTP.GeneralClient):
     
     def LoginAttempt(self, packet):
         # TODO: Make use of the "id" request
-        resp = self.RequestData(packet, "users", "id", "id")
+        resp = self.RequestData(packet, "id", table="users", userIDString="id")
         resp = json.dumps(resp)
         respPacket = HTTP.Packet()
         respPacket.Headers['Content-Type'] = "text/json"
@@ -131,9 +131,25 @@ class client(HTTP.GeneralClient):
             if file == "/LOGIN":
                 self.LoginAttempt(packet)
             elif file.startswith("/NotebookList"):
-                notebookList = self.RequestData(packet, "notebooks", "ownerID" , "*")
+                notebookList = self.RequestData(packet, "id", "ownerID", "title", "description", table="notebooks", userIDString="ownerID")
+                
                 nbListPacket = HTTP.Packet(json.dumps(notebookList, indent=4))
+                
                 self.SendPacket(nbListPacket)
+            elif file.startswith("/Notebook"):
+                notebookID = file[10:]
+                
+                nbdatadict = self.RequestData(packet, "NotebookPath", "title", table="notebooks", userIDString="ownerID", where=f"id={notebookID}", singleton=True)
+                
+                if not nbdatadict['code']:
+                    filePath = nbdatadict['data']["NotebookPath"]
+                    with open(filePath) as FILE:
+                        nbdatadict['data']["NotebookData"] = FILE.read()
+                    nbdatadict['data'].pop('NotebookPath', None)
+                    
+                nbdataPacket = HTTP.Packet(nbdatadict)
+                self.SendPacket(nbdataPacket)
+                logger.info(f'Sent notebook {notebookID} to {self.addr}')
             else: # If file is public
                 self.PublicResponse(file)
         except Exception as e:

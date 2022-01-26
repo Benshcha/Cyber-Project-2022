@@ -5,10 +5,13 @@ html,
   margin: 0;
 }
 
+#addnb-container {}
+
 
 :root {
+  --button-radius: 26.626px;
   --mainbody-width: 90%;
-  --sidebar-width: calc(100% - var(--mainbody-width))
+  --sidebar-width: calc(100% - var(--mainbody-width));
 }
 
 #mainbody{
@@ -21,9 +24,11 @@ html,
   height: 100%;
   text-align: center;
   background-color: rgb(53, 53, 53);
+  align-items: center;
 }
 
 #sidebar{
+  resize: horizontal;
   --border-rad: 0px 10px 10px 0px;
   border-radius: var(--border-rad);
   position: fixed;
@@ -34,19 +39,35 @@ html,
 
 
 #notebookList{
+  max-height: calc(100% - 2.5 * var(--button-radius));
+  --default-notebookList-background: rgb(53, 53, 53);
   border-radius: 0px 0px 10px 0px;
   border: 2px solid rgb(24, 24, 24);
   width: 100%;
-  background-color: rgb(53, 53, 53);
-  display: flexbox;
+  background-color: var(--default-notebookList-background);
+  display: flex;
   flex-direction: column;
+  overflow-y: scroll;
+}
+
+#notebookList::-webkit-scrollbar{
+  width: 10px;
+  background-color: rgba(114, 114, 114, 0.514);
+  border-radius: 10em;
+}
+
+#notebookList::-webkit-scrollbar-thumb{
+  background-color: rgba(32, 32, 32, 0.514);
+  border-radius: 10em;
 }
 
 .notebook-title{
-  background-color: rgb(80, 79, 79);
+  --default-title: rgb(80, 79, 79);
+  background-color: var(--default-title);
 }
 
 .notebook-block{
+  margin-top: 0.3em;
   cursor: pointer;
   background-color: rgb(65, 64, 64);
   color: #fff;
@@ -68,7 +89,7 @@ html,
 }
 
 #addNB{
-  --button-radius: 1.11em;
+  
   text-align: center;
   width: var(--button-radius);
   height: var(--button-radius);
@@ -126,3 +147,4 @@ path {
   stroke-linejoin: round;
   stroke-linecap: round;
 }
+

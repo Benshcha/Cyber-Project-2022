@@ -23,7 +23,7 @@ def initMainSQL():
     cursor.execute(createusersQuery)
     mydb.commit()
     
-    createNotebookQuery = """CREATE TABLE IF NOT EXISTS notebooks (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,ownerID INT NOT NULL, NotebookPath CHAR UNIQUE NOT NULL, title CHAR(30) NOT NULL, discription TEXT, FOREIGN KEY (ownerID) REFERENCES users(id));
+    createNotebookQuery = """CREATE TABLE IF NOT EXISTS notebooks (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,ownerID INT NOT NULL, NotebookPath CHAR(255) NOT NULL, title CHAR(30) NOT NULL, description TEXT, FOREIGN KEY (ownerID) REFERENCES users(id));
     """
     cursor.execute(createNotebookQuery)
     mydb.commit()
@@ -75,15 +75,16 @@ def saveDBToJson():
             json.dump(datadict, UsersFILE, indent=4)
         logger.info(f"Table: {table} saved to {filename}!")
 
-def DataQuery(Username: str, Password: str, table:str ="", UserIDString: str="id", *attr: tuple[str]) -> dict[int, Any]:
+def DataQuery(Username: str, Password: str, *attr: tuple[str], table:str ="", userIDString: str="id", where=None, **kwargs) -> dict[int, Any]:
     """Request data from database using the client's username and password for authentication
 
     Args:
         Username (str): user's username for authentication
         Password (str): user's password for authentication
+        *args (tuple[str]): the requested data.
         table (str, optional): the name of the table containing the data. Defaults to "".
         UserIDString (str, optional): the name of the user id as stated in the referenced table
-        *args (tuple[str]): the requested data.
+        where (str): WHERE command
 
     Raises:
         Exception: If no attributes were given but the table was
@@ -92,6 +93,10 @@ def DataQuery(Username: str, Password: str, table:str ="", UserIDString: str="id
         dict[int, Any]: dictionary conatining the error code and the data requested
     """
     condition = f"username='{Username}' AND pass='{Password}'"
+    
+    additionalCMD = ""
+    if where != None:
+        additionalCMD = f"AND ({where})"
     checkQuery = f"SELECT id FROM users WHERE {condition}"
     cursor.execute(checkQuery)
     attemptRes = cursor.fetchall()
@@ -105,14 +110,15 @@ def DataQuery(Username: str, Password: str, table:str ="", UserIDString: str="id
     if table != "":
         if len(attr) == 0:
             raise Exception("No attributes were given but table was")
-        dataQuery = f"SELECT {', '.join(attr)} FROM {table} WHERE {UserIDString}={id}"
+        dataQuery = f"SELECT {', '.join(attr)} FROM {table} WHERE {userIDString}={id} {additionalCMD}"
         cursor.execute(dataQuery)
         
         vals = cursor.fetchall()
         cols = cursor.description
         for val in vals:
             dataRes.append({col[0]: val[i] for i, col in enumerate(cols)})
-    
+        if 'singleton' in kwargs and kwargs['singleton']:
+            dataRes = dataRes[0]
     return {'code': 0, 'data': dataRes}
     
 def exitHandler():
