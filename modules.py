@@ -130,6 +130,19 @@ class GeneralClient:
         resp.Headers["Content-Type"] = "error"
         resp.bytePayload = FileNotFoundData
         return resp
+    
+    def RecievePacket(self):
+        bufSize = 4096
+        data = b''
+        while True:
+            part = self.socket.recv(bufSize)
+            data += part
+            
+            if len(part) < bufSize:
+                break
+            
+        return data
+    
 
 def extractDataFromPacket(packet: str) -> Packet:
     """

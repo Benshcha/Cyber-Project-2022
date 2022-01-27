@@ -5,19 +5,68 @@ html,
   margin: 0;
 }
 
-#addnb-container {}
+textarea{
+  border: 2px solid #060606;
+  border-radius: 4px;
+  background-color: #414040;
+  resize: none;
+  color: white;
+}
 
+.new-description {
+  height: 70px;
+  box-sizing: border-box;
+}
+
+.new-title {
+  height: 30px;
+}
+
+#toolbar {
+  
+  position: fixed;
+    
+  width: var(--mainbody-width);
+    
+  left: var(--sidebar-width);
+    
+  z-index: 10;
+    
+  height: var(--toolbar-width);
+    
+  display: flex;
+    
+  flex-direction: row;
+    
+  justify-content: flex-start;
+    
+  background-color: #353535;
+    
+  border-radius: 0 0 var(--toolbar-border-radius) var(--toolbar-border-radius);
+}
+
+#toolbar button {
+    margin: var(--toolbar-button-margin);
+}
+
+#toolbar div {
+  margin: var(--toolbar-button-margin);
+}
 
 :root {
+  --toolbar-border-radius: 10px;
+  --toolbar-width: 1.5em;
   --button-radius: 26.626px;
-  --mainbody-width: 90%;
+  --mainbody-width: 85%;
   --sidebar-width: calc(100% - var(--mainbody-width));
+  --toolbar-button-margin: 0.2em 0 0.2em 0.5em;
 }
 
 #mainbody{
   position: absolute;
   width: var(--mainbody-width);
   left: var(--sidebar-width);
+  top: var(--toolbar-width);
 }
 
 #notebookList-Container {
@@ -29,11 +78,11 @@ html,
 
 #sidebar{
   resize: horizontal;
-  --border-rad: 0px 10px 10px 0px;
+  --border-rad: 0px var(--toolbar-border-radius) var(--toolbar-border-radius) 0px;
   border-radius: var(--border-rad);
   position: fixed;
   background-color: rgba(90, 68, 150, 0.849);
-  width: 10%;
+  width: var(--sidebar-width);
   height: 100%;
 }
 
@@ -78,11 +127,19 @@ html,
   color: #fff
 }
 
-#sidebar button:not(#addNB){
+#logoutButton{
   position: absolute;
   right: 0;
   bottom: 0;
 }
+
+#loginButton{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+#complete-add {width: 50px;}
 
 #addNB:hover{
   background-color: #5c5b5b;
@@ -127,6 +184,9 @@ button {
   opacity: 0.8;
   border-radius: 1em;
   /* border: 0; */
+}
+
+button#loginButton {
 }
 
 

@@ -63,14 +63,23 @@ class client(HTTP.GeneralClient):
     def __init__(self, clientSocket, addr):
         super().__init__(clientSocket, addr)
         self.thread = threading.Thread(target=self.manage)
-        self.POSTActions = {"/SIGNUP": self.SignUp}
+    
+    def getUserAuth(self, packet):
+        cookiesStr = [i.split("=") for i in packet.Headers['Cookie'].split(";")]
+        cookies = {cookieStr[0]: cookieStr[1] for cookieStr in cookiesStr}
+        return tuple(json.loads(cookies['user_auth']).values())
+    
+    def postResponse(self, packet: HTTP.Packet):
+        file = packet.filename
+        resp = None
+        if file == "/SIGNUP":
+            resp = self.SignUp(packet.payload)
+        elif file.startswith('/SAVENEWNB'):
+            resp = self.NewNotebook(packet)
+        else:
+            # TODO Add error response
+            ...
         
-    def postResponse(self, packet):
-        # logger.debug(f"=================================\n")
-        # logger.debug("\n" + pformat([f"{packet.command} {packet.filename}", packet.Headers, packet.Payload]))
-        # logger.debug("\n\n=================================")
-        
-        resp = self.POSTActions[packet.filename](packet.Payload)
         resp = json.dumps(resp)
         respPacket = HTTP.Packet()
         respPacket.Headers['Content-Type'] = "text/json"
@@ -78,7 +87,43 @@ class client(HTTP.GeneralClient):
         self.SendPacket(respPacket)
         logger.debug(f"Sent response packet: {resp}")
     
-    def SignUp(self, payload):
+
+    def NewNotebook(self, packet: HTTP.Packet):
+        user_auth = self.getUserAuth(packet)
+        id = SQL.CheckAuth(*user_auth)
+        
+        if id != None:
+            payloadDict = json.loads(packet.Payload)
+            svgData = payloadDict['svgData']
+            payloadDict.pop('svgData', None)
+            payloadDict['ownerID'] = id
+            
+            try:
+                insertResp = SQL.Insert('notebooks', **payloadDict)
+                
+                if insertResp['code'] != 0:
+                    return insertResp
+                
+            except KeyError as e:
+                logger.error("User request doesn't have enough data:")
+                logger.error(e)
+                return {'code': 1, 'data': f'Missing key: {e}'}
+                
+            notebookID = insertResp['inserted_id']
+            
+            # Create svg file:
+            newPath = f'Protected/Notebooks/{notebookID}.svg'
+            with open(newPath, 'w') as FILE:
+                FILE.write(svgData)
+            
+            # Update file path to DB
+            updateResp = SQL.Update(table="notebooks", where=f'id={notebookID}', NotebookPath=newPath)
+
+            return updateResp
+        else:
+            return {'code': 1, 'data': 'Authorization denied!'}
+    
+    def SignUp(self, payload: str):
         payloadDict = json.loads(payload)
         attemptUsername = payloadDict['username']
         attemptPassword = payloadDict['password']
@@ -87,20 +132,18 @@ class client(HTTP.GeneralClient):
         resp = cursor.fetchall()
         
         if resp[0][0] == 1:
-            return {"errCode": 1, "description": "Username already exists!"}
+            return {"code": 1, "description": "Username already exists!"}
         
         
         cursor.execute(f"INSERT INTO users (username, pass) VALUES ('{attemptUsername}', '{attemptPassword}')")
         mydb.commit()
         
-        return {"errCode": 0, "discription": "Signed Up successfuly"}
+        return {"code": 0, "description": "Signed Up successfuly"}
     
-    def RequestData(self, packet, *attr, table="", userIDString="id", where=None, **kwargs):
+    def RequestData(self, packet: HTTP.Packet, *attr: tuple[str], table="", userIDString="id", where=None, **kwargs):
         try:
-            cookiesStr = [i.split("=") for i in packet.Headers['Cookie'].split(";")]
-            cookies = {cookieStr[0]: cookieStr[1] for cookieStr in cookiesStr}
-            user_auth = json.loads(cookies['user_auth'])
-            resp = DataQuery(user_auth['username'], user_auth['password'],  *attr, table=table, userIDString=userIDString, where=where, **kwargs)
+            user_auth = self.getUserAuth(packet)
+            resp = DataQuery(*user_auth,  *attr, table=table, userIDString=userIDString, where=where, **kwargs)
         except KeyError as e:
             resp = {'code': 1, 'data': "No cookie was sent"}
 
@@ -124,32 +167,37 @@ class client(HTTP.GeneralClient):
         sentBytes = self.SendPacket(fileRespPacket)
         logger.info(f"Sent {filePath} to {self.addr}")
 
-
+    def SendNotebookList(self, packet):
+        notebookList = self.RequestData(packet, "id", "ownerID", "title", "description", table="notebooks", userIDString="ownerID")
+                
+        nbListPacket = HTTP.Packet(json.dumps(notebookList, indent=4))
+        
+        self.SendPacket(nbListPacket)
+    
+    def SendNotebook(self, packet):
+        notebookID = packet.filename[10:]
+                
+        nbdatadict = self.RequestData(packet, "NotebookPath", "title", table="notebooks", userIDString="ownerID", where=f"id={notebookID}", singleton=True)
+        
+        if not nbdatadict['code']:
+            filePath = nbdatadict['data']["NotebookPath"]
+            with open(filePath) as FILE:
+                nbdatadict['data']["NotebookData"] = FILE.read()
+            nbdatadict['data'].pop('NotebookPath', None)
+            
+        nbdataPacket = HTTP.Packet(nbdatadict)
+        self.SendPacket(nbdataPacket)
+        logger.info(f'Sent notebook {notebookID} to {self.addr}')
+    
     def getResponse(self, packet):
         try:
             file = packet.filename
             if file == "/LOGIN":
                 self.LoginAttempt(packet)
             elif file.startswith("/NotebookList"):
-                notebookList = self.RequestData(packet, "id", "ownerID", "title", "description", table="notebooks", userIDString="ownerID")
-                
-                nbListPacket = HTTP.Packet(json.dumps(notebookList, indent=4))
-                
-                self.SendPacket(nbListPacket)
+                self.SendNotebookList(packet)
             elif file.startswith("/Notebook"):
-                notebookID = file[10:]
-                
-                nbdatadict = self.RequestData(packet, "NotebookPath", "title", table="notebooks", userIDString="ownerID", where=f"id={notebookID}", singleton=True)
-                
-                if not nbdatadict['code']:
-                    filePath = nbdatadict['data']["NotebookPath"]
-                    with open(filePath) as FILE:
-                        nbdatadict['data']["NotebookData"] = FILE.read()
-                    nbdatadict['data'].pop('NotebookPath', None)
-                    
-                nbdataPacket = HTTP.Packet(nbdatadict)
-                self.SendPacket(nbdataPacket)
-                logger.info(f'Sent notebook {notebookID} to {self.addr}')
+                self.SendNotebook(packet)
             else: # If file is public
                 self.PublicResponse(file)
         except Exception as e:
@@ -161,6 +209,8 @@ class client(HTTP.GeneralClient):
                 logger.debug(f"{self.addr} Aborted Connection")
             else:
                 logger.error(e, traceback.format_exc())
+
+        
         
     def manage(self):
         # Define all actions
@@ -168,7 +218,7 @@ class client(HTTP.GeneralClient):
         
         while True:
             try:
-                packetStr = self.socket.recv(2040).decode()
+                packetStr = self.RecievePacket().decode()
                 packet = HTTP.extractDataFromPacket(packetStr)
                 command = packet.command
                 if command != None:

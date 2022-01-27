@@ -54,15 +54,20 @@ function loadNotebook(notebookID)
 }
 
 
-function BuildNotebookList(userID)
+function BuildNotebookList()
 {
-    respJson = JSON.parse(GET(`NotebookList/#id=${userID['username']}`, "text/json"));
+    respJson = JSON.parse(GET(`NotebookList`, "text/json"));
     errCode = respJson['code'];
     nbList = respJson['data'];
     console.log(nbList);
+    nbListDiv = $("#notebookList");
 
-    nbListDiv = $("#notebookList")
-    currentNotebook = ""
+    if (errCode == 1)
+    {
+        return 1
+    }
+    nbListDiv.html("");
+    currentNotebook = "";
     for (var nbAttr of nbList)
     {
         nbblock = $(`<div class="notebook-block" id=Notebook${nbAttr['id']}>
@@ -79,8 +84,45 @@ function BuildNotebookList(userID)
     }
 }
 
+function RequestDataNewNotebook() {
+    $("#addnb-container").hide();
+    var newNBBlock = $(`<div class="notebook-block" id="new-notebook-block">
+        <div class="notebook-title"><textarea class="new-title" id="new-notebook-title"> </textarea></div>
+        <div class="notebook-description"><textarea class="new-description" id="new-notebook-description"> </textarea></div>
+        <button id="complete-add">Add</button>
+    </div>`);
+
+    
+    nbListDiv.append(newNBBlock);
+
+    $("#complete-add").click(function (e) {
+        e.preventDefault();
+        var newTitle = $("#new-notebook-title").val();
+        var newDescription = $("#new-notebook-description").val();
+        createNotebook(newTitle, newDescription);
+        $("#addnb-container").show();
+    });
+
+
+}
+
+function createNotebook(newTitle, newDescription) {
+    textResp  = POST(`SAVENEWNB`, 'text/svg', JSON.stringify({'svgData': draw.svg(), 'title': newTitle, 'description': newDescription}), (resp) => {
+        console.log(resp);    
+        BuildNotebookList();
+    });
+    
+}
+
+function saveCurrentNotebook()
+{
+    // var count = 0;
+    // var resp = POST(`Notebook/${currentNotebook}`);
+}
+
 function init()
 {
+    $("#addNB").hide();
     userIDstring = getCookie('user_auth');
 
     if (userIDstring != null)
@@ -93,6 +135,7 @@ function init()
             $("#logoutButton").show()
             $("#welcome").text(`Hi ${userID['username']}!`);
             BuildNotebookList(userID);
+            $("#addNB").show();
         }
     }
     canvas = $("#drawing");
@@ -105,10 +148,12 @@ function init()
     pos = {x: null, y: null, width: null};
     width = null;
 
+    currentNotebook = "";
+
     $(document).bind('keydown', function(e) {
         if (e.which === 83 && e.ctrlKey) {
             e.preventDefault();
-            alert("save");
+            RequestDataNewNotebook();
         }
     })
 }

@@ -28,13 +28,18 @@
         
       </div>
       <div id="addnb-container">
-        <button id="addNB" class="center-button">+</button>
+        <button id="addNB" class="center-button" onclick="RequestDataNewNotebook()">+</button>
       </div>
     </div>
     <button onclick="window.location.href='login.html'" id="loginButton">Log in</button>
     <button onclick="deleteCookie('user_auth'); window.location.replace('/')" id="logoutButton" style="display: none">Log out</button><br>
 
   </div>
+
+  <div id="toolbar">
+    <button onclick="RequestDataNewNotebook()" id="save-button">Save</button>
+  </div>
+
   <div id="mainbody">
     <div id="drawing-container">
       <div id="drawing">

@@ -1,6 +1,8 @@
 import mysql.connector as connector
 import json
 from typing import Any
+
+from numpy import insert
 from config import logger, jsonFiles
 
 def __init__():
@@ -23,7 +25,7 @@ def initMainSQL():
     cursor.execute(createusersQuery)
     mydb.commit()
     
-    createNotebookQuery = """CREATE TABLE IF NOT EXISTS notebooks (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,ownerID INT NOT NULL, NotebookPath CHAR(255) NOT NULL, title CHAR(30) NOT NULL, description TEXT, FOREIGN KEY (ownerID) REFERENCES users(id));
+    createNotebookQuery = """CREATE TABLE IF NOT EXISTS notebooks (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,ownerID INT NOT NULL, NotebookPath CHAR(255), title CHAR(30) NOT NULL, description TEXT, FOREIGN KEY (ownerID) REFERENCES users(id));
     """
     cursor.execute(createNotebookQuery)
     mydb.commit()
@@ -75,6 +77,16 @@ def saveDBToJson():
             json.dump(datadict, UsersFILE, indent=4)
         logger.info(f"Table: {table} saved to {filename}!")
 
+def CheckAuth(Username: str, Password: str):
+    condition = f"username='{Username}' AND pass='{Password}'"
+    checkQuery = f"SELECT id FROM users WHERE {condition}"
+    cursor.execute(checkQuery)
+    attemptRes = cursor.fetchall()
+    if attemptRes == []:
+        return None
+    else:
+        return attemptRes[0][0]
+
 def DataQuery(Username: str, Password: str, *attr: tuple[str], table:str ="", userIDString: str="id", where=None, **kwargs) -> dict[int, Any]:
     """Request data from database using the client's username and password for authentication
 
@@ -92,19 +104,14 @@ def DataQuery(Username: str, Password: str, *attr: tuple[str], table:str ="", us
     Returns:
         dict[int, Any]: dictionary conatining the error code and the data requested
     """
-    condition = f"username='{Username}' AND pass='{Password}'"
+    id = CheckAuth(Username, Password)
+    
+    if id == None:
+        return {'code': 1, 'data': 'Authentication denied!'}
     
     additionalCMD = ""
     if where != None:
         additionalCMD = f"AND ({where})"
-    checkQuery = f"SELECT id FROM users WHERE {condition}"
-    cursor.execute(checkQuery)
-    attemptRes = cursor.fetchall()
-    
-    if attemptRes == []:
-        return {'code': 1}
-    else:
-        id = attemptRes[0][0]
     
     dataRes = []
     if table != "":
@@ -117,6 +124,10 @@ def DataQuery(Username: str, Password: str, *attr: tuple[str], table:str ="", us
         cols = cursor.description
         for val in vals:
             dataRes.append({col[0]: val[i] for i, col in enumerate(cols)})
+        
+        if len(vals) == 0:
+            return {'code': 1, 'data': 'No such notebook in your list!'}
+        
         if 'singleton' in kwargs and kwargs['singleton']:
             dataRes = dataRes[0]
     return {'code': 0, 'data': dataRes}
@@ -126,3 +137,38 @@ def exitHandler():
     saveDBToJson()
     logger.info(f"Goodbye :)")
 
+def Insert(table:str, **datadict):  
+    if len(datadict) != 0:
+        try:
+            insertQuery = f"INSERT INTO {table} ({', '.join(datadict.keys())}) VALUES {tuple(datadict.values())}"
+            
+            cursor.execute(insertQuery)
+            mydb.commit()
+            
+            idQuery = 'SELECT LAST_INSERT_ID()'
+            cursor.execute(idQuery)
+            
+            id = cursor.fetchall()
+            logger.debug(f"Inserted into {table} values {datadict}")
+            return {'code': 0, 'inserted_id': id[0][0]}
+            
+        except Exception as e:
+            logger.error(e)
+            return {'code': 1, 'data': e}
+        
+    return {'code': 1, 'data': ""}
+
+def Update(table: str, where: str, **datadict):
+    if len(datadict) != 0:
+        try:
+            items = [(k, '\'' + v + '\'') for k, v in datadict.items()]
+            itemsList = ', '.join('='.join(item) for item in items)
+            updateQuery = f"UPDATE {table} SET {itemsList} WHERE {where}"
+            cursor.execute(updateQuery)
+            mydb.commit()
+            logger.info(f"Updated {table} where {where} by {datadict}")
+            
+            return {'code': 0}
+        except Exception as e:
+            logger.error(e)
+            return {'code': 1, 'data': e}

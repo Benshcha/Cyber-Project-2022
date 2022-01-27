@@ -14,11 +14,27 @@ function deleteCookie(name) {
 
 function GET(file, type)
 {
-    resp = $.ajax({
+    var resp = $.ajax({
         type: 'GET',
         url: file,
         async: false,
         dataType: type
+    });
+    return resp.responseText;
+}
+
+function POST(file, type, data, complete)
+{
+    var resp = $.ajax({
+        type: 'POST',
+        url: file,
+        async: true,
+        dataType: type,
+        data: data,
+        complete: complete,
+        processData: false,
+        mimeType: "multipart/form-data"
+
     });
     return resp.responseText;
 }
@@ -37,7 +53,7 @@ function Login(Username, Password)
 function SignUp(Username, Password, confirmPass){
     /**
      * Takes username, password and confirm password and tries to sign up.
-     * returns: A json file containing the error code at "errCode" and the discription of the error at "discription"
+     * returns: A json file containing the error code at "errCode" and the description of the error at "description"
      */
     if (confirmPass === Password)
     {
