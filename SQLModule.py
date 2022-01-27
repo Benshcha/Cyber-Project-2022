@@ -172,3 +172,14 @@ def Update(table: str, where: str, **datadict):
         except Exception as e:
             logger.error(e)
             return {'code': 1, 'data': e}
+        
+def Remove(table, id):
+    logger.info(f"Removing {id} from {table}...")
+    try:
+        cursor.execute(f"DELETE FROM {table} WHERE id='{id}'")
+        mydb.commit()
+    except Exception as e:
+        logger.warning(f"Could not remove {id} from {table}")
+        logger.warning(e)
+    
+    logger.info(f"Successfully Removed {id} from {table}")

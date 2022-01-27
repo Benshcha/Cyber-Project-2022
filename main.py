@@ -28,18 +28,23 @@ def exitFunc(*args):
     SQL.exitHandler()
     os._exit(0)
 
-def removeUser(username, *args):
-    logger.info(f"Removing User: {username}...")
-    try:
-        cursor.execute(f"DELETE FROM users WHERE username='{username}'")
-        mydb.commit()
-    except Exception as e:
-        logger.warning(f"Could not remove user: {username}:")
-        logger.warning(e)
-    
-    logger.info(f"Successfully Removed {username}")
+def removeUser(username):
+    SQL.Remove('users', username)
 
-actions = {"exit": exitFunc, "remove": removeUser, "save": SQL.saveDBToJson}
+def removeNotebook(notebookID):
+    SQL.Remove('notebooks', notebookID)
+
+def Remove(*args):
+    if len(args) == 0:
+        logger.warning("Did not recieve arguments!")
+    elif len(args) == 1:
+        removeUser(args[0])
+    elif args[0] == "ID":
+        removeNotebook(args[1])
+    else:
+        logger.warning("No such command: ")
+
+actions = {"exit": exitFunc, "remove": Remove, "save": SQL.saveDBToJson}
 
 # Start console:
 def console():
