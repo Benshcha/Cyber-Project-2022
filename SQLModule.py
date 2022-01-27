@@ -104,9 +104,9 @@ def DataQuery(Username: str, Password: str, *attr: tuple[str], table:str ="", us
     Returns:
         dict[int, Any]: dictionary conatining the error code and the data requested
     """
-    id = CheckAuth(Username, Password)
+    UserID = CheckAuth(Username, Password)
     
-    if id == None:
+    if UserID == None:
         return {'code': 1, 'data': 'Authentication denied!'}
     
     additionalCMD = ""
@@ -117,7 +117,7 @@ def DataQuery(Username: str, Password: str, *attr: tuple[str], table:str ="", us
     if table != "":
         if len(attr) == 0:
             raise Exception("No attributes were given but table was")
-        dataQuery = f"SELECT {', '.join(attr)} FROM {table} WHERE {userIDString}={id} {additionalCMD}"
+        dataQuery = f"SELECT {', '.join(attr)} FROM {table} WHERE {userIDString}={UserID} {additionalCMD}"
         cursor.execute(dataQuery)
         
         vals = cursor.fetchall()
@@ -130,7 +130,11 @@ def DataQuery(Username: str, Password: str, *attr: tuple[str], table:str ="", us
         
         if 'singleton' in kwargs and kwargs['singleton']:
             dataRes = dataRes[0]
-    return {'code': 0, 'data': dataRes}
+            
+        ans = {'code': 0, 'data': dataRes}
+        if 'returnUserID' in kwargs and kwargs['returnUserID']:
+            ans['UserID'] = UserID
+    return ans
     
 def exitHandler():
     __init__()

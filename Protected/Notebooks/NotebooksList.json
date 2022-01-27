@@ -3,21 +3,7 @@
         "id": 1,
         "ownerID": 1,
         "NotebookPath": "Protected/Notebooks/1.svg",
-        "title": " A",
-        "description": " B"
-    },
-    {
-        "id": 3,
-        "ownerID": 4,
-        "NotebookPath": "Protected/Notebooks/3.svg",
-        "title": " This",
-        "description": "What a great notebook containing life's secrets which everyone should know im.\nThe wheel turns and bla bla bla \n "
-    },
-    {
-        "id": 4,
-        "ownerID": 1,
-        "NotebookPath": "Protected/Notebooks/4.svg",
-        "title": " U",
-        "description": " D"
+        "title": " My first notebook",
+        "description": "This is my first notebook "
     }
 ]

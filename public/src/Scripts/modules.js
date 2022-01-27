@@ -23,20 +23,16 @@ function GET(file, type)
     return resp.responseText;
 }
 
-function POST(file, type, data, complete)
-{
-    var resp = $.ajax({
-        type: 'POST',
-        url: file,
-        async: true,
-        dataType: type,
-        data: data,
-        complete: complete,
-        processData: false,
-        mimeType: "multipart/form-data"
-
-    });
-    return resp.responseText;
+function POST(file, type, data, complete = null) {
+	var resp = $.ajax({
+		type: "POST",
+		url: file,
+		async: true,
+		dataType: type,
+		data: data,
+		complete: complete,
+	});
+	return resp.responseText;
 }
 
 function Login(Username, Password)

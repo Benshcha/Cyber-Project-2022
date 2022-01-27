@@ -78,9 +78,11 @@ class client(HTTP.GeneralClient):
         file = packet.filename
         resp = None
         if file == "/SIGNUP":
-            resp = self.SignUp(packet.payload)
+            resp = self.SignUp(packet.Payload)
         elif file.startswith('/SAVENEWNB'):
             resp = self.NewNotebook(packet)
+        elif file.startswith('/SAVE/'):
+            resp = self.SaveNotebook(packet)
         else:
             # TODO Add error response
             ...
@@ -90,9 +92,29 @@ class client(HTTP.GeneralClient):
         respPacket.Headers['Content-Type'] = "text/json"
         respPacket.setPayload(resp)
         self.SendPacket(respPacket)
-        logger.debug(f"Sent response packet: {resp}")
-    
+        logger.debug(f"Sent response packet: {resp}") 
 
+    def SaveNotebook(self, packet: HTTP.Packet):
+        
+        notebookID = packet.filename[6:]
+        
+        user_auth = self.getUserAuth(packet)
+        resp = SQL.DataQuery(*user_auth, "id", 'NotebookPath', table="notebooks", userIDString='ownerID', where=f"id={notebookID}", singleton=True, returnUserID=True)
+        
+        id = resp['UserID']
+        logger.info(f"User {id} is saving notebook {notebookID}...")
+        
+        if resp['code'] == 1:
+            errMsg = f"User {id} doesn't own notebook {notebookID}"
+            logger.error(errMsg)
+            return {'code': 1, 'data': errMsg}
+        elif resp['code'] == 0:
+            with open(resp['data']['NotebookPath'], 'a') as FILE:
+                FILE.write(packet.Payload)
+                
+            logger.info(f"Succesfully saved user {id}'s notebook {notebookID}")
+        return resp
+    
     def NewNotebook(self, packet: HTTP.Packet):
         user_auth = self.getUserAuth(packet)
         id = SQL.CheckAuth(*user_auth)
@@ -124,7 +146,10 @@ class client(HTTP.GeneralClient):
             # Update file path to DB
             updateResp = SQL.Update(table="notebooks", where=f'id={notebookID}', NotebookPath=newPath)
 
-            return updateResp
+            if updateResp['code'] == 0:
+                return SQL.DataQuery(*user_auth, "id", table="notebooks", userIDString="ownerID", singleton=True)
+            else:
+                return updateResp
         else:
             return {'code': 1, 'data': 'Authorization denied!'}
     
@@ -213,18 +238,23 @@ class client(HTTP.GeneralClient):
             elif isinstance(e, ConnectionAbortedError):
                 logger.debug(f"{self.addr} Aborted Connection")
             else:
-                logger.error(e, traceback.format_exc())
-
-        
-        
+                logger.error(e, traceback.format_exc())       
+    
+    def RecieveHTTPPacket(self):
+        packetStr = self.RecievePacket().decode()
+        packet = HTTP.extractDataFromPacket(packetStr)
+        if packet.command == "POST" and packet.Payload == "" and int(packet.Headers['Content-Length']) >= 0:
+            # Since the length is already set there is no need to use .setPayload
+            packet.Payload = self.RecievePacket().decode()
+            
+        return packet
     def manage(self):
         # Define all actions
         Actions = {"GET": self.getResponse, "POST": self.postResponse}
         
         while True:
             try:
-                packetStr = self.RecievePacket().decode()
-                packet = HTTP.extractDataFromPacket(packetStr)
+                packet = self.RecieveHTTPPacket()
                 command = packet.command
                 if command != None:
                     Actions[command](packet)
