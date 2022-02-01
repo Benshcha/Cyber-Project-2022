@@ -243,11 +243,13 @@ class client(HTTP.GeneralClient):
     def RecieveHTTPPacket(self):
         packetStr = self.RecievePacket().decode()
         packet = HTTP.extractDataFromPacket(packetStr)
-        if packet.command == "POST" and packet.Payload == "" and int(packet.Headers['Content-Length']) >= 0:
-            # Since the length is already set there is no need to use .setPayload
-            packet.Payload = self.RecievePacket().decode()
+        if packet.command == "POST":
+            while len(packet.Payload) < int(packet.Headers['Content-Length']):
+                # Since the length is already set there is no need to use .setPayload
+                packet.Payload += self.RecievePacket().decode()
             
         return packet
+    
     def manage(self):
         # Define all actions
         Actions = {"GET": self.getResponse, "POST": self.postResponse}
@@ -265,8 +267,9 @@ class client(HTTP.GeneralClient):
                 if isinstance(e, KeyError):
                     logger.error(f"Command {command} not built in to server")
                 else:
-                    logger.error(e, traceback.format_stack())
-                logger.debug("\n" + pformat([packet.filename, packet.Headers, packet.Payload]))
+                    # logger.error(e, traceback.format_stack())
+                    logger.error(e)
+                # logger.debug("\n" + pformat([packet.filename, packet.Headers, packet.Payload]))
             
         
     def start(self):
