@@ -28,7 +28,8 @@ function POST(file, type, data, complete = null) {
 		type: "POST",
 		url: file,
 		async: true,
-		dataType: type,
+		// dataType: type,
+		contentType: type,
 		data: data,
 		complete: complete,
 	});

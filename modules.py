@@ -131,7 +131,7 @@ class GeneralClient:
         resp.bytePayload = FileNotFoundData
         return resp
     
-    def RecievePacket(self):
+    def Recieve(self):
         bufSize = 4096
         data = b''
         while True:

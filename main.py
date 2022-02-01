@@ -241,12 +241,12 @@ class client(HTTP.GeneralClient):
                 logger.error(e, traceback.format_exc())       
     
     def RecieveHTTPPacket(self):
-        packetStr = self.RecievePacket().decode()
+        packetStr = self.Recieve().decode()
         packet = HTTP.extractDataFromPacket(packetStr)
         if packet.command == "POST":
             while len(packet.Payload) < int(packet.Headers['Content-Length']):
                 # Since the length is already set there is no need to use .setPayload
-                packet.Payload += self.RecievePacket().decode()
+                packet.Payload += self.Recieve().decode()
             
         return packet
     

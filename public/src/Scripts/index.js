@@ -125,7 +125,7 @@ function SaveCurrentNotebook() {
 
 	var resp = POST(
 		`/SAVE/${currentNotebook}`,
-		(type = "text/svg"),
+		(type = "svg"),
 		(data = nb.changes),
 		(complete = (resp) => {
 			nb.changes = "";
@@ -232,7 +232,7 @@ $(document).ready(function () {
 			lastPos = { x: null, y: null, width: null };
 			pos = { x: null, y: null, width: null };
 
-			nb.changes = nb.cGroup.svg();
+			nb.changes += nb.cGroup.svg();
 			nb.groups.push(nb.cGroup);
 		},
 		change: function (force, event) {
