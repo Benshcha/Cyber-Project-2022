@@ -8,3 +8,6 @@ logger = myLogger("mainLogger")
 
 # json files for db
 jsonFiles = {'users': 'Protected/UsersLoginData.json', 'notebooks': "Protected/Notebooks/NotebooksList.json"}
+
+# silent log
+silentLog = False

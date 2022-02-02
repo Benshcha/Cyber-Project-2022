@@ -1,6 +1,6 @@
 #signup_instructions
 {
-  color: red
+  	color: red
 }
 
 #signin_instructions
@@ -15,8 +15,15 @@
 }
 
 #login_box div {
+    --pading: 7px;
     position: relative;
-    padding-left: 10px;
+    padding-left: var(--pading);
+	padding-right: var(--pading);
+}
+
+.logininput
+{
+  	width: 100%
 }
 
 input {

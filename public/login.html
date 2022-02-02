@@ -13,8 +13,12 @@
         <br>
         <br>
         <div class="center" id="login_box">
-            <div class="login-input-box">Username: <br><input title="Username" placeholder="Username" type="text" id="username"> </div><br>
-            <div class="login-input-box">Password: <br><input title="Password" placeholder="Password" type="text" id="password"><p id="signin_instructions"></p> </div><br>
+            <div class="login-input-box">Username: <br><input title="Username" placeholder="Username" type="text" id="username"
+                    class="logininput"> </div><br>
+            <div class="login-input-box">Password: <br><input title="Password" placeholder="Password" type="text" id="password"
+                    class="logininput">
+                <p id="signin_instructions"></p>
+            </div><br>
             <script>
                 LoginOnPress = () => {Login($('#username')[0].value, $('#password')[0].value) ? window.location.replace(`/`) : $('#signin_instructions').html('Error Username and Password do not match')};
                 $(".login-input-box").on('keypress', function(e){

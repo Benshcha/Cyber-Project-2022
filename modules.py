@@ -4,8 +4,9 @@ Module for managing HTML functions and classes
 from dataclasses import dataclass, field
 import logging
 import sys, json
-from typing import Union
+from typing import Union, Any
 import urllib.parse
+from xml.etree.ElementInclude import include
 
 class myLogger(logging.Logger):
     def __init__(self, name: str, level:str = ...) -> None:
@@ -23,7 +24,7 @@ class myLogger(logging.Logger):
         file_handler.setFormatter(formatter)
 
         self.addHandler(file_handler)
-        self.addHandler(stdout_handler)   
+        self.addHandler(stdout_handler)  
    
 @dataclass
 class Packet:
@@ -37,25 +38,35 @@ class Packet:
     status: str = ""
     bytePayload: bytes = b""
     """
-    Payload: str = ""
-    Headers: dict = field(default_factory=dict)
-    command: str = ""
-    filename: str = ""
-    overflow: str = ""
-    status: str = "200 OK"
-    attr: dict = field(default_factory=dict)
-    bytePayload: bytes = b''
     
-    def __post_init__(self):
-        if not isinstance(self.Payload, str):
-            if isinstance(self.Payload, dict):
-                self.Payload = json.dumps(self.Payload)
+    def __init__(self, Payload: str = "", Headers: dict = {}, command: str = "", filename: str = "", overflow: str = "", status: str = "200 OK", attr: dict = {}, bytePayload: bytes = b'', includePayload: bool=True):
+        self.Headers = Headers
+        self.command = command
+        self.filename = filename
+        self.overflow = overflow
+        self.status = status
+        self.attr = attr
+        self.bytePayload = bytePayload
+        
+        if includePayload:
+            if not isinstance(Payload, str):
+                if isinstance(Payload, dict):
+                    self.Payload = json.dumps(Payload)
+                else:
+                    self.Payload = str(Payload)
             else:
-                self.Payload = str(self.Payload)
+                self.Payload = Payload            
+        else:
+            self.Payload = ""
             
         if self.Payload != None and self.Payload != "":
             self.Headers['Content-Length'] = len(self.Payload)
-    
+
+    def getHeader(self, header:str) -> Any:
+        if header in self.Headers:
+            return self.Headers[header]
+        return None
+            
     def toBytes(self) -> bytes:
         packetString = ""
         if self.command != "":
@@ -85,8 +96,7 @@ class Packet:
         try:
             return bytesObj.decode()
         except Exception as e:
-            return e + "\n" + str(bytesObj)
-    
+            return e + "\n" + str(bytesObj)   
     
 class GeneralClient:
     def __init__(self, clientSocket, addr):
@@ -110,7 +120,7 @@ class GeneralClient:
     def getType(string):
         return typeDict[string]
 
-    def FileResponsePacket(self, filePath):
+    def FileResponsePacket(self, filePath, includePayload=True):
         with open(filePath, 'rb') as FILE:
             fileData = FILE.read()
         fileType = self.getType(filePath.split('.')[-1])
@@ -118,7 +128,8 @@ class GeneralClient:
         resp.status = "200 OK"
         resp.Headers["Content-Length"] = len(fileData)
         resp.Headers["Content-Type"] = fileType
-        resp.bytePayload = fileData
+        if includePayload:
+            resp.bytePayload = fileData
         return resp
 
     def FileNotFoundMsgPacket(self, filePath):

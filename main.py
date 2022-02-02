@@ -7,7 +7,7 @@ import json
 import traceback
 
 # import global variables
-from config import logger
+from config import logger, silentLog
 
 # Load SQL
 import SQLModule as SQL
@@ -44,7 +44,11 @@ def Remove(*args):
     else:
         logger.warning("No such command: ")
 
-actions = {"exit": exitFunc, "remove": Remove, "save": SQL.saveDBToJson}
+def toggleSilentHeaderLog():
+    global silentLog
+    silentLog = not silentLog
+
+actions = {"exit": exitFunc, "remove": Remove, "save": SQL.saveDBToJson, "silent": toggleSilentHeaderLog}
 
 # Start console:
 def console():
@@ -179,32 +183,45 @@ class client(HTTP.GeneralClient):
 
         return resp
     
-    def LoginAttempt(self, packet):
+    def LoginAttempt(self, packet, includePayload=True):
         # TODO: Make use of the "id" request
         resp = self.RequestData(packet, "id", table="users", userIDString="id")
         resp = json.dumps(resp)
         respPacket = HTTP.Packet()
         respPacket.Headers['Content-Type'] = "text/json"
-        respPacket.setPayload(resp)
+        
+        if includePayload:
+            respPacket.setPayload(resp)
+        else:
+            respPacket.Headers['Content-Length'] = len(resp)
+            
         self.SendPacket(respPacket)
         logger.debug(f"Sent login response packet: {resp}")
         
-    def PublicResponse(self, file):
+    def PublicResponse(self, file, includePayload=True):
         if file == '/':
             file = "index.html"
         filePath = "public/" + file
-        fileRespPacket = self.FileResponsePacket(filePath)
+        fileRespPacket = self.FileResponsePacket(filePath, includePayload=includePayload)
         sentBytes = self.SendPacket(fileRespPacket)
-        logger.info(f"Sent {filePath} to {self.addr}")
+        
+        msg = f"Sent {filePath} to {self.addr}"
+        
+        if not includePayload:
+            if silentLog:
+                return
+            else:
+                msg += " without payload"
+        logger.info(msg)
 
-    def SendNotebookList(self, packet):
+    def SendNotebookList(self, packet, includePayload=True):
         notebookList = self.RequestData(packet, "id", "ownerID", "title", "description", table="notebooks", userIDString="ownerID")
                 
-        nbListPacket = HTTP.Packet(json.dumps(notebookList, indent=4))
+        nbListPacket = HTTP.Packet(json.dumps(notebookList, indent=4), includePayload=includePayload)
         
         self.SendPacket(nbListPacket)
     
-    def SendNotebook(self, packet):
+    def SendNotebook(self, packet, includePayload=True):
         notebookID = packet.filename[10:]
                 
         nbdatadict = self.RequestData(packet, "NotebookPath", "title", table="notebooks", userIDString="ownerID", where=f"id={notebookID}", singleton=True)
@@ -215,21 +232,21 @@ class client(HTTP.GeneralClient):
                 nbdatadict['data']["NotebookData"] = FILE.read()
             nbdatadict['data'].pop('NotebookPath', None)
             
-        nbdataPacket = HTTP.Packet(nbdatadict)
+        nbdataPacket = HTTP.Packet(nbdatadict, includePayload=includePayload)
         self.SendPacket(nbdataPacket)
         logger.info(f'Sent notebook {notebookID} to {self.addr}')
     
-    def getResponse(self, packet):
+    def getResponseManage(self, packet, includePayload=True):
         try:
             file = packet.filename
             if file == "/LOGIN":
-                self.LoginAttempt(packet)
+                self.LoginAttempt(packet, includePayload=includePayload)
             elif file.startswith("/NotebookList"):
-                self.SendNotebookList(packet)
+                self.SendNotebookList(packet, includePayload=includePayload)
             elif file.startswith("/Notebook"):
-                self.SendNotebook(packet)
+                self.SendNotebook(packet, includePayload=includePayload)
             else: # If file is public
-                self.PublicResponse(file)
+                self.PublicResponse(file, includePayload=includePayload)
         except Exception as e:
             if isinstance(e, FileNotFoundError):
                 logger.error(f"404:\n{e}")
@@ -238,7 +255,13 @@ class client(HTTP.GeneralClient):
             elif isinstance(e, ConnectionAbortedError):
                 logger.debug(f"{self.addr} Aborted Connection")
             else:
-                logger.error(e, traceback.format_exc())       
+                logger.error(e, traceback.format_exc())  
+    
+    def getResponse(self, packet):
+        self.getResponseManage(packet)
+        
+    def headResponse(self, packet):
+        self.getResponseManage(packet, includePayload=False)
     
     def RecieveHTTPPacket(self):
         packetStr = self.Recieve().decode()
@@ -252,7 +275,7 @@ class client(HTTP.GeneralClient):
     
     def manage(self):
         # Define all actions
-        Actions = {"GET": self.getResponse, "POST": self.postResponse}
+        Actions = {"GET": self.getResponse, "POST": self.postResponse, "HEAD": self.headResponse}
         
         while True:
             try:
@@ -260,6 +283,8 @@ class client(HTTP.GeneralClient):
                 command = packet.command
                 if command != None:
                     Actions[command](packet)
+                    if packet.getHeader('Connection') != 'keep-alive':
+                        self.socket.close()
                 else:
                     # print(packetStr)
                     ...

@@ -33,7 +33,7 @@ function getCookie(name) {
 }
 
 function loadNotebook(notebookID) {
-	$("#save-button").show();
+	$(".online").show();
 	console.log(`pressed ${notebookID}`);
 	if (currentNotebook != "") {
 		$(`#Notebook${currentNotebook}`).css({
@@ -115,7 +115,7 @@ function createNotebook(newTitle, newDescription) {
 			console.log(resp);
 			BuildNotebookList();
 			currentNotebook = JSON.parse(resp.responseText)["data"]["id"];
-			$("#save-button").show();
+			$(".online").show();
 		}
 	);
 }
@@ -135,9 +135,6 @@ function SaveCurrentNotebook() {
 }
 
 function init() {
-	$("#save-button").hide();
-
-	$("#addNB").hide();
 	userIDstring = getCookie("user_auth");
 
 	if (userIDstring != null) {
