@@ -118,7 +118,10 @@ class GeneralClient:
 
     @staticmethod
     def getType(string):
-        return typeDict[string]
+        if string in typeDict:
+            return typeDict[string]
+        else:
+            return string
 
     def FileResponsePacket(self, filePath, includePayload=True):
         with open(filePath, 'rb') as FILE:

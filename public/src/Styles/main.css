@@ -49,6 +49,8 @@ textarea{
     margin: var(--toolbar-button-margin);
 }
 
+img#eraser {filter: invert(1);}
+
 :root {
 	--share-prompt-width: 10em;
   	--toolbar-border-radius: 10px;

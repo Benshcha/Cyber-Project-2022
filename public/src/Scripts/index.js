@@ -172,6 +172,16 @@ function init() {
 	});
 }
 
+function ChooseEraser() {
+	// TODO: Choose eraser
+	console.log("Erasing!");
+}
+
+function ChoosePen() {
+	// TODO: Choose pen
+	console.log("Penning!");
+}
+
 function getPos(e, div) {
 	pos = { x: null, y: null, width: null };
 	if (!e.touches) {
@@ -230,6 +240,7 @@ $(document).ready(function () {
 			pos = { x: null, y: null, width: null };
 
 			nb.changes += nb.cGroup.svg();
+			SaveCurrentNotebook();
 			nb.groups.push(nb.cGroup);
 		},
 		change: function (force, event) {

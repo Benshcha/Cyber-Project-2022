@@ -282,18 +282,17 @@ class client(HTTP.GeneralClient):
                 packet = self.RecieveHTTPPacket()
                 command = packet.command
                 if command != None:
-                    Actions[command](packet)
-                    if packet.getHeader('Connection') != 'keep-alive':
-                        self.socket.close()
+                    if command in Actions:
+                        Actions[command](packet)
+                        if packet.getHeader('Connection') != 'keep-alive':
+                            self.socket.close()
+                    else:
+                        logger.error(f"command {command} is not supported!")
                 else:
                     # print(packetStr)
                     ...
             except Exception as e:
-                if isinstance(e, KeyError):
-                    logger.error(f"Command {command} not built in to server")
-                else:
-                    # logger.error(e, traceback.format_stack())
-                    logger.error(e)
+                logger.error(e)
                 # logger.debug("\n" + pformat([packet.filename, packet.Headers, packet.Payload]))
             
         

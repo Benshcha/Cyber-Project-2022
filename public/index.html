@@ -4,7 +4,11 @@
 <head>
 	<meta charset="utf-8">
   <link rel="stylesheet" href="src/styles/main.css">
+<!-- 
+  # For debugging:
   <script type="text/javascript" src="https://livejs.com/live.js"></script>
+-->
+
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="theme-color" content="#000000">
   <script  src="src/Scripts/modules.js"></script>
@@ -38,6 +42,8 @@
   </div>
 
   <div id="toolbar">
+    <img alt="pen" src="src/Images/pen-icon.png" id="pen" class="tool" onclick="ChoosePen()">
+    <img alt="eraesr" src="src/Images/eraser-icon.jpg" id="eraser" onclick="ChooseEraser()" class="tool">
 	<button id="clear" class="tool" name="clearbutton" title="clearbutton" onclick="draw.clear()">Clear</button>
 	<button onclick="SaveCurrentNotebook()" id="save-button" class="online tool">Save</button>
 	
@@ -61,10 +67,10 @@
 	<div class="dropdown tool" id="online-users">
 		Online Users
 		<div class="dropdown-content" id="online-list">
-			<div class="online-user" id="1">
+      <div class="online-user" id="user1">
 				User 1#1
 			</div>
-			<div class="online-user" id="1">
+      <div class="online-user" id="user2">
 				User 2#2
 			</div>
 		</div>
