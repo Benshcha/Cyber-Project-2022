@@ -260,7 +260,7 @@ class client(HTTP.GeneralClient):
             elif isinstance(e, ConnectionAbortedError):
                 logger.debug(f"{self.addr} Aborted Connection")
             else:
-                logger.error(e, traceback.format_exc())  
+                logger.error(f"e\n{traceback.format_exc()}") 
     
     def getResponse(self, packet):
         self.getResponseManage(packet)
@@ -301,17 +301,19 @@ class client(HTTP.GeneralClient):
                 try: 
                     exc_type, exc_obj, exc_tb = sys.exc_info()
                     fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
-                    logger.error(f"""
+
+                    raise
+                except SQL.connector.Error as e:
+                    logger.error(f"sql line from {self.addr} was: {SQL.cursor.statement} ")
+                except ConnectionAbortedError as e:
+                    logger.error(f"connection aborted with {self.addr}!")
+                except Exception as e:
+                                        logger.error(f"""{self.addr}
         =========================
         {traceback.format_exc()}
         ----------------------
         \t\t{exc_obj}
         =========================""")
-                    raise
-                except SQL.connector.Error as e:
-                    logger.error(f"sql line was: {SQL.cursor.statement}")
-                except Exception as e:
-                    logger.error(e)
                 # logger.debug("\n" + pformat([packet.filename, packet.Headers, packet.Payload]))
             
         

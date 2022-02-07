@@ -237,7 +237,7 @@ $(document).ready(function () {
 			nb.DrawPos(e);
 		}
 	});
-	2;
+
 	canvas.on("touchmove", (e) => {
 		if (doDraw) {
 			// Prevents an additional mousedown event being triggered
@@ -256,9 +256,8 @@ $(document).ready(function () {
 			var g = nb.draw.group();
 			nb.cGroup = g;
 
-			nb.cPoints = [];
-
-			// nb.cPath = nb.cGroup.path(`M${pos.x} ${pos.y} `);
+			width = 1;
+			nb.cPoints = [[pos.x, pos.y, pos.width]];
 		},
 		end: function (event) {
 			doDraw = false;
@@ -266,6 +265,7 @@ $(document).ready(function () {
 			pos = { x: null, y: null, width: null };
 
 			nb.changes += nb.cGroup.svg();
+
 			// if (currentNotebook !== "") {
 			// 	SaveCurrentNotebook();
 			// }
