@@ -3,7 +3,7 @@ Module for managing HTML functions and classes
 """
 from dataclasses import dataclass, field
 import logging
-import sys, json
+import sys, json, os
 from typing import Union, Any
 import urllib.parse
 from xml.etree.ElementInclude import include
@@ -71,9 +71,7 @@ class Packet:
         packetString = ""
         if self.command != "":
             packetString += f"{self.command} {self.filename} "
-        packetString = f"HTTP/1.1"
-        if self.status != "":
-            packetString += f" {self.status}"
+        packetString += f"HTTP/1.1 {self.status}"
         
         for header in self.Headers:
             packetString += "\r\n" + header + ": " + str(self.Headers[header])
@@ -149,11 +147,14 @@ class GeneralClient:
         bufSize = 4096
         data = b''
         while True:
-            part = self.socket.recv(bufSize)
-            data += part
-            
-            if len(part) < bufSize:
-                break
+            try:
+                part = self.socket.recv(bufSize)
+                data += part
+                
+                if len(part) < bufSize:
+                    break
+            except Exception as e:
+                raise(e)
             
         return data
     

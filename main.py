@@ -2,7 +2,7 @@ import socket, threading
 from pprint import pprint, pformat
 import modules as HTTP
 from os.path import join
-import os
+import os, sys
 import json
 import traceback
 
@@ -201,7 +201,12 @@ class client(HTTP.GeneralClient):
     def PublicResponse(self, file, includePayload=True):
         if file == '/':
             file = "index.html"
-        filePath = "public/" + file
+
+        if not file.startswith('/node_modules'):
+            filePath = "public/" + file
+        else:
+            filePath = file[1:]
+
         fileRespPacket = self.FileResponsePacket(filePath, includePayload=includePayload)
         sentBytes = self.SendPacket(fileRespPacket)
         
@@ -286,13 +291,27 @@ class client(HTTP.GeneralClient):
                         Actions[command](packet)
                         if packet.getHeader('Connection') != 'keep-alive':
                             self.socket.close()
+                            break
                     else:
                         logger.error(f"command {command} is not supported!")
                 else:
                     # print(packetStr)
                     ...
-            except Exception as e:
-                logger.error(e)
+            except:
+                try: 
+                    exc_type, exc_obj, exc_tb = sys.exc_info()
+                    fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
+                    logger.error(f"""
+        =========================
+        {traceback.format_exc()}
+        ----------------------
+        \t\t{exc_obj}
+        =========================""")
+                    raise
+                except SQL.connector.Error as e:
+                    logger.error(f"sql line was: {SQL.cursor.statement}")
+                except Exception as e:
+                    logger.error(e)
                 # logger.debug("\n" + pformat([packet.filename, packet.Headers, packet.Payload]))
             
         

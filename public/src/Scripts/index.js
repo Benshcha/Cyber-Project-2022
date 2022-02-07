@@ -1,4 +1,3 @@
-
 class Notebook {
 	constructor(drawer, div) {
 		this.changes = "";
@@ -6,20 +5,40 @@ class Notebook {
 		this.div = div;
 		this.cPath = null;
 		this.cGroup = null;
+		this.cPoints = [];
 		this.groups = [];
 	}
 
 	// drawing on canvas ctx given touch/click event e
-	DrawPos(e) {
-		lastPos = pos;
+	DrawPos(e, sim = true) {
 		pos = getPos(e, this.div);
-		var lastPoint = `${lastPos.x},${lastPos.y}`;
-		var newPoint = `${pos.x},${pos.y} `;
-		var newChange = `M${lastPoint} L${newPoint}`;
-		nb.cPath = nb.cGroup.path(newChange);
-		nb.cPath.attr("stroke-width", width);
+
+		this.cPoints.push([pos.x, pos.y, pos.width]);
+
+		var outlinePoints = getStroke(this.cPoints, {
+			simulatePressure: sim,
+		});
+
+		// Still need to define new Change
+
+		// if nb has cPath clear it
+		if (this.cPath != null) {
+			this.cGroup.clear();
+		}
+
+		nb.cPath = nb.cGroup.path(getSvgPathFromStroke(outlinePoints));
+		// nb.cPath.attr("stroke-width", width);
 	}
 }
+
+// function ShowShare() {
+// 	var container = $("#share-button-container");
+// 	$(document).click(function (e) {
+// 		if (container[0] !== e.target && !container[0].contains(e.target)) {
+// 			$("#share-button-content").hide();
+// 		}
+// 	});
+// }
 
 function getCookie(name) {
 	var nameEQ = name + "=";
@@ -57,11 +76,10 @@ function loadNotebook(notebookID) {
 }
 
 function BuildNotebookList() {
-	respJson = JSON.parse(GET(`NotebookList`, "text/json"));
-	errCode = respJson["code"];
-	nbList = respJson["data"];
+	var respJson = JSON.parse(GET(`NotebookList`, "text/json"));
+	var errCode = respJson["code"];
+	var nbList = respJson["data"];
 	console.log(nbList);
-	nbListDiv = $("#notebookList");
 
 	if (errCode == 1) {
 		return 1;
@@ -69,7 +87,7 @@ function BuildNotebookList() {
 	nbListDiv.html("");
 	currentNotebook = "";
 	for (var nbAttr of nbList) {
-		nbblock = $(`<div class="notebook-block" id=Notebook${nbAttr["id"]}>
+		var nbblock = $(`<div class="notebook-block" id=Notebook${nbAttr["id"]}>
         <div class="notebook-title">${nbAttr["title"]}</div>
         <div class="notebook-description">${nbAttr["description"]}</div>
     </div>`);
@@ -77,7 +95,7 @@ function BuildNotebookList() {
 		nbListDiv.append(nbblock);
 
 		nbblock.click((e) => {
-			notebookID = e.currentTarget.id.slice(8);
+			var notebookID = e.currentTarget.id.slice(8);
 			loadNotebook(notebookID);
 		});
 	}
@@ -103,14 +121,14 @@ function RequestDataNewNotebook() {
 }
 
 function createNotebook(newTitle, newDescription) {
-	textResp = POST(
-		(file = `SAVENEWNB`),
-		(type = "text/json"),
-		(data = JSON.stringify({
+	var textResp = POST(
+		`SAVENEWNB`,
+		"text/json",
+		JSON.stringify({
 			svgData: svg.html(),
 			title: newTitle,
 			description: newDescription,
-		})),
+		}),
 		(resp) => {
 			console.log(resp);
 			BuildNotebookList();
@@ -123,16 +141,25 @@ function createNotebook(newTitle, newDescription) {
 function SaveCurrentNotebook() {
 	// var count = 0;
 
-	var resp = POST(
-		`/SAVE/${currentNotebook}`,
-		(type = "svg"),
-		(data = nb.changes),
-		(complete = (resp) => {
-			nb.changes = "";
-			console.log(resp);
-		})
-	);
+	var resp = POST(`/SAVE/${currentNotebook}`, "svg", nb.changes, (resp) => {
+		nb.changes = "";
+		console.log(resp);
+	});
 }
+
+var userIDstring;
+var isLoggedIn;
+var canvas;
+var draw;
+var nb;
+var pos;
+var svg;
+var userID;
+var width;
+var borderWidths;
+var doDraw = false;
+var currentNotebook = "";
+var nbListDiv = $("#notebookList");
 
 function init() {
 	userIDstring = getCookie("user_auth");
@@ -144,7 +171,7 @@ function init() {
 			$("#loginButton").hide();
 			$("#logoutButton").show();
 			$("#welcome").text(`Hi ${userID["username"]}!`);
-			BuildNotebookList(userID);
+			BuildNotebookList();
 			$("#addNB").show();
 		}
 	}
@@ -154,11 +181,8 @@ function init() {
 	doDraw = false;
 	nb = new Notebook(draw, canvas);
 
-	lastPos = { x: null, y: null, width: null };
 	pos = { x: null, y: null, width: null };
 	width = null;
-
-	currentNotebook = "";
 
 	$(document).bind("keydown", function (e) {
 		if (e.which === 83 && e.ctrlKey) {
@@ -213,13 +237,13 @@ $(document).ready(function () {
 			nb.DrawPos(e);
 		}
 	});
-
+	2;
 	canvas.on("touchmove", (e) => {
 		if (doDraw) {
 			// Prevents an additional mousedown event being triggered
 			if (e.touches.length == 1) {
 				e.preventDefault();
-				nb.DrawPos(e);
+				nb.DrawPos(e, (sim = false));
 			}
 		}
 	});
@@ -229,23 +253,27 @@ $(document).ready(function () {
 		start: function (event) {
 			doDraw = true;
 			pos = getPos(event, nb.div);
-			g = nb.draw.group();
+			var g = nb.draw.group();
 			nb.cGroup = g;
-			nb.cPath = nb.cGroup.path(`M${pos.x} ${pos.y} `);
+
+			nb.cPoints = [];
+
+			// nb.cPath = nb.cGroup.path(`M${pos.x} ${pos.y} `);
 		},
 		end: function (event) {
 			doDraw = false;
 
-			lastPos = { x: null, y: null, width: null };
 			pos = { x: null, y: null, width: null };
 
 			nb.changes += nb.cGroup.svg();
-			SaveCurrentNotebook();
+			// if (currentNotebook !== "") {
+			// 	SaveCurrentNotebook();
+			// }
 			nb.groups.push(nb.cGroup);
 		},
 		change: function (force, event) {
 			// width = Pressure.map(force, 0, 1, 3, 10);
-			width = force * 10;
+			width = force;
 		},
 		unsupported: function () {
 			this.innerHTML = "Sorry! Check the devices and browsers";
