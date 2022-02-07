@@ -81,6 +81,8 @@ function BuildNotebookList() {
 	var nbList = respJson["data"];
 	console.log(nbList);
 
+	const nbListDiv = $("#notebookList");
+
 	if (errCode == 1) {
 		return 1;
 	}
@@ -102,6 +104,7 @@ function BuildNotebookList() {
 }
 
 function RequestDataNewNotebook() {
+	const nbListDiv = $("#notebookList");
 	$("#addnb-container").hide();
 	var newNBBlock = $(`<div class="notebook-block" id="new-notebook-block">
         <div class="notebook-title"><textarea class="new-title" id="new-notebook-title"> </textarea></div>
@@ -159,7 +162,6 @@ var width;
 var borderWidths;
 var doDraw = false;
 var currentNotebook = "";
-var nbListDiv = $("#notebookList");
 
 function init() {
 	userIDstring = getCookie("user_auth");
