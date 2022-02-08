@@ -51,6 +51,8 @@ textarea{
 
 img#eraser {filter: invert(1);}
 
+img#pen {filter: invert(1);}
+
 :root {
 	--share-prompt-width: 10em;
   	--toolbar-border-radius: 10px;
