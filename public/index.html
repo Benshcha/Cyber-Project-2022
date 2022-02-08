@@ -24,12 +24,15 @@
 
 
 <body>
+	<button id="collapse-sidebar" class="sidebar-button" onclick="collapseSidebar()">
+		<< </button>
   <div id="sidebar">
     <div id="sidebarHeaders">
       <h id="welcome"></h>
       <br>
       <h id="sidebarTitle">Notebooks:</h> <br>
     </div>
+		
     <div id="notebookList-Container">
       <div id="notebookList">
         
@@ -44,12 +47,12 @@
   </div>
 
   <div id="toolbar">
-    <img alt="pen" src="src/Images/pen-icon.png" id="pen" class="tool" onclick="ChoosePen()">
-    <img alt="eraesr" src="src/Images/eraser-icon.jpg" id="eraser" onclick="ChooseEraser()" class="tool">
+	<img alt="pen" src="src/Images/pen-icon.png" id="pen" class="tool" onclick="ChoosePen()">
+	<img alt="eraesr" src="src/Images/eraser-icon.jpg" id="eraser" onclick="ChooseEraser()" class="tool">
 	<button id="clear" class="tool" name="clearbutton" title="clearbutton" onclick="draw.clear()">Clear</button>
 	<button onclick="SaveCurrentNotebook()" id="save-button" class="online tool">Save</button>
 	
-	<div class="tool online" id="share-button-container">
+	<div class="online" id="share-button-container">
 		<script>
 			var container = $("#share-button-container");
 			$(document).click(function (e)
@@ -60,7 +63,7 @@
 				}
 			});
 		</script>
-		<button onclick="$('#share-button-content').show()">
+		<button onclick="$('#share-button-content').show()" class="tool">
 			Share</button>
 		<div id="share-button-content">Link:
 			https://stackoverflow.com/questions/33241859/how-to-stop-div-from-pushing-other-divs-down</div>

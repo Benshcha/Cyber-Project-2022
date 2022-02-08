@@ -178,7 +178,7 @@ function init() {
 		}
 	}
 	canvas = $("#drawing");
-	draw = SVG("#drawingSvg").addTo("#drawing").size("100%", 700);
+	draw = SVG("#drawingSvg").addTo("#drawing").size("100%", "100%");
 	svg = $("#drawingSvg");
 	doDraw = false;
 	nb = new Notebook(draw, canvas);
@@ -282,3 +282,22 @@ $(document).ready(function () {
 		},
 	});
 });
+
+var collapsed = false;
+
+function collapseSidebar() {
+	if (!collapsed) {
+		$(":root").css("--mainbody-width", "100%");
+		$(":root").css("--button-radius", "0");
+		$("#collapse-sidebar").css("transform", "rotate(180deg)");
+		$("#collapse-sidebar").css("top", "50%");
+		$("#collapse-sidebar").css("left", "0%");
+	} else {
+		$(":root").css("--mainbody-width", "85%");
+		$(":root").css("--button-radius", "1.5rem");
+		$("#collapse-sidebar").css("transform", "rotate(0deg)");
+		$("#collapse-sidebar").css("top", "50%");
+		$("#collapse-sidebar").css("left", "calc(var(--sidebar-width)");
+	}
+	collapsed = !collapsed;
+}
