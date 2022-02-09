@@ -81,7 +81,7 @@ img#pen {width: 2rem;filter: invert(1);height: 2rem;}
 
 #sidebar{
   resize: horizontal;
-  --border-rad: 0px var(--toolbar-border-radius) var(--toolbar-border-radius) 0px;
+  --border-rad: 0px;
   border-radius: var(--border-rad);
   position: fixed;
   background-color: rgba(90, 68, 150, 0.849);
