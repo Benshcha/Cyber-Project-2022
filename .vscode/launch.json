@@ -5,19 +5,26 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+        },
+        {
             "name": "Python: main *without save",
             "type": "python",
             "request": "launch",
             "program": "main.py",
-            "console": "integratedTerminal",
+            "console": "externalTerminal",
         },
         {
             "name": "Python: main",
             "type": "python",
             "request": "launch",
             "program": "main.py",
-            "console": "integratedTerminal",
-            "postDebugTask": "Save DB"
+            "console": "externalTerminal",
+            "postDebugTask": "Save DB",
         }
     ]
 }
