@@ -78,7 +78,7 @@ def saveDBToJson():
         logger.info(f"Table: {table} saved to {filename}!")
 
 def CheckAuth(Username: str, Password: str):
-    condition = f"username='{Username}' AND pass='{Password}'"
+    condition = "username='%s' AND pass='%s'" % (Username, Password)
     checkQuery = f"SELECT id FROM users WHERE {condition}"
     cursor.execute(checkQuery)
     attemptRes = cursor.fetchall()
@@ -117,7 +117,9 @@ def DataQuery(Username: str, Password: str, *attr: tuple[str], table:str ="", us
     if table != "":
         if len(attr) == 0:
             raise Exception("No attributes were given but table was")
-        dataQuery = f"SELECT {', '.join(attr)} FROM {table} WHERE {userIDString}={UserID} {additionalCMD}"
+        
+        dataReq = ', '.join(attr)
+        dataQuery = "SELECT %s FROM %s WHERE %s=%s %s" % (dataReq, table, userIDString, UserID, additionalCMD)
         cursor.execute(dataQuery)
         
         vals = cursor.fetchall()
@@ -144,7 +146,9 @@ def exitHandler():
 def Insert(table:str, **datadict):  
     if len(datadict) != 0:
         try:
-            insertQuery = f"INSERT INTO {table} ({', '.join(datadict.keys())}) VALUES {tuple(datadict.values())}"
+            keys = ', '.join(datadict.keys())
+            vals = tuple(datadict.values())
+            insertQuery = "INSERT INTO %s (%s) VALUES %s" % (table, keys, vals)
             
             cursor.execute(insertQuery)
             mydb.commit()
@@ -167,7 +171,7 @@ def Update(table: str, where: str, **datadict):
         try:
             items = [(k, '\'' + v + '\'') for k, v in datadict.items()]
             itemsList = ', '.join('='.join(item) for item in items)
-            updateQuery = f"UPDATE {table} SET {itemsList} WHERE {where}"
+            updateQuery = "UPDATE %s SET %s WHERE %s" % (table, itemsList, where)
             cursor.execute(updateQuery)
             mydb.commit()
             logger.info(f"Updated {table} where {where} by {datadict}")
@@ -180,7 +184,7 @@ def Update(table: str, where: str, **datadict):
 def Remove(table, id):
     logger.info(f"Removing {id} from {table}...")
     try:
-        cursor.execute(f"DELETE FROM {table} WHERE id='{id}'")
+        cursor.execute("DELETE FROM %s WHERE id='%s'") % (table, id)
         mydb.commit()
     except Exception as e:
         logger.warning(f"Could not remove {id} from {table}")

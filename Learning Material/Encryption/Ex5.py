@@ -1,2 +1,5 @@
 import hashlib
-import Crypto as c
+import crypto as c
+
+c.
+

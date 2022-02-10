@@ -268,9 +268,9 @@ $(document).ready(function () {
 
 			nb.changes += nb.cGroup.svg();
 
-			// if (currentNotebook !== "") {
-			// 	SaveCurrentNotebook();
-			// }
+			if (currentNotebook !== "") {
+				SaveCurrentNotebook();
+			}
 			nb.groups.push(nb.cGroup);
 		},
 		change: function (force, event) {

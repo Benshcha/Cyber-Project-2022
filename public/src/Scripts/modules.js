@@ -37,13 +37,16 @@ function POST(file, type, data, complete = null) {
 	return resp.responseText;
 }
 
-function Login(Username, Password) {
+function Login(Username, Password, returnData = false) {
 	setCookie("user_auth", { username: Username, password: Password }, 10);
 
 	var respJson = JSON.parse(GET("LOGIN", "text/json"));
 	var errCode = respJson["code"];
-
-	return !errCode;
+	if (!returnData) {
+		return !errCode;
+	} else {
+		return respJson;
+	}
 }
 
 function SignUp(Username, Password, confirmPass) {

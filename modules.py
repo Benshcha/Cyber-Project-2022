@@ -8,12 +8,59 @@ from typing import Union, Any
 import urllib.parse
 from xml.etree.ElementInclude import include
 
+# create a color dictionary for console text
+colorDict = {
+    'red': '\033[91m',
+    'blue': '\033[94m',
+    'green': '\033[92m',
+    'yellow': '\033[93m',
+    'white': '\033[0m',
+    'cyan': '\033[96m',
+    'bold': '\033[1m',
+    'underline': '\033[4m',
+    'end': '\033[0m'
+}
+
+# Color text according to the color dictionary
+def colorText(text: str, color: str) -> str:
+    """
+    # Color text according to the color dictionary
+    
+    ## Args:
+    
+        text (str): the text to color
+        color (str): the color to use
+    
+    ## Returns:
+    
+        **text**: str = the text colored according to the color dictionary
+    """
+    return colorDict[color] + text + colorDict['end']
+
+
+LevelColor = {"INFO": "cyan", "WARNING": "yellow", "ERROR": "red", "DEBUG": 'green'}
+def ColorLevel(text):
+    return  colorText(text, LevelColor[text.upper()])
+
+
+class LoggerFormatter(logging.Formatter):
+    def __init__(self, *args, use_color=True, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.use_color = use_color
+
+    def format(self, record):
+        levelName = record.levelname
+        if self.use_color and levelName in LevelColor:
+            record.levelname = ColorLevel(levelName)
+
+        return logging.Formatter.format(self, record)
+
 class myLogger(logging.Logger):
     def __init__(self, name: str, level:str = ...) -> None:
         super().__init__(name)
         self.setLevel(logging.DEBUG)
-        formatter = logging.Formatter('%(asctime)s | %(levelname)s | %(message)s', 
-                                    '%m-%d-%Y %H:%M:%S')
+        formatter = LoggerFormatter('%(asctime)s | %(levelname)s | %(message)s', 
+                                    '%m-%d-%Y %H:%M:%S', use_color=True, style="%")
 
         stdout_handler = logging.StreamHandler(sys.stdout)
         stdout_handler.setLevel(logging.DEBUG)
@@ -39,7 +86,7 @@ class Packet:
     bytePayload: bytes = b""
     """
     
-    def __init__(self, Payload: str = "", Headers: dict = {}, command: str = "", filename: str = "", overflow: str = "", status: str = "200 OK", attr: dict = {}, bytePayload: bytes = b'', includePayload: bool=True):
+    def __init__(self, Payload: str = "", Headers: dict = {}, command: str = "", filename: str = "", overflow: str = "", status: str = "200 OK", attr: dict = {}, bytePayload: bytes = b'', includePayload: bool=True, dataType: str = ...) -> None:
         self.Headers = Headers
         self.command = command
         self.filename = filename
@@ -47,6 +94,7 @@ class Packet:
         self.status = status
         self.attr = attr
         self.bytePayload = bytePayload
+        self.dataType = dataType
         
         if includePayload:
             if not isinstance(Payload, str):
@@ -61,6 +109,14 @@ class Packet:
             
         if self.Payload != None and self.Payload != "":
             self.Headers['Content-Length'] = len(self.Payload)
+
+        try:
+            if self.dataType == ...:
+                self.dataType = self.filename.split(".")[-1]
+
+            self.Headers['Content-Type'] = self.dataType
+        except AttributeError:
+            pass
 
     def getHeader(self, header:str) -> Any:
         if header in self.Headers:

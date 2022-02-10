@@ -1,6 +1,7 @@
 import socket, threading
 from pprint import pprint, pformat
 import modules as HTTP
+from modules import colorText
 from os.path import join
 import os, sys
 import json
@@ -64,7 +65,11 @@ def console():
             actions[cmd](*args)
         except KeyError as e:
             logger.warning(f"No Such Command: {cmd}")
-    
+
+class InvalidLoginAttempt(Exception):
+    def __init__(self):
+        super().__init__("Invalid Login Attempt")
+
 consoleThread = threading.Thread(target=console)
 consoleThread.start()
 
@@ -179,24 +184,27 @@ class client(HTTP.GeneralClient):
             user_auth = self.getUserAuth(packet)
             resp = DataQuery(*user_auth,  *attr, table=table, userIDString=userIDString, where=where, **kwargs)
         except KeyError as e:
-            resp = {'code': 1, 'data': "No cookie was sent"}
+            resp = {"code": 1, "data": "No cookie was sent"}
 
         return resp
     
     def LoginAttempt(self, packet, includePayload=True):
         # TODO: Make use of the "id" request
-        resp = self.RequestData(packet, "id", table="users", userIDString="id")
-        resp = json.dumps(resp)
-        respPacket = HTTP.Packet()
-        respPacket.Headers['Content-Type'] = "text/json"
-        
-        if includePayload:
-            respPacket.setPayload(resp)
-        else:
-            respPacket.Headers['Content-Length'] = len(resp)
+        try:
+            resp = self.RequestData(packet, "id", table="users", userIDString="id")
+            resp = json.dumps(resp)
+            respPacket = HTTP.Packet()
+            respPacket.Headers['Content-Type'] = "text/json"
             
-        self.SendPacket(respPacket)
-        logger.debug(f"Sent login response packet: {resp}")
+            if includePayload:
+                respPacket.setPayload(resp)
+            else:
+                respPacket.Headers['Content-Length'] = len(resp)
+                
+            self.SendPacket(respPacket)
+            logger.debug(f"Sent login response packet: {resp}")
+        except Exception as e:
+            raise InvalidLoginAttempt()
         
     def PublicResponse(self, file, includePayload=True):
         if file == '/':
@@ -228,7 +236,7 @@ class client(HTTP.GeneralClient):
     
     def SendNotebook(self, packet, includePayload=True):
         notebookID = packet.filename[10:]
-                
+            
         nbdatadict = self.RequestData(packet, "NotebookPath", "title", table="notebooks", userIDString="ownerID", where=f"id={notebookID}", singleton=True)
         
         if not nbdatadict['code']:
@@ -259,8 +267,17 @@ class client(HTTP.GeneralClient):
                 self.SendPacket(errorPacket)
             elif isinstance(e, ConnectionAbortedError):
                 logger.debug(f"{self.addr} Aborted Connection")
+            elif isinstance(e, SQL.connector.errors.ProgrammingError):
+                logger.error(f"SQL Error:\n{e}")
+                errorPacket = HTTP.Packet(json.dumps({"code": 1, "data": "Internal Server Error"}))
+            elif isinstance(e, InvalidLoginAttempt):
+                logger.error(f"{e}")
+                errorPacket = HTTP.Packet({"code": 1, "data": "invalid login attempt"}, status="400")
             else:
-                logger.error(f"e\n{traceback.format_exc()}") 
+                logger.error(f"{e}\n{traceback.format_exc()}")
+                errorPacket = HTTP.Packet(f"Unknown Error: {e}", status="520")
+            
+            self.SendPacket(errorPacket)
     
     def getResponse(self, packet):
         self.getResponseManage(packet)
@@ -301,7 +318,7 @@ class client(HTTP.GeneralClient):
                 try: 
                     exc_type, exc_obj, exc_tb = sys.exc_info()
                     fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
-
+                    
                     raise
                 except SQL.connector.Error as e:
                     logger.error(f"sql line from {self.addr} was: {SQL.cursor.statement} ")
