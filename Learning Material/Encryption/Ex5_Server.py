@@ -18,12 +18,14 @@ def manageClient(ClientSocket, clientAddress):
     print('Client connected: ', clientAddress)
     try:
         print("Awaiting public key...")
-        e, n = (int(x) for x in ClientSocket.recv(4096).decode()[1:-1].split(','))
-        print("Received public key")
+        publicKey = (int(x) for x in ClientSocket.recv(4096).decode()[1:-1].split(','))
+        print(f"Received public key")
 
         print("Awaiting AES key...")
-        key = pow(int.from_bytes(ClientSocket.recv(4096), 'big'), e, n).to_bytes(32, 'big')
-        print(f"Received AES key:\n{key}")
+        EncData = ClientSocket.recv(4096)
+
+        key = RSADecrypt(EncData, *publicKey)
+        print(f"Received AES key")
 
         print("Awaiting file request...")
         while True:

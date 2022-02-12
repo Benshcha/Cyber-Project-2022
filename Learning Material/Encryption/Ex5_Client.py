@@ -13,15 +13,17 @@ try:
     publicKey = (e, n)
     privateKey = (d, n)
 
+    print("Sending public key...")
     ClientSocket.send(str(publicKey).encode())
 
     print("Generating AES key...")
-    key = os.urandom(32)
+    key = np.random.bytes(16)
 
     print("Sending AES key...")
-    ClientSocket.send(pow(int.from_bytes(key, 'big'), d, n).to_bytes(32, 'big'))
-    print(f"AES key sent\n{key}")    
-
+    EncKey = RSAEncrypt(key, *privateKey)
+    ClientSocket.send(EncKey)
+    DecKey = RSADecrypt(EncKey, *publicKey)
+    print(f"AES key sent")    
 
     while True:
         msg = input('Enter file name: ')
@@ -30,13 +32,13 @@ try:
 
         ClientSocket.send(EncryptCTR(msg.encode(), key))
         resp = RecievePacket(ClientSocket)
+        Data = DecryptCTR(resp, key)
 
-        if resp == b"1":
-            print("error")
+        if Data == b"1":
+            print("Error!")
         else:
-            DecData = DecryptCTR(resp, key)
             with open("Recieved Msg-" + msg, 'wb') as file:
-                file.write(DecData)
+                file.write(Data)
 
 except Exception as e:
     # print(e)

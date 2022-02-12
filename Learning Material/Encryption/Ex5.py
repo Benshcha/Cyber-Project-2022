@@ -114,3 +114,17 @@ def generateKeys():
     d = modInverse(e, phi)
 
     return e, d, n
+
+def RSAEncrypt(msg:bytes, e:int, n:int) -> bytes:
+    nByteLength = int(np.log(n)/np.log(16))
+    l = int(np.sqrt(nByteLength))
+    msgListInt = [int.from_bytes(msg[i:i+l], 'big') for i in range(0, len(msg), l)]
+    EncMsgList = [(pow(block, e, n)).to_bytes(nByteLength, 'big') for block in msgListInt]
+    return b"".join(EncMsgList)
+
+def RSADecrypt(msg: bytes, d:int, n:int) -> bytes:
+    nByteLength = int(np.log(n)/np.log(16))
+    l = int(np.sqrt(nByteLength))
+    msgList = [msg[i:i+nByteLength] for i in range(0, len(msg), nByteLength)]
+    DecMsgList = [(pow(int.from_bytes(block, 'big'), d, n)).to_bytes(l, 'big') for block in msgList]
+    return b"".join(DecMsgList)
