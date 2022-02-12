@@ -37,7 +37,6 @@ def colorText(text: str, color: str) -> str:
     """
     return colorDict[color] + text + colorDict['end']
 
-
 LevelColor = {"INFO": "cyan", "WARNING": "yellow", "ERROR": "red", "DEBUG": 'green'}
 def ColorLevel(text):
     return  colorText(text, LevelColor[text.upper()])
@@ -152,22 +151,22 @@ class Packet:
         except Exception as e:
             return e + "\n" + str(bytesObj)   
     
+typeDict = {"html": "text/html",
+            "ico": "image/x-icon",
+            "js": "text/javascript",
+            "css": "text/css",
+            "json": "text/json"
+            }  
 class GeneralClient:
-    def __init__(self, clientSocket, addr):
-        global typeDict
-        self.socket = clientSocket
-        self.addr = addr
-        typeDict = {"html": "text/html",
-                    "ico": "image/x-icon",
-                    "js": "text/javascript",
-                    "css": "text/css",
-                    "json": "text/json"
-                    }
     
+    def __init__(self, clientStream, addr: tuple[str]) -> None:
+        global typeDict
+        self.stream = clientStream
+        self.addr = addr
     
     def SendPacket(self, packet: Packet):
         byteString = packet.toBytes()
-        self.socket.send(byteString)
+        self.stream.send(byteString)
         return byteString
 
     @staticmethod
@@ -199,12 +198,12 @@ class GeneralClient:
         resp.bytePayload = FileNotFoundData
         return resp
     
-    def Recieve(self):
+    def Recieve(self) -> bytes:
         bufSize = 4096
         data = b''
         while True:
             try:
-                part = self.socket.recv(bufSize)
+                part = self.stream.recv(bufSize)
                 data += part
                 
                 if len(part) < bufSize:
@@ -214,6 +213,9 @@ class GeneralClient:
             
         return data
     
+class ParsingError(Exception):
+    def __init__(self, e: Exception) -> None:
+        super().__init__(e)
 
 def extractDataFromPacket(packet: str) -> Packet:
     """
@@ -231,32 +233,35 @@ def extractDataFromPacket(packet: str) -> Packet:
         **file**: str = the file path refered to in the first line
         **overflow**: list = a list of overflow objects in the first line
     """
-    
-    msgHeaderPayloadList = packet.split("\r\n\r\n")
-    msgHeaderString = msgHeaderPayloadList[0].split("\r\n")
-    
-    msgPayload = None
-    if len(msgHeaderPayloadList) > 1:
-        msgPayload = msgHeaderPayloadList[1]
-    
-    commandLine = msgHeaderString[0]
-    
-    HeaderNamesAndAttr = [Header.split(": ") for Header in msgHeaderString[1:]]
-    msgHeader = {h[0]: h[1] for h in HeaderNamesAndAttr[1:]}
-    
-    commandLine = urllib.parse.unquote(commandLine)
-    resp =  commandLine.split()
-    command, file, overflow, attr, status = None, None, None, {}, ""
-    if len(resp) >= 1:
-        command = resp[0]
-        if len(resp) >= 2:
-            if "?" in resp[1]:
-                file, attrStr = resp[1].split("?")
-                for eq in attrStr.split("&"):
-                    var, val = eq.split("=")
-                    attr[var] = val
-            else:
-                file = resp[1]
-            overflow = resp[2:]
-    
-    return Packet(msgPayload, msgHeader, command, file, overflow, status=status, attr=attr)
+    try:
+        msgHeaderPayloadList = packet.split("\r\n\r\n")
+        msgHeaderString = msgHeaderPayloadList[0].split("\r\n")
+        
+        msgPayload = None
+        if len(msgHeaderPayloadList) > 1:
+            msgPayload = msgHeaderPayloadList[1]
+        
+        commandLine = msgHeaderString[0]
+        
+        HeaderNamesAndAttr = [Header.split(": ") for Header in msgHeaderString[1:]]
+        msgHeader = {h[0]: h[1] for h in HeaderNamesAndAttr[1:]}
+        
+        commandLine = urllib.parse.unquote(commandLine)
+        resp =  commandLine.split()
+        command, file, overflow, attr, status = None, None, None, {}, ""
+        if len(resp) >= 1:
+            command = resp[0]
+            if len(resp) >= 2:
+                if "?" in resp[1]:
+                    file, attrStr = resp[1].split("?")
+                    for eq in attrStr.split("&"):
+                        var, val = eq.split("=")
+                        attr[var] = val
+                else:
+                    file = resp[1]
+                overflow = resp[2:]
+        
+        return Packet(msgPayload, msgHeader, command, file, overflow, status=status, attr=attr)
+    except Exception as e:
+        raise ParsingError(e)
+

@@ -1,4 +1,4 @@
-import socket, threading
+import socket, threading, ssl
 from pprint import pprint, pformat
 import modules as HTTP
 from modules import colorText
@@ -15,10 +15,13 @@ import SQLModule as SQL
 SQL.initMainSQL()
 from SQLModule import cursor, mydb, DataQuery
 
-serverSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-ADDR = ('', 80)
-serverSocket.bind(ADDR)
-serverSocket.listen()
+context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
+context.load_cert_chain(certfile="https/cert.pem", keyfile="https/key.pem")
+
+bindSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+ADDR = ('', 443)
+bindSocket.bind(ADDR)
+bindSocket.listen()
 hostname = socket.gethostname()
 local_ip = socket.gethostbyname(hostname)
 
@@ -49,7 +52,11 @@ def toggleSilentHeaderLog():
     global silentLog
     silentLog = not silentLog
 
-actions = {"exit": exitFunc, "remove": Remove, "save": SQL.saveDBToJson, "silent": toggleSilentHeaderLog}
+def printClientList():
+    logger.debug(f"Client List:\n{pformat(clients)}")
+    
+
+actions = {"exit": exitFunc, "remove": Remove, "save": SQL.saveDBToJson, "silent": toggleSilentHeaderLog, "clients": printClientList}
 
 # Start console:
 def console():
@@ -74,8 +81,8 @@ consoleThread = threading.Thread(target=console)
 consoleThread.start()
 
 class client(HTTP.GeneralClient):
-    def __init__(self, clientSocket, addr):
-        super().__init__(clientSocket, addr)
+    def __init__(self, *args):
+        super().__init__(*args)
         self.thread = threading.Thread(target=self.manage)
     
     def getUserAuth(self, packet):
@@ -285,8 +292,8 @@ class client(HTTP.GeneralClient):
     def headResponse(self, packet):
         self.getResponseManage(packet, includePayload=False)
     
-    def RecieveHTTPPacket(self):
-        packetStr = self.Recieve().decode()
+    def parseHttpPacket(self, packetByteData: bytes):
+        packetStr = packetByteData.decode()
         packet = HTTP.extractDataFromPacket(packetStr)
         if packet.command == "POST":
             while len(packet.Payload) < int(packet.Headers['Content-Length']):
@@ -301,13 +308,21 @@ class client(HTTP.GeneralClient):
         
         while True:
             try:
-                packet = self.RecieveHTTPPacket()
+                packetByteData = self.Recieve()
+                if packetByteData == b'':
+                    logger.warning('Recieved empty packet')
+                    self.stream.send(b'\r\n')
+                    break
+
+                packet = self.parseHttpPacket(packetByteData)
+                
+                
                 command = packet.command
                 if command != None:
                     if command in Actions:
                         Actions[command](packet)
                         if packet.getHeader('Connection') != 'keep-alive':
-                            self.socket.close()
+                            self.stream.close()
                             break
                     else:
                         logger.error(f"command {command} is not supported!")
@@ -324,23 +339,38 @@ class client(HTTP.GeneralClient):
                     logger.error(f"sql line from {self.addr} was: {SQL.cursor.statement} ")
                 except ConnectionAbortedError as e:
                     logger.error(f"connection aborted with {self.addr}!")
+                    self.stream.close()
+                    return 1
+                except HTTP.ParsingError as e:
+                    logger.error(f"{e}")
+
                 except Exception as e:
-                                        logger.error(f"""{self.addr}
-        =========================
-        {traceback.format_exc()}
-        ----------------------
-        \t\t{exc_obj}
-        =========================""")
-                # logger.debug("\n" + pformat([packet.filename, packet.Headers, packet.Payload]))
-            
+                    eText = f"{self.addr}\n=========================\n\n\t" + traceback.format_exc().replace('\n', '\n\t') + f"\n----------------------\n\t{exc_obj}\n========================="
+                    logger.error(eText)
+
+                    # ! Generally dont need this, but it is here for debugging
+                    # logger.debug("\n->->->->->->->->->->\n" + pformat(packetByteData) + '\n->->->->->->->->->->\n')          
+                    
         
     def start(self):
         self.thread.start()
+
+    def __str__(self):
+        return f"{self.addr}"
         
 clients = []
 while True:
-    clientSocket, addr = serverSocket.accept()
-    clientSocket.settimeout(10*60)
-    myClient = client(clientSocket, addr)
-    clients.append(myClient)
-    myClient.start()
+    clientSocket, addr = bindSocket.accept()
+    try:
+        connStream = context.wrap_socket(clientSocket, server_side=True)
+        myClient = client(connStream, addr)
+        clients.append(myClient)
+        myClient.start()
+    except ssl.SSLError as e:
+        if isinstance(e, ssl.AlertDescription):
+            logger.warning(e)
+    except Exception as e:
+        logger.erorr(f"{e}\n{traceback.format_exc()}\n\nClosing client {addr}")
+        clientSocket.close()
+
+    # clientSocket.settimeout(10*60)
