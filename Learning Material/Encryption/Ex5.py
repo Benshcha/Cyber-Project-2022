@@ -1,6 +1,6 @@
 # %%
 
-import hashlib
+import hashlib, random
 from Crypto.Cipher import AES
 from Crypto.Util import Counter
 
@@ -107,7 +107,7 @@ def generateKeys():
     n = p * q
     phi = (p - 1) * (q - 1)
     while True:
-        e = int(np.random.choice(range(2, phi), 1)[0])
+        e = random.randint(1, phi)
         if GCD(e, phi) == 1 and GCD(e, n) == 1:
             break
 
