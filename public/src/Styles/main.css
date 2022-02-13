@@ -5,9 +5,8 @@
 	--toolbar-border-radius: 10px;
 	--toolbar-width: 1.5em;
 	--button-radius: 1.5rem;
-	--mainbody-width: 85%;
-	--mainbody-height: 2000px;
-	--sidebar-width: calc(100% - var(--mainbody-width));
+	--mainbody-width: 85vw;
+	--sidebar-width: calc(100vw - var(--mainbody-width));
 	--toolbar-button-margin: 0.2em 0 0.2em 0.5em;
 	--sidebar-transition: 504.46ms ease 0ms;
 }
@@ -38,10 +37,11 @@ textarea{
 
 #toolbar 
 {
-	transition: all 0.5s;
+	transition: width var(--sidebar-transition);
 	position: fixed;	
 	width: var(--mainbody-width);	
-	left: var(--sidebar-width);	
+	/* left: var(--sidebar-width);	 */
+  right: 0;
 	z-index: 1;	
 	height: fit-content;	
 	display: flex;	
@@ -65,11 +65,13 @@ img#pen {width: 2rem;filter: invert(1);height: 2rem;}
 
 #mainbody{
   position: absolute;
+  border: 1em solid rgb(139, 139, 243);
   width: var(--mainbody-width);
   /* left: var(--sidebar-width); */
+  height: calc(100vh - var(--toolbar-width) - 0.85em);
   right: 0;
-  top: var(--toolbar-width);
-  transition: all var(--sidebar-transition);
+  bottom: 0;
+  transition: width var(--sidebar-transition);
 }
 
 #notebookList-Container {
@@ -158,7 +160,7 @@ div#notebookList::-webkit-scrollbar-track {
 }
 
 #addNB{
-	transition: all var(--sidebar-transition);
+	transition: width var(--sidebar-transition);
 	width: var(--button-radius);
 	height: var(--button-radius);
 	background-color: #202020;
@@ -171,9 +173,6 @@ div#notebookList::-webkit-scrollbar-track {
 	text-align: center;
 	vertical-align: middle;
 	}
-
-#sidebarHeaders{
-}
 
 .center {
   position: fixed;
@@ -196,12 +195,6 @@ button {
   opacity: 0.8;
   border-radius: 1em;
   /* border: 0; */
-}
-
-
-#drawing {
-	border: 1em solid rgb(139, 139, 243);
-	height: var(--mainbody-height);
 }
 
 path {
@@ -320,4 +313,10 @@ button#collapse-sidebar {
   position: relative;
   margin-top: 0.35rem;
   width: 10rem;
+}
+
+#drawing {
+  overflow: scroll;
+  width: 100%;
+  height: 100%;
 }

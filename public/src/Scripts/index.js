@@ -16,7 +16,7 @@ class Notebook {
 
 	// drawing on canvas ctx given touch/click event e
 	DrawPos(e, sim = true) {
-		pos = getPos(e, this.div);
+		pos = getPos(e);
 		this.cPoints.push([pos.x, pos.y, pos.width]);
 
 		let options = Object.assign({}, this.options, {
@@ -35,6 +35,14 @@ class Notebook {
 		nb.cPath = nb.cGroup.path(getSvgPathFromStroke(outlinePoints));
 		nb.cPath.stroke({ opacity: 0 });
 		nb.cPath.fill({ color: color });
+
+		if (pos.x > this.div.width() - thresh) {
+			this.div.width(this.div.width() + thresh * 10);
+		}
+
+		if (pos.y > this.div.height() - thresh) {
+			this.div.height(this.div.height() + thresh * 10);
+		}
 		// nb.cPath.attr("stroke-width", width);
 	}
 }
@@ -171,6 +179,7 @@ var borderWidths;
 var doDraw = false;
 var currentNotebook = "";
 var color = "black";
+var thresh = 20;
 
 function map(value, low1, high1, low2, high2) {
 	return low2 + ((high2 - low2) * (value - low1)) / (high1 - low1);
@@ -209,7 +218,7 @@ function init() {
 	draw = SVG("#drawingSvg").addTo("#drawing").size("100%", "100%");
 	svg = $("#drawingSvg");
 	doDraw = false;
-	nb = new Notebook(draw, canvas);
+	nb = new Notebook(draw, svg);
 	nb.setOptions("size", 5);
 
 	pos = { x: null, y: null, width: null };
@@ -239,7 +248,7 @@ function ChoosePen() {
 	console.log("Penning!");
 }
 
-function getPos(e, div) {
+function getPos(e) {
 	pos = { x: null, y: null, width: null };
 	pos.x = e.offsetX;
 	pos.y = e.offsetY;
@@ -259,15 +268,20 @@ $(document).ready(function () {
 	});
 
 	canvas.on("touchmove", (e) => {
-		if (doDraw) {
-			e.preventDefault();
-			simState = false;
+		if (e.touches.length === 1) {
+			if (doDraw) {
+				e.preventDefault();
+				simState = false;
+			}
+		} else {
+			doDraw = false;
+			nb.cGroup.remove();
 		}
 	});
 
 	canvas.on("pointermove", (e) => {
 		if (doDraw) {
-			console.log(width);
+			// console.log(width);
 			nb.DrawPos(e, (sim = simState));
 		}
 	});
@@ -310,13 +324,13 @@ var collapsed = false;
 
 function collapseSidebar() {
 	if (!collapsed) {
-		$(":root").css("--mainbody-width", "100%");
+		$(":root").css("--mainbody-width", "100vw");
 		$(":root").css("--button-radius", "0");
 		$("#collapse-sidebar").css("transform", "rotate(180deg)");
 		$("#collapse-sidebar").css("top", "50%");
-		$("#collapse-sidebar").css("left", "0%");
+		$("#collapse-sidebar").css("left", "0");
 	} else {
-		$(":root").css("--mainbody-width", "85%");
+		$(":root").css("--mainbody-width", "85vw");
 		$(":root").css("--button-radius", "1.5rem");
 		$("#collapse-sidebar").css("transform", "rotate(0deg)");
 		$("#collapse-sidebar").css("top", "50%");
