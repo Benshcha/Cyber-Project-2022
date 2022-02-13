@@ -7,19 +7,25 @@ class Notebook {
 		this.cGroup = null;
 		this.cPoints = [];
 		this.groups = [];
+		this.options = { size: 1 };
+	}
+
+	setOptions(option, val) {
+		this.options[option] = val;
 	}
 
 	// drawing on canvas ctx given touch/click event e
 	DrawPos(e, sim = true) {
 		pos = getPos(e, this.div);
-
 		this.cPoints.push([pos.x, pos.y, pos.width]);
 
-		var outlinePoints = getStroke(this.cPoints, {
+		let options = Object.assign({}, this.options, {
 			simulatePressure: sim,
 		});
 
-		// Still need to define new Change
+		var outlinePoints = getStroke(this.cPoints, options);
+
+		// TODO: Still need to define new Change
 
 		// if nb has cPath clear it
 		if (this.cPath != null) {
@@ -27,6 +33,8 @@ class Notebook {
 		}
 
 		nb.cPath = nb.cGroup.path(getSvgPathFromStroke(outlinePoints));
+		nb.cPath.stroke({ opacity: 0 });
+		nb.cPath.fill({ color: color });
 		// nb.cPath.attr("stroke-width", width);
 	}
 }
@@ -162,6 +170,26 @@ var width;
 var borderWidths;
 var doDraw = false;
 var currentNotebook = "";
+var color = "black";
+
+function map(value, low1, high1, low2, high2) {
+	return low2 + ((high2 - low2) * (value - low1)) / (high1 - low1);
+}
+
+const midPoint = 0.5;
+const midPointVal = 0.5;
+const maxVal = 1;
+const minVal = 0;
+presMap = (w) => {
+	// if (0 <= w && w <= midPoint) {
+	// 	console.log(`lower -> ${w}`);
+	// 	return map(w, 0, midPoint, minVal, midPointVal);
+	// } else if (midPoint < w && w <= 1) {
+	// 	console.log(`upper -> ${w}`);
+	// 	return map(w, midPoint, 1, midPointVal, maxVal);
+	// }
+	return w;
+};
 
 function init() {
 	userIDstring = getCookie("user_auth");
@@ -182,6 +210,7 @@ function init() {
 	svg = $("#drawingSvg");
 	doDraw = false;
 	nb = new Notebook(draw, canvas);
+	nb.setOptions("size", 5);
 
 	pos = { x: null, y: null, width: null };
 	width = null;
@@ -196,6 +225,8 @@ function init() {
 			}
 		}
 	});
+
+	DrawPreview(5);
 }
 
 function ChooseEraser() {
@@ -210,47 +241,39 @@ function ChoosePen() {
 
 function getPos(e, div) {
 	pos = { x: null, y: null, width: null };
-	if (!e.touches) {
-		pos.x = e.offsetX;
-		pos.y = e.offsetY;
-	} else {
-		if (e.touches.length == 1) {
-			// Only deal with one finger
-			var touch = e.touches[0]; // Get the information for finger #1
-			touch.target.offsetLeft;
-			borderWidths = {
-				x: parseInt(div.css("border-left-width")),
-				y: parseInt(div.css("border-top-width")),
-			};
-			var br = div[0].getBoundingClientRect();
-			pos.x = touch.clientX - br.left - borderWidths.x;
-			pos.y = touch.clientY - br.top - borderWidths.y;
-		}
-	}
-	pos.width = width;
+	pos.x = e.offsetX;
+	pos.y = e.offsetY;
+
+	pos.width = presMap(width);
 	return pos;
 }
 
 $(document).ready(function () {
 	init();
 
+	var simState = false;
 	canvas.on("mousemove", (e) => {
 		if (doDraw) {
-			nb.DrawPos(e);
+			simState = true;
 		}
 	});
 
 	canvas.on("touchmove", (e) => {
 		if (doDraw) {
-			// Prevents an additional mousedown event being triggered
-			if (e.touches.length == 1) {
-				e.preventDefault();
-				nb.DrawPos(e, (sim = false));
-			}
+			e.preventDefault();
+			simState = false;
+		}
+	});
+
+	canvas.on("pointermove", (e) => {
+		if (doDraw) {
+			console.log(width);
+			nb.DrawPos(e, (sim = simState));
 		}
 	});
 
 	// Regular
+	$.pressureConfig({ polyfillSpeedUp: 10000, preventSelect: true });
 	canvas.pressure({
 		start: function (event) {
 			doDraw = true;
@@ -258,15 +281,16 @@ $(document).ready(function () {
 			var g = nb.draw.group();
 			nb.cGroup = g;
 
-			width = 1;
-			nb.cPoints = [[pos.x, pos.y, pos.width]];
+			nb.cPoints = [];
+			width = event.pressure;
+			nb.DrawPos(event);
 		},
 		end: function (event) {
 			doDraw = false;
 
-			pos = { x: null, y: null, width: null };
-
-			nb.changes += nb.cGroup.svg();
+			if (currentNotebook != "") {
+				nb.changes += nb.cGroup.svg();
+			}
 
 			if (currentNotebook !== "") {
 				SaveCurrentNotebook();
@@ -274,11 +298,10 @@ $(document).ready(function () {
 			nb.groups.push(nb.cGroup);
 		},
 		change: function (force, event) {
-			// width = Pressure.map(force, 0, 1, 3, 10);
 			width = force;
 		},
 		unsupported: function () {
-			this.innerHTML = "Sorry! Check the devices and browsers";
+			this.innerHTML = `Sorry! Check the devices and browsers`;
 		},
 	});
 });

@@ -18,6 +18,10 @@
   <!-- <script src="../node_modules/perfect-freehand/dist/esm/index.js"></script> -->
   <script type="module" src="src/Scripts/config.js"></script>
   <script src="src/Scripts/index.js"></script>
+<script>
+	shareHidden = true;
+	sizeHidden = true;
+</script>
   <link rel="icon" type="image/ico" href="src/Images/favicon.ico"/>
 	<title>Gal's Cyber Project 2022</title>
 </head>
@@ -54,21 +58,83 @@
 	
 	<div class="online" id="share-button-container">
 		<script>
-			var container = $("#share-button-container");
-			$(document).click(function (e)
-			{
-				if (container[0] !== e.target && !container[0].contains(e.target))
+			ShareClick = () => {
+				$('#share-button-content').show(); const ShareContainer = $('#share-button-container');
+				$(document).click(function (e)
 				{
-					$('#share-button-content').hide();
-				}
-			});
+					if (ShareContainer[0] !== e.target && !ShareContainer[0].contains(e.target))
+					{
+						shareHidden = !shareHidden;
+						if (!shareHidden)
+						{
+						$('#share-button-content').hide();
+						} else {
+						$('#share-button-content').show();
+						}
+						$(document).off('click', '**');
+					}
+				});
+			}
 		</script>
-		<button onclick="$('#share-button-content').show()" class="tool">
-			Share</button>
-		<div id="share-button-content">Link:
-			https://stackoverflow.com/questions/33241859/how-to-stop-div-from-pushing-other-divs-down</div>
+	<button onclick="ShareClick()" class="tool">
+        Share</button>
+      <div id="share-button-content">Link:
+        https://stackoverflow.com/questions/33241859/how-to-stop-div-from-pushing-other-divs-down</div>
 	</div>
 	
+	<div id="size-container">
+		<script>
+			SizeClick = () => {
+				const SizeContainer = $('#size-container');
+				$(document).click(function (e)
+					{
+						
+						
+						if (SizeContainer[0] !== e.target && !SizeContainer[0].contains(e.target))
+						{
+							$('#size-content').hide();
+							sizeHidden = true;
+							$(document).off('click', '**');
+						}
+					});
+				if (!sizeHidden)
+					{
+						$('#size-content').hide();
+					} else {
+						$('#size-content').show();
+					}
+				sizeHidden = !sizeHidden
+			}
+		</script>
+		<button id="size-button" class="tool" onclick="SizeClick()" class="tool">
+			Size
+		</button>
+		<div id="size-content">
+			<svg id="size-preview"></svg>
+			<input type="range" min="1" max="10" value="5" class="slider" id="size-slider"
+				oninput="nb.setOptions('size', this.value); DrawPreview(this.value)">
+		</div>
+		<script>
+			var prevDraw = SVG("#size-preview");
+			DrawPreview = (val) => {
+				prevDraw.clear()
+				let points = [];
+				for (let i = 0; i < 10; i++)
+				{
+					points.push([10 + i*21, 8, i/10]);
+				}
+				let stroke = getStroke(points, {'size': val, 'simulatePressure': false});
+				let p = getSvgPathFromStroke(stroke);
+				prevDraw.path(p);
+			}
+		</script>
+	
+	</div>
+
+	<div id="colorpicker-button" class="tool">
+		<input type="color" id="colorpicker" onchange="color = this.value" value="#000000">
+	</div>
+
 	<div class="dropdown tool" id="online-users">
 		Online Users
 		<div class="dropdown-content" id="online-list">

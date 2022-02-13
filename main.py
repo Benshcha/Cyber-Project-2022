@@ -312,6 +312,7 @@ class client(HTTP.GeneralClient):
                 if packetByteData == b'':
                     logger.warning('Recieved empty packet')
                     self.stream.send(b'\r\n')
+                    self.stream.close()
                     break
 
                 packet = self.parseHttpPacket(packetByteData)
