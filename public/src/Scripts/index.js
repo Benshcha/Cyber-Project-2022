@@ -144,7 +144,7 @@ function createNotebook(newTitle, newDescription) {
 		`SAVENEWNB`,
 		"text/json",
 		JSON.stringify({
-			svgData: svg.html(),
+			svgData: draw.svg(),
 			title: newTitle,
 			description: newDescription,
 		}),
@@ -300,13 +300,14 @@ $(document).ready(function () {
 			nb.DrawPos(event);
 		},
 		end: function (event) {
-			doDraw = false;
-
-			if (currentNotebook != "") {
-				nb.changes += nb.cGroup.svg();
-			}
-
 			if (currentNotebook !== "") {
+				if (doDraw) {
+					doDraw = false;
+					nb.changes.push(("a", nb.cGroup.svg()));
+				} else if (doErase) {
+					doErase = false;
+					nb.changes.push(("e", eraseGroup.svg()));
+				}
 				SaveCurrentNotebook();
 			}
 			nb.groups.push(nb.cGroup);

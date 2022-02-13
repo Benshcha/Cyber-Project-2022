@@ -25,15 +25,16 @@ def initMainSQL():
     cursor.execute(createusersQuery)
     mydb.commit()
     
-    createNotebookQuery = """CREATE TABLE IF NOT EXISTS notebooks (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,ownerID INT NOT NULL, NotebookPath CHAR(255), title CHAR(30) NOT NULL, description TEXT, FOREIGN KEY (ownerID) REFERENCES users(id));
+    createNotebookQuery = """CREATE TABLE IF NOT EXISTS notebooks (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,ownerID INT NOT NULL, NotebookPath CHAR(255), title CHAR(30) NOT NULL, description TEXT, FOREIGN KEY (ownerID) REFERENCES users(id), code CHAR(256) UNIQUE);
     """
     cursor.execute(createNotebookQuery)
     mydb.commit()
-    
+
     truncateQuery = (
     "SET FOREIGN_KEY_CHECKS = 0",
     "TRUNCATE notebooks",
     "TRUNCATE users",
+    "TRUNCATE openNotebooks",
     "SET FOREIGN_KEY_CHECKS = 1"
     )
     for q in truncateQuery:
@@ -79,18 +80,43 @@ def saveDBToJson():
 
 def CheckAuth(Username: str, Password: str):
     condition = "username='%s' AND pass='%s'" % (Username, Password)
-    checkQuery = f"SELECT id FROM users WHERE {condition}"
-    cursor.execute(checkQuery)
-    attemptRes = cursor.fetchall()
+    attemptRes = Request('id', table='users', where=condition)
     if attemptRes == []:
         return None
     else:
         return attemptRes[0][0]
 
-def DataQuery(Username: str, Password: str, *attr: tuple[str], table:str ="", userIDString: str="id", where=None, **kwargs) -> dict[int, Any]:
-    """Request data from database using the client's username and password for authentication
+def Request(*attr, table: str, where: str = "", singleton: bool=False) -> list[dict[str: str]]:
+    """
+    ### Send a query request (SELECT) to the database.
 
     Args:
+        table (str): the table for the request
+        where (str, optional): the where command. Defaults to "".
+        singleton (bool, optional): whether to return a singleton or not. Defaults to False.
+    Returns:
+        (list): the result of the request
+    """
+    dataReq = ', '.join(attr)
+    whereCMD = "WHERE %s" % where if where != "" else ""
+    dataQuery = "SELECT %s FROM %s %s" % (dataReq, table, whereCMD)
+    cursor.execute(dataQuery)
+    vals = cursor.fetchall()
+    cols = cursor.description
+
+    data = []
+    for val in vals:
+        data.append({col[0]: val[i] for i, col in enumerate(cols)})
+
+    if singleton:
+        data = data[0]
+    return data
+
+def DataQuery(Username: str, Password: str, *attr: tuple[str], table:str ="", userIDString: str="id", where=None, **kwargs) -> dict[int, Any]:
+    """
+    ## Request data from database using the client's username and password for authentication
+
+    ### Args:
         Username (str): user's username for authentication
         Password (str): user's password for authentication
         *args (tuple[str]): the requested data.
@@ -98,10 +124,10 @@ def DataQuery(Username: str, Password: str, *attr: tuple[str], table:str ="", us
         UserIDString (str, optional): the name of the user id as stated in the referenced table
         where (str): WHERE command
 
-    Raises:
+    ### Raises:
         Exception: If no attributes were given but the table was
 
-    Returns:
+    ### Returns:
         dict[int, Any]: dictionary conatining the error code and the data requested
     """
     UserID = CheckAuth(Username, Password)
@@ -117,21 +143,16 @@ def DataQuery(Username: str, Password: str, *attr: tuple[str], table:str ="", us
     if table != "":
         if len(attr) == 0:
             raise Exception("No attributes were given but table was")
-        
-        dataReq = ', '.join(attr)
-        dataQuery = "SELECT %s FROM %s WHERE %s=%s %s" % (dataReq, table, userIDString, UserID, additionalCMD)
-        cursor.execute(dataQuery)
-        
-        vals = cursor.fetchall()
-        cols = cursor.description
-        for val in vals:
-            dataRes.append({col[0]: val[i] for i, col in enumerate(cols)})
-        
-        if len(vals) == 0:
-            return {'code': 1, 'data': 'No such notebook in your list!'}
-        
+
+        whereCommand = "%s=%s %s" % (userIDString, UserID, additionalCMD)
+
+        singleton = False
         if 'singleton' in kwargs and kwargs['singleton']:
-            dataRes = dataRes[0]
+            singleton = True
+        dataRes = Request(*attr, table=table, where=whereCommand, singleton=singleton)
+        
+        if len(dataRes) == 0:
+            return {'code': 1, 'data': 'No such notebook in your list!'}
             
         ans = {'code': 0, 'data': dataRes}
         if 'returnUserID' in kwargs and kwargs['returnUserID']:

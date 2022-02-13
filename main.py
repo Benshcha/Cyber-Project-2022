@@ -5,7 +5,7 @@ from modules import colorText
 from os.path import join
 import os, sys
 import json
-import traceback
+import traceback, lxml, hashlib, time
 
 # import global variables
 from config import logger, silentLog
@@ -80,12 +80,14 @@ class InvalidLoginAttempt(Exception):
 consoleThread = threading.Thread(target=console)
 consoleThread.start()
 
-class client(HTTP.GeneralClient):
-    def __init__(self, *args):
+class Client(HTTP.GeneralClient):
+    def __init__(self, *args, changesList):
         super().__init__(*args)
         self.thread = threading.Thread(target=self.manage)
-    
-    def getUserAuth(self, packet):
+        self.changesList = changesList
+
+    @staticmethod
+    def getUserAuth(packet):
         cookiesStr = [i.split("=") for i in packet.Headers['Cookie'].split(";")]
         cookies = {cookieStr[0]: cookieStr[1] for cookieStr in cookiesStr}
         return tuple(json.loads(cookies['user_auth']).values())
@@ -98,7 +100,7 @@ class client(HTTP.GeneralClient):
         elif file.startswith('/SAVENEWNB'):
             resp = self.NewNotebook(packet)
         elif file.startswith('/SAVE/'):
-            resp = self.SaveNotebook(packet)
+            resp = self.SaveNotebook(packet, file)
         else:
             # TODO Add error response
             ...
@@ -110,11 +112,9 @@ class client(HTTP.GeneralClient):
         self.SendPacket(respPacket)
         logger.debug(f"Sent response packet: {resp}") 
 
-    def SaveNotebook(self, packet: HTTP.Packet):
+    @staticmethod
+    def SavePrivateNotebook(user_auth, notebookID, payload):
         
-        notebookID = packet.filename[6:]
-        
-        user_auth = self.getUserAuth(packet)
         resp = SQL.DataQuery(*user_auth, "id", 'NotebookPath', table="notebooks", userIDString='ownerID', where=f"id={notebookID}", singleton=True, returnUserID=True)
         
         id = resp['UserID']
@@ -126,11 +126,36 @@ class client(HTTP.GeneralClient):
             return {'code': 1, 'data': errMsg}
         elif resp['code'] == 0:
             with open(resp['data']['NotebookPath'], 'a') as FILE:
-                FILE.write(packet.Payload)
+                FILE.write(payload)
                 
             logger.info(f"Succesfully saved user {id}'s notebook {notebookID}")
         return resp
-    
+
+    @staticmethod
+    def SavePublicNotebook(notebookCode, changesList, changes):
+        resp = SQL.Request('notebookPath', table="openNotebooks", where="code='%s'" % notebookCode, singleton=True)
+
+        if len(resp) == 0:
+            return {'code': 1, 'data': "Unknown notebook code"}
+        else:
+            changesList.append((resp, changes))
+            return {'code': 0, 'data': "Changes saved"}
+
+    def SaveNotebook(self, packet: HTTP.Packet, file: str = "") -> dict:
+        user_auth = self.getUserAuth(packet)
+
+        notebookCode = ""
+        if file.startswith('/SAVE/c'):
+            notebookCode = file[7:]
+        
+        if notebookCode == "":
+            notebookID = file[6:]
+            resp = self.SavePrivateNotebook(user_auth, notebookID, packet.Payload)
+            return resp
+        else:
+            resp = self.SavePublicNotebook(notebookCode, self.changesList, packet.Payload)
+            return resp
+
     def NewNotebook(self, packet: HTTP.Packet):
         user_auth = self.getUserAuth(packet)
         id = SQL.CheckAuth(*user_auth)
@@ -160,7 +185,7 @@ class client(HTTP.GeneralClient):
                 FILE.write(svgData)
             
             # Update file path to DB
-            updateResp = SQL.Update(table="notebooks", where=f'id={notebookID}', NotebookPath=newPath)
+            updateResp = SQL.Update(table="notebooks", where=f'id={notebookID}', NotebookPath=newPath, code=GenerateNotebookCode(user_auth[1]))
 
             if updateResp['code'] == 0:
                 return SQL.DataQuery(*user_auth, "id", table="notebooks", userIDString="ownerID", singleton=True)
@@ -358,13 +383,36 @@ class client(HTTP.GeneralClient):
 
     def __str__(self):
         return f"{self.addr}"
+
+
+def GenerateNotebookCode(password:str) -> bytes:
+    code = hashlib.sha256((password + str(time.time())).encode()).hexdigest()
+    return code
+
+
+# TODO: Update notebooks using the xml package
+def UpdateNotebook(notebookID: dict, change: dict):
+    ...
+
+def UpdateOpenNotebooksLoop():
+    global notebookChanges
+
+    while True:
+        for nbID, change in notebookChanges:
+            UpdateNotebook(nbID, change)
         
+
+logger.debug("Initiating opennotebook manager")
+notebookChanges = []
+openNotebooksThread = threading.Thread(target=UpdateOpenNotebooksLoop)
+openNotebooksThread.start()
+
 clients = []
 while True:
     clientSocket, addr = bindSocket.accept()
     try:
         connStream = context.wrap_socket(clientSocket, server_side=True)
-        myClient = client(connStream, addr)
+        myClient = Client(connStream, addr, changesList=notebookChanges)
         clients.append(myClient)
         myClient.start()
     except ssl.SSLError as e:
