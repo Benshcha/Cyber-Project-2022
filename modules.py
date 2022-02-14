@@ -72,7 +72,6 @@ class myLogger(logging.Logger):
         self.addHandler(file_handler)
         self.addHandler(stdout_handler)  
    
-@dataclass
 class Packet:
     """Class for a general Packet
 

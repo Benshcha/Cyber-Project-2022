@@ -6,6 +6,7 @@ from os.path import join
 import os, sys
 import json
 import traceback, lxml, hashlib, time
+import multiprocessing as mp
 
 # import global variables
 from config import logger, silentLog
@@ -400,19 +401,16 @@ def UpdateOpenNotebooksLoop():
     while True:
         for nbID, change in notebookChanges:
             UpdateNotebook(nbID, change)
-        
 
-logger.debug("Initiating opennotebook manager")
-notebookChanges = []
-openNotebooksThread = threading.Thread(target=UpdateOpenNotebooksLoop)
-openNotebooksThread.start()
+
+# TODO Add notebook writer process
 
 clients = []
 while True:
     clientSocket, addr = bindSocket.accept()
     try:
         connStream = context.wrap_socket(clientSocket, server_side=True)
-        myClient = Client(connStream, addr, changesList=notebookChanges)
+        myClient = Client(connStream, addr)
         clients.append(myClient)
         myClient.start()
     except ssl.SSLError as e:

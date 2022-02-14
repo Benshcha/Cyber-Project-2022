@@ -108,6 +108,7 @@ def Request(*attr, table: str, where: str = "", singleton: bool=False) -> list[d
     for val in vals:
         data.append({col[0]: val[i] for i, col in enumerate(cols)})
 
+    # TODO: fix singleton reciving empty list
     if singleton:
         data = data[0]
     return data
