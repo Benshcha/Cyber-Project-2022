@@ -1,6 +1,6 @@
 class Notebook {
 	constructor(drawer, div) {
-		this.changes = "";
+		this.changes = [];
 		this.draw = drawer;
 		this.div = div;
 		this.cPath = null;
@@ -25,7 +25,7 @@ class Notebook {
 
 		var outlinePoints = getStroke(this.cPoints, options);
 
-		// TODO: Still need to define new Change
+		// vTODO: Still need to define new Change
 
 		// if nb has cPath clear it
 		if (this.cPath != null) {
@@ -157,13 +157,17 @@ function createNotebook(newTitle, newDescription) {
 	);
 }
 
-function SaveCurrentNotebook() {
+function SaveCurrentNotebook(nb) {
 	// var count = 0;
-
-	var resp = POST(`/SAVE/${currentNotebook}`, "svg", nb.changes, (resp) => {
-		nb.changes = "";
-		console.log(resp);
-	});
+	var resp = POST(
+		`/SAVE/${currentNotebook}`,
+		"svg",
+		JSON.stringify(nb.changes),
+		(resp) => {
+			console.log(resp);
+		}
+	);
+	nb.changes = [];
 }
 
 var userIDstring;
@@ -300,15 +304,21 @@ $(document).ready(function () {
 			nb.DrawPos(event);
 		},
 		end: function (event) {
+			let t;
+			let svgData;
+			if (doDraw) {
+				t = "a";
+				svgData = nb.cGroup.svg();
+				doDraw = false;
+			} else if (doErase) {
+				t = "e";
+				svgData = eraseGroup.svg();
+				doErase = false;
+			}
 			if (currentNotebook !== "") {
-				if (doDraw) {
-					doDraw = false;
-					nb.changes.push(("a", nb.cGroup.svg()));
-				} else if (doErase) {
-					doErase = false;
-					nb.changes.push(("e", eraseGroup.svg()));
-				}
-				SaveCurrentNotebook();
+				nb.changes.push([t, svgData]);
+
+				SaveCurrentNotebook(nb);
 			}
 			nb.groups.push(nb.cGroup);
 		},

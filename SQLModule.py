@@ -25,7 +25,7 @@ def initMainSQL():
     cursor.execute(createusersQuery)
     mydb.commit()
     
-    createNotebookQuery = """CREATE TABLE IF NOT EXISTS notebooks (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,ownerID INT NOT NULL, NotebookPath CHAR(255), title CHAR(30) NOT NULL, description TEXT, FOREIGN KEY (ownerID) REFERENCES users(id), code CHAR(256) UNIQUE);
+    createNotebookQuery = """CREATE TABLE IF NOT EXISTS notebooks (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, ownerID INT NOT NULL, NotebookPath CHAR(255), title CHAR(30) NOT NULL, description TEXT, FOREIGN KEY (ownerID) REFERENCES users(id), code TEXT);
     """
     cursor.execute(createNotebookQuery)
     mydb.commit()
@@ -34,17 +34,20 @@ def initMainSQL():
     "SET FOREIGN_KEY_CHECKS = 0",
     "TRUNCATE notebooks",
     "TRUNCATE users",
-    "TRUNCATE openNotebooks",
     "SET FOREIGN_KEY_CHECKS = 1"
     )
     for q in truncateQuery:
         cursor.execute(q)
     mydb.commit()
     
-    for k, path in jsonFiles.items():
-        loadTableFromJson(k, path)
+    for k, data in jsonFiles.items():
+        if "without" in data:
+            without = data["without"]
+        else:
+            without = None
+        loadTableFromJson(k, data['path'], without)
 
-def loadTableFromJson(table, filename):
+def loadTableFromJson(table, filename, without: str | None =None):
     logger.info(f"Uploading {table} to database...")
     with open(filename) as FILE:
         jsonData = json.load(FILE)
@@ -52,7 +55,18 @@ def loadTableFromJson(table, filename):
     if len(jsonData) == 0:
         return 1
     try:
-        cmd = f"INSERT INTO {table} VALUES "
+        if without is None:
+            cmd = f"INSERT INTO {table} VALUES "
+        else:
+            getColumnsQuery = f"SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '{table}' ORDER BY ORDINAL_POSITION"
+            cursor.execute(getColumnsQuery)
+            columns = cursor.fetchall()
+            columns = [c[0] for c in columns]
+
+            if without in columns:
+                columns.remove(without) 
+
+            cmd = f"INSERT INTO {table} ({', '.join(columns)}) VALUES "
         for row in jsonData:
             cmd += str(tuple(row.values())) + ", "
         cmd = cmd[: -2]
@@ -80,11 +94,8 @@ def saveDBToJson():
 
 def CheckAuth(Username: str, Password: str):
     condition = "username='%s' AND pass='%s'" % (Username, Password)
-    attemptRes = Request('id', table='users', where=condition)
-    if attemptRes == []:
-        return None
-    else:
-        return attemptRes[0][0]
+    attemptRes = Request('id', table='users', where=condition, singleton=True)
+    return attemptRes['id'] if attemptRes is not None else None
 
 def Request(*attr, table: str, where: str = "", singleton: bool=False) -> list[dict[str: str]]:
     """
@@ -110,6 +121,8 @@ def Request(*attr, table: str, where: str = "", singleton: bool=False) -> list[d
 
     # TODO: fix singleton reciving empty list
     if singleton:
+        if len(data) == 0:
+            return None
         data = data[0]
     return data
 
