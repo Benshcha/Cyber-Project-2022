@@ -82,6 +82,7 @@ function loadNotebook(notebookID) {
 	var notebookData = JSON.parse(jsonString);
 	var data = notebookData["data"];
 	var svgData = data["NotebookData"];
+	currentGroupID = data["currentGroupID"];
 	draw.clear();
 	draw.svg(svgData);
 	$(`#Notebook${notebookID}`).css({ "background-color": "#fd4448" });
@@ -184,6 +185,7 @@ var doDraw = false;
 var currentNotebook = "";
 var color = "black";
 var thresh = 20;
+var currentGroupID = "";
 
 function map(value, low1, high1, low2, high2) {
 	return low2 + ((high2 - low2) * (value - low1)) / (high1 - low1);

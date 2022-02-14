@@ -341,11 +341,11 @@ class Notebook:
         changeCMD = change[0]
         changeData = change[1]
 
-        Data = ET.parse(path)
+        tree = ET.parse(path)
+        root = tree.getroot()
         if changeCMD == 'a':
-            # !fixme
-            ET.Element('g', {'id': 1, 'name': 'g1'}).text = changeData
-            Data.find('{http://www.w3.org/2000/svg}svg').append()
+            newElement = ET.fromstring(changeData)
+            root.append(newElement)
 
     def start(self):
         self.UpdateThread = threading.Thread(target=self.UpdateNotebook)
