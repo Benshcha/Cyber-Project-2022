@@ -25,7 +25,7 @@ def initMainSQL():
     cursor.execute(createusersQuery)
     mydb.commit()
     
-    createNotebookQuery = """CREATE TABLE IF NOT EXISTS notebooks (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, ownerID INT NOT NULL, NotebookPath CHAR(255), title CHAR(30) NOT NULL, description TEXT, FOREIGN KEY (ownerID) REFERENCES users(id), currentGroupID INT NOT NULL DEFAULT 0 AUTO_INCREMENT, code TEXT);
+    createNotebookQuery = """CREATE TABLE IF NOT EXISTS notebooks (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, ownerID INT NOT NULL, NotebookPath CHAR(255), title CHAR(30) NOT NULL, description TEXT, FOREIGN KEY (ownerID) REFERENCES users(id), currentGroupID INT, code TEXT);
     """
     cursor.execute(createNotebookQuery)
     mydb.commit()

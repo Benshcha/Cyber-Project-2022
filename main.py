@@ -13,6 +13,7 @@ class InvalidLoginAttempt(Exception):
     def __init__(self, msg: str):
         super().__init__(f"Invalid Login Attempt\n{msg}")
 
+
 class Client(HTTP.GeneralClient):
     def __init__(self, *args, UpdatePipe):
         super().__init__(*args)
@@ -44,6 +45,10 @@ class Client(HTTP.GeneralClient):
         respPacket.setPayload(resp)
         self.SendPacket(respPacket)
         logger.debug(f"Sent response packet: {resp}") 
+
+    # TODO: Add closing of a client using the open notebooks
+    def close(self):
+        ...
 
     @staticmethod
     def SavePrivateNotebook(user_auth, notebookID, changes):
