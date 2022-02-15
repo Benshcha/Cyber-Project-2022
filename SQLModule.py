@@ -65,6 +65,8 @@ def loadTableFromJson(table, filename, without: str | None =None):
 
             if without in columns:
                 columns.remove(without) 
+                for nb in jsonData:
+                    nb.pop(without)
 
             cmd = f"INSERT INTO {table} ({', '.join(columns)}) VALUES "
         for row in jsonData:
@@ -80,7 +82,8 @@ def loadTableFromJson(table, filename, without: str | None =None):
         return 0
 
 def saveDBToJson():
-    for table, filename in jsonFiles.items():    
+    for table, data in jsonFiles.items():  
+        filename = data['path']  
         logger.info(f"Saving {table} to {filename}...")
         cursor.execute(f"SELECT * FROM {table}")
         data=cursor.fetchall()
@@ -204,7 +207,7 @@ def Insert(table:str, **datadict):
 def Update(table: str, where: str, **datadict):
     if len(datadict) != 0:
         try:
-            items = [(k, '\'' + v + '\'') for k, v in datadict.items()]
+            items = [(str(k), '\'' + str(v) + '\'') for k, v in datadict.items()]
             itemsList = ', '.join('='.join(item) for item in items)
             updateQuery = "UPDATE %s SET %s WHERE %s" % (table, itemsList, where)
             cursor.execute(updateQuery)
@@ -213,7 +216,6 @@ def Update(table: str, where: str, **datadict):
             
             return {'code': 0}
         except Exception as e:
-            logger.error(e)
             return {'code': 1, 'data': e}
         
 def Remove(table, id):

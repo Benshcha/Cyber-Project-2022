@@ -58,8 +58,7 @@ class myLogger(logging.Logger):
     def __init__(self, name: str, level:str = ...) -> None:
         super().__init__(name)
         self.setLevel(logging.DEBUG)
-        formatter = LoggerFormatter('%(asctime)s | %(levelname)s | %(message)s', 
-                                    '%m-%d-%Y %H:%M:%S', use_color=True, style="%")
+        formatter = LoggerFormatter('%(asctime)s | %(levelname)s | %(message)s', '%m-%d-%Y %H:%M:%S', use_color=True, style="%")
 
         stdout_handler = logging.StreamHandler(sys.stdout)
         stdout_handler.setLevel(logging.DEBUG)
@@ -70,7 +69,7 @@ class myLogger(logging.Logger):
         file_handler.setFormatter(formatter)
 
         self.addHandler(file_handler)
-        self.addHandler(stdout_handler)  
+        self.addHandler(stdout_handler) 
    
 class Packet:
     """Class for a general Packet

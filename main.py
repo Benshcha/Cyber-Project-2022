@@ -8,6 +8,7 @@ import json
 import traceback, hashlib, time
 import multiprocessing as mp
 import xml.etree.ElementTree as ET
+ET.register_namespace('', "http://www.w3.org/2000/svg")
     
 class InvalidLoginAttempt(Exception):
     def __init__(self, msg: str):
@@ -53,7 +54,7 @@ class Client(HTTP.GeneralClient):
     @staticmethod
     def SavePrivateNotebook(user_auth, notebookID, changes):
         
-        resp = SQL.DataQuery(*user_auth, "id", 'NotebookPath', table="notebooks", userIDString='ownerID', where=f"id={notebookID}", singleton=True, returnUserID=True)
+        resp = SQL.DataQuery(*user_auth, "id", 'NotebookPath', 'currentGroupID', table="notebooks", userIDString='ownerID', where=f"id={notebookID}", singleton=True, returnUserID=True)
         
         id = resp['UserID']
         logger.info(f"User {id} is saving notebook {notebookID}...")
@@ -64,13 +65,13 @@ class Client(HTTP.GeneralClient):
             return {'code': 1, 'data': errMsg}
         elif resp['code'] == 0:
             for change in changes:
-                Notebook.ChangeNotebook(resp['data']['NotebookPath'], change)
+                Notebook.ChangeNotebook(resp['data']['NotebookPath'], resp["data"]['currentGroupID'], change)
                 
             logger.info(f"Succesfully saved user {id}'s notebook {notebookID}")
         return {'code': 0, 'data': "Changes saved"}
 
     def SavePublicNotebook(self, notebookCode, changes):
-        resp = SQL.Request('id', 'notebookPath', table="openNotebooks", where="code='%s'" % notebookCode, singleton=True)
+        resp = SQL.Request('id', 'notebookPath', 'currentGroupID', table="openNotebooks", where="code='%s'" % notebookCode, singleton=True)
 
         if len(resp) == 0:
             return {'code': 1, 'data': "Unknown notebook code"}
@@ -208,13 +209,12 @@ class Client(HTTP.GeneralClient):
     def SendNotebook(self, packet, includePayload=True):
         notebookID = packet.filename[10:]
             
-        nbdatadict = self.RequestData(packet, "NotebookPath", "title", table="notebooks", userIDString="ownerID", where=f"id={notebookID}", singleton=True)
+        nbdatadict = self.RequestData(packet, "NotebookPath", "title", "currentGroupID", table="notebooks", userIDString="ownerID", where=f"id={notebookID}", singleton=True)
         
         if not nbdatadict['code']:
-            filePath = nbdatadict['data']["NotebookPath"]
+            filePath = nbdatadict['data'].pop('NotebookPath', None)
             with open(filePath) as FILE:
                 nbdatadict['data']["NotebookData"] = FILE.read()
-            nbdatadict['data'].pop('NotebookPath', None)
             
         nbdataPacket = HTTP.Packet(nbdatadict, includePayload=includePayload)
         self.SendPacket(nbdataPacket)
@@ -340,17 +340,25 @@ class Notebook:
                     return
                 self.ChangeNotebook(self.path, change)
 
+    ns = "{http://www.w3.org/2000/svg}"
+
     # TODO: Update notebooks using the xml package 
     @staticmethod
-    def ChangeNotebook(path: str, change: tuple):
+    def ChangeNotebook(path: str, currentGroupID: str, change: tuple):
         changeCMD = change[0]
         changeData = change[1]
-
         tree = ET.parse(path)
         root = tree.getroot()
         if changeCMD == 'a':
             newElement = ET.fromstring(changeData)
+            newElement.set('id', str(currentGroupID))
             root.append(newElement)
+            SQL.Update('notebooks', 'NotebookPath=%s' % path, currentGroupID=currentGroupID+1)
+        elif changeCMD == 'e':
+            for element in root.find(f".//{Notebook.ns + 'g'}[@id='{currentGroupID}']"):
+                root.remove(element)
+        
+        tree.write(path)
 
     def start(self):
         self.UpdateThread = threading.Thread(target=self.UpdateNotebook)

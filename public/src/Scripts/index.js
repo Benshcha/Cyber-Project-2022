@@ -135,12 +135,13 @@ function RequestDataNewNotebook() {
 		e.preventDefault();
 		var newTitle = $("#new-notebook-title").val();
 		var newDescription = $("#new-notebook-description").val();
-		createNotebook(newTitle, newDescription);
+		createNotebook(newTitle, newDescription, currentGroupID);
+		currentGroupID = 0;
 		$("#addnb-container").show();
 	});
 }
 
-function createNotebook(newTitle, newDescription) {
+function createNotebook(newTitle, newDescription, newGroupID) {
 	var textResp = POST(
 		`SAVENEWNB`,
 		"text/json",
@@ -148,6 +149,7 @@ function createNotebook(newTitle, newDescription) {
 			svgData: draw.svg(),
 			title: newTitle,
 			description: newDescription,
+			currentGroupID: newGroupID,
 		}),
 		(resp) => {
 			console.log(resp);
@@ -166,6 +168,7 @@ function SaveCurrentNotebook(nb) {
 		JSON.stringify(nb.changes),
 		(resp) => {
 			console.log(resp);
+			loadNotebook(currentNotebook);
 		}
 	);
 	nb.changes = [];
@@ -185,7 +188,9 @@ var doDraw = false;
 var currentNotebook = "";
 var color = "black";
 var thresh = 20;
-var currentGroupID = "";
+var currentGroupID = 0;
+var isPen = true;
+var isEraser = false;
 
 function map(value, low1, high1, low2, high2) {
 	return low2 + ((high2 - low2) * (value - low1)) / (high1 - low1);
@@ -245,13 +250,17 @@ function init() {
 }
 
 function ChooseEraser() {
-	// TODO: Choose eraser
-	console.log("Erasing!");
+	isPen = false;
+	$("#eraser").css("filter", "invert(0)");
+	isEraser = true;
+	$("#pen").css("filter", "invert(1)");
 }
 
 function ChoosePen() {
-	// TODO: Choose pen
-	console.log("Penning!");
+	isEraser = false;
+	$("#pen").css("filter", "invert(0)");
+	isPen = true;
+	$("#eraser").css("filter", "invert(1)");
 }
 
 function getPos(e) {
@@ -287,8 +296,13 @@ $(document).ready(function () {
 
 	canvas.on("pointermove", (e) => {
 		if (doDraw) {
-			// console.log(width);
-			nb.DrawPos(e, (sim = simState));
+			if (isPen) {
+				nb.DrawPos(e, (sim = simState));
+			} else if (isEraser) {
+				nb.EraseGroup(e);
+			}
+		} else if (doErase) {
+			console.log("erase" + e.target);
 		}
 	});
 
@@ -299,6 +313,12 @@ $(document).ready(function () {
 			doDraw = true;
 			pos = getPos(event, nb.div);
 			var g = nb.draw.group();
+
+			if (currentNotebook == "") {
+				currentGroupID += 1;
+				g = g.id(currentGroupID);
+			}
+
 			nb.cGroup = g;
 
 			nb.cPoints = [];
