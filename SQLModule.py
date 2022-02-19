@@ -5,6 +5,10 @@ from typing import Any
 from numpy import insert
 from config import logger, jsonFiles
 
+class SQLException(Exception):
+    def __init__(self, message: str, query: str):
+        self.message = f"Error from:\n{query}\nmessage"
+
 def __init__():
     logger.info("Initializing Database...")
     global cursor, mydb
@@ -74,9 +78,9 @@ def loadTableFromJson(table, filename, without: str | None =None):
         cmd = cmd[: -2]
         cursor.execute(cmd)
         mydb.commit()
-    except Exception as e:
-        logger.error(f"Failed to load {table}:\n{e}")
-        raise e
+    except connector.ProgrammingError as e:
+        logger.error()
+        raise SQLException(f"Failed to load {table}:\n{e}", cursor.statement)
     else:
         logger.info(f"Successfully uploaded {table} to database!")
         return 0
@@ -96,9 +100,12 @@ def saveDBToJson():
         logger.info(f"Table: {table} saved to {filename}!")
 
 def CheckAuth(Username: str, Password: str):
-    condition = "username='%s' AND pass='%s'" % (Username, Password)
-    attemptRes = Request('id', table='users', where=condition, singleton=True)
-    return attemptRes['id'] if attemptRes is not None else None
+    try:
+        condition = "username='%s' AND pass='%s'" % (Username, Password)
+        attemptRes = Request('id', table='users', where=condition, singleton=True)
+        return attemptRes['id'] if attemptRes is not None else None
+    except connector.ProgrammingError as e:
+        raise SQLException(e, cursor.statement)
 
 def Request(*attr, table: str, where: str = "", singleton: bool=False) -> list[dict[str: str]]:
     """

@@ -11,8 +11,9 @@ import xml.etree.ElementTree as ET
 ET.register_namespace('', "http://www.w3.org/2000/svg")
     
 class InvalidLoginAttempt(Exception):
+    # ! Do not insert sensitive information in the exception message
     def __init__(self, msg: str):
-        super().__init__(f"Invalid Login Attempt\n{msg}")
+        super().__init__(f"Invalid Login Attempt:\n{msg}")
 
 
 class Client(HTTP.GeneralClient):
@@ -25,7 +26,11 @@ class Client(HTTP.GeneralClient):
     def getUserAuth(packet):
         cookiesStr = [i.split("=") for i in packet.Headers['Cookie'].split(";")]
         cookies = {cookieStr[0]: cookieStr[1] for cookieStr in cookiesStr}
-        return tuple(json.loads(cookies['user_auth']).values())
+        username, password = tuple(json.loads(cookies['user_auth']).values())
+        if "'" not in username and "'" not in password:
+            return username, password
+        else:
+            raise InvalidLoginAttempt("Username or password contains invalid characters: '")
     
     def postResponse(self, packet: HTTP.Packet):
         file = packet.filename
@@ -176,7 +181,7 @@ class Client(HTTP.GeneralClient):
             self.SendPacket(respPacket)
             logger.debug(f"Sent login response packet: {resp}")
         except Exception as e:
-            raise InvalidLoginAttempt(e)
+            raise e
         
     def PublicResponse(self, file, includePayload=True):
         if file == '/':
@@ -243,7 +248,7 @@ class Client(HTTP.GeneralClient):
                 errorPacket = HTTP.Packet(json.dumps({"code": 1, "data": "Internal Server Error"}))
             elif isinstance(e, InvalidLoginAttempt):
                 logger.error(f"{e}")
-                errorPacket = HTTP.Packet({"code": 1, "data": "invalid login attempt"}, status="400")
+                errorPacket = HTTP.Packet({"code": 1, "data": f"invalid login attempt, {str(e)}"}, status="400")
             else:
                 logger.error(f"{e}\n{traceback.format_exc()}")
                 errorPacket = HTTP.Packet(f"Unknown Error: {e}", status="520")
