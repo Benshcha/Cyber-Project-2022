@@ -6,7 +6,6 @@ class Notebook {
 		this.cPath = null;
 		this.cGroup = null;
 		this.cPoints = [];
-		this.groups = [];
 		this.options = { size: 1 };
 	}
 
@@ -44,6 +43,19 @@ class Notebook {
 			this.div.height(this.div.height() + thresh * 10);
 		}
 		// nb.cPath.attr("stroke-width", width);
+	}
+
+	EraseGroup(target) {
+		let group = target.parentElement;
+		if (group.nodeName != "g") {
+			return;
+		}
+
+		let groupID = group.getAttribute("id");
+		console.log("deleting group: " + groupID);
+		let data = ["e", { type: "g", id: groupID }];
+		this.changes.push(data);
+		group.remove();
 	}
 }
 
@@ -254,6 +266,7 @@ function ChooseEraser() {
 	$("#eraser").css("filter", "invert(0)");
 	isEraser = true;
 	$("#pen").css("filter", "invert(1)");
+	console.log("Switched to eraser");
 }
 
 function ChoosePen() {
@@ -261,6 +274,7 @@ function ChoosePen() {
 	$("#pen").css("filter", "invert(0)");
 	isPen = true;
 	$("#eraser").css("filter", "invert(1)");
+	console.log("Switched to pen");
 }
 
 function getPos(e) {
@@ -299,10 +313,8 @@ $(document).ready(function () {
 			if (isPen) {
 				nb.DrawPos(e, (sim = simState));
 			} else if (isEraser) {
-				nb.EraseGroup(e);
+				nb.EraseGroup(e.target);
 			}
-		} else if (doErase) {
-			console.log("erase" + e.target);
 		}
 	});
 
@@ -311,38 +323,35 @@ $(document).ready(function () {
 	canvas.pressure({
 		start: function (event) {
 			doDraw = true;
-			pos = getPos(event, nb.div);
-			var g = nb.draw.group();
 
-			if (currentNotebook == "") {
-				currentGroupID += 1;
-				g = g.id(currentGroupID);
+			if (isPen) {
+				pos = getPos(event, nb.div);
+				var g = nb.draw.group();
+				if (currentNotebook == "") {
+					currentGroupID += 1;
+					g = g.id(currentGroupID);
+				}
+				nb.cGroup = g;
+				nb.cPoints = [];
+
+				width = event.pressure;
+				nb.DrawPos(event);
 			}
-
-			nb.cGroup = g;
-
-			nb.cPoints = [];
-			width = event.pressure;
-			nb.DrawPos(event);
 		},
 		end: function (event) {
 			let t;
 			let svgData;
-			if (doDraw) {
-				t = "a";
-				svgData = nb.cGroup.svg();
-				doDraw = false;
-			} else if (doErase) {
-				t = "e";
-				svgData = eraseGroup.svg();
-				doErase = false;
-			}
-			if (currentNotebook !== "") {
-				nb.changes.push([t, svgData]);
+			
+			doDraw = false;
 
+			if (currentNotebook !== "") {
+				if (isPen) {
+					t = "a";
+					svgData = nb.cGroup.svg();
+					nb.changes.push([t, svgData]);
+				}
 				SaveCurrentNotebook(nb);
 			}
-			nb.groups.push(nb.cGroup);
 		},
 		change: function (force, event) {
 			width = force;

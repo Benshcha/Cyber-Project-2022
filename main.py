@@ -69,8 +69,9 @@ class Client(HTTP.GeneralClient):
             logger.error(errMsg)
             return {'code': 1, 'data': errMsg}
         elif resp['code'] == 0:
-            for change in changes:
-                Notebook.ChangeNotebook(resp['data']['NotebookPath'], resp["data"]['currentGroupID'], change)
+            groupID = int(resp['data']['currentGroupID'])
+            for i, change in enumerate(changes):
+                Notebook.ChangeNotebook(resp['data']['NotebookPath'], groupID, change)
                 
             logger.info(f"Succesfully saved user {id}'s notebook {notebookID}")
         return {'code': 0, 'data': "Changes saved"}
@@ -349,7 +350,7 @@ class Notebook:
 
     # TODO: Update notebooks using the xml package 
     @staticmethod
-    def ChangeNotebook(path: str, currentGroupID: str, change: tuple):
+    def ChangeNotebook(path: str, currentGroupID: int, change: tuple):
         changeCMD = change[0]
         changeData = change[1]
         tree = ET.parse(path)
@@ -358,10 +359,13 @@ class Notebook:
             newElement = ET.fromstring(changeData)
             newElement.set('id', str(currentGroupID))
             root.append(newElement)
-            SQL.Update('notebooks', 'NotebookPath=%s' % path, currentGroupID=currentGroupID+1)
+            currentGroupID += 1
+            SQL.Update('notebooks', 'NotebookPath=\'%s\'' % path, currentGroupID=currentGroupID)
         elif changeCMD == 'e':
-            for element in root.find(f".//{Notebook.ns + 'g'}[@id='{currentGroupID}']"):
-                root.remove(element)
+            id = changeData['id']
+            t = changeData['type']
+            group = root.find(f".//{Notebook.ns + t}[@id='{id}']")
+            root.remove(group)
         
         tree.write(path)
 
