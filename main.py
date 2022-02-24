@@ -1,3 +1,5 @@
+port = 443
+
 import socket, threading, ssl
 from pprint import pprint, pformat
 import modules as HTTP
@@ -455,13 +457,13 @@ if __name__ == "__main__":
     context.load_cert_chain(certfile="https/cert.pem", keyfile="https/key.pem")
 
     bindSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    ADDR = ('', 443)
+    ADDR = ('', port)
     bindSocket.bind(ADDR)
     bindSocket.listen()
     hostname = socket.gethostname()
     local_ip = socket.gethostbyname(hostname)
 
-    logger.info(f"[INIT] Server running on {local_ip, hostname = }")
+    logger.info(f"[INIT] Server running on {local_ip, port, hostname = }")
 
     child_conn, parent_conn = mp.Pipe()
     UpdateNotebook = mp.Process(target=UpdateOpenNotebooksLoop, args=(child_conn, ))

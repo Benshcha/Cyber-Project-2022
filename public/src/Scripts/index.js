@@ -363,7 +363,7 @@ $(document).ready(function () {
 
 	setInterval(() => {
 		if (currentNotebook != "") {
-			SaveCurrentNotebook();
+			loadNotebook(currentNotebook);
 		}
 	}, 0.1);
 });
