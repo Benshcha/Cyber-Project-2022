@@ -360,6 +360,12 @@ $(document).ready(function () {
 			this.innerHTML = `Sorry! Check the devices and browsers`;
 		},
 	});
+
+	setInterval(() => {
+		if (currentNotebook != "") {
+			SaveCurrentNotebook();
+		}
+	}, 0.1);
 });
 
 var collapsed = false;
