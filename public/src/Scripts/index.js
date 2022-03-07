@@ -1,12 +1,11 @@
 class Notebook {
 	constructor(drawer, div) {
-		this.changes = "";
+		this.changes = [];
 		this.draw = drawer;
 		this.div = div;
 		this.cPath = null;
 		this.cGroup = null;
 		this.cPoints = [];
-		this.groups = [];
 		this.options = { size: 1 };
 	}
 
@@ -25,7 +24,7 @@ class Notebook {
 
 		var outlinePoints = getStroke(this.cPoints, options);
 
-		// TODO: Still need to define new Change
+		// vTODO: Still need to define new Change
 
 		// if nb has cPath clear it
 		if (this.cPath != null) {
@@ -44,6 +43,19 @@ class Notebook {
 			this.div.height(this.div.height() + thresh * 10);
 		}
 		// nb.cPath.attr("stroke-width", width);
+	}
+
+	EraseGroup(target) {
+		let group = target.parentElement;
+		if (group.nodeName != "g") {
+			return;
+		}
+
+		let groupID = group.getAttribute("id");
+		console.log("deleting group: " + groupID);
+		let data = ["e", { type: "g", id: groupID }];
+		this.changes.push(data);
+		group.remove();
 	}
 }
 
@@ -82,6 +94,7 @@ function loadNotebook(notebookID) {
 	var notebookData = JSON.parse(jsonString);
 	var data = notebookData["data"];
 	var svgData = data["NotebookData"];
+	currentGroupID = data["currentGroupID"];
 	draw.clear();
 	draw.svg(svgData);
 	$(`#Notebook${notebookID}`).css({ "background-color": "#fd4448" });
@@ -134,19 +147,21 @@ function RequestDataNewNotebook() {
 		e.preventDefault();
 		var newTitle = $("#new-notebook-title").val();
 		var newDescription = $("#new-notebook-description").val();
-		createNotebook(newTitle, newDescription);
+		createNotebook(newTitle, newDescription, currentGroupID);
+		currentGroupID = 0;
 		$("#addnb-container").show();
 	});
 }
 
-function createNotebook(newTitle, newDescription) {
+function createNotebook(newTitle, newDescription, newGroupID) {
 	var textResp = POST(
 		`SAVENEWNB`,
 		"text/json",
 		JSON.stringify({
-			svgData: svg.html(),
+			svgData: draw.svg(),
 			title: newTitle,
 			description: newDescription,
+			currentGroupID: newGroupID,
 		}),
 		(resp) => {
 			console.log(resp);
@@ -157,13 +172,18 @@ function createNotebook(newTitle, newDescription) {
 	);
 }
 
-function SaveCurrentNotebook() {
+function SaveCurrentNotebook(nb) {
 	// var count = 0;
-
-	var resp = POST(`/SAVE/${currentNotebook}`, "svg", nb.changes, (resp) => {
-		nb.changes = "";
-		console.log(resp);
-	});
+	var resp = POST(
+		`/SAVE/${currentNotebook}`,
+		"svg",
+		JSON.stringify(nb.changes),
+		(resp) => {
+			console.log(resp);
+			loadNotebook(currentNotebook);
+		}
+	);
+	nb.changes = [];
 }
 
 var userIDstring;
@@ -180,6 +200,9 @@ var doDraw = false;
 var currentNotebook = "";
 var color = "black";
 var thresh = 20;
+var currentGroupID = 0;
+var isPen = true;
+var isEraser = false;
 
 function map(value, low1, high1, low2, high2) {
 	return low2 + ((high2 - low2) * (value - low1)) / (high1 - low1);
@@ -239,13 +262,19 @@ function init() {
 }
 
 function ChooseEraser() {
-	// TODO: Choose eraser
-	console.log("Erasing!");
+	isPen = false;
+	$("#eraser").css("filter", "invert(0)");
+	isEraser = true;
+	$("#pen").css("filter", "invert(1)");
+	console.log("Switched to eraser");
 }
 
 function ChoosePen() {
-	// TODO: Choose pen
-	console.log("Penning!");
+	isEraser = false;
+	$("#pen").css("filter", "invert(0)");
+	isPen = true;
+	$("#eraser").css("filter", "invert(1)");
+	console.log("Switched to pen");
 }
 
 function getPos(e) {
@@ -281,8 +310,11 @@ $(document).ready(function () {
 
 	canvas.on("pointermove", (e) => {
 		if (doDraw) {
-			// console.log(width);
-			nb.DrawPos(e, (sim = simState));
+			if (isPen) {
+				nb.DrawPos(e, (sim = simState));
+			} else if (isEraser) {
+				nb.EraseGroup(e.target);
+			}
 		}
 	});
 
@@ -291,25 +323,35 @@ $(document).ready(function () {
 	canvas.pressure({
 		start: function (event) {
 			doDraw = true;
-			pos = getPos(event, nb.div);
-			var g = nb.draw.group();
-			nb.cGroup = g;
 
-			nb.cPoints = [];
-			width = event.pressure;
-			nb.DrawPos(event);
+			if (isPen) {
+				pos = getPos(event, nb.div);
+				var g = nb.draw.group();
+				if (currentNotebook == "") {
+					currentGroupID += 1;
+					g = g.id(currentGroupID);
+				}
+				nb.cGroup = g;
+				nb.cPoints = [];
+
+				width = event.pressure;
+				nb.DrawPos(event);
+			}
 		},
 		end: function (event) {
+			let t;
+			let svgData;
+			
 			doDraw = false;
 
-			if (currentNotebook != "") {
-				nb.changes += nb.cGroup.svg();
-			}
-
 			if (currentNotebook !== "") {
-				SaveCurrentNotebook();
+				if (isPen) {
+					t = "a";
+					svgData = nb.cGroup.svg();
+					nb.changes.push([t, svgData]);
+				}
+				SaveCurrentNotebook(nb);
 			}
-			nb.groups.push(nb.cGroup);
 		},
 		change: function (force, event) {
 			width = force;
@@ -318,6 +360,12 @@ $(document).ready(function () {
 			this.innerHTML = `Sorry! Check the devices and browsers`;
 		},
 	});
+
+	setInterval(() => {
+		if (currentNotebook != "") {
+			loadNotebook(currentNotebook);
+		}
+	}, 0.1);
 });
 
 var collapsed = false;

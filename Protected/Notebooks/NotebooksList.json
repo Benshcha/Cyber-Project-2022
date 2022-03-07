@@ -1,23 +1,2 @@
 [
-    {
-        "id": 1,
-        "ownerID": 1,
-        "NotebookPath": "Protected/Notebooks/1.svg",
-        "title": " My first notebook",
-        "description": "This is my first notebook "
-    },
-    {
-        "id": 2,
-        "ownerID": 8,
-        "NotebookPath": "Protected/Notebooks/2.svg",
-        "title": " Hello\n",
-        "description": "Jfaa "
-    },
-    {
-        "id": 3,
-        "ownerID": 8,
-        "NotebookPath": "Protected/Notebooks/3.svg",
-        "title": " Ok",
-        "description": "f "
-    }
 ]
