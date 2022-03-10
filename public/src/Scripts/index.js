@@ -361,11 +361,11 @@ $(document).ready(function () {
 		},
 	});
 
-	setInterval(() => {
-		if (currentNotebook != "") {
-			loadNotebook(currentNotebook);
-		}
-	}, 0.1);
+	// setInterval(() => {
+	// 	if (currentNotebook != "") {
+	// 		loadNotebook(currentNotebook);
+	// 	}
+	// }, 0.1);
 });
 
 var collapsed = false;
