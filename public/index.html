@@ -57,34 +57,13 @@
 	<button onclick="SaveCurrentNotebook()" id="save-button" class="online tool">Save</button>
 	
 	<div class="online" id="share-button-container">
-		<script>
-			// TODO
-			RequestLink = (nb) => {
-
-			}
-
-			ShareClick = () => {
-				$('#share-button-content').show(); const ShareContainer = $('#share-button-container');
-				$(document).click(function (e)
-				{
-					if (ShareContainer[0] !== e.target && !ShareContainer[0].contains(e.target))
-					{
-						shareHidden = !shareHidden;
-						if (!shareHidden)
-						{
-						$('#share-button-content').hide();
-						} else {
-						$('#share-button-content').show();
-						}
-						$(document).off('click', '**');
-					}
-				});
-			}
-		</script>
 	<button onclick="ShareClick()" class="tool">
         Share</button>
-      <div id="share-button-content">Link:
-        https://stackoverflow.com/questions/33241859/how-to-stop-div-from-pushing-other-divs-down</div>
+      <div id="share-button-content">
+		  <button id="generate-link" onclick="generateLink()">
+			Generate Link
+	  </button>
+        </div>
 	</div>
 	
 	<div id="size-container">

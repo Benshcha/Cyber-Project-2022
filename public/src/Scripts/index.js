@@ -79,7 +79,7 @@ function getCookie(name) {
 	return null;
 }
 
-function loadNotebook(notebookID) {
+function loadNotebook(notebookID, isCode = false) {
 	$(".online").show();
 	console.log(`pressed ${notebookID}`);
 	if (currentNotebook != "") {
@@ -90,7 +90,16 @@ function loadNotebook(notebookID) {
 			"background-color": "var(--default-title)",
 		});
 	}
-	var jsonString = GET(`Notebook/${notebookID}`, "text/json");
+
+	if (!isCode) {
+		var jsonString = GET(`Notebook/${notebookID}`, "text/json");
+	} else {
+		/* 
+		TODO : 
+			- request notebook according to code 
+			- also implement it server side
+		*/
+	}
 	var notebookData = JSON.parse(jsonString);
 	var data = notebookData["data"];
 	var svgData = data["NotebookData"];
@@ -125,7 +134,7 @@ function BuildNotebookList() {
 
 		nbListDiv.append(nbblock);
 
-		nbblock.click((e) => {
+		nbblock.on("click", (e) => {
 			var notebookID = e.currentTarget.id.slice(8);
 			loadNotebook(notebookID);
 		});
@@ -203,6 +212,10 @@ var thresh = 20;
 var currentGroupID = 0;
 var isPen = true;
 var isEraser = false;
+var collapsed = false;
+var attr = {};
+
+var NBcode = undefined;
 
 function map(value, low1, high1, low2, high2) {
 	return low2 + ((high2 - low2) * (value - low1)) / (high1 - low1);
@@ -258,6 +271,17 @@ function init() {
 		}
 	});
 
+	window.location.search
+		.substr(1)
+		.split("&&")
+		.forEach((eq) => {
+			let eqt = eq.split("=");
+			attr[eqt[0]] = eqt[1];
+		});
+
+	if (attr["nb"] != undefined) {
+		loadNotebook(attr["nb"], true);
+	}
 	DrawPreview(5);
 }
 
@@ -341,7 +365,7 @@ $(document).ready(function () {
 		end: function (event) {
 			let t;
 			let svgData;
-			
+
 			doDraw = false;
 
 			if (currentNotebook !== "") {
@@ -368,8 +392,6 @@ $(document).ready(function () {
 	// }, 0.1);
 });
 
-var collapsed = false;
-
 function collapseSidebar() {
 	if (!collapsed) {
 		$(":root").css("--mainbody-width", "100vw");
@@ -385,4 +407,84 @@ function collapseSidebar() {
 		$("#collapse-sidebar").css("left", "calc(var(--sidebar-width)");
 	}
 	collapsed = !collapsed;
+}
+
+var notebookLinkID = "";
+function ShareClick() {
+	if (NBcode === null || currentNotebook != notebookLinkID) {
+		NBcode = RequestLink(currentNotebook);
+		notebookLinkID = currentNotebook;
+	}
+
+	shareHidden = !shareHidden;
+	console.log(shareHidden);
+	if (shareHidden) {
+		$("#share-button-content").hide();
+	} else {
+		$("#share-button-content").show();
+	}
+	const ShareContainer = $("#share-button-container");
+
+	$(document).on("click", function (e) {
+		if (
+			ShareContainer[0] !== e.target &&
+			!ShareContainer[0].contains(e.target)
+		) {
+			if (!shareHidden) {
+				shareHidden = !shareHidden;
+				$("#share-button-content").hide();
+			}
+		}
+	});
+}
+
+function copy(selector) {
+	navigator.clipboard.writeText($(selector).text()).then(
+		() => {
+			console.log("Copied to clipboard");
+		},
+		() => {
+			console.log("Failed to copy");
+		}
+	);
+}
+
+function displayShareLink(code) {
+	let currentURL = $(location).attr("href");
+	$("#share-button-content").html(
+		`<div onclick="copy('#shareLink')" target="_blank">Link: <a id="shareLink"> ${currentURL}?nb=${code} </a>
+		</div>
+		`
+	);
+	$("#generate-link").hide();
+}
+
+function RequestLink(nbID) {
+	$.ajax({
+		type: "GET",
+		url: `/api/notebook/code?nbID=${nbID}`,
+		complete: (data) => {
+			data = data.responseJSON;
+			console.log(data);
+			code = data.code;
+			if (code != null) {
+				displayShareLink(code);
+			}
+		},
+	});
+	// return code;
+}
+
+function generateLink() {
+	resp = $.ajax({
+		type: "POST",
+		url: `/api/notebook/create`,
+		data: currentNotebook,
+		contentType: "text/json",
+		complete: (data) => {
+			console.log("data: ", data);
+			code = data.responseJSON["code"];
+			displayShareLink(code);
+		},
+	});
 }

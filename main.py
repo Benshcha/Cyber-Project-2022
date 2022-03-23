@@ -6,7 +6,7 @@ import modules as HTTP
 from modules import colorText
 from os.path import join
 import os, sys
-import json
+import json, random
 import traceback, hashlib, time
 import multiprocessing as mp
 import xml.etree.ElementTree as ET
@@ -43,6 +43,8 @@ class Client(HTTP.GeneralClient):
             resp = self.NewNotebook(packet)
         elif file.startswith('/SAVE/'):
             resp = self.SaveNotebook(packet, file)
+        elif file.startswith('/api/'):
+            resp = self.APIPostResponse(packet)
         else:
             # TODO Add error response
             ...
@@ -91,8 +93,8 @@ class Client(HTTP.GeneralClient):
         user_auth = self.getUserAuth(packet)
 
         notebookCode = ""
-        if file.startswith('/SAVE/c'):
-            notebookCode = file[7:]
+        if 'nb' in packet.attr:
+            notebookCode = packet.attr['nb']
         
         changes = json.loads(packet.Payload)
         if notebookCode == "":
@@ -159,7 +161,19 @@ class Client(HTTP.GeneralClient):
         
         return {"code": 0, "description": "Signed Up successfuly"}
     
-    def RequestData(self, packet: HTTP.Packet, *attr: tuple[str], table="", userIDString="id", where=None, **kwargs):
+    def RequestData(self, packet: HTTP.Packet, *attr: tuple[str], table="", userIDString="id", where: str=None, **kwargs):
+        """Request user's private data from the database.
+
+        Args:
+            packet (HTTP.Packet): the packet that contains the user's credentials.
+            table (str, optional): the table from which to request the data. Defaults to "".
+            userIDString (str, optional): the string which represents the owner id in the relevent table. Defaults to "id".
+            where (str | None, optional): additional where sql commands. Defaults to None.
+
+        Returns:
+            dict: dictionary containing the error code and data 
+            e.g: {'code': 0, 'data': somedata}.
+        """
         try:
             user_auth = self.getUserAuth(packet)
             resp = DataQuery(*user_auth,  *attr, table=table, userIDString=userIDString, where=where, **kwargs)
@@ -228,8 +242,19 @@ class Client(HTTP.GeneralClient):
         self.SendPacket(nbdataPacket)
         logger.info(f'Sent notebook {notebookID} to {self.addr}')
     
-    def getResponseManage(self, packet, includePayload=True):
+    def APIPostResponse(self, APIpacket):
+        notebookID = APIpacket.Payload
+        authResp = self.RequestData(APIpacket, "code", table='notebooks', userIDString='ownerID', where=f"id={notebookID}", singleton=True)
+        if authResp['code'] == 0:
+            resp = self.UpdateNotebookCode(notebookID)
+        return resp
+
+    def getResponseManage(self, packet: HTTP.Packet, includePayload=True):
         try:
+            # isPublicNB = 'nb' in packet.attr
+            
+            # if isPublicNB:
+            #     code = packet.attr['nb']
             file = packet.filename
             if file == "/LOGIN":
                 self.LoginAttempt(packet, includePayload=includePayload)
@@ -237,6 +262,9 @@ class Client(HTTP.GeneralClient):
                 self.SendNotebookList(packet, includePayload=includePayload)
             elif file.startswith("/Notebook"):
                 self.SendNotebook(packet, includePayload=includePayload)
+            elif file.startswith('/api/'):
+                apiRequest = file[5:]
+                self.APIGetResponse(packet, apiRequest)
             else: # If file is public
                 self.PublicResponse(file, includePayload=includePayload)
         except Exception as e:
@@ -246,7 +274,7 @@ class Client(HTTP.GeneralClient):
                 self.SendPacket(errorPacket)
             elif isinstance(e, ConnectionAbortedError):
                 logger.debug(f"{self.addr} Aborted Connection")
-            elif isinstance(e, SQL.connector.errors.ProgrammingError):
+            elif isinstance(e, SQL.SQLException):
                 logger.error(f"SQL Error:\n{e}")
                 errorPacket = HTTP.Packet(json.dumps({"code": 1, "data": "Internal Server Error"}))
             elif isinstance(e, InvalidLoginAttempt):
@@ -264,6 +292,25 @@ class Client(HTTP.GeneralClient):
     def headResponse(self, packet):
         self.getResponseManage(packet, includePayload=False)
     
+    def APIGetResponse(self, APIpacket: HTTP.Packet, apiUrl: str) :
+        if apiUrl == "notebook/code":
+            notebookID =  APIpacket.attr['nbID']
+            # Verify the opener is the owner of the notebook
+            authResp = self.RequestData(APIpacket, "code", table='notebooks', userIDString='ownerID', where=f"id={notebookID}", singleton=True)
+            if authResp['code'] == 1:
+                apiRespPacket = HTTP.Packet("Invalid credentials", filename=apiUrl, status="403")
+            else:
+                currentCode = authResp['data']['code']
+                apiRespPacket = HTTP.Packet({'code': currentCode}, filename=apiUrl, dataType='text/json')
+                
+        
+        self.SendPacket(apiRespPacket)
+
+    def UpdateNotebookCode(self, notebookID):
+        code = GenerateNotebookCode()
+        updateResp = SQL.Update(table="notebooks", where=f"id={notebookID}", code=code)
+        return {"code": code}
+
     def parseHttpPacket(self, packetByteData: bytes):
         packetStr = packetByteData.decode()
         packet = HTTP.extractDataFromPacket(packetStr)
@@ -283,8 +330,11 @@ class Client(HTTP.GeneralClient):
                 packetByteData = self.Recieve()
                 if packetByteData == b'':
                     logger.info(f'Recieved empty packet from {self.addr}. closing connection')
-                    self.stream.send(b'\r\n')
-                    self.stream.close()
+                    try:
+                        self.stream.send(b'\r\n')
+                        self.stream.close()
+                    except Exception:
+                        pass
                     break
 
                 packet = self.parseHttpPacket(packetByteData)
@@ -374,10 +424,16 @@ class Notebook:
     def start(self):
         self.UpdateThread = threading.Thread(target=self.UpdateNotebook)
         self.UpdateThread.start()
-    
 
-def GenerateNotebookCode(password:str) -> str:
-    code = hashlib.sha256((password + str(time.time())).encode()).hexdigest()
+def CodeEncryptionKey() -> str:
+    key = 0
+    while True:
+        yield bytes(key) + str(time.time()).encode()
+        key += 1
+
+def GenerateNotebookCode() -> str:
+    keys = CodeEncryptionKey()
+    code = hashlib.md5(next(keys)).hexdigest()
     return code
 
 
@@ -386,7 +442,6 @@ def UpdateOpenNotebooksLoop(child_conn):
     while True:
         changesList = child_conn.recv()
 
-        # vTODO: Send to child connection from parent the changes
         for NotebookID, NotebookPath, change in changesList:
             if NotebookID not in OpenNotebooks:
                 newNotebook = Notebook(NotebookID, NotebookPath)

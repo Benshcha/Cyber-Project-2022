@@ -18,6 +18,12 @@ html,
   margin: 0;
 }
 
+#shareLink {
+    background: #707070;
+    border-radius: 5px;
+    padding: 1px;
+}
+
 textarea{
   border: 2px solid #060606;
   border-radius: 4px;
@@ -223,6 +229,8 @@ path {
 }
 
 #share-button-content {
+	cursor: pointer;
+	padding: 5px;
 	display: none;
 	position: fixed;
 	background-color: #555555;

@@ -13,12 +13,13 @@ function deleteCookie(name) {
 	document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:01 GMT;";
 }
 
-function GET(file, type) {
+function GET(file, type, complete = null) {
 	var resp = $.ajax({
 		type: "GET",
 		url: file,
 		async: false,
 		dataType: type,
+		complete: complete,
 	});
 	return resp.responseText;
 }

@@ -6,9 +6,18 @@ from numpy import insert
 from config import logger, jsonFiles
 
 class SQLException(Exception):
-    def __init__(self, message: str, query: str):
-        self.message = f"Error from:\n{query}\nmessage"
+    def __init__(self, e: Exception, query: str):
+        self.message = f"Error from:\n{query}\n{e}"
 
+def SQLFunction(func):
+    def wrapper(*args, **kwargs):
+        try:
+            return func(*args, **kwargs)
+        except connector.Error as e:
+            raise SQLException(e, cursor.statement)
+    return wrapper
+
+@SQLFunction
 def __init__():
     logger.info("Initializing Database...")
     global cursor, mydb
@@ -22,7 +31,8 @@ def __init__():
     )
     
     cursor = mydb.cursor()
-    
+
+@SQLFunction  
 def initMainSQL():
     __init__()
     createusersQuery = """CREATE TABLE IF NOT EXISTS users(id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,username CHAR(30) NOT NULL UNIQUE, pass CHAR(30) NOT NULL);"""
@@ -51,6 +61,7 @@ def initMainSQL():
             without = None
         loadTableFromJson(k, data['path'], without)
 
+@SQLFunction
 def loadTableFromJson(table, filename, without: str | None =None):
     logger.info(f"Uploading {table} to database...")
     with open(filename) as FILE:
@@ -85,6 +96,7 @@ def loadTableFromJson(table, filename, without: str | None =None):
         logger.info(f"Successfully uploaded {table} to database!")
         return 0
 
+@SQLFunction
 def saveDBToJson():
     for table, data in jsonFiles.items():  
         filename = data['path']  
@@ -99,6 +111,7 @@ def saveDBToJson():
             json.dump(datadict, UsersFILE, indent=4)
         logger.info(f"Table: {table} saved to {filename}!")
 
+@SQLFunction
 def CheckAuth(Username: str, Password: str):
     try:
         condition = "username='%s' AND pass='%s'" % (Username, Password)
@@ -107,6 +120,7 @@ def CheckAuth(Username: str, Password: str):
     except connector.ProgrammingError as e:
         raise SQLException(e, cursor.statement)
 
+@SQLFunction
 def Request(*attr, table: str, where: str = "", singleton: bool=False) -> list[dict[str: str]]:
     """
     ### Send a query request (SELECT) to the database.
@@ -136,6 +150,7 @@ def Request(*attr, table: str, where: str = "", singleton: bool=False) -> list[d
         data = data[0]
     return data
 
+@SQLFunction
 def DataQuery(Username: str, Password: str, *attr: tuple[str], table:str ="", userIDString: str="id", where=None, **kwargs) -> dict[int, Any]:
     """
     ## Request data from database using the client's username and password for authentication
@@ -182,12 +197,14 @@ def DataQuery(Username: str, Password: str, *attr: tuple[str], table:str ="", us
         if 'returnUserID' in kwargs and kwargs['returnUserID']:
             ans['UserID'] = UserID
     return ans
-    
+
+@SQLFunction  
 def exitHandler():
     __init__()
     saveDBToJson()
     logger.info(f"Goodbye :)")
 
+@SQLFunction
 def Insert(table:str, **datadict):  
     if len(datadict) != 0:
         try:
@@ -211,6 +228,7 @@ def Insert(table:str, **datadict):
         
     return {'code': 1, 'data': ""}
 
+@SQLFunction
 def Update(table: str, where: str, **datadict):
     if len(datadict) != 0:
         try:
@@ -224,7 +242,8 @@ def Update(table: str, where: str, **datadict):
             return {'code': 0}
         except Exception as e:
             return {'code': 1, 'data': e}
-        
+
+@SQLFunction      
 def Remove(table, id):
     logger.info(f"Removing {id} from {table}...")
     try:
