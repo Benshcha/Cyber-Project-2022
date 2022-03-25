@@ -81,7 +81,6 @@ function getCookie(name) {
 
 function loadNotebook(notebookID, isCode = false) {
 	$(".online").show();
-	console.log(`pressed ${notebookID}`);
 	if (currentNotebook != "") {
 		$(`#Notebook${currentNotebook}`).css({
 			"background-color": "var(--default-notebookList-background)",
@@ -92,15 +91,17 @@ function loadNotebook(notebookID, isCode = false) {
 	}
 
 	if (!isCode) {
-		var jsonString = GET(`Notebook/${notebookID}`, "text/json");
+		var notebookDataString = GET(`Notebook/${notebookID}`, "text/json");
+		var notebookData = JSON.parse(notebookDataString);
 	} else {
-		/* 
-		TODO : 
-			- request notebook according to code 
-			- also implement it server side
-		*/
+		var notebookDataResp = $.ajax({
+			url: `Notebook`,
+			type: "GET",
+			data: { nb: notebookID },
+			async: false,
+		});
+		var notebookData = notebookDataResp.responseJSON;
 	}
-	var notebookData = JSON.parse(jsonString);
 	var data = notebookData["data"];
 	var svgData = data["NotebookData"];
 	currentGroupID = data["currentGroupID"];
@@ -182,16 +183,30 @@ function createNotebook(newTitle, newDescription, newGroupID) {
 }
 
 function SaveCurrentNotebook(nb) {
+	let code = attr["nb"];
+
 	// var count = 0;
-	var resp = POST(
-		`/SAVE/${currentNotebook}`,
-		"svg",
-		JSON.stringify(nb.changes),
-		(resp) => {
-			console.log(resp);
-			loadNotebook(currentNotebook);
-		}
-	);
+	if (code == undefined) {
+		var resp = POST(
+			`/SAVE/${currentNotebook}`,
+			"svg",
+			JSON.stringify(nb.changes),
+			(resp) => {
+				console.log(resp);
+				loadNotebook(currentNotebook);
+			}
+		);
+	} else {
+		var resp = $.ajax({
+			url: `/SAVE/?nb=${code}`,
+			type: "POST",
+			contentType: "svg",
+			data: JSON.stringify(nb.changes),
+			complete: (resp) => {
+				console.log(resp);
+			},
+		});
+	}
 	nb.changes = [];
 }
 
@@ -214,6 +229,7 @@ var isPen = true;
 var isEraser = false;
 var collapsed = false;
 var attr = {};
+var updateInterval = 1000;
 
 var NBcode = undefined;
 
@@ -281,6 +297,7 @@ function init() {
 
 	if (attr["nb"] != undefined) {
 		loadNotebook(attr["nb"], true);
+		collapseSidebar();
 	}
 	DrawPreview(5);
 }
@@ -385,11 +402,15 @@ $(document).ready(function () {
 		},
 	});
 
-	// setInterval(() => {
-	// 	if (currentNotebook != "") {
-	// 		loadNotebook(currentNotebook);
-	// 	}
-	// }, 0.1);
+	setInterval(() => {
+		if (isUpdating) {
+			if (attr["nb"] != undefined) {
+				loadNotebook(attr["nb"], true);
+			} else if (currentNotebook != "") {
+				loadNotebook(currentNotebook);
+			}
+		}
+	}, updateInterval);
 });
 
 function collapseSidebar() {
@@ -487,4 +508,10 @@ function generateLink() {
 			displayShareLink(code);
 		},
 	});
+}
+
+var isUpdating = true;
+
+function toggleUpdate() {
+	isUpdating = !isUpdating;
 }

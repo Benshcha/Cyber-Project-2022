@@ -3,6 +3,8 @@ port = 443
 import socket, threading, ssl
 from pprint import pprint, pformat
 import modules as HTTP
+import SQLModule as SQL
+SQL.__init__()
 from modules import colorText
 from os.path import join
 import os, sys
@@ -81,12 +83,12 @@ class Client(HTTP.GeneralClient):
         return {'code': 0, 'data': "Changes saved"}
 
     def SavePublicNotebook(self, notebookCode, changes):
-        resp = SQL.Request('id', 'notebookPath', 'currentGroupID', table="openNotebooks", where="code='%s'" % notebookCode, singleton=True)
+        resp = SQL.Request('id', 'notebookPath', table="notebooks", where="code='%s'" % notebookCode, singleton=True)
 
         if len(resp) == 0:
             return {'code': 1, 'data': "Unknown notebook code"}
         else:
-            self.UpdatePipe.send((*resp, changes))
+            self.UpdatePipe.send((*list(resp.values()), changes))
             return {'code': 0, 'data': "Changes saved"}
 
     def SaveNotebook(self, packet: HTTP.Packet, file: str = "") -> dict:
@@ -102,6 +104,7 @@ class Client(HTTP.GeneralClient):
             resp = self.SavePrivateNotebook(user_auth, notebookID, changes)
             return resp
         else:
+            logger.debug(f"User {user_auth[0]} is saving public notebook {notebookCode}...")
             resp = self.SavePublicNotebook(notebookCode, changes)
             return resp
 
@@ -202,7 +205,7 @@ class Client(HTTP.GeneralClient):
         
     def PublicResponse(self, file, includePayload=True):
         if file == '/':
-            file = "index.html"
+            file = "/index.html"
 
         if not file.startswith('/node_modules'):
             filePath = "public/" + file
@@ -229,16 +232,26 @@ class Client(HTTP.GeneralClient):
         self.SendPacket(nbListPacket)
     
     def SendNotebook(self, packet, includePayload=True):
-        notebookID = packet.filename[10:]
-            
-        nbdatadict = self.RequestData(packet, "NotebookPath", "title", "currentGroupID", table="notebooks", userIDString="ownerID", where=f"id={notebookID}", singleton=True)
+        isPublicNB = 'nb' in packet.attr
         
-        if not nbdatadict['code']:
+        if not isPublicNB:
+            notebookID = packet.filename[10:]
+                
+            nbdatadict = self.RequestData(packet, "NotebookPath", "title", "currentGroupID", table="notebooks", userIDString="ownerID", where=f"id={notebookID}", singleton=True)
+            
+        else:
+            code = packet.attr['nb']
+            sqlReqResp = SQL.Request("NotebookPath", "title", 'id', "currentGroupID", table="notebooks", where=f"code='{code}'", singleton=True)
+            nbdatadict = {'code': 0, 'data': sqlReqResp}
+
+            notebookID = sqlReqResp['id']
+        
+        if 'code' in nbdatadict and nbdatadict['code'] == 0:
             filePath = nbdatadict['data'].pop('NotebookPath', None)
             with open(filePath) as FILE:
                 nbdatadict['data']["NotebookData"] = FILE.read()
-            
-        nbdataPacket = HTTP.Packet(nbdatadict, includePayload=includePayload)
+
+        nbdataPacket = HTTP.Packet(nbdatadict, includePayload=includePayload, dataType='text/json')
         self.SendPacket(nbdataPacket)
         logger.info(f'Sent notebook {notebookID} to {self.addr}')
     
@@ -251,10 +264,6 @@ class Client(HTTP.GeneralClient):
 
     def getResponseManage(self, packet: HTTP.Packet, includePayload=True):
         try:
-            # isPublicNB = 'nb' in packet.attr
-            
-            # if isPublicNB:
-            #     code = packet.attr['nb']
             file = packet.filename
             if file == "/LOGIN":
                 self.LoginAttempt(packet, includePayload=includePayload)
@@ -275,8 +284,8 @@ class Client(HTTP.GeneralClient):
             elif isinstance(e, ConnectionAbortedError):
                 logger.debug(f"{self.addr} Aborted Connection")
             elif isinstance(e, SQL.SQLException):
-                logger.error(f"SQL Error:\n{e}")
-                errorPacket = HTTP.Packet(json.dumps({"code": 1, "data": "Internal Server Error"}))
+                logger.error(f"SQL Error:\n{e}\n{traceback.format_exc()}")
+                errorPacket = HTTP.Packet(json.dumps({"code": 1, "data": "Internal Server Error"}), status="500")
             elif isinstance(e, InvalidLoginAttempt):
                 logger.error(f"{e}")
                 errorPacket = HTTP.Packet({"code": 1, "data": f"invalid login attempt, {str(e)}"}, status="400")
@@ -392,11 +401,13 @@ class Notebook:
 
     def UpdateNotebook(self):
         while True:
-            if not self.Queue.isEmpty():
-                change = self.Queue.pop()
+            if not self.Queue.empty():
+                change = self.Queue.get()
                 if change == "stop":
                     return
-                self.ChangeNotebook(self.path, change)
+                sqlResp = SQL.Request("currentGroupID", table="notebooks", where=f"id={self.id}", singleton=True)
+                currentGroupNumber = sqlResp['currentGroupID']
+                self.ChangeNotebook(self.path, currentGroupNumber, change)
 
     ns = "{http://www.w3.org/2000/svg}"
 
@@ -409,15 +420,16 @@ class Notebook:
         root = tree.getroot()
         if changeCMD == 'a':
             newElement = ET.fromstring(changeData)
-            newElement.set('id', str(currentGroupID))
             root.append(newElement)
             currentGroupID += 1
+            newElement.set('id', str(currentGroupID))
             SQL.Update('notebooks', 'NotebookPath=\'%s\'' % path, currentGroupID=currentGroupID)
         elif changeCMD == 'e':
             id = changeData['id']
             t = changeData['type']
             group = root.find(f".//{Notebook.ns + t}[@id='{id}']")
-            root.remove(group)
+            if group != None: 
+                root.remove(group)
         
         tree.write(path)
 
@@ -439,17 +451,24 @@ def GenerateNotebookCode() -> str:
 
 def UpdateOpenNotebooksLoop(child_conn):
     OpenNotebooks = {}
+    changesList = []
     while True:
-        changesList = child_conn.recv()
+        try:
+            changesList.append(child_conn.recv())
 
-        for NotebookID, NotebookPath, change in changesList:
-            if NotebookID not in OpenNotebooks:
-                newNotebook = Notebook(NotebookID, NotebookPath)
-                newNotebook.start()
-                newNotebook.addChanges(change)
-                OpenNotebooks[NotebookID] = newNotebook
-            else:
-                OpenNotebooks[NotebookID].addChanges(change)
+            for NotebookID, NotebookPath, NBchanges in changesList:
+                if NotebookID not in OpenNotebooks:
+                    newNotebook = Notebook(NotebookID, NotebookPath)
+                    newNotebook.start()
+                    for change in NBchanges:
+                        newNotebook.addChanges(change)
+                    OpenNotebooks[NotebookID] = newNotebook
+                else:
+                    for change in NBchanges:
+                        OpenNotebooks[NotebookID].addChanges(change)
+
+        except Exception as e:
+            logger.error(e, exc_info=True)
         
 
 if __name__ == "__main__":
@@ -457,7 +476,6 @@ if __name__ == "__main__":
     from config import logger, silentLog
 
     # Load SQL
-    import SQLModule as SQL
     SQL.initMainSQL()
     from SQLModule import cursor, mydb, DataQuery
 

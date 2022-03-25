@@ -13,8 +13,11 @@ def SQLFunction(func):
     def wrapper(*args, **kwargs):
         try:
             return func(*args, **kwargs)
-        except connector.Error as e:
-            raise SQLException(e, cursor.statement)
+        except Exception as e:
+            if isinstance(e, connector.errors.Error):
+                raise SQLException(e, cursor.statement)
+            else:
+                raise e
     return wrapper
 
 @SQLFunction
@@ -34,7 +37,6 @@ def __init__():
 
 @SQLFunction  
 def initMainSQL():
-    __init__()
     createusersQuery = """CREATE TABLE IF NOT EXISTS users(id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,username CHAR(30) NOT NULL UNIQUE, pass CHAR(30) NOT NULL);"""
     cursor.execute(createusersQuery)
     mydb.commit()
