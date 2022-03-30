@@ -1,10 +1,11 @@
 port = 443
 
+# import global variables
+from config import *
+
 import socket, threading, ssl
 from pprint import pprint, pformat
 import modules as HTTP
-import SQLModule as SQL
-SQL.__init__()
 from modules import colorText
 from os.path import join
 import os, sys
@@ -77,7 +78,7 @@ class Client(HTTP.GeneralClient):
         elif resp['code'] == 0:
             groupID = int(resp['data']['currentGroupID'])
             for i, change in enumerate(changes):
-                Notebook.ChangeNotebook(resp['data']['NotebookPath'], groupID, change)
+                Notebook.ChangeNotebook(resp['data']['NotebookPath'], groupID, change, SQL)
                 
             logger.info(f"Succesfully saved user {id}'s notebook {notebookID}")
         return {'code': 0, 'data': "Changes saved"}
@@ -152,15 +153,15 @@ class Client(HTTP.GeneralClient):
         attemptUsername = payloadDict['username']
         attemptPassword = payloadDict['password']
         
-        cursor.execute(f"SELECT EXISTS(SELECT 1 FROM users WHERE username='{attemptUsername}')")
-        resp = cursor.fetchall()
+        SQL.cursor.execute(f"SELECT EXISTS(SELECT 1 FROM users WHERE username='{attemptUsername}')")
+        resp = SQL.cursor.fetchall()
         
         if resp[0][0] == 1:
             return {"code": 1, "description": "Username already exists!"}
         
         
-        cursor.execute(f"INSERT INTO users (username, pass) VALUES ('{attemptUsername}', '{attemptPassword}')")
-        mydb.commit()
+        SQL.cursor.execute(f"INSERT INTO users (username, pass) VALUES ('{attemptUsername}', '{attemptPassword}')")
+        SQL.mydb.commit()
         
         return {"code": 0, "description": "Signed Up successfuly"}
     
@@ -179,7 +180,7 @@ class Client(HTTP.GeneralClient):
         """
         try:
             user_auth = self.getUserAuth(packet)
-            resp = DataQuery(*user_auth,  *attr, table=table, userIDString=userIDString, where=where, **kwargs)
+            resp = SQL.DataQuery(*user_auth,  *attr, table=table, userIDString=userIDString, where=where, **kwargs)
         except KeyError as e:
             resp = {"code": 1, "data": "No cookie was sent"}
 
@@ -253,7 +254,7 @@ class Client(HTTP.GeneralClient):
 
         nbdataPacket = HTTP.Packet(nbdatadict, includePayload=includePayload, dataType='text/json')
         self.SendPacket(nbdataPacket)
-        logger.info(f'Sent notebook {notebookID} to {self.addr}')
+        logger.info(f'Sent notebook {notebookID} to {self.addr} with groupid: {nbdatadict["data"]["currentGroupID"]}')
     
     def APIPostResponse(self, APIpacket):
         notebookID = APIpacket.Payload
@@ -283,7 +284,7 @@ class Client(HTTP.GeneralClient):
                 self.SendPacket(errorPacket)
             elif isinstance(e, ConnectionAbortedError):
                 logger.debug(f"{self.addr} Aborted Connection")
-            elif isinstance(e, SQL.SQLException):
+            elif isinstance(e, SQLException):
                 logger.error(f"SQL Error:\n{e}\n{traceback.format_exc()}")
                 errorPacket = HTTP.Packet(json.dumps({"code": 1, "data": "Internal Server Error"}), status="500")
             elif isinstance(e, InvalidLoginAttempt):
@@ -367,8 +368,8 @@ class Client(HTTP.GeneralClient):
                     fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
                     
                     raise
-                except SQL.connector.Error as e:
-                    logger.error(f"sql line from {self.addr} was: {SQL.cursor.statement} ")
+                # except SQL.connector.Error as e:
+                #     logger.error(f"sql line from {self.addr} was: {SQL.cursor.statement} ")
                 except ConnectionAbortedError as e:
                     logger.error(f"connection aborted with {self.addr}!")
                     self.stream.close()
@@ -390,11 +391,12 @@ class Client(HTTP.GeneralClient):
         return f"{self.addr}"
 
 class Notebook:
-    def __init__(self, id: str, path: str) -> None:
+    def __init__(self, id: str, path: str, SQL: SQLClass) -> None:
         self.id = id
         self.path = path
         self.Queue = mp.Queue()
         self.UpdateThread = None
+        self.SQL = SQL
     
     def addChanges(self, change: tuple):
         self.Queue.put(change)
@@ -405,15 +407,15 @@ class Notebook:
                 change = self.Queue.get()
                 if change == "stop":
                     return
-                sqlResp = SQL.Request("currentGroupID", table="notebooks", where=f"id={self.id}", singleton=True)
+                sqlResp = self.SQL.Request("currentGroupID", table="notebooks", where=f"id={self.id}", singleton=True)
                 currentGroupNumber = sqlResp['currentGroupID']
-                self.ChangeNotebook(self.path, currentGroupNumber, change)
+                self.ChangeNotebook(self.path, currentGroupNumber, change, self.SQL)
 
     ns = "{http://www.w3.org/2000/svg}"
 
     # TODO: Update notebooks using the xml package 
     @staticmethod
-    def ChangeNotebook(path: str, currentGroupID: int, change: tuple):
+    def ChangeNotebook(path: str, currentGroupID: int, change: tuple, SQL: SQLClass):
         changeCMD = change[0]
         changeData = change[1]
         tree = ET.parse(path)
@@ -452,13 +454,19 @@ def GenerateNotebookCode() -> str:
 def UpdateOpenNotebooksLoop(child_conn):
     OpenNotebooks = {}
     changesList = []
+
+    # Connect to database
+    logger.info("Connecting to database from update process")
+    updateNBSQL = SQLClass()
+    logger.info("Connected to database from update process")
+
     while True:
         try:
             changesList.append(child_conn.recv())
 
             for NotebookID, NotebookPath, NBchanges in changesList:
                 if NotebookID not in OpenNotebooks:
-                    newNotebook = Notebook(NotebookID, NotebookPath)
+                    newNotebook = Notebook(NotebookID, NotebookPath, updateNBSQL)
                     newNotebook.start()
                     for change in NBchanges:
                         newNotebook.addChanges(change)
@@ -472,12 +480,11 @@ def UpdateOpenNotebooksLoop(child_conn):
         
 
 if __name__ == "__main__":
-    # import global variables
-    from config import logger, silentLog
-
     # Load SQL
+    logger.info("Initializing Database from main thread...")
+    SQL = SQLClass()
     SQL.initMainSQL()
-    from SQLModule import cursor, mydb, DataQuery
+    logger.info("Database initialized")
 
     def exitFunc(*args):
         SQL.exitHandler()
@@ -536,11 +543,14 @@ if __name__ == "__main__":
     hostname = socket.gethostname()
     local_ip = socket.gethostbyname(hostname)
 
-    logger.info(f"[INIT] Server running on {local_ip, port, hostname = }")
-
     child_conn, parent_conn = mp.Pipe()
     UpdateNotebook = mp.Process(target=UpdateOpenNotebooksLoop, args=(child_conn, ))
     UpdateNotebook.start()
+    logger.info(f"[INIT] Server running on {local_ip, port, hostname = }")
+
+
+    # ! Send SQL Module with the its global variables
+    # parent_conn.send(SQL)
 
     clients = []
     while True:

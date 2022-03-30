@@ -11,3 +11,6 @@ jsonFiles = {'users': {"path": 'Protected/UsersLoginData.json'}, 'notebooks': {"
 
 # silent log
 silentLog = False
+
+# SQL connection
+from SQLModule import SQLClass, SQLException

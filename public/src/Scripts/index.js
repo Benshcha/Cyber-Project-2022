@@ -369,7 +369,7 @@ $(document).ready(function () {
 				pos = getPos(event, nb.div);
 				var g = nb.draw.group();
 				if (currentNotebook == "") {
-					currentGroupID += 1;
+					currentGroupID += 1; // TODO: Change
 					g = g.id(currentGroupID);
 				}
 				nb.cGroup = g;
@@ -492,8 +492,9 @@ function RequestLink(nbID) {
 				displayShareLink(code);
 			}
 		},
+		async: false,
 	});
-	// return code;
+	return code;
 }
 
 function generateLink() {
