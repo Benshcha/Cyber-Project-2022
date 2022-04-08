@@ -42,7 +42,7 @@ class SQLClass:
         
         self.cursor = self.mydb.cursor()
 
-        for attr in self.__dict__:
+        for attr in self.__class__.__dict__:
             func = getattr(self, attr)
             if callable(func):
                 setattr(self, attr, SQLFunction(self, func))
