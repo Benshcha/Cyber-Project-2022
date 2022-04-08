@@ -29,9 +29,13 @@ class Client(HTTP.GeneralClient):
 
     @staticmethod
     def getUserAuth(packet):
-        cookiesStr = [i.split("=") for i in packet.Headers['Cookie'].split(";")]
-        cookies = {cookieStr[0]: cookieStr[1] for cookieStr in cookiesStr}
-        username, password = tuple(json.loads(cookies['user_auth']).values())
+        if 'Cookie' in packet.Headers and 'user_auth' in packet.Headers['Cookie']:
+            cookiesStr = [i.split("=") for i in packet.Headers['Cookie'].split(";")]
+            cookies = {cookieStr[0]: cookieStr[1] for cookieStr in cookiesStr}
+            username, password = tuple(json.loads(cookies['user_auth']).values())
+        else:
+            return None, None
+            
         if "'" not in username and "'" not in password:
             return username, password
         else:
@@ -452,6 +456,7 @@ def GenerateNotebookCode() -> str:
 
 
 def UpdateOpenNotebooksLoop(child_conn):
+    # Main function for the update process
     OpenNotebooks = {}
     changesList = []
 
