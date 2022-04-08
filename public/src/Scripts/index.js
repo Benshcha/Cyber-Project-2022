@@ -111,7 +111,7 @@ function loadNotebook(notebookID, isCode = false) {
 	$(`#Notebook${notebookID} .notebook-title`).css({
 		"background-color": "#f21c21",
 	});
-	currentNotebook = notebookID;
+	currentNotebook = `${notebookID}`;
 }
 
 function BuildNotebookList() {

@@ -464,7 +464,9 @@ def UpdateOpenNotebooksLoop(child_conn):
         try:
             changesList.append(child_conn.recv())
 
-            for NotebookID, NotebookPath, NBchanges in changesList:
+            while len(changesList) != 0:
+                NotebookID, NotebookPath, NBchanges = changesList.pop(-1)
+                
                 if NotebookID not in OpenNotebooks:
                     newNotebook = Notebook(NotebookID, NotebookPath, updateNBSQL)
                     newNotebook.start()
@@ -472,8 +474,9 @@ def UpdateOpenNotebooksLoop(child_conn):
                         newNotebook.addChanges(change)
                     OpenNotebooks[NotebookID] = newNotebook
                 else:
+                    notebook = OpenNotebooks[NotebookID]
                     for change in NBchanges:
-                        OpenNotebooks[NotebookID].addChanges(change)
+                        notebook.addChanges(change)
 
         except Exception as e:
             logger.error(e, exc_info=True)
