@@ -141,6 +141,11 @@ class Packet:
     def setPayload(self, payload):
         self.Payload = payload
         self.Headers['Content-Length'] = len(payload)
+
+    def send(self, sock) -> None:
+        byteString = self.toBytes()
+        sock.send(byteString)
+        return byteString
     
     def __str__(self):
         bytesObj = self.toBytes()

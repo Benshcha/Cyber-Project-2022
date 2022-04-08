@@ -96,6 +96,9 @@ class Client(HTTP.GeneralClient):
             self.UpdatePipe.send((*list(resp.values()), changes))
             return {'code': 0, 'data': "Changes saved"}
 
+    def SendUpdates(changes):
+        ...
+
     def SaveNotebook(self, packet: HTTP.Packet, file: str = "") -> dict:
         user_auth = self.getUserAuth(packet)
 
@@ -131,7 +134,7 @@ class Client(HTTP.GeneralClient):
                 
             except KeyError as e:
                 logger.error("User request doesn't have enough data:")
-                logger.error(e)
+                logger.error(e, exc_info=True)
                 return {'code': 1, 'data': f'Missing key: {e}'}
                 
             notebookID = insertResp['inserted_id']
@@ -279,6 +282,8 @@ class Client(HTTP.GeneralClient):
             elif file.startswith('/api/'):
                 apiRequest = file[5:]
                 self.APIGetResponse(packet, apiRequest)
+            elif file.startswith('/UPDATE'):
+                self.SignClientForUpdate(packet)
             else: # If file is public
                 self.PublicResponse(file, includePayload=includePayload)
         except Exception as e:
@@ -292,14 +297,14 @@ class Client(HTTP.GeneralClient):
                 logger.error(f"SQL Error:\n{e}\n{traceback.format_exc()}")
                 errorPacket = HTTP.Packet(json.dumps({"code": 1, "data": "Internal Server Error"}), status="500")
             elif isinstance(e, InvalidLoginAttempt):
-                logger.error(f"{e}")
+                logger.error(f"{e}\n{traceback.format_exc()}")
                 errorPacket = HTTP.Packet({"code": 1, "data": f"invalid login attempt, {str(e)}"}, status="400")
             else:
                 logger.error(f"{e}\n{traceback.format_exc()}")
                 errorPacket = HTTP.Packet(f"Unknown Error: {e}", status="520")
             
             self.SendPacket(errorPacket)
-    
+
     def getResponse(self, packet):
         self.getResponseManage(packet)
         
@@ -324,6 +329,13 @@ class Client(HTTP.GeneralClient):
         code = GenerateNotebookCode()
         updateResp = SQL.Update(table="notebooks", where=f"id={notebookID}", code=code)
         return {"code": code}
+
+    def SignClientForUpdate(self, packet: HTTP.Packet):
+        code = packet.attr['code']
+        req = SQL.Request("id", table="notebooks", where="code='%s'" % str(code), singleton=True)
+        id = req['id']
+
+        self.UpdatePipe.send(("sign", self.stream, id)) #TODO! Maybe transition to queue?
 
     def parseHttpPacket(self, packetByteData: bytes):
         packetStr = packetByteData.decode()
@@ -379,7 +391,7 @@ class Client(HTTP.GeneralClient):
                     self.stream.close()
                     return 1
                 except HTTP.ParsingError as e:
-                    logger.error(f"{e}")
+                    logger.error(f"{e}", exc_info=True)
 
                 except Exception as e:
                     eText = f"{self.addr}\n=========================\n\n\t" + traceback.format_exc().replace('\n', '\n\t') + f"\n----------------------\n\t{exc_obj}\n========================="
@@ -401,6 +413,7 @@ class Notebook:
         self.Queue = mp.Queue()
         self.UpdateThread = None
         self.SQL = SQL
+        self.clients = []
     
     def addChanges(self, change: tuple):
         self.Queue.put(change)
@@ -414,6 +427,11 @@ class Notebook:
                 sqlResp = self.SQL.Request("currentGroupID", table="notebooks", where=f"id={self.id}", singleton=True)
                 currentGroupNumber = sqlResp['currentGroupID']
                 self.ChangeNotebook(self.path, currentGroupNumber, change, self.SQL)
+
+    def sendChanges(self, clients, change):
+        for client in clients:
+            updatePacket = HTTP.Packet(change, filename="UPDATE", dataType="text/json")
+            updatePacket.send(client)
 
     ns = "{http://www.w3.org/2000/svg}"
 
@@ -459,6 +477,7 @@ def UpdateOpenNotebooksLoop(child_conn):
     # Main function for the update process
     OpenNotebooks = {}
     changesList = []
+    connectedClients = {}
 
     # Connect to database
     logger.info("Connecting to database from update process")
@@ -470,21 +489,31 @@ def UpdateOpenNotebooksLoop(child_conn):
             changesList.append(child_conn.recv())
 
             while len(changesList) != 0:
-                NotebookID, NotebookPath, NBchanges = changesList.pop(-1)
-                
+                msg = changesList.pop(-1)
+
+                # Check if a client wants to go on the update list
+                if msg[0] == "sign":
+                    client, NotebookID = msg[1], msg[2]
+                    connectedClients[NotebookID] = client
+                    continue
+                    
+
+                NotebookID, NotebookPath, NBchanges = msg
                 if NotebookID not in OpenNotebooks:
                     newNotebook = Notebook(NotebookID, NotebookPath, updateNBSQL)
                     newNotebook.start()
                     for change in NBchanges:
                         newNotebook.addChanges(change)
+                        newNotebook.sendChanges(connectedClients.pop(NotebookID), change)
                     OpenNotebooks[NotebookID] = newNotebook
                 else:
                     notebook = OpenNotebooks[NotebookID]
                     for change in NBchanges:
                         notebook.addChanges(change)
+                        newNotebook.sendChanges(connectedClients.pop(NotebookID), change)
 
         except Exception as e:
-            logger.error(e, exc_info=True)
+            logger.error(f"{e}\n{traceback.format_exc()}")
         
 
 if __name__ == "__main__":

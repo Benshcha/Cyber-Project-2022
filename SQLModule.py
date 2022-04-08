@@ -135,7 +135,7 @@ class SQLClass:
             raise SQLException(e, self.cursor.statement)
 
     
-    def Request(self, *attr, table: str, where: str = "", singleton: bool=False) -> list[dict[str: str]]:
+    def Request(self, *attr, table: str, where: str = "", singleton: bool=False) -> list[dict[str: str] | dict[str: Any]]:
         """
         ### Send a query request (SELECT) to the database.
 
@@ -237,7 +237,7 @@ class SQLClass:
                 return {'code': 0, 'inserted_id': id[0][0]}
                 
             except Exception as e:
-                logger.error(e)
+                logger.error(e, exc_info=True)
                 return {'code': 1, 'data': e}
             
         return {'code': 1, 'data': ""}

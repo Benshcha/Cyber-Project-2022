@@ -405,8 +405,9 @@ $(document).ready(function () {
 	setInterval(() => {
 		if (isUpdating) {
 			if (attr["nb"] != undefined) {
-				loadNotebook(attr["nb"], true);
+				checkUpdates(attr["nb"]);
 			} else if (currentNotebook != "") {
+				// TODO: Maybe transition to the same update method
 				loadNotebook(currentNotebook);
 			}
 		}
@@ -428,6 +429,28 @@ function collapseSidebar() {
 		$("#collapse-sidebar").css("left", "calc(var(--sidebar-width)");
 	}
 	collapsed = !collapsed;
+}
+
+checkingUpdates = false;
+function checkUpdates(code) {
+	if (checkingUpdates) {
+		return;
+	}
+
+	checkingUpdates = true;
+	$.ajax({
+		method: "GET",
+		url: `UPDATE`,
+		data: { code: code },
+		async: true,
+		complete: function (resp) {
+			if (resp.status == 200) {
+				let data = resp.responseJSON;
+				console.log("Recieved Update!");
+				checkingUpdates = false;
+			}
+		},
+	});
 }
 
 var notebookLinkID = "";
