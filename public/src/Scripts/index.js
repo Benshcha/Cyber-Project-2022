@@ -93,6 +93,7 @@ function loadNotebook(notebookID, isCode = false) {
 	if (!isCode) {
 		var notebookDataString = GET(`Notebook/${notebookID}`, "text/json");
 		var notebookData = JSON.parse(notebookDataString);
+		nbcode = notebookData["data"]["code"];
 	} else {
 		var notebookDataResp = $.ajax({
 			url: `Notebook`,
@@ -183,33 +184,29 @@ function createNotebook(newTitle, newDescription, newGroupID) {
 }
 
 function SaveCurrentNotebook(nb) {
-	let code = attr["nb"];
+	let attrcode = attr["nb"];
 
 	// var count = 0;
-	if (code == undefined) {
-		var resp = POST(
-			`/SAVE/${currentNotebook}`,
-			"svg",
-			JSON.stringify(nb.changes),
-			(resp) => {
-				console.log(resp);
-				loadNotebook(currentNotebook);
-			}
-		);
+	if (attrcode != undefined) {
+		addedurl = `?nb=${attrcode}`;
+	} else if (nbcode != null) {
+		addedurl = `?nb=${nbcode}`;
 	} else {
-		var resp = $.ajax({
-			url: `/SAVE/?nb=${code}`,
-			type: "POST",
-			contentType: "svg",
-			data: JSON.stringify(nb.changes),
-			complete: (resp) => {
-				console.log(resp);
-			},
-		});
+		addedurl = `${currentNotebook}`;
 	}
+	var resp = $.ajax({
+		url: `/SAVE/${addedurl}`,
+		type: "POST",
+		contentType: "svg",
+		data: JSON.stringify(nb.changes),
+		complete: (resp) => {
+			console.log(resp);
+		},
+	});
 	nb.changes = [];
 }
 
+var nbcode = null;
 var userIDstring;
 var isLoggedIn;
 var canvas;
@@ -406,6 +403,8 @@ $(document).ready(function () {
 		if (isUpdating) {
 			if (attr["nb"] != undefined) {
 				checkUpdates(attr["nb"]);
+			} else if (nbcode != null) {
+				checkUpdates(nbcode);
 			} else if (currentNotebook != "") {
 				// TODO: Maybe transition to the same update method
 				loadNotebook(currentNotebook);
@@ -438,15 +437,23 @@ function checkUpdates(code) {
 	}
 
 	checkingUpdates = true;
+	// create random id code
+	updateIDCode = Math.random().toString(36).substring(2, 15);
 	$.ajax({
 		method: "GET",
 		url: `UPDATE`,
-		data: { code: code },
+		data: { code: code, updateID: updateIDCode },
 		async: true,
 		complete: function (resp) {
 			if (resp.status == 200) {
 				let data = resp.responseJSON;
 				console.log("Recieved Update!");
+				if (data[1][0] == "a" && data[0] == updateIDCode) {
+					let newGroup = nb.draw.group(data[1]);
+				} else {
+					console.log("Update failed");
+				}
+
 				checkingUpdates = false;
 			}
 		},
@@ -529,6 +536,7 @@ function generateLink() {
 		complete: (data) => {
 			console.log("data: ", data);
 			code = data.responseJSON["code"];
+			nbcode = code;
 			displayShareLink(code);
 		},
 	});

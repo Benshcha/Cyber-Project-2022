@@ -22,10 +22,11 @@ class InvalidLoginAttempt(Exception):
 
 
 class Client(HTTP.GeneralClient):
-    def __init__(self, *args, UpdatePipe):
+    def __init__(self, *args, UpdatePipe, ClientUpdatePipe):
         super().__init__(*args)
         self.thread = threading.Thread(target=self.manage)
         self.UpdatePipe = UpdatePipe
+        self.clientUpdateParrentConnection = ClientUpdatePipe
 
     @staticmethod
     def getUserAuth(packet):
@@ -245,11 +246,11 @@ class Client(HTTP.GeneralClient):
         if not isPublicNB:
             notebookID = packet.filename[10:]
                 
-            nbdatadict = self.RequestData(packet, "NotebookPath", "title", "currentGroupID", table="notebooks", userIDString="ownerID", where=f"id={notebookID}", singleton=True)
+            nbdatadict = self.RequestData(packet, "NotebookPath", "title", "currentGroupID", "code", table="notebooks", userIDString="ownerID", where=f"id={notebookID}", singleton=True)
             
         else:
             code = packet.attr['nb']
-            sqlReqResp = SQL.Request("NotebookPath", "title", 'id', "currentGroupID", table="notebooks", where=f"code='{code}'", singleton=True)
+            sqlReqResp = SQL.Request("NotebookPath", "title", 'id', "currentGroupID", "code", table="notebooks", where=f"code='{code}'", singleton=True)
             nbdatadict = {'code': 0, 'data': sqlReqResp}
 
             notebookID = sqlReqResp['id']
@@ -335,7 +336,10 @@ class Client(HTTP.GeneralClient):
         req = SQL.Request("id", table="notebooks", where="code='%s'" % str(code), singleton=True)
         id = req['id']
 
-        self.UpdatePipe.send(("sign", self.stream, id)) #TODO! Maybe transition to queue?
+        self.UpdatePipe.send(("sign", packet.attr['updateID'], id)) #TODO! Maybe transition to queue?
+
+        change: Change = self.clientUpdateParrentConnection.recv()
+        self.SendPacket(HTTP.Packet(change, filename="/UPDATE", dataType="text/json"))
 
     def parseHttpPacket(self, packetByteData: bytes):
         packetStr = packetByteData.decode()
@@ -406,6 +410,21 @@ class Client(HTTP.GeneralClient):
     def __str__(self):
         return f"{self.addr}"
 
+class Change:
+    def __init__(self, t, val, code=None):
+        self.t = t
+        self.val = val
+        self.code = code
+
+    def __str__(self):
+        if self.code != None:
+            strData = str(self.t, self.val, self.code)
+        else: 
+            strData = str(self.t, self.val)
+
+        return json.dumps(strData)
+        
+
 class Notebook:
     def __init__(self, id: str, path: str, SQL: SQLClass) -> None:
         self.id = id
@@ -420,18 +439,22 @@ class Notebook:
 
     def UpdateNotebook(self):
         while True:
-            if not self.Queue.empty():
-                change = self.Queue.get()
-                if change == "stop":
-                    return
-                sqlResp = self.SQL.Request("currentGroupID", table="notebooks", where=f"id={self.id}", singleton=True)
-                currentGroupNumber = sqlResp['currentGroupID']
-                self.ChangeNotebook(self.path, currentGroupNumber, change, self.SQL)
+            try:
+                if not self.Queue.empty():
+                    change = self.Queue.get()
+                    if change == "stop":
+                        return
+                    sqlResp = self.SQL.Request("currentGroupID", table="notebooks", where=f"id={self.id}", singleton=True)
+                    currentGroupNumber = sqlResp['currentGroupID']
+                    self.ChangeNotebook(self.path, currentGroupNumber, change, self.SQL)
+            except Exception as e:
+                logger.error(f"{e}", exc_info=True)
 
-    def sendChanges(self, clients, change):
-        for client in clients:
-            updatePacket = HTTP.Packet(change, filename="UPDATE", dataType="text/json")
-            updatePacket.send(client)
+    def sendChanges(self, clients, changeTuple, connection):
+        for clientcode in clients:
+            logger.info(f"Sending change to {clientcode}")
+            change = Change(*changeTuple, clientcode)
+            connection.send(change)
 
     ns = "{http://www.w3.org/2000/svg}"
 
@@ -473,7 +496,7 @@ def GenerateNotebookCode() -> str:
     return code
 
 
-def UpdateOpenNotebooksLoop(child_conn):
+def UpdateOpenNotebooksLoop(child_conn, clientUpdateConnection):
     # Main function for the update process
     OpenNotebooks = {}
     changesList = []
@@ -495,6 +518,7 @@ def UpdateOpenNotebooksLoop(child_conn):
                 if msg[0] == "sign":
                     client, NotebookID = msg[1], msg[2]
                     connectedClients[NotebookID] = client
+                    logger.info(f"{client} signed in to {NotebookID}")
                     continue
                     
 
@@ -504,13 +528,13 @@ def UpdateOpenNotebooksLoop(child_conn):
                     newNotebook.start()
                     for change in NBchanges:
                         newNotebook.addChanges(change)
-                        newNotebook.sendChanges(connectedClients.pop(NotebookID), change)
+                        newNotebook.sendChanges(connectedClients.pop(NotebookID, []), change, clientUpdateConnection)
                     OpenNotebooks[NotebookID] = newNotebook
                 else:
                     notebook = OpenNotebooks[NotebookID]
                     for change in NBchanges:
                         notebook.addChanges(change)
-                        newNotebook.sendChanges(connectedClients.pop(NotebookID), change)
+                        newNotebook.sendChanges(connectedClients.pop(NotebookID, []), change, clientUpdateConnection)
 
         except Exception as e:
             logger.error(f"{e}\n{traceback.format_exc()}")
@@ -581,7 +605,8 @@ if __name__ == "__main__":
     local_ip = socket.gethostbyname(hostname)
 
     child_conn, parent_conn = mp.Pipe()
-    UpdateNotebook = mp.Process(target=UpdateOpenNotebooksLoop, args=(child_conn, ))
+    clientUpdateConnection, clientUpdateParrentConnection = mp.Pipe()
+    UpdateNotebook = mp.Process(target=UpdateOpenNotebooksLoop, args=(child_conn, clientUpdateConnection))
     UpdateNotebook.start()
     logger.info(f"[INIT] Server running on {local_ip, port, hostname = }")
 
@@ -594,7 +619,7 @@ if __name__ == "__main__":
         clientSocket, addr = bindSocket.accept()
         try:
             connStream = context.wrap_socket(clientSocket, server_side=True)
-            myClient = Client(connStream, addr, UpdatePipe=parent_conn)
+            myClient = Client(connStream, addr, UpdatePipe=parent_conn, ClientUpdatePipe=clientUpdateParrentConnection)
             clients.append(myClient)
             myClient.start()
         except ssl.SSLError as e:
