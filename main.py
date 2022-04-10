@@ -16,17 +16,18 @@ import xml.etree.ElementTree as ET
 ET.register_namespace('', "http://www.w3.org/2000/svg")
     
 class InvalidLoginAttempt(Exception):
-    # ! Do not insert sensitive information in the exception message
+    """ # ! Do not insert sensitive information in the exception message
+    """
     def __init__(self, msg: str):
         super().__init__(f"Invalid Login Attempt:\n{msg}")
 
 
 class Client(HTTP.GeneralClient):
-    def __init__(self, *args, UpdatePipe, ClientUpdatePipe):
+    def __init__(self, *args, server):
         super().__init__(*args)
         self.thread = threading.Thread(target=self.manage)
-        self.UpdatePipe = UpdatePipe
-        self.clientUpdateParrentConnection = ClientUpdatePipe
+        self.server = server
+        self.UpdateCode = None
 
     @staticmethod
     def getUserAuth(packet):
@@ -94,7 +95,7 @@ class Client(HTTP.GeneralClient):
         if len(resp) == 0:
             return {'code': 1, 'data': "Unknown notebook code"}
         else:
-            self.UpdatePipe.send((*list(resp.values()), changes))
+            self.server.UpdatePipe.send((*list(resp.values()), changes))
             return {'code': 0, 'data': "Changes saved"}
 
     def SendUpdates(changes):
@@ -334,12 +335,25 @@ class Client(HTTP.GeneralClient):
     def SignClientForUpdate(self, packet: HTTP.Packet):
         code = packet.attr['code']
         req = SQL.Request("id", table="notebooks", where="code='%s'" % str(code), singleton=True)
-        id = req['id']
+        nbid = req['id']
 
-        self.UpdatePipe.send(("sign", packet.attr['updateID'], id)) #TODO! Maybe transition to queue?
+        # updateID = packet.attr['updateID']
+        # self.server.UpdatePipe.send(("sign", nbid)) #TODO! Maybe transition to queue?
 
-        change: Change = self.clientUpdateParrentConnection.recv()
-        self.SendPacket(HTTP.Packet(change, filename="/UPDATE", dataType="text/json"))
+        # Signing the client for update
+        logger.info(f"Signing client {self.addr} for update from notebook {nbid}")
+        if nbid in self.server.onlineClients:
+            self.server.onlineClients[nbid].append(self)
+        else:
+            self.server.onlineClients[nbid] = [self]
+        # change: Change = self.server.ClientUpdateQueue.get()
+        # payloadData = str(change)
+        # if packet.attr['updateID'] == change.code:
+        #     logger.info(f"sending {self.addr} update {change.code}")
+        # self.SendPacket(HTTP.Packet(payloadData, filename="/UPDATE", dataType="text/json"))
+        # else:
+        #     self.SendPacket(HTTP.Packet("Update ID mismatch", filename="/UPDATE", status="400"))
+        #     raise Exception(f"Update ID mismatch: sent id: {packet.attr['updateID']} !=  my id: {change.code}")
 
     def parseHttpPacket(self, packetByteData: bytes):
         packetStr = packetByteData.decode()
@@ -359,13 +373,14 @@ class Client(HTTP.GeneralClient):
             try:
                 packetByteData = self.Recieve()
                 if packetByteData == b'':
-                    logger.info(f'Recieved empty packet from {self.addr}. closing connection')
-                    try:
-                        self.stream.send(b'\r\n')
-                        self.stream.close()
-                    except Exception:
-                        pass
-                    break
+                    # logger.info(f'Recieved empty packet from {self.addr}. closing connection')
+                    # try:
+                    #     self.stream.send(b'\r\n')
+                    #     self.stream.close()
+                    # except Exception:
+                    #     pass
+                    # break
+                    continue
 
                 packet = self.parseHttpPacket(packetByteData)
                 
@@ -410,32 +425,97 @@ class Client(HTTP.GeneralClient):
     def __str__(self):
         return f"{self.addr}"
 
+# TODO: Convert entire setup to sever class
+class Server:
+    def SendUpdates(self):
+        while True:
+            try:
+                if not self.ClientUpdateQueue.empty():
+                    change = self.ClientUpdateQueue.get()
+                    while len(self.onlineClients[change.NotebookID]) != 0:
+                        client = self.onlineClients[change.NotebookID].pop()
+                        logger.info(f"sending {client.addr} update")
+                        client.SendPacket(HTTP.Packet(change, {"Server-Timing": "miss, db;dur=53, app;dur=47.2"}, filename="/UPDATE", dataType="text/json"))
+            except Exception as e:
+                logger.error(e, exc_info=True)
+
+    def start(self):
+        self.consoleThread = threading.Thread(target=console)
+        self.consoleThread.start()
+
+        self.context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
+        self.context.load_cert_chain(certfile="https/cert.pem", keyfile="https/key.pem")
+
+        self.bindSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        ADDR = ('', port)
+        self.bindSocket.bind(ADDR)
+        self.bindSocket.listen()
+        self.hostname = socket.gethostname()
+        self.local_ip = socket.gethostbyname(self.hostname)
+
+        child_conn, self.UpdatePipe = mp.Pipe()
+        self.ClientUpdateQueue = mp.Queue()
+        self.UpdateNotebookProcess = mp.Process(target=UpdateOpenNotebooksLoop, args=(child_conn, self.ClientUpdateQueue))
+        self.UpdateNotebookProcess.start()
+
+        self.onlineClients = {}
+        self.UpdateClientsThread = threading.Thread(target=self.SendUpdates, )
+        self.UpdateClientsThread.start()
+        logger.info(f"[INIT] Server running on {self.local_ip, port, self.hostname = }")
+        self.run()
+
+    def run(self,):
+        self.clients = []
+        while True:
+            clientSocket, addr = self.bindSocket.accept()
+            try:
+                connStream = self.context.wrap_socket(clientSocket, server_side=True)
+                myClient = Client(connStream, addr, server=self)
+                self.clients.append(myClient)
+                myClient.start()
+            except ssl.SSLError as e:
+                if isinstance(e, ssl.AlertDescription):
+                    logger.warning(e)
+            except Exception as e:
+                logger.error(f"{e}\n{traceback.format_exc()}\n\nClosing client {addr}")
+                clientSocket.close()
+                    
+
 class Change:
-    def __init__(self, t, val, code=None):
+    def __init__(self, t, val, NotebookID, code=None):
         self.t = t
         self.val = val
         self.code = code
+        self.NotebookID = NotebookID
 
     def __str__(self):
         if self.code != None:
-            strData = str(self.t, self.val, self.code)
+            strData = {"command": self.t, "data": self.val, "updateCode": self.code}
         else: 
-            strData = str(self.t, self.val)
+            strData = {"command": self.t, "data": self.val}
 
         return json.dumps(strData)
         
 
 class Notebook:
-    def __init__(self, id: str, path: str, SQL: SQLClass) -> None:
+    def __init__(self, id: str, SQL: SQLClass, ClientUpdateQueue):
         self.id = id
-        self.path = path
+        self.path = ""
         self.Queue = mp.Queue()
         self.UpdateThread = None
         self.SQL = SQL
         self.clients = []
+        self.ClientUpdateQueue = ClientUpdateQueue
     
     def addChanges(self, change: tuple):
         self.Queue.put(change)
+
+    def hasPath(self,):
+        return self.path != ""
+
+    def setPath(self, path):
+        self.path = path
+        return self
 
     def UpdateNotebook(self):
         while True:
@@ -446,15 +526,23 @@ class Notebook:
                         return
                     sqlResp = self.SQL.Request("currentGroupID", table="notebooks", where=f"id={self.id}", singleton=True)
                     currentGroupNumber = sqlResp['currentGroupID']
-                    self.ChangeNotebook(self.path, currentGroupNumber, change, self.SQL)
+                    change = self.ChangeNotebook(self.path, currentGroupNumber, change, self.SQL)
+                    self.sendChanges(change)
             except Exception as e:
                 logger.error(f"{e}", exc_info=True)
 
-    def sendChanges(self, clients, changeTuple, connection):
-        for clientcode in clients:
-            logger.info(f"Sending change to {clientcode}")
-            change = Change(*changeTuple, clientcode)
-            connection.send(change)
+    def sendChanges(self, changeTuple):
+        # Wait incase there are no clients in the list
+        # while len(self.clients) == 0:
+        #     pass
+        # while len(self.clients) != 0:
+        #     clientcode = self.clients.pop(0)
+        #     logger.info(f"Sending change to {clientcode}")
+        #     change = Change(*changeTuple, clientcode)
+        #     self.ClientUpdateQueue.put(change)
+
+        change = Change(*changeTuple, self.id)
+        self.ClientUpdateQueue.put(change)
 
     ns = "{http://www.w3.org/2000/svg}"
 
@@ -471,14 +559,19 @@ class Notebook:
             currentGroupID += 1
             newElement.set('id', str(currentGroupID))
             SQL.Update('notebooks', 'NotebookPath=\'%s\'' % path, currentGroupID=currentGroupID)
+
+            finalChange = (changeCMD, ET.tostring(newElement).decode())
         elif changeCMD == 'e':
             id = changeData['id']
             t = changeData['type']
             group = root.find(f".//{Notebook.ns + t}[@id='{id}']")
             if group != None: 
                 root.remove(group)
+            
+            finalChange = (changeCMD, changeData)
         
         tree.write(path)
+        return finalChange
 
     def start(self):
         self.UpdateThread = threading.Thread(target=self.UpdateNotebook)
@@ -496,7 +589,7 @@ def GenerateNotebookCode() -> str:
     return code
 
 
-def UpdateOpenNotebooksLoop(child_conn, clientUpdateConnection):
+def UpdateOpenNotebooksLoop(child_conn, ClientUpdateQueue):
     # Main function for the update process
     OpenNotebooks = {}
     changesList = []
@@ -515,26 +608,31 @@ def UpdateOpenNotebooksLoop(child_conn, clientUpdateConnection):
                 msg = changesList.pop(-1)
 
                 # Check if a client wants to go on the update list
-                if msg[0] == "sign":
-                    client, NotebookID = msg[1], msg[2]
-                    connectedClients[NotebookID] = client
-                    logger.info(f"{client} signed in to {NotebookID}")
-                    continue
+                # if msg[0] == "sign":
+                #     NotebookID = msg[1], msg[2]
+                #     if NotebookID in OpenNotebooks:
+                #         OpenNotebooks[NotebookID].clients.append(client)
+                #     else:
+                #         OpenNotebooks[NotebookID] = Notebook(NotebookID, updateNBSQL, ClientUpdateQueue)
+                #     logger.info(f"{client} signed in to {NotebookID}")
+                #     continue
                     
 
                 NotebookID, NotebookPath, NBchanges = msg
                 if NotebookID not in OpenNotebooks:
-                    newNotebook = Notebook(NotebookID, NotebookPath, updateNBSQL)
+                    newNotebook: Notebook = Notebook(NotebookID, updateNBSQL, ClientUpdateQueue).setPath(NotebookPath)
                     newNotebook.start()
                     for change in NBchanges:
                         newNotebook.addChanges(change)
-                        newNotebook.sendChanges(connectedClients.pop(NotebookID, []), change, clientUpdateConnection)
+                        
                     OpenNotebooks[NotebookID] = newNotebook
                 else:
                     notebook = OpenNotebooks[NotebookID]
+                    if not notebook.hasPath():
+                        notebook.setPath(NotebookPath)
+                        notebook.start()
                     for change in NBchanges:
                         notebook.addChanges(change)
-                        newNotebook.sendChanges(connectedClients.pop(NotebookID, []), change, clientUpdateConnection)
 
         except Exception as e:
             logger.error(f"{e}\n{traceback.format_exc()}")
@@ -572,7 +670,7 @@ if __name__ == "__main__":
         silentLog = not silentLog
 
     def printClientList():
-        logger.debug(f"Client List:\n{pformat(clients)}")
+        logger.debug(f"Client List:\n{pformat(server.clients)}")
 
     actions = {"exit": exitFunc, "remove": Remove, "save": SQL.saveDBToJson, "silent": toggleSilentHeaderLog, "clients": printClientList}
 
@@ -591,43 +689,14 @@ if __name__ == "__main__":
             except KeyError as e:
                 logger.warning(f"No Such Command: {cmd}")
 
-    consoleThread = threading.Thread(target=console)
-    consoleThread.start()
-
-    context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
-    context.load_cert_chain(certfile="https/cert.pem", keyfile="https/key.pem")
-
-    bindSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    ADDR = ('', port)
-    bindSocket.bind(ADDR)
-    bindSocket.listen()
-    hostname = socket.gethostname()
-    local_ip = socket.gethostbyname(hostname)
-
-    child_conn, parent_conn = mp.Pipe()
-    clientUpdateConnection, clientUpdateParrentConnection = mp.Pipe()
-    UpdateNotebook = mp.Process(target=UpdateOpenNotebooksLoop, args=(child_conn, clientUpdateConnection))
-    UpdateNotebook.start()
-    logger.info(f"[INIT] Server running on {local_ip, port, hostname = }")
+    server = Server()
+    server.start()
 
 
     # ! Send SQL Module with the its global variables
     # parent_conn.send(SQL)
 
-    clients = []
-    while True:
-        clientSocket, addr = bindSocket.accept()
-        try:
-            connStream = context.wrap_socket(clientSocket, server_side=True)
-            myClient = Client(connStream, addr, UpdatePipe=parent_conn, ClientUpdatePipe=clientUpdateParrentConnection)
-            clients.append(myClient)
-            myClient.start()
-        except ssl.SSLError as e:
-            if isinstance(e, ssl.AlertDescription):
-                logger.warning(e)
-        except Exception as e:
-            logger.error(f"{e}\n{traceback.format_exc()}\n\nClosing client {addr}")
-            clientSocket.close()
+    
 
 
     # clientSocket.settimeout(10*60)

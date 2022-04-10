@@ -80,6 +80,7 @@ function getCookie(name) {
 }
 
 function loadNotebook(notebookID, isCode = false) {
+	// $("#drawingSvg").remove()
 	$(".online").show();
 	if (currentNotebook != "") {
 		$(`#Notebook${currentNotebook}`).css({
@@ -107,7 +108,8 @@ function loadNotebook(notebookID, isCode = false) {
 	var svgData = data["NotebookData"];
 	currentGroupID = data["currentGroupID"];
 	draw.clear();
-	draw.svg(svgData);
+	// draw.svg(svgData);
+	$("#drawingSvg").html($(svgData).html());
 	$(`#Notebook${notebookID}`).css({ "background-color": "#fd4448" });
 	$(`#Notebook${notebookID} .notebook-title`).css({
 		"background-color": "#f21c21",
@@ -401,17 +403,18 @@ $(document).ready(function () {
 
 	setInterval(() => {
 		if (isUpdating) {
-			if (attr["nb"] != undefined) {
-				checkUpdates(attr["nb"]);
-			} else if (nbcode != null) {
-				checkUpdates(nbcode);
-			} else if (currentNotebook != "") {
-				// TODO: Maybe transition to the same update method
-				loadNotebook(currentNotebook);
-			}
+			checkGlobaly();
 		}
 	}, updateInterval);
 });
+
+function checkGlobaly() {
+	if (attr["nb"] != undefined) {
+		checkUpdates(attr["nb"]);
+	} else if (nbcode != null) {
+		checkUpdates(nbcode);
+	}
+}
 
 function collapseSidebar() {
 	if (!collapsed) {
@@ -439,23 +442,39 @@ function checkUpdates(code) {
 	checkingUpdates = true;
 	// create random id code
 	updateIDCode = Math.random().toString(36).substring(2, 15);
+	console.log("sending update request");
 	$.ajax({
 		method: "GET",
 		url: `UPDATE`,
-		data: { code: code, updateID: updateIDCode },
-		async: true,
+		data: { code: code },
+		accepts: "text/json",
 		complete: function (resp) {
 			if (resp.status == 200) {
-				let data = resp.responseJSON;
+				let data = JSON.parse(resp.responseText);
 				console.log("Recieved Update!");
-				if (data[1][0] == "a" && data[0] == updateIDCode) {
-					let newGroup = nb.draw.group(data[1]);
-				} else {
-					console.log("Update failed");
-				}
+				if (data["command"] == "a") {
+					let newGroup = draw.svg(data["data"]);
 
-				checkingUpdates = false;
+					// Remove groups we know are not updated to the server
+					let groups = $("#drawingSvg g");
+					if (groups.length > 0) {
+						for (let i = 0; i < groups.length; i++) {
+							let g = groups[i];
+							if (g.id == "") {
+								g.remove();
+							}
+						}
+					}
+				} else if (data["command"] == "e") {
+					console.log(
+						"Recieved Erase! erasing group " + data["data"]
+					);
+					$(`${data["data"]["type"]}#${data["data"]["id"]}`).remove();
+				}
+			} else if (resp.status == 400) {
+				console.log("Update failed: Bad Request");
 			}
+			checkingUpdates = false;
 		},
 	});
 }
