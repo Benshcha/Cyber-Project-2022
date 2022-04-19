@@ -1,6 +1,6 @@
 # Cyber-Project-2022 Gal Ben-Shach
 ## Documentation
-Documentation is inside [/docs/documentation](https://github.com/Benshcha/Cyber-Project-2022/edit/main/README.md) folder
+Documentation is inside [/docs/documentation](https://github.com/Benshcha/Cyber-Project-2022/docs/documentation) folder
 
 ## Running the server
 To run the server, all the python related packages should be installed in the interpreted and the file [main.py](main.py) should be run.
