@@ -229,7 +229,7 @@ var isPen = true;
 var isEraser = false;
 var collapsed = false;
 var attr = {};
-var updateInterval = 1000;
+var updateInterval = 1;
 
 var NBcode = undefined;
 
