@@ -1,1 +1,4 @@
-[main](docs/main.html)
+---
+layout: forward
+target: docs/main.htm
+---
