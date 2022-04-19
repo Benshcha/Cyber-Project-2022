@@ -1,3 +1,9 @@
+"""
+Main file for Cyber-Project-2022 Gal Ben-Shach
+
+HTTP is refering to the modules.py file.
+"""
+
 port = 443
 
 # import global variables
@@ -14,7 +20,8 @@ import traceback, hashlib, time
 import multiprocessing as mp
 import xml.etree.ElementTree as ET
 ET.register_namespace('', "http://www.w3.org/2000/svg")
-    
+from SQLModule import *
+
 class InvalidLoginAttempt(Exception):
     """ # ! Do not insert sensitive information in the exception message
     """
@@ -23,6 +30,8 @@ class InvalidLoginAttempt(Exception):
 
 
 class Client(HTTP.GeneralClient):
+    """Main Client Class
+    """
     def __init__(self, *args, server):
         super().__init__(*args)
         self.thread = threading.Thread(target=self.manage)
@@ -31,6 +40,7 @@ class Client(HTTP.GeneralClient):
 
     @staticmethod
     def getUserAuth(packet):
+        """Get authorization data from packet cookie"""
         if 'Cookie' in packet.Headers and 'user_auth' in packet.Headers['Cookie']:
             cookiesStr = [i.split("=") for i in packet.Headers['Cookie'].split(";")]
             cookies = {cookieStr[0]: cookieStr[1] for cookieStr in cookiesStr}
@@ -44,6 +54,11 @@ class Client(HTTP.GeneralClient):
             raise InvalidLoginAttempt("Username or password contains invalid characters: '")
     
     def postResponse(self, packet: HTTP.Packet):
+        """Manage response to post request
+
+        Args:
+            packet (HTTP.Packet): POST Request packet
+        """
         file = packet.filename
         resp = None
         if file == "/SIGNUP":
@@ -65,13 +80,18 @@ class Client(HTTP.GeneralClient):
         self.SendPacket(respPacket)
         logger.debug(f"Sent response packet: {resp}") 
 
-    # TODO: Add closing of a client using the open notebooks
-    def close(self):
-        ...
-
     @staticmethod
     def SavePrivateNotebook(user_auth, notebookID, changes):
-        
+        """Save private notebook
+
+        Args:
+            user_auth (tuple): user authorization data
+            notebookID (str): notebook ID
+            changes (tuple): the changes the client requested (command, change data)
+
+        Returns:
+            dict: {'code': error code, 'data': relevent response data}
+        """
         resp = SQL.DataQuery(*user_auth, "id", 'NotebookPath', 'currentGroupID', table="notebooks", userIDString='ownerID', where=f"id={notebookID}", singleton=True, returnUserID=True)
         
         id = resp['UserID']
@@ -90,6 +110,15 @@ class Client(HTTP.GeneralClient):
         return {'code': 0, 'data': "Changes saved"}
 
     def SavePublicNotebook(self, notebookCode, changes):
+        """Save public notebook
+
+        Args:
+            notebookCode (str): notebook public code
+            changes (tuple): the changes the client requested (command, change data)
+
+        Returns:
+            dict: {'code': error code, 'data': relevent response data}
+        """
         resp = SQL.Request('id', 'notebookPath', table="notebooks", where="code='%s'" % notebookCode, singleton=True)
 
         if len(resp) == 0:
@@ -102,6 +131,15 @@ class Client(HTTP.GeneralClient):
         ...
 
     def SaveNotebook(self, packet: HTTP.Packet, file: str = "") -> dict:
+        """Save notebook
+
+        Args:
+            packet (HTTP.Packet): The packet requesting the save
+            file (str, optional): The name of the notebook file from the post request. Defaults to "".
+
+        Returns:
+            dict: {'code': error code, 'data': relevent response data}
+        """
         user_auth = self.getUserAuth(packet)
 
         notebookCode = ""
@@ -119,6 +157,14 @@ class Client(HTTP.GeneralClient):
             return resp
 
     def NewNotebook(self, packet: HTTP.Packet):
+        """Create a new notebook
+
+        Args:
+            packet (HTTP.Packet): the packet which requested to create the notebook
+
+        Returns:
+            dict: {'code': error code, 'data': relevent response data}
+        """
         user_auth = self.getUserAuth(packet)
         id = SQL.CheckAuth(*user_auth)
         
@@ -158,6 +204,14 @@ class Client(HTTP.GeneralClient):
             return {'code': 1, 'data': 'Authorization denied!'}
     
     def SignUp(self, payload: str):
+        """Manage signup request
+
+        Args:
+            payload (str): payload of the request
+
+        Returns:
+            dict: {'code': error code, 'data': relevent response data}
+        """
         payloadDict = json.loads(payload)
         attemptUsername = payloadDict['username']
         attemptPassword = payloadDict['password']
@@ -195,7 +249,14 @@ class Client(HTTP.GeneralClient):
 
         return resp
     
-    def LoginAttempt(self, packet, includePayload=True):
+    def LoginAttempt(self, packet: HTTP.Packet, includePayload: bool=True):
+        """Manage login attempt
+
+        Args:
+            packet (HTTP.Packet): packet whith the login request
+            includePayload (bool, optional): Defaults to True.
+
+        """
         # TODO: Make use of the "id" request
         try:
             resp = self.RequestData(packet, "id", table="users", userIDString="id")
@@ -214,10 +275,16 @@ class Client(HTTP.GeneralClient):
             raise e
         
     def PublicResponse(self, file, includePayload=True):
+        """manage response for public files.
+
+        Args:
+            file (str): the file which was requested by the user.
+            includePayload (bool, optional): Defaults to True.
+        """
         if file == '/':
             file = "/index.html"
 
-        if not file.startswith('/node_modules'):
+        if not file.startswith('/node_modules') or '..' in file:
             filePath = "public/" + file
         else:
             filePath = file[1:]
@@ -234,14 +301,26 @@ class Client(HTTP.GeneralClient):
                 msg += " without payload"
         logger.info(msg)
 
-    def SendNotebookList(self, packet, includePayload=True):
+    def SendNotebookList(self, packet: HTTP.Packet, includePayload=True):
+        """Send notebook list as requested from client after checking authorization.
+
+        Args:
+            packet (HTTP.Packet): packet with the notebook list request
+            includePayload (bool, optional): Defaults to True.
+        """
         notebookList = self.RequestData(packet, "id", "ownerID", "title", "description", table="notebooks", userIDString="ownerID")
                 
         nbListPacket = HTTP.Packet(json.dumps(notebookList, indent=4), includePayload=includePayload)
         
         self.SendPacket(nbListPacket)
     
-    def SendNotebook(self, packet, includePayload=True):
+    def SendNotebook(self, packet: HTTP.Packet, includePayload=True):
+        """Send notebook data after checking authorization.
+
+        Args:
+            packet (HTTP.Packet): packet requesting the notebook
+            includePayload (bool, optional): Defaults to True.
+        """
         isPublicNB = 'nb' in packet.attr
         
         if not isPublicNB:
@@ -266,6 +345,14 @@ class Client(HTTP.GeneralClient):
         logger.info(f'Sent notebook {notebookID} to {self.addr} with groupid: {nbdatadict["data"]["currentGroupID"]}')
     
     def APIPostResponse(self, APIpacket):
+        """Manage code creation api post request and response
+
+        Args:
+            APIpacket (HTTP.Packet): packet requesting the code
+
+        Returns:
+            dict: the code for the notebook as {"code": code}
+        """
         notebookID = APIpacket.Payload
         authResp = self.RequestData(APIpacket, "code", table='notebooks', userIDString='ownerID', where=f"id={notebookID}", singleton=True)
         if authResp['code'] == 0:
@@ -273,6 +360,12 @@ class Client(HTTP.GeneralClient):
         return resp
 
     def getResponseManage(self, packet: HTTP.Packet, includePayload=True):
+        """Manage GET request packet
+
+        Args:
+            packet (HTTP.Packet): the packet requesting the data.
+            includePayload (bool, optional): wheather or not to include the payload in the response (for HEAD requests). Defaults to True.
+        """
         try:
             file = packet.filename
             if file == "/LOGIN":
@@ -314,6 +407,12 @@ class Client(HTTP.GeneralClient):
         self.getResponseManage(packet, includePayload=False)
     
     def APIGetResponse(self, APIpacket: HTTP.Packet, apiUrl: str) :
+        """Manage notebook API requests
+
+        Args:
+            APIpacket (HTTP.Packet): packet requesting the data
+            apiUrl (str): requested url
+        """
         if apiUrl == "notebook/code":
             notebookID =  APIpacket.attr['nbID']
             # Verify the opener is the owner of the notebook
@@ -328,17 +427,27 @@ class Client(HTTP.GeneralClient):
         self.SendPacket(apiRespPacket)
 
     def UpdateNotebookCode(self, notebookID):
+        """Update notebook code to the sql database
+
+        Args:
+            notebookID (str): the id of the notebook to update
+
+        Returns:
+            dict: the code for the notebook as {"code": code}
+        """
         code = GenerateNotebookCode()
         updateResp = SQL.Update(table="notebooks", where=f"id={notebookID}", code=code)
         return {"code": code}
 
     def SignClientForUpdate(self, packet: HTTP.Packet):
+        """Sign client for update in the update process loop
+
+        Args:
+            packet (HTTP.Packet): packet requesting the sign
+        """
         code = packet.attr['code']
         req = SQL.Request("id", table="notebooks", where="code='%s'" % str(code), singleton=True)
         nbid = req['id']
-
-        # updateID = packet.attr['updateID']
-        # self.server.UpdatePipe.send(("sign", nbid)) #TODO! Maybe transition to queue?
 
         # Signing the client for update
         logger.info(f"Signing client {self.addr} for update from notebook {nbid}")
@@ -346,16 +455,16 @@ class Client(HTTP.GeneralClient):
             self.server.onlineClients[nbid].append(self)
         else:
             self.server.onlineClients[nbid] = [self]
-        # change: Change = self.server.ClientUpdateQueue.get()
-        # payloadData = str(change)
-        # if packet.attr['updateID'] == change.code:
-        #     logger.info(f"sending {self.addr} update {change.code}")
-        # self.SendPacket(HTTP.Packet(payloadData, filename="/UPDATE", dataType="text/json"))
-        # else:
-        #     self.SendPacket(HTTP.Packet("Update ID mismatch", filename="/UPDATE", status="400"))
-        #     raise Exception(f"Update ID mismatch: sent id: {packet.attr['updateID']} !=  my id: {change.code}")
 
-    def parseHttpPacket(self, packetByteData: bytes):
+    def parseHttpPacket(self, packetByteData: bytes) -> HTTP.Packet:
+        """parse the packet byte data and return the corresponding Packet instance
+
+        Args:
+            packetByteData (bytes): packet data as bytes
+
+        Returns:
+            HTTP.Packet: the returned parsed packet.
+        """
         packetStr = packetByteData.decode()
         packet = HTTP.extractDataFromPacket(packetStr)
         if packet.command == "POST":
@@ -366,6 +475,8 @@ class Client(HTTP.GeneralClient):
         return packet
     
     def manage(self):
+        """Manage packet and its response
+        """
         # Define all actions
         Actions = {"GET": self.getResponse, "POST": self.postResponse, "HEAD": self.headResponse}
         
@@ -373,14 +484,14 @@ class Client(HTTP.GeneralClient):
             try:
                 packetByteData = self.Recieve()
                 if packetByteData == b'':
-                    # logger.info(f'Recieved empty packet from {self.addr}. closing connection')
-                    # try:
-                    #     self.stream.send(b'\r\n')
-                    #     self.stream.close()
-                    # except Exception:
-                    #     pass
-                    # break
-                    continue
+                    logger.info(f'Recieved empty packet from {self.addr}')
+                    try:
+                        self.stream.send(b'\r\n')
+                        self.stream.close()
+                    except Exception:
+                        pass
+                    break
+                    # continue
 
                 packet = self.parseHttpPacket(packetByteData)
                 
@@ -425,9 +536,12 @@ class Client(HTTP.GeneralClient):
     def __str__(self):
         return f"{self.addr}"
 
-# TODO: Convert entire setup to sever class
 class Server:
+    """Singleton class for server managment
+    """
     def SendUpdates(self):
+        """send updates from update queue.
+        """
         while True:
             try:
                 if not self.ClientUpdateQueue.empty():
@@ -482,7 +596,17 @@ class Server:
                     
 
 class Change:
-    def __init__(self, t, val, NotebookID, code=None):
+    """class for managing changes in the update process loop
+    """
+    def __init__(self, t: str, val: Any, NotebookID: str, code=None):
+        """Initiator for Change Class
+
+        Args:
+            t (str): change type (e.g "a" = append/add, "e" = erase)
+            val (Any): Value of the change (e.g the added group data or the removed group id)
+            NotebookID (str): notebook id
+            code (_type_, optional): Defaults to None.
+        """
         self.t = t
         self.val = val
         self.code = code
@@ -498,7 +622,16 @@ class Change:
         
 
 class Notebook:
-    def __init__(self, id: str, SQL: SQLClass, ClientUpdateQueue):
+    """Class for managing changes in public notebooks
+    """
+    def __init__(self, id: str, SQL: SQLClass, ClientUpdateQueue: mp.Queue):
+        """Initiator for Notebook class.
+
+        Args:
+            id (str): notebook id
+            SQL (SQLClass): SQL class relevent to notebook associated with a server
+            ClientUpdateQueue (mp.Queue): Queue in charge of transfering changes between porocesses.
+        """
         self.id = id
         self.path = ""
         self.Queue = mp.Queue()
@@ -518,6 +651,8 @@ class Notebook:
         return self
 
     def UpdateNotebook(self):
+        """Main loop for the public notebook updates
+        """
         while True:
             try:
                 if not self.Queue.empty():
@@ -532,15 +667,6 @@ class Notebook:
                 logger.error(f"{e}", exc_info=True)
 
     def sendChanges(self, changeTuple):
-        # Wait incase there are no clients in the list
-        # while len(self.clients) == 0:
-        #     pass
-        # while len(self.clients) != 0:
-        #     clientcode = self.clients.pop(0)
-        #     logger.info(f"Sending change to {clientcode}")
-        #     change = Change(*changeTuple, clientcode)
-        #     self.ClientUpdateQueue.put(change)
-
         change = Change(*changeTuple, self.id)
         self.ClientUpdateQueue.put(change)
 
@@ -549,6 +675,17 @@ class Notebook:
     # TODO: Update notebooks using the xml package 
     @staticmethod
     def ChangeNotebook(path: str, currentGroupID: int, change: tuple, SQL: SQLClass):
+        """Add changes to a notbook
+
+        Args:
+            path (str): notebook path
+            currentGroupID (int): the current group id in the notebook
+            change (tuple): the change whished upon the notebook
+            SQL (SQLClass): SQL class associated with the notebook's server
+
+        Returns:
+            tuple: the final change enflicted upon the notebook
+        """
         changeCMD = change[0]
         changeData = change[1]
         tree = ET.parse(path)
@@ -578,18 +715,33 @@ class Notebook:
         self.UpdateThread.start()
 
 def CodeEncryptionKey() -> str:
+    """Encription for the code creation key, available for change.
+
+    Yields:
+        Iterator[byte]: key
+    """
     key = 0
     while True:
         yield bytes(key) + str(time.time()).encode()
         key += 1
 
 def GenerateNotebookCode() -> str:
+    """Create a new notebook code using an encryption key and MD5
+
+    Returns:
+        str: code
+    """
     keys = CodeEncryptionKey()
     code = hashlib.md5(next(keys)).hexdigest()
     return code
 
+def UpdateOpenNotebooksLoop(child_conn, ClientUpdateQueue: mp.Queue):
+    """Main loop for update process loop.
 
-def UpdateOpenNotebooksLoop(child_conn, ClientUpdateQueue):
+    Args:
+        child_conn (Connection): child connection to the update pipe
+        ClientUpdateQueue (mp.Queue): Queue for the client updates
+    """
     # Main function for the update process
     OpenNotebooks = {}
     changesList = []
@@ -606,17 +758,6 @@ def UpdateOpenNotebooksLoop(child_conn, ClientUpdateQueue):
 
             while len(changesList) != 0:
                 msg = changesList.pop(-1)
-
-                # Check if a client wants to go on the update list
-                # if msg[0] == "sign":
-                #     NotebookID = msg[1], msg[2]
-                #     if NotebookID in OpenNotebooks:
-                #         OpenNotebooks[NotebookID].clients.append(client)
-                #     else:
-                #         OpenNotebooks[NotebookID] = Notebook(NotebookID, updateNBSQL, ClientUpdateQueue)
-                #     logger.info(f"{client} signed in to {NotebookID}")
-                #     continue
-                    
 
                 NotebookID, NotebookPath, NBchanges = msg
                 if NotebookID not in OpenNotebooks:
@@ -676,6 +817,16 @@ if __name__ == "__main__":
 
     # Start console:
     def console():
+        """
+        Main I/O Console loop.
+        Available functions:
+        1. exit: exit the server safely
+        2. remove: remove a user or a notebook, one argument is interpreted as a user and two, if the first is "ID" then the second the notebook id (e.g remove ID 1 `removes the notebook` with id 1 and `remove 13` removes user with id 13)
+        3. save: save the database to the json files safely
+        4. silent: silent header logs; for debug purposes
+        5. clients: print online client list
+
+        """
         while True:
             try:
                 cmdtxt = input()

@@ -171,7 +171,8 @@ function createNotebook(newTitle, newDescription, newGroupID) {
 		`SAVENEWNB`,
 		"text/json",
 		JSON.stringify({
-			svgData: draw.svg(),
+			// svgData: draw.svg(),
+			svgData: "",
 			title: newTitle,
 			description: newDescription,
 			currentGroupID: newGroupID,
@@ -263,6 +264,7 @@ function init() {
 			$("#welcome").text(`Hi ${userID["username"]}!`);
 			BuildNotebookList();
 			$("#addNB").show();
+			$(".user").show();
 		}
 	}
 	canvas = $("#drawing");

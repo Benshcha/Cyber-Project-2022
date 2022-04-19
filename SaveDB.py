@@ -1,3 +1,3 @@
-import SQLModule as SQL
+import SQLModule 
 
-SQL.exitHandler()
+SQLModule.SQLClass.exitHandler()

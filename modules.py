@@ -55,7 +55,15 @@ class LoggerFormatter(logging.Formatter):
         return logging.Formatter.format(self, record)
 
 class myLogger(logging.Logger):
+    """Custom logger wrapper class
+    """
     def __init__(self, name: str, level:str = ...) -> None:
+        """Initiator for the logger class
+
+        Args:
+            name (str): name of the logger
+            level (str, optional): logger level. Defaults to ....
+        """
         super().__init__(name)
         self.setLevel(logging.DEBUG)
         formatter = LoggerFormatter('%(asctime)s | %(levelname)s | %(message)s', '%m-%d-%Y %H:%M:%S', use_color=True, style="%")
@@ -161,6 +169,8 @@ typeDict = {"html": "text/html",
             "json": "text/json"
             }  
 class GeneralClient:
+    """Base class for a general client, with a socket, an address.
+    """
     
     def __init__(self, clientStream, addr: tuple[str]) -> None:
         global typeDict

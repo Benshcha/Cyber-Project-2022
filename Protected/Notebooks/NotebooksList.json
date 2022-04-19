@@ -1,2 +1,20 @@
 [
+    {
+        "id": 1,
+        "ownerID": 1,
+        "NotebookPath": "Protected/Notebooks/1.svg",
+        "title": " My Notebook",
+        "description": " This is a great notebook!",
+        "currentGroupID": 61,
+        "code": null
+    },
+    {
+        "id": 2,
+        "ownerID": 1,
+        "NotebookPath": "Protected/Notebooks/2.svg",
+        "title": " Another Great Notebook",
+        "description": " Wow so many good notebooks!",
+        "currentGroupID": 0,
+        "code": null
+    }
 ]
