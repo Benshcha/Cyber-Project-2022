@@ -1,0 +1,432 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module traceback</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>traceback</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:c%3A%5Cprogram%20files%5Cwindowsapps%5Cpythonsoftwarefoundation.python.3.10_3.10.1264.0_x64__qbz5n2kfra8p0%5Clib%5Ctraceback.py">c:\program files\windowsapps\pythonsoftwarefoundation.python.3.10_3.10.1264.0_x64__qbz5n2kfra8p0\lib\traceback.py</a><br><a href="https://docs.python.org/3.10/library/traceback.html">Module Reference</a></font></td></tr></table>
+    <p><tt>Extract,&nbsp;format&nbsp;and&nbsp;print&nbsp;information&nbsp;about&nbsp;Python&nbsp;stack&nbsp;traces.</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="collections.html">collections</a><br>
+</td><td width="25%" valign=top><a href="itertools.html">itertools</a><br>
+</td><td width="25%" valign=top><a href="linecache.html">linecache</a><br>
+</td><td width="25%" valign=top><a href="sys.html">sys</a><br>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#list">builtins.list</a>(<a href="builtins.html#object">builtins.object</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="traceback.html#StackSummary">StackSummary</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="traceback.html#FrameSummary">FrameSummary</a>
+</font></dt><dt><font face="helvetica, arial"><a href="traceback.html#TracebackException">TracebackException</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="FrameSummary">class <strong>FrameSummary</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#FrameSummary">FrameSummary</a>(filename,&nbsp;lineno,&nbsp;name,&nbsp;*,&nbsp;lookup_line=True,&nbsp;locals=None,&nbsp;line=None)<br>
+&nbsp;<br>
+A&nbsp;single&nbsp;frame&nbsp;from&nbsp;a&nbsp;traceback.<br>
+&nbsp;<br>
+-&nbsp;:attr:`filename`&nbsp;The&nbsp;filename&nbsp;for&nbsp;the&nbsp;frame.<br>
+-&nbsp;:attr:`lineno`&nbsp;The&nbsp;line&nbsp;within&nbsp;filename&nbsp;for&nbsp;the&nbsp;frame&nbsp;that&nbsp;was<br>
+&nbsp;&nbsp;active&nbsp;when&nbsp;the&nbsp;frame&nbsp;was&nbsp;captured.<br>
+-&nbsp;:attr:`name`&nbsp;The&nbsp;name&nbsp;of&nbsp;the&nbsp;function&nbsp;or&nbsp;method&nbsp;that&nbsp;was&nbsp;executing<br>
+&nbsp;&nbsp;when&nbsp;the&nbsp;frame&nbsp;was&nbsp;captured.<br>
+-&nbsp;:attr:`line`&nbsp;The&nbsp;text&nbsp;from&nbsp;the&nbsp;linecache&nbsp;module&nbsp;for&nbsp;the<br>
+&nbsp;&nbsp;of&nbsp;code&nbsp;that&nbsp;was&nbsp;running&nbsp;when&nbsp;the&nbsp;frame&nbsp;was&nbsp;captured.<br>
+-&nbsp;:attr:`locals`&nbsp;Either&nbsp;None&nbsp;if&nbsp;locals&nbsp;were&nbsp;not&nbsp;supplied,&nbsp;or&nbsp;a&nbsp;dict<br>
+&nbsp;&nbsp;mapping&nbsp;the&nbsp;name&nbsp;to&nbsp;the&nbsp;repr()&nbsp;of&nbsp;the&nbsp;variable.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="FrameSummary-__eq__"><strong>__eq__</strong></a>(self, other)</dt><dd><tt>Return&nbsp;self==value.</tt></dd></dl>
+
+<dl><dt><a name="FrameSummary-__getitem__"><strong>__getitem__</strong></a>(self, pos)</dt></dl>
+
+<dl><dt><a name="FrameSummary-__init__"><strong>__init__</strong></a>(self, filename, lineno, name, *, lookup_line=True, locals=None, line=None)</dt><dd><tt>Construct&nbsp;a&nbsp;<a href="#FrameSummary">FrameSummary</a>.<br>
+&nbsp;<br>
+:param&nbsp;lookup_line:&nbsp;If&nbsp;True,&nbsp;`linecache`&nbsp;is&nbsp;consulted&nbsp;for&nbsp;the&nbsp;source<br>
+&nbsp;&nbsp;&nbsp;&nbsp;code&nbsp;line.&nbsp;Otherwise,&nbsp;the&nbsp;line&nbsp;will&nbsp;be&nbsp;looked&nbsp;up&nbsp;when&nbsp;first&nbsp;needed.<br>
+:param&nbsp;locals:&nbsp;If&nbsp;supplied&nbsp;the&nbsp;frame&nbsp;locals,&nbsp;which&nbsp;will&nbsp;be&nbsp;captured&nbsp;as<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="builtins.html#object">object</a>&nbsp;representations.<br>
+:param&nbsp;line:&nbsp;If&nbsp;provided,&nbsp;use&nbsp;this&nbsp;instead&nbsp;of&nbsp;looking&nbsp;up&nbsp;the&nbsp;line&nbsp;in<br>
+&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;linecache.</tt></dd></dl>
+
+<dl><dt><a name="FrameSummary-__iter__"><strong>__iter__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="FrameSummary-__len__"><strong>__len__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="FrameSummary-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<hr>
+Readonly properties defined here:<br>
+<dl><dt><strong>line</strong></dt>
+</dl>
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>filename</strong></dt>
+</dl>
+<dl><dt><strong>lineno</strong></dt>
+</dl>
+<dl><dt><strong>locals</strong></dt>
+</dl>
+<dl><dt><strong>name</strong></dt>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__hash__</strong> = None</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="StackSummary">class <strong>StackSummary</strong></a>(<a href="builtins.html#list">builtins.list</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#StackSummary">StackSummary</a>(iterable=(),&nbsp;/)<br>
+&nbsp;<br>
+A&nbsp;stack&nbsp;of&nbsp;frames.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="traceback.html#StackSummary">StackSummary</a></dd>
+<dd><a href="builtins.html#list">builtins.list</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="StackSummary-format"><strong>format</strong></a>(self)</dt><dd><tt>Format&nbsp;the&nbsp;stack&nbsp;ready&nbsp;for&nbsp;printing.<br>
+&nbsp;<br>
+Returns&nbsp;a&nbsp;<a href="builtins.html#list">list</a>&nbsp;of&nbsp;strings&nbsp;ready&nbsp;for&nbsp;printing.&nbsp;&nbsp;Each&nbsp;string&nbsp;in&nbsp;the<br>
+resulting&nbsp;<a href="builtins.html#list">list</a>&nbsp;corresponds&nbsp;to&nbsp;a&nbsp;single&nbsp;frame&nbsp;from&nbsp;the&nbsp;stack.<br>
+Each&nbsp;string&nbsp;ends&nbsp;in&nbsp;a&nbsp;newline;&nbsp;the&nbsp;strings&nbsp;may&nbsp;contain&nbsp;internal<br>
+newlines&nbsp;as&nbsp;well,&nbsp;for&nbsp;those&nbsp;items&nbsp;with&nbsp;source&nbsp;text&nbsp;lines.<br>
+&nbsp;<br>
+For&nbsp;long&nbsp;sequences&nbsp;of&nbsp;the&nbsp;same&nbsp;frame&nbsp;and&nbsp;line,&nbsp;the&nbsp;first&nbsp;few<br>
+repetitions&nbsp;are&nbsp;shown,&nbsp;followed&nbsp;by&nbsp;a&nbsp;summary&nbsp;line&nbsp;stating&nbsp;the&nbsp;exact<br>
+number&nbsp;of&nbsp;further&nbsp;repetitions.</tt></dd></dl>
+
+<hr>
+Class methods defined here:<br>
+<dl><dt><a name="StackSummary-extract"><strong>extract</strong></a>(frame_gen, *, limit=None, lookup_lines=True, capture_locals=False)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Create&nbsp;a&nbsp;<a href="#StackSummary">StackSummary</a>&nbsp;from&nbsp;a&nbsp;traceback&nbsp;or&nbsp;stack&nbsp;<a href="builtins.html#object">object</a>.<br>
+&nbsp;<br>
+:param&nbsp;frame_gen:&nbsp;A&nbsp;generator&nbsp;that&nbsp;yields&nbsp;(frame,&nbsp;lineno)&nbsp;tuples&nbsp;to<br>
+&nbsp;&nbsp;&nbsp;&nbsp;include&nbsp;in&nbsp;the&nbsp;stack.<br>
+:param&nbsp;limit:&nbsp;None&nbsp;to&nbsp;include&nbsp;all&nbsp;frames&nbsp;or&nbsp;the&nbsp;number&nbsp;of&nbsp;frames&nbsp;to<br>
+&nbsp;&nbsp;&nbsp;&nbsp;include.<br>
+:param&nbsp;lookup_lines:&nbsp;If&nbsp;True,&nbsp;lookup&nbsp;lines&nbsp;for&nbsp;each&nbsp;frame&nbsp;immediately,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;otherwise&nbsp;lookup&nbsp;is&nbsp;deferred&nbsp;until&nbsp;the&nbsp;frame&nbsp;is&nbsp;rendered.<br>
+:param&nbsp;capture_locals:&nbsp;If&nbsp;True,&nbsp;the&nbsp;local&nbsp;variables&nbsp;from&nbsp;each&nbsp;frame&nbsp;will<br>
+&nbsp;&nbsp;&nbsp;&nbsp;be&nbsp;captured&nbsp;as&nbsp;<a href="builtins.html#object">object</a>&nbsp;representations&nbsp;into&nbsp;the&nbsp;<a href="#FrameSummary">FrameSummary</a>.</tt></dd></dl>
+
+<dl><dt><a name="StackSummary-from_list"><strong>from_list</strong></a>(a_list)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Create&nbsp;a&nbsp;<a href="#StackSummary">StackSummary</a>&nbsp;<a href="builtins.html#object">object</a>&nbsp;from&nbsp;a&nbsp;supplied&nbsp;<a href="builtins.html#list">list</a>&nbsp;of<br>
+<a href="#FrameSummary">FrameSummary</a>&nbsp;objects&nbsp;or&nbsp;old-style&nbsp;<a href="builtins.html#list">list</a>&nbsp;of&nbsp;tuples.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Methods inherited from <a href="builtins.html#list">builtins.list</a>:<br>
+<dl><dt><a name="StackSummary-__add__"><strong>__add__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self+value.</tt></dd></dl>
+
+<dl><dt><a name="StackSummary-__contains__"><strong>__contains__</strong></a>(self, key, /)</dt><dd><tt>Return&nbsp;key&nbsp;in&nbsp;self.</tt></dd></dl>
+
+<dl><dt><a name="StackSummary-__delitem__"><strong>__delitem__</strong></a>(self, key, /)</dt><dd><tt>Delete&nbsp;self[key].</tt></dd></dl>
+
+<dl><dt><a name="StackSummary-__eq__"><strong>__eq__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self==value.</tt></dd></dl>
+
+<dl><dt><a name="StackSummary-__ge__"><strong>__ge__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self&gt;=value.</tt></dd></dl>
+
+<dl><dt><a name="StackSummary-__getattribute__"><strong>__getattribute__</strong></a>(self, name, /)</dt><dd><tt>Return&nbsp;getattr(self,&nbsp;name).</tt></dd></dl>
+
+<dl><dt><a name="StackSummary-__getitem__"><strong>__getitem__</strong></a>(...)</dt><dd><tt>x.<a href="#StackSummary-__getitem__">__getitem__</a>(y)&nbsp;&lt;==&gt;&nbsp;x[y]</tt></dd></dl>
+
+<dl><dt><a name="StackSummary-__gt__"><strong>__gt__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self&gt;value.</tt></dd></dl>
+
+<dl><dt><a name="StackSummary-__iadd__"><strong>__iadd__</strong></a>(self, value, /)</dt><dd><tt>Implement&nbsp;self+=value.</tt></dd></dl>
+
+<dl><dt><a name="StackSummary-__imul__"><strong>__imul__</strong></a>(self, value, /)</dt><dd><tt>Implement&nbsp;self*=value.</tt></dd></dl>
+
+<dl><dt><a name="StackSummary-__init__"><strong>__init__</strong></a>(self, /, *args, **kwargs)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="StackSummary-__iter__"><strong>__iter__</strong></a>(self, /)</dt><dd><tt>Implement&nbsp;iter(self).</tt></dd></dl>
+
+<dl><dt><a name="StackSummary-__le__"><strong>__le__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self&lt;=value.</tt></dd></dl>
+
+<dl><dt><a name="StackSummary-__len__"><strong>__len__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;len(self).</tt></dd></dl>
+
+<dl><dt><a name="StackSummary-__lt__"><strong>__lt__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self&lt;value.</tt></dd></dl>
+
+<dl><dt><a name="StackSummary-__mul__"><strong>__mul__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self*value.</tt></dd></dl>
+
+<dl><dt><a name="StackSummary-__ne__"><strong>__ne__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self!=value.</tt></dd></dl>
+
+<dl><dt><a name="StackSummary-__repr__"><strong>__repr__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><a name="StackSummary-__reversed__"><strong>__reversed__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;a&nbsp;reverse&nbsp;iterator&nbsp;over&nbsp;the&nbsp;<a href="builtins.html#list">list</a>.</tt></dd></dl>
+
+<dl><dt><a name="StackSummary-__rmul__"><strong>__rmul__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;value*self.</tt></dd></dl>
+
+<dl><dt><a name="StackSummary-__setitem__"><strong>__setitem__</strong></a>(self, key, value, /)</dt><dd><tt>Set&nbsp;self[key]&nbsp;to&nbsp;value.</tt></dd></dl>
+
+<dl><dt><a name="StackSummary-__sizeof__"><strong>__sizeof__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;the&nbsp;size&nbsp;of&nbsp;the&nbsp;<a href="builtins.html#list">list</a>&nbsp;in&nbsp;memory,&nbsp;in&nbsp;bytes.</tt></dd></dl>
+
+<dl><dt><a name="StackSummary-append"><strong>append</strong></a>(self, object, /)</dt><dd><tt>Append&nbsp;<a href="builtins.html#object">object</a>&nbsp;to&nbsp;the&nbsp;end&nbsp;of&nbsp;the&nbsp;<a href="builtins.html#list">list</a>.</tt></dd></dl>
+
+<dl><dt><a name="StackSummary-clear"><strong>clear</strong></a>(self, /)</dt><dd><tt>Remove&nbsp;all&nbsp;items&nbsp;from&nbsp;<a href="builtins.html#list">list</a>.</tt></dd></dl>
+
+<dl><dt><a name="StackSummary-copy"><strong>copy</strong></a>(self, /)</dt><dd><tt>Return&nbsp;a&nbsp;shallow&nbsp;copy&nbsp;of&nbsp;the&nbsp;<a href="builtins.html#list">list</a>.</tt></dd></dl>
+
+<dl><dt><a name="StackSummary-count"><strong>count</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;number&nbsp;of&nbsp;occurrences&nbsp;of&nbsp;value.</tt></dd></dl>
+
+<dl><dt><a name="StackSummary-extend"><strong>extend</strong></a>(self, iterable, /)</dt><dd><tt>Extend&nbsp;<a href="builtins.html#list">list</a>&nbsp;by&nbsp;appending&nbsp;elements&nbsp;from&nbsp;the&nbsp;iterable.</tt></dd></dl>
+
+<dl><dt><a name="StackSummary-index"><strong>index</strong></a>(self, value, start=0, stop=9223372036854775807, /)</dt><dd><tt>Return&nbsp;first&nbsp;index&nbsp;of&nbsp;value.<br>
+&nbsp;<br>
+Raises&nbsp;ValueError&nbsp;if&nbsp;the&nbsp;value&nbsp;is&nbsp;not&nbsp;present.</tt></dd></dl>
+
+<dl><dt><a name="StackSummary-insert"><strong>insert</strong></a>(self, index, object, /)</dt><dd><tt>Insert&nbsp;<a href="builtins.html#object">object</a>&nbsp;before&nbsp;index.</tt></dd></dl>
+
+<dl><dt><a name="StackSummary-pop"><strong>pop</strong></a>(self, index=-1, /)</dt><dd><tt>Remove&nbsp;and&nbsp;return&nbsp;item&nbsp;at&nbsp;index&nbsp;(default&nbsp;last).<br>
+&nbsp;<br>
+Raises&nbsp;IndexError&nbsp;if&nbsp;<a href="builtins.html#list">list</a>&nbsp;is&nbsp;empty&nbsp;or&nbsp;index&nbsp;is&nbsp;out&nbsp;of&nbsp;range.</tt></dd></dl>
+
+<dl><dt><a name="StackSummary-remove"><strong>remove</strong></a>(self, value, /)</dt><dd><tt>Remove&nbsp;first&nbsp;occurrence&nbsp;of&nbsp;value.<br>
+&nbsp;<br>
+Raises&nbsp;ValueError&nbsp;if&nbsp;the&nbsp;value&nbsp;is&nbsp;not&nbsp;present.</tt></dd></dl>
+
+<dl><dt><a name="StackSummary-reverse"><strong>reverse</strong></a>(self, /)</dt><dd><tt>Reverse&nbsp;*IN&nbsp;PLACE*.</tt></dd></dl>
+
+<dl><dt><a name="StackSummary-sort"><strong>sort</strong></a>(self, /, *, key=None, reverse=False)</dt><dd><tt>Sort&nbsp;the&nbsp;<a href="builtins.html#list">list</a>&nbsp;in&nbsp;ascending&nbsp;order&nbsp;and&nbsp;return&nbsp;None.<br>
+&nbsp;<br>
+The&nbsp;sort&nbsp;is&nbsp;in-place&nbsp;(i.e.&nbsp;the&nbsp;<a href="builtins.html#list">list</a>&nbsp;itself&nbsp;is&nbsp;modified)&nbsp;and&nbsp;stable&nbsp;(i.e.&nbsp;the<br>
+order&nbsp;of&nbsp;two&nbsp;equal&nbsp;elements&nbsp;is&nbsp;maintained).<br>
+&nbsp;<br>
+If&nbsp;a&nbsp;key&nbsp;function&nbsp;is&nbsp;given,&nbsp;apply&nbsp;it&nbsp;once&nbsp;to&nbsp;each&nbsp;<a href="builtins.html#list">list</a>&nbsp;item&nbsp;and&nbsp;sort&nbsp;them,<br>
+ascending&nbsp;or&nbsp;descending,&nbsp;according&nbsp;to&nbsp;their&nbsp;function&nbsp;values.<br>
+&nbsp;<br>
+The&nbsp;reverse&nbsp;flag&nbsp;can&nbsp;be&nbsp;set&nbsp;to&nbsp;sort&nbsp;in&nbsp;descending&nbsp;order.</tt></dd></dl>
+
+<hr>
+Class methods inherited from <a href="builtins.html#list">builtins.list</a>:<br>
+<dl><dt><a name="StackSummary-__class_getitem__"><strong>__class_getitem__</strong></a>(...)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>See&nbsp;<a href="https://www.python.org/dev/peps/pep-0585/">PEP&nbsp;585</a></tt></dd></dl>
+
+<hr>
+Static methods inherited from <a href="builtins.html#list">builtins.list</a>:<br>
+<dl><dt><a name="StackSummary-__new__"><strong>__new__</strong></a>(*args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;<a href="builtins.html#object">object</a>.&nbsp;&nbsp;See&nbsp;help(type)&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="builtins.html#list">builtins.list</a>:<br>
+<dl><dt><strong>__hash__</strong> = None</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="TracebackException">class <strong>TracebackException</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#TracebackException">TracebackException</a>(exc_type,&nbsp;exc_value,&nbsp;exc_traceback,&nbsp;*,&nbsp;limit=None,&nbsp;lookup_lines=True,&nbsp;capture_locals=False,&nbsp;compact=False,&nbsp;_seen=None)<br>
+&nbsp;<br>
+An&nbsp;exception&nbsp;ready&nbsp;for&nbsp;rendering.<br>
+&nbsp;<br>
+The&nbsp;traceback&nbsp;module&nbsp;captures&nbsp;enough&nbsp;attributes&nbsp;from&nbsp;the&nbsp;original&nbsp;exception<br>
+to&nbsp;this&nbsp;intermediary&nbsp;form&nbsp;to&nbsp;ensure&nbsp;that&nbsp;no&nbsp;references&nbsp;are&nbsp;held,&nbsp;while<br>
+still&nbsp;being&nbsp;able&nbsp;to&nbsp;fully&nbsp;print&nbsp;or&nbsp;format&nbsp;it.<br>
+&nbsp;<br>
+Use&nbsp;`from_exception`&nbsp;to&nbsp;create&nbsp;<a href="#TracebackException">TracebackException</a>&nbsp;instances&nbsp;from&nbsp;exception<br>
+objects,&nbsp;or&nbsp;the&nbsp;constructor&nbsp;to&nbsp;create&nbsp;<a href="#TracebackException">TracebackException</a>&nbsp;instances&nbsp;from<br>
+individual&nbsp;components.<br>
+&nbsp;<br>
+-&nbsp;:attr:`__cause__`&nbsp;A&nbsp;<a href="#TracebackException">TracebackException</a>&nbsp;of&nbsp;the&nbsp;original&nbsp;*__cause__*.<br>
+-&nbsp;:attr:`__context__`&nbsp;A&nbsp;<a href="#TracebackException">TracebackException</a>&nbsp;of&nbsp;the&nbsp;original&nbsp;*__context__*.<br>
+-&nbsp;:attr:`__suppress_context__`&nbsp;The&nbsp;*__suppress_context__*&nbsp;value&nbsp;from&nbsp;the<br>
+&nbsp;&nbsp;original&nbsp;exception.<br>
+-&nbsp;:attr:`stack`&nbsp;A&nbsp;`<a href="#StackSummary">StackSummary</a>`&nbsp;representing&nbsp;the&nbsp;traceback.<br>
+-&nbsp;:attr:`exc_type`&nbsp;The&nbsp;class&nbsp;of&nbsp;the&nbsp;original&nbsp;traceback.<br>
+-&nbsp;:attr:`filename`&nbsp;For&nbsp;syntax&nbsp;errors&nbsp;-&nbsp;the&nbsp;filename&nbsp;where&nbsp;the&nbsp;error<br>
+&nbsp;&nbsp;occurred.<br>
+-&nbsp;:attr:`lineno`&nbsp;For&nbsp;syntax&nbsp;errors&nbsp;-&nbsp;the&nbsp;linenumber&nbsp;where&nbsp;the&nbsp;error<br>
+&nbsp;&nbsp;occurred.<br>
+-&nbsp;:attr:`end_lineno`&nbsp;For&nbsp;syntax&nbsp;errors&nbsp;-&nbsp;the&nbsp;end&nbsp;linenumber&nbsp;where&nbsp;the&nbsp;error<br>
+&nbsp;&nbsp;occurred.&nbsp;Can&nbsp;be&nbsp;`None`&nbsp;if&nbsp;not&nbsp;present.<br>
+-&nbsp;:attr:`text`&nbsp;For&nbsp;syntax&nbsp;errors&nbsp;-&nbsp;the&nbsp;text&nbsp;where&nbsp;the&nbsp;error<br>
+&nbsp;&nbsp;occurred.<br>
+-&nbsp;:attr:`offset`&nbsp;For&nbsp;syntax&nbsp;errors&nbsp;-&nbsp;the&nbsp;offset&nbsp;into&nbsp;the&nbsp;text&nbsp;where&nbsp;the<br>
+&nbsp;&nbsp;error&nbsp;occurred.<br>
+-&nbsp;:attr:`end_offset`&nbsp;For&nbsp;syntax&nbsp;errors&nbsp;-&nbsp;the&nbsp;offset&nbsp;into&nbsp;the&nbsp;text&nbsp;where&nbsp;the<br>
+&nbsp;&nbsp;error&nbsp;occurred.&nbsp;Can&nbsp;be&nbsp;`None`&nbsp;if&nbsp;not&nbsp;present.<br>
+-&nbsp;:attr:`msg`&nbsp;For&nbsp;syntax&nbsp;errors&nbsp;-&nbsp;the&nbsp;compiler&nbsp;error&nbsp;message.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="TracebackException-__eq__"><strong>__eq__</strong></a>(self, other)</dt><dd><tt>Return&nbsp;self==value.</tt></dd></dl>
+
+<dl><dt><a name="TracebackException-__init__"><strong>__init__</strong></a>(self, exc_type, exc_value, exc_traceback, *, limit=None, lookup_lines=True, capture_locals=False, compact=False, _seen=None)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="TracebackException-__str__"><strong>__str__</strong></a>(self)</dt><dd><tt>Return&nbsp;str(self).</tt></dd></dl>
+
+<dl><dt><a name="TracebackException-format"><strong>format</strong></a>(self, *, chain=True)</dt><dd><tt>Format&nbsp;the&nbsp;exception.<br>
+&nbsp;<br>
+If&nbsp;chain&nbsp;is&nbsp;not&nbsp;*True*,&nbsp;*__cause__*&nbsp;and&nbsp;*__context__*&nbsp;will&nbsp;not&nbsp;be&nbsp;formatted.<br>
+&nbsp;<br>
+The&nbsp;return&nbsp;value&nbsp;is&nbsp;a&nbsp;generator&nbsp;of&nbsp;strings,&nbsp;each&nbsp;ending&nbsp;in&nbsp;a&nbsp;newline&nbsp;and<br>
+some&nbsp;containing&nbsp;internal&nbsp;newlines.&nbsp;`print_exception`&nbsp;is&nbsp;a&nbsp;wrapper&nbsp;around<br>
+this&nbsp;method&nbsp;which&nbsp;just&nbsp;prints&nbsp;the&nbsp;lines&nbsp;to&nbsp;a&nbsp;file.<br>
+&nbsp;<br>
+The&nbsp;message&nbsp;indicating&nbsp;which&nbsp;exception&nbsp;occurred&nbsp;is&nbsp;always&nbsp;the&nbsp;last<br>
+string&nbsp;in&nbsp;the&nbsp;output.</tt></dd></dl>
+
+<dl><dt><a name="TracebackException-format_exception_only"><strong>format_exception_only</strong></a>(self)</dt><dd><tt>Format&nbsp;the&nbsp;exception&nbsp;part&nbsp;of&nbsp;the&nbsp;traceback.<br>
+&nbsp;<br>
+The&nbsp;return&nbsp;value&nbsp;is&nbsp;a&nbsp;generator&nbsp;of&nbsp;strings,&nbsp;each&nbsp;ending&nbsp;in&nbsp;a&nbsp;newline.<br>
+&nbsp;<br>
+Normally,&nbsp;the&nbsp;generator&nbsp;emits&nbsp;a&nbsp;single&nbsp;string;&nbsp;however,&nbsp;for<br>
+SyntaxError&nbsp;exceptions,&nbsp;it&nbsp;emits&nbsp;several&nbsp;lines&nbsp;that&nbsp;(when<br>
+printed)&nbsp;display&nbsp;detailed&nbsp;information&nbsp;about&nbsp;where&nbsp;the&nbsp;syntax<br>
+error&nbsp;occurred.<br>
+&nbsp;<br>
+The&nbsp;message&nbsp;indicating&nbsp;which&nbsp;exception&nbsp;occurred&nbsp;is&nbsp;always&nbsp;the&nbsp;last<br>
+string&nbsp;in&nbsp;the&nbsp;output.</tt></dd></dl>
+
+<hr>
+Class methods defined here:<br>
+<dl><dt><a name="TracebackException-from_exception"><strong>from_exception</strong></a>(exc, *args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Create&nbsp;a&nbsp;<a href="#TracebackException">TracebackException</a>&nbsp;from&nbsp;an&nbsp;exception.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__hash__</strong> = None</dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-clear_frames"><strong>clear_frames</strong></a>(tb)</dt><dd><tt>Clear&nbsp;all&nbsp;references&nbsp;to&nbsp;local&nbsp;variables&nbsp;in&nbsp;the&nbsp;frames&nbsp;of&nbsp;a&nbsp;traceback.</tt></dd></dl>
+ <dl><dt><a name="-extract_stack"><strong>extract_stack</strong></a>(f=None, limit=None)</dt><dd><tt>Extract&nbsp;the&nbsp;raw&nbsp;traceback&nbsp;from&nbsp;the&nbsp;current&nbsp;stack&nbsp;frame.<br>
+&nbsp;<br>
+The&nbsp;return&nbsp;value&nbsp;has&nbsp;the&nbsp;same&nbsp;format&nbsp;as&nbsp;for&nbsp;<a href="#-extract_tb">extract_tb</a>().&nbsp;&nbsp;The<br>
+optional&nbsp;'f'&nbsp;and&nbsp;'limit'&nbsp;arguments&nbsp;have&nbsp;the&nbsp;same&nbsp;meaning&nbsp;as&nbsp;for<br>
+<a href="#-print_stack">print_stack</a>().&nbsp;&nbsp;Each&nbsp;item&nbsp;in&nbsp;the&nbsp;<a href="builtins.html#list">list</a>&nbsp;is&nbsp;a&nbsp;quadruple&nbsp;(filename,<br>
+line&nbsp;number,&nbsp;function&nbsp;name,&nbsp;text),&nbsp;and&nbsp;the&nbsp;entries&nbsp;are&nbsp;in&nbsp;order<br>
+from&nbsp;oldest&nbsp;to&nbsp;newest&nbsp;stack&nbsp;frame.</tt></dd></dl>
+ <dl><dt><a name="-extract_tb"><strong>extract_tb</strong></a>(tb, limit=None)</dt><dd><tt>Return&nbsp;a&nbsp;<a href="#StackSummary">StackSummary</a>&nbsp;<a href="builtins.html#object">object</a>&nbsp;representing&nbsp;a&nbsp;<a href="builtins.html#list">list</a>&nbsp;of<br>
+pre-processed&nbsp;entries&nbsp;from&nbsp;traceback.<br>
+&nbsp;<br>
+This&nbsp;is&nbsp;useful&nbsp;for&nbsp;alternate&nbsp;formatting&nbsp;of&nbsp;stack&nbsp;traces.&nbsp;&nbsp;If<br>
+'limit'&nbsp;is&nbsp;omitted&nbsp;or&nbsp;None,&nbsp;all&nbsp;entries&nbsp;are&nbsp;extracted.&nbsp;&nbsp;A<br>
+pre-processed&nbsp;stack&nbsp;trace&nbsp;entry&nbsp;is&nbsp;a&nbsp;<a href="#FrameSummary">FrameSummary</a>&nbsp;<a href="builtins.html#object">object</a><br>
+containing&nbsp;attributes&nbsp;filename,&nbsp;lineno,&nbsp;name,&nbsp;and&nbsp;line<br>
+representing&nbsp;the&nbsp;information&nbsp;that&nbsp;is&nbsp;usually&nbsp;printed&nbsp;for&nbsp;a&nbsp;stack<br>
+trace.&nbsp;&nbsp;The&nbsp;line&nbsp;is&nbsp;a&nbsp;string&nbsp;with&nbsp;leading&nbsp;and&nbsp;trailing<br>
+whitespace&nbsp;stripped;&nbsp;if&nbsp;the&nbsp;source&nbsp;is&nbsp;not&nbsp;available&nbsp;it&nbsp;is&nbsp;None.</tt></dd></dl>
+ <dl><dt><a name="-format_exc"><strong>format_exc</strong></a>(limit=None, chain=True)</dt><dd><tt>Like&nbsp;<a href="#-print_exc">print_exc</a>()&nbsp;but&nbsp;return&nbsp;a&nbsp;string.</tt></dd></dl>
+ <dl><dt><a name="-format_exception"><strong>format_exception</strong></a>(exc, /, value=&lt;implicit&gt;, tb=&lt;implicit&gt;, limit=None, chain=True)</dt><dd><tt>Format&nbsp;a&nbsp;stack&nbsp;trace&nbsp;and&nbsp;the&nbsp;exception&nbsp;information.<br>
+&nbsp;<br>
+The&nbsp;arguments&nbsp;have&nbsp;the&nbsp;same&nbsp;meaning&nbsp;as&nbsp;the&nbsp;corresponding&nbsp;arguments<br>
+to&nbsp;<a href="#-print_exception">print_exception</a>().&nbsp;&nbsp;The&nbsp;return&nbsp;value&nbsp;is&nbsp;a&nbsp;<a href="builtins.html#list">list</a>&nbsp;of&nbsp;strings,&nbsp;each<br>
+ending&nbsp;in&nbsp;a&nbsp;newline&nbsp;and&nbsp;some&nbsp;containing&nbsp;internal&nbsp;newlines.&nbsp;&nbsp;When<br>
+these&nbsp;lines&nbsp;are&nbsp;concatenated&nbsp;and&nbsp;printed,&nbsp;exactly&nbsp;the&nbsp;same&nbsp;text&nbsp;is<br>
+printed&nbsp;as&nbsp;does&nbsp;<a href="#-print_exception">print_exception</a>().</tt></dd></dl>
+ <dl><dt><a name="-format_exception_only"><strong>format_exception_only</strong></a>(exc, /, value=&lt;implicit&gt;)</dt><dd><tt>Format&nbsp;the&nbsp;exception&nbsp;part&nbsp;of&nbsp;a&nbsp;traceback.<br>
+&nbsp;<br>
+The&nbsp;return&nbsp;value&nbsp;is&nbsp;a&nbsp;<a href="builtins.html#list">list</a>&nbsp;of&nbsp;strings,&nbsp;each&nbsp;ending&nbsp;in&nbsp;a&nbsp;newline.<br>
+&nbsp;<br>
+Normally,&nbsp;the&nbsp;<a href="builtins.html#list">list</a>&nbsp;contains&nbsp;a&nbsp;single&nbsp;string;&nbsp;however,&nbsp;for<br>
+SyntaxError&nbsp;exceptions,&nbsp;it&nbsp;contains&nbsp;several&nbsp;lines&nbsp;that&nbsp;(when<br>
+printed)&nbsp;display&nbsp;detailed&nbsp;information&nbsp;about&nbsp;where&nbsp;the&nbsp;syntax<br>
+error&nbsp;occurred.<br>
+&nbsp;<br>
+The&nbsp;message&nbsp;indicating&nbsp;which&nbsp;exception&nbsp;occurred&nbsp;is&nbsp;always&nbsp;the&nbsp;last<br>
+string&nbsp;in&nbsp;the&nbsp;<a href="builtins.html#list">list</a>.</tt></dd></dl>
+ <dl><dt><a name="-format_list"><strong>format_list</strong></a>(extracted_list)</dt><dd><tt>Format&nbsp;a&nbsp;<a href="builtins.html#list">list</a>&nbsp;of&nbsp;tuples&nbsp;or&nbsp;<a href="#FrameSummary">FrameSummary</a>&nbsp;objects&nbsp;for&nbsp;printing.<br>
+&nbsp;<br>
+Given&nbsp;a&nbsp;<a href="builtins.html#list">list</a>&nbsp;of&nbsp;tuples&nbsp;or&nbsp;<a href="#FrameSummary">FrameSummary</a>&nbsp;objects&nbsp;as&nbsp;returned&nbsp;by<br>
+<a href="#-extract_tb">extract_tb</a>()&nbsp;or&nbsp;<a href="#-extract_stack">extract_stack</a>(),&nbsp;return&nbsp;a&nbsp;<a href="builtins.html#list">list</a>&nbsp;of&nbsp;strings&nbsp;ready<br>
+for&nbsp;printing.<br>
+&nbsp;<br>
+Each&nbsp;string&nbsp;in&nbsp;the&nbsp;resulting&nbsp;<a href="builtins.html#list">list</a>&nbsp;corresponds&nbsp;to&nbsp;the&nbsp;item&nbsp;with&nbsp;the<br>
+same&nbsp;index&nbsp;in&nbsp;the&nbsp;argument&nbsp;<a href="builtins.html#list">list</a>.&nbsp;&nbsp;Each&nbsp;string&nbsp;ends&nbsp;in&nbsp;a&nbsp;newline;<br>
+the&nbsp;strings&nbsp;may&nbsp;contain&nbsp;internal&nbsp;newlines&nbsp;as&nbsp;well,&nbsp;for&nbsp;those&nbsp;items<br>
+whose&nbsp;source&nbsp;text&nbsp;line&nbsp;is&nbsp;not&nbsp;None.</tt></dd></dl>
+ <dl><dt><a name="-format_stack"><strong>format_stack</strong></a>(f=None, limit=None)</dt><dd><tt>Shorthand&nbsp;for&nbsp;'<a href="#-format_list">format_list</a>(<a href="#-extract_stack">extract_stack</a>(f,&nbsp;limit))'.</tt></dd></dl>
+ <dl><dt><a name="-format_tb"><strong>format_tb</strong></a>(tb, limit=None)</dt><dd><tt>A&nbsp;shorthand&nbsp;for&nbsp;'<a href="#-format_list">format_list</a>(<a href="#-extract_tb">extract_tb</a>(tb,&nbsp;limit))'.</tt></dd></dl>
+ <dl><dt><a name="-print_exc"><strong>print_exc</strong></a>(limit=None, file=None, chain=True)</dt><dd><tt>Shorthand&nbsp;for&nbsp;'<a href="#-print_exception">print_exception</a>(*sys.exc_info(),&nbsp;limit,&nbsp;file)'.</tt></dd></dl>
+ <dl><dt><a name="-print_exception"><strong>print_exception</strong></a>(exc, /, value=&lt;implicit&gt;, tb=&lt;implicit&gt;, limit=None, file=None, chain=True)</dt><dd><tt>Print&nbsp;exception&nbsp;up&nbsp;to&nbsp;'limit'&nbsp;stack&nbsp;trace&nbsp;entries&nbsp;from&nbsp;'tb'&nbsp;to&nbsp;'file'.<br>
+&nbsp;<br>
+This&nbsp;differs&nbsp;from&nbsp;<a href="#-print_tb">print_tb</a>()&nbsp;in&nbsp;the&nbsp;following&nbsp;ways:&nbsp;(1)&nbsp;if<br>
+traceback&nbsp;is&nbsp;not&nbsp;None,&nbsp;it&nbsp;prints&nbsp;a&nbsp;header&nbsp;"Traceback&nbsp;(most&nbsp;recent<br>
+call&nbsp;last):";&nbsp;(2)&nbsp;it&nbsp;prints&nbsp;the&nbsp;exception&nbsp;type&nbsp;and&nbsp;value&nbsp;after&nbsp;the<br>
+stack&nbsp;trace;&nbsp;(3)&nbsp;if&nbsp;type&nbsp;is&nbsp;SyntaxError&nbsp;and&nbsp;value&nbsp;has&nbsp;the<br>
+appropriate&nbsp;format,&nbsp;it&nbsp;prints&nbsp;the&nbsp;line&nbsp;where&nbsp;the&nbsp;syntax&nbsp;error<br>
+occurred&nbsp;with&nbsp;a&nbsp;caret&nbsp;on&nbsp;the&nbsp;next&nbsp;line&nbsp;indicating&nbsp;the&nbsp;approximate<br>
+position&nbsp;of&nbsp;the&nbsp;error.</tt></dd></dl>
+ <dl><dt><a name="-print_last"><strong>print_last</strong></a>(limit=None, file=None, chain=True)</dt><dd><tt>This&nbsp;is&nbsp;a&nbsp;shorthand&nbsp;for&nbsp;'<a href="#-print_exception">print_exception</a>(sys.last_type,<br>
+sys.last_value,&nbsp;sys.last_traceback,&nbsp;limit,&nbsp;file)'.</tt></dd></dl>
+ <dl><dt><a name="-print_stack"><strong>print_stack</strong></a>(f=None, limit=None, file=None)</dt><dd><tt>Print&nbsp;a&nbsp;stack&nbsp;trace&nbsp;from&nbsp;its&nbsp;invocation&nbsp;point.<br>
+&nbsp;<br>
+The&nbsp;optional&nbsp;'f'&nbsp;argument&nbsp;can&nbsp;be&nbsp;used&nbsp;to&nbsp;specify&nbsp;an&nbsp;alternate<br>
+stack&nbsp;frame&nbsp;at&nbsp;which&nbsp;to&nbsp;start.&nbsp;The&nbsp;optional&nbsp;'limit'&nbsp;and&nbsp;'file'<br>
+arguments&nbsp;have&nbsp;the&nbsp;same&nbsp;meaning&nbsp;as&nbsp;for&nbsp;<a href="#-print_exception">print_exception</a>().</tt></dd></dl>
+ <dl><dt><a name="-print_tb"><strong>print_tb</strong></a>(tb, limit=None, file=None)</dt><dd><tt>Print&nbsp;up&nbsp;to&nbsp;'limit'&nbsp;stack&nbsp;trace&nbsp;entries&nbsp;from&nbsp;the&nbsp;traceback&nbsp;'tb'.<br>
+&nbsp;<br>
+If&nbsp;'limit'&nbsp;is&nbsp;omitted&nbsp;or&nbsp;None,&nbsp;all&nbsp;entries&nbsp;are&nbsp;printed.&nbsp;&nbsp;If&nbsp;'file'<br>
+is&nbsp;omitted&nbsp;or&nbsp;None,&nbsp;the&nbsp;output&nbsp;goes&nbsp;to&nbsp;sys.stderr;&nbsp;otherwise<br>
+'file'&nbsp;should&nbsp;be&nbsp;an&nbsp;open&nbsp;file&nbsp;or&nbsp;file-like&nbsp;<a href="builtins.html#object">object</a>&nbsp;with&nbsp;a&nbsp;write()<br>
+method.</tt></dd></dl>
+ <dl><dt><a name="-walk_stack"><strong>walk_stack</strong></a>(f)</dt><dd><tt>Walk&nbsp;a&nbsp;stack&nbsp;yielding&nbsp;the&nbsp;frame&nbsp;and&nbsp;line&nbsp;number&nbsp;for&nbsp;each&nbsp;frame.<br>
+&nbsp;<br>
+This&nbsp;will&nbsp;follow&nbsp;f.f_back&nbsp;from&nbsp;the&nbsp;given&nbsp;frame.&nbsp;If&nbsp;no&nbsp;frame&nbsp;is&nbsp;given,&nbsp;the<br>
+current&nbsp;stack&nbsp;is&nbsp;used.&nbsp;Usually&nbsp;used&nbsp;with&nbsp;<a href="#StackSummary">StackSummary</a>.extract.</tt></dd></dl>
+ <dl><dt><a name="-walk_tb"><strong>walk_tb</strong></a>(tb)</dt><dd><tt>Walk&nbsp;a&nbsp;traceback&nbsp;yielding&nbsp;the&nbsp;frame&nbsp;and&nbsp;line&nbsp;number&nbsp;for&nbsp;each&nbsp;frame.<br>
+&nbsp;<br>
+This&nbsp;will&nbsp;follow&nbsp;tb.tb_next&nbsp;(and&nbsp;thus&nbsp;is&nbsp;in&nbsp;the&nbsp;opposite&nbsp;order&nbsp;to<br>
+walk_stack).&nbsp;Usually&nbsp;used&nbsp;with&nbsp;<a href="#StackSummary">StackSummary</a>.extract.</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__all__</strong> = ['extract_stack', 'extract_tb', 'format_exception', 'format_exception_only', 'format_list', 'format_stack', 'format_tb', 'print_exc', 'format_exc', 'print_exception', 'print_last', 'print_stack', 'print_tb', 'clear_frames', 'FrameSummary', 'StackSummary', 'TracebackException', 'walk_stack', 'walk_tb']</td></tr></table>
+</body></html>

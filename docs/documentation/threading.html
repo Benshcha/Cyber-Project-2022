@@ -1,0 +1,1007 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module threading</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>threading</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:c%3A%5Cprogram%20files%5Cwindowsapps%5Cpythonsoftwarefoundation.python.3.10_3.10.1264.0_x64__qbz5n2kfra8p0%5Clib%5Cthreading.py">c:\program files\windowsapps\pythonsoftwarefoundation.python.3.10_3.10.1264.0_x64__qbz5n2kfra8p0\lib\threading.py</a><br><a href="https://docs.python.org/3.10/library/threading.html">Module Reference</a></font></td></tr></table>
+    <p><tt><a href="#Thread">Thread</a>&nbsp;module&nbsp;emulating&nbsp;a&nbsp;subset&nbsp;of&nbsp;Java's&nbsp;threading&nbsp;model.</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="os.html">os</a><br>
+</td><td width="25%" valign=top><a href="sys.html">sys</a><br>
+</td><td width="25%" valign=top><a href="functools.html">functools</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#Exception">builtins.Exception</a>(<a href="builtins.html#BaseException">builtins.BaseException</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#RuntimeError">builtins.RuntimeError</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="threading.html#BrokenBarrierError">BrokenBarrierError</a>
+</font></dt></dl>
+</dd>
+</dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="_thread.html#_local">_thread._local</a>
+</font></dt><dt><font face="helvetica, arial"><a href="threading.html#Barrier">Barrier</a>
+</font></dt><dt><font face="helvetica, arial"><a href="threading.html#Condition">Condition</a>
+</font></dt><dt><font face="helvetica, arial"><a href="threading.html#Event">Event</a>
+</font></dt><dt><font face="helvetica, arial"><a href="threading.html#Semaphore">Semaphore</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="threading.html#BoundedSemaphore">BoundedSemaphore</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="threading.html#Thread">Thread</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="threading.html#Timer">Timer</a>
+</font></dt></dl>
+</dd>
+</dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="builtins.html#tuple">builtins.tuple</a>(<a href="builtins.html#object">builtins.object</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="_thread.html#_ExceptHookArgs">_thread._ExceptHookArgs</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Barrier">class <strong>Barrier</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Barrier">Barrier</a>(parties,&nbsp;action=None,&nbsp;timeout=None)<br>
+&nbsp;<br>
+Implements&nbsp;a&nbsp;<a href="#Barrier">Barrier</a>.<br>
+&nbsp;<br>
+Useful&nbsp;for&nbsp;synchronizing&nbsp;a&nbsp;fixed&nbsp;number&nbsp;of&nbsp;threads&nbsp;at&nbsp;known&nbsp;synchronization<br>
+points.&nbsp;&nbsp;Threads&nbsp;block&nbsp;on&nbsp;'<a href="#Barrier-wait">wait</a>()'&nbsp;and&nbsp;are&nbsp;simultaneously&nbsp;awoken&nbsp;once&nbsp;they<br>
+have&nbsp;all&nbsp;made&nbsp;that&nbsp;call.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Barrier-__init__"><strong>__init__</strong></a>(self, parties, action=None, timeout=None)</dt><dd><tt>Create&nbsp;a&nbsp;barrier,&nbsp;initialised&nbsp;to&nbsp;'parties'&nbsp;threads.<br>
+&nbsp;<br>
+'action'&nbsp;is&nbsp;a&nbsp;callable&nbsp;which,&nbsp;when&nbsp;supplied,&nbsp;will&nbsp;be&nbsp;called&nbsp;by&nbsp;one&nbsp;of<br>
+the&nbsp;threads&nbsp;after&nbsp;they&nbsp;have&nbsp;all&nbsp;entered&nbsp;the&nbsp;barrier&nbsp;and&nbsp;just&nbsp;prior&nbsp;to<br>
+releasing&nbsp;them&nbsp;all.&nbsp;If&nbsp;a&nbsp;'timeout'&nbsp;is&nbsp;provided,&nbsp;it&nbsp;is&nbsp;used&nbsp;as&nbsp;the<br>
+default&nbsp;for&nbsp;all&nbsp;subsequent&nbsp;'<a href="#Barrier-wait">wait</a>()'&nbsp;calls.</tt></dd></dl>
+
+<dl><dt><a name="Barrier-abort"><strong>abort</strong></a>(self)</dt><dd><tt>Place&nbsp;the&nbsp;barrier&nbsp;into&nbsp;a&nbsp;'broken'&nbsp;state.<br>
+&nbsp;<br>
+Useful&nbsp;in&nbsp;case&nbsp;of&nbsp;error.&nbsp;&nbsp;Any&nbsp;currently&nbsp;waiting&nbsp;threads&nbsp;and&nbsp;threads<br>
+attempting&nbsp;to&nbsp;'<a href="#Barrier-wait">wait</a>()'&nbsp;will&nbsp;have&nbsp;<a href="#BrokenBarrierError">BrokenBarrierError</a>&nbsp;raised.</tt></dd></dl>
+
+<dl><dt><a name="Barrier-reset"><strong>reset</strong></a>(self)</dt><dd><tt>Reset&nbsp;the&nbsp;barrier&nbsp;to&nbsp;the&nbsp;initial&nbsp;state.<br>
+&nbsp;<br>
+Any&nbsp;threads&nbsp;currently&nbsp;waiting&nbsp;will&nbsp;get&nbsp;the&nbsp;BrokenBarrier&nbsp;exception<br>
+raised.</tt></dd></dl>
+
+<dl><dt><a name="Barrier-wait"><strong>wait</strong></a>(self, timeout=None)</dt><dd><tt>Wait&nbsp;for&nbsp;the&nbsp;barrier.<br>
+&nbsp;<br>
+When&nbsp;the&nbsp;specified&nbsp;number&nbsp;of&nbsp;threads&nbsp;have&nbsp;started&nbsp;waiting,&nbsp;they&nbsp;are&nbsp;all<br>
+simultaneously&nbsp;awoken.&nbsp;If&nbsp;an&nbsp;'action'&nbsp;was&nbsp;provided&nbsp;for&nbsp;the&nbsp;barrier,&nbsp;one<br>
+of&nbsp;the&nbsp;threads&nbsp;will&nbsp;have&nbsp;executed&nbsp;that&nbsp;callback&nbsp;prior&nbsp;to&nbsp;returning.<br>
+Returns&nbsp;an&nbsp;individual&nbsp;index&nbsp;number&nbsp;from&nbsp;0&nbsp;to&nbsp;'parties-1'.</tt></dd></dl>
+
+<hr>
+Readonly properties defined here:<br>
+<dl><dt><strong>broken</strong></dt>
+<dd><tt>Return&nbsp;True&nbsp;if&nbsp;the&nbsp;barrier&nbsp;is&nbsp;in&nbsp;a&nbsp;broken&nbsp;state.</tt></dd>
+</dl>
+<dl><dt><strong>n_waiting</strong></dt>
+<dd><tt>Return&nbsp;the&nbsp;number&nbsp;of&nbsp;threads&nbsp;currently&nbsp;waiting&nbsp;at&nbsp;the&nbsp;barrier.</tt></dd>
+</dl>
+<dl><dt><strong>parties</strong></dt>
+<dd><tt>Return&nbsp;the&nbsp;number&nbsp;of&nbsp;threads&nbsp;required&nbsp;to&nbsp;trip&nbsp;the&nbsp;barrier.</tt></dd>
+</dl>
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="BoundedSemaphore">class <strong>BoundedSemaphore</strong></a>(<a href="threading.html#Semaphore">Semaphore</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#BoundedSemaphore">BoundedSemaphore</a>(value=1)<br>
+&nbsp;<br>
+Implements&nbsp;a&nbsp;bounded&nbsp;semaphore.<br>
+&nbsp;<br>
+A&nbsp;bounded&nbsp;semaphore&nbsp;checks&nbsp;to&nbsp;make&nbsp;sure&nbsp;its&nbsp;current&nbsp;value&nbsp;doesn't&nbsp;exceed&nbsp;its<br>
+initial&nbsp;value.&nbsp;If&nbsp;it&nbsp;does,&nbsp;ValueError&nbsp;is&nbsp;raised.&nbsp;In&nbsp;most&nbsp;situations<br>
+semaphores&nbsp;are&nbsp;used&nbsp;to&nbsp;guard&nbsp;resources&nbsp;with&nbsp;limited&nbsp;capacity.<br>
+&nbsp;<br>
+If&nbsp;the&nbsp;semaphore&nbsp;is&nbsp;released&nbsp;too&nbsp;many&nbsp;times&nbsp;it's&nbsp;a&nbsp;sign&nbsp;of&nbsp;a&nbsp;bug.&nbsp;If&nbsp;not<br>
+given,&nbsp;value&nbsp;defaults&nbsp;to&nbsp;1.<br>
+&nbsp;<br>
+Like&nbsp;regular&nbsp;semaphores,&nbsp;bounded&nbsp;semaphores&nbsp;manage&nbsp;a&nbsp;counter&nbsp;representing<br>
+the&nbsp;number&nbsp;of&nbsp;<a href="#BoundedSemaphore-release">release</a>()&nbsp;calls&nbsp;minus&nbsp;the&nbsp;number&nbsp;of&nbsp;<a href="#BoundedSemaphore-acquire">acquire</a>()&nbsp;calls,&nbsp;plus&nbsp;an<br>
+initial&nbsp;value.&nbsp;The&nbsp;<a href="#BoundedSemaphore-acquire">acquire</a>()&nbsp;method&nbsp;blocks&nbsp;if&nbsp;necessary&nbsp;until&nbsp;it&nbsp;can&nbsp;return<br>
+without&nbsp;making&nbsp;the&nbsp;counter&nbsp;negative.&nbsp;If&nbsp;not&nbsp;given,&nbsp;value&nbsp;defaults&nbsp;to&nbsp;1.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="threading.html#BoundedSemaphore">BoundedSemaphore</a></dd>
+<dd><a href="threading.html#Semaphore">Semaphore</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="BoundedSemaphore-__init__"><strong>__init__</strong></a>(self, value=1)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="BoundedSemaphore-release"><strong>release</strong></a>(self, n=1)</dt><dd><tt>Release&nbsp;a&nbsp;semaphore,&nbsp;incrementing&nbsp;the&nbsp;internal&nbsp;counter&nbsp;by&nbsp;one&nbsp;or&nbsp;more.<br>
+&nbsp;<br>
+When&nbsp;the&nbsp;counter&nbsp;is&nbsp;zero&nbsp;on&nbsp;entry&nbsp;and&nbsp;another&nbsp;thread&nbsp;is&nbsp;waiting&nbsp;for&nbsp;it<br>
+to&nbsp;become&nbsp;larger&nbsp;than&nbsp;zero&nbsp;again,&nbsp;wake&nbsp;up&nbsp;that&nbsp;thread.<br>
+&nbsp;<br>
+If&nbsp;the&nbsp;number&nbsp;of&nbsp;releases&nbsp;exceeds&nbsp;the&nbsp;number&nbsp;of&nbsp;acquires,<br>
+raise&nbsp;a&nbsp;ValueError.</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="threading.html#Semaphore">Semaphore</a>:<br>
+<dl><dt><a name="BoundedSemaphore-__enter__"><strong>__enter__</strong></a> = <a href="#BoundedSemaphore-acquire">acquire</a>(self, blocking=True, timeout=None)</dt></dl>
+
+<dl><dt><a name="BoundedSemaphore-__exit__"><strong>__exit__</strong></a>(self, t, v, tb)</dt></dl>
+
+<dl><dt><a name="BoundedSemaphore-acquire"><strong>acquire</strong></a>(self, blocking=True, timeout=None)</dt><dd><tt>Acquire&nbsp;a&nbsp;semaphore,&nbsp;decrementing&nbsp;the&nbsp;internal&nbsp;counter&nbsp;by&nbsp;one.<br>
+&nbsp;<br>
+When&nbsp;invoked&nbsp;without&nbsp;arguments:&nbsp;if&nbsp;the&nbsp;internal&nbsp;counter&nbsp;is&nbsp;larger&nbsp;than<br>
+zero&nbsp;on&nbsp;entry,&nbsp;decrement&nbsp;it&nbsp;by&nbsp;one&nbsp;and&nbsp;return&nbsp;immediately.&nbsp;If&nbsp;it&nbsp;is&nbsp;zero<br>
+on&nbsp;entry,&nbsp;block,&nbsp;waiting&nbsp;until&nbsp;some&nbsp;other&nbsp;thread&nbsp;has&nbsp;called&nbsp;<a href="#BoundedSemaphore-release">release</a>()&nbsp;to<br>
+make&nbsp;it&nbsp;larger&nbsp;than&nbsp;zero.&nbsp;This&nbsp;is&nbsp;done&nbsp;with&nbsp;proper&nbsp;interlocking&nbsp;so&nbsp;that<br>
+if&nbsp;multiple&nbsp;<a href="#BoundedSemaphore-acquire">acquire</a>()&nbsp;calls&nbsp;are&nbsp;blocked,&nbsp;<a href="#BoundedSemaphore-release">release</a>()&nbsp;will&nbsp;wake&nbsp;exactly&nbsp;one<br>
+of&nbsp;them&nbsp;up.&nbsp;The&nbsp;implementation&nbsp;may&nbsp;pick&nbsp;one&nbsp;at&nbsp;random,&nbsp;so&nbsp;the&nbsp;order&nbsp;in<br>
+which&nbsp;blocked&nbsp;threads&nbsp;are&nbsp;awakened&nbsp;should&nbsp;not&nbsp;be&nbsp;relied&nbsp;on.&nbsp;There&nbsp;is&nbsp;no<br>
+return&nbsp;value&nbsp;in&nbsp;this&nbsp;case.<br>
+&nbsp;<br>
+When&nbsp;invoked&nbsp;with&nbsp;blocking&nbsp;set&nbsp;to&nbsp;true,&nbsp;do&nbsp;the&nbsp;same&nbsp;thing&nbsp;as&nbsp;when&nbsp;called<br>
+without&nbsp;arguments,&nbsp;and&nbsp;return&nbsp;true.<br>
+&nbsp;<br>
+When&nbsp;invoked&nbsp;with&nbsp;blocking&nbsp;set&nbsp;to&nbsp;false,&nbsp;do&nbsp;not&nbsp;block.&nbsp;If&nbsp;a&nbsp;call&nbsp;without<br>
+an&nbsp;argument&nbsp;would&nbsp;block,&nbsp;return&nbsp;false&nbsp;immediately;&nbsp;otherwise,&nbsp;do&nbsp;the<br>
+same&nbsp;thing&nbsp;as&nbsp;when&nbsp;called&nbsp;without&nbsp;arguments,&nbsp;and&nbsp;return&nbsp;true.<br>
+&nbsp;<br>
+When&nbsp;invoked&nbsp;with&nbsp;a&nbsp;timeout&nbsp;other&nbsp;than&nbsp;None,&nbsp;it&nbsp;will&nbsp;block&nbsp;for&nbsp;at<br>
+most&nbsp;timeout&nbsp;seconds.&nbsp;&nbsp;If&nbsp;acquire&nbsp;does&nbsp;not&nbsp;complete&nbsp;successfully&nbsp;in<br>
+that&nbsp;interval,&nbsp;return&nbsp;false.&nbsp;&nbsp;Return&nbsp;true&nbsp;otherwise.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="threading.html#Semaphore">Semaphore</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="BrokenBarrierError">class <strong>BrokenBarrierError</strong></a>(<a href="builtins.html#RuntimeError">builtins.RuntimeError</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>#&nbsp;exception&nbsp;raised&nbsp;by&nbsp;the&nbsp;<a href="#Barrier">Barrier</a>&nbsp;class<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="threading.html#BrokenBarrierError">BrokenBarrierError</a></dd>
+<dd><a href="builtins.html#RuntimeError">builtins.RuntimeError</a></dd>
+<dd><a href="builtins.html#Exception">builtins.Exception</a></dd>
+<dd><a href="builtins.html#BaseException">builtins.BaseException</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Methods inherited from <a href="builtins.html#RuntimeError">builtins.RuntimeError</a>:<br>
+<dl><dt><a name="BrokenBarrierError-__init__"><strong>__init__</strong></a>(self, /, *args, **kwargs)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<hr>
+Static methods inherited from <a href="builtins.html#RuntimeError">builtins.RuntimeError</a>:<br>
+<dl><dt><a name="BrokenBarrierError-__new__"><strong>__new__</strong></a>(*args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;<a href="builtins.html#object">object</a>.&nbsp;&nbsp;See&nbsp;help(type)&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="builtins.html#BaseException">builtins.BaseException</a>:<br>
+<dl><dt><a name="BrokenBarrierError-__delattr__"><strong>__delattr__</strong></a>(self, name, /)</dt><dd><tt>Implement&nbsp;delattr(self,&nbsp;name).</tt></dd></dl>
+
+<dl><dt><a name="BrokenBarrierError-__getattribute__"><strong>__getattribute__</strong></a>(self, name, /)</dt><dd><tt>Return&nbsp;getattr(self,&nbsp;name).</tt></dd></dl>
+
+<dl><dt><a name="BrokenBarrierError-__reduce__"><strong>__reduce__</strong></a>(...)</dt><dd><tt>Helper&nbsp;for&nbsp;pickle.</tt></dd></dl>
+
+<dl><dt><a name="BrokenBarrierError-__repr__"><strong>__repr__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><a name="BrokenBarrierError-__setattr__"><strong>__setattr__</strong></a>(self, name, value, /)</dt><dd><tt>Implement&nbsp;setattr(self,&nbsp;name,&nbsp;value).</tt></dd></dl>
+
+<dl><dt><a name="BrokenBarrierError-__setstate__"><strong>__setstate__</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="BrokenBarrierError-__str__"><strong>__str__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;str(self).</tt></dd></dl>
+
+<dl><dt><a name="BrokenBarrierError-with_traceback"><strong>with_traceback</strong></a>(...)</dt><dd><tt><a href="builtins.html#Exception">Exception</a>.<a href="#BrokenBarrierError-with_traceback">with_traceback</a>(tb)&nbsp;--<br>
+set&nbsp;self.<strong>__traceback__</strong>&nbsp;to&nbsp;tb&nbsp;and&nbsp;return&nbsp;self.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="builtins.html#BaseException">builtins.BaseException</a>:<br>
+<dl><dt><strong>__cause__</strong></dt>
+<dd><tt>exception&nbsp;cause</tt></dd>
+</dl>
+<dl><dt><strong>__context__</strong></dt>
+<dd><tt>exception&nbsp;context</tt></dd>
+</dl>
+<dl><dt><strong>__dict__</strong></dt>
+</dl>
+<dl><dt><strong>__suppress_context__</strong></dt>
+</dl>
+<dl><dt><strong>__traceback__</strong></dt>
+</dl>
+<dl><dt><strong>args</strong></dt>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Condition">class <strong>Condition</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Condition">Condition</a>(lock=None)<br>
+&nbsp;<br>
+Class&nbsp;that&nbsp;implements&nbsp;a&nbsp;condition&nbsp;variable.<br>
+&nbsp;<br>
+A&nbsp;condition&nbsp;variable&nbsp;allows&nbsp;one&nbsp;or&nbsp;more&nbsp;threads&nbsp;to&nbsp;wait&nbsp;until&nbsp;they&nbsp;are<br>
+notified&nbsp;by&nbsp;another&nbsp;thread.<br>
+&nbsp;<br>
+If&nbsp;the&nbsp;lock&nbsp;argument&nbsp;is&nbsp;given&nbsp;and&nbsp;not&nbsp;None,&nbsp;it&nbsp;must&nbsp;be&nbsp;a&nbsp;Lock&nbsp;or&nbsp;RLock<br>
+<a href="builtins.html#object">object</a>,&nbsp;and&nbsp;it&nbsp;is&nbsp;used&nbsp;as&nbsp;the&nbsp;underlying&nbsp;lock.&nbsp;Otherwise,&nbsp;a&nbsp;new&nbsp;RLock&nbsp;<a href="builtins.html#object">object</a><br>
+is&nbsp;created&nbsp;and&nbsp;used&nbsp;as&nbsp;the&nbsp;underlying&nbsp;lock.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Condition-__enter__"><strong>__enter__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Condition-__exit__"><strong>__exit__</strong></a>(self, *args)</dt></dl>
+
+<dl><dt><a name="Condition-__init__"><strong>__init__</strong></a>(self, lock=None)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="Condition-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><a name="Condition-notify"><strong>notify</strong></a>(self, n=1)</dt><dd><tt>Wake&nbsp;up&nbsp;one&nbsp;or&nbsp;more&nbsp;threads&nbsp;waiting&nbsp;on&nbsp;this&nbsp;condition,&nbsp;if&nbsp;any.<br>
+&nbsp;<br>
+If&nbsp;the&nbsp;calling&nbsp;thread&nbsp;has&nbsp;not&nbsp;acquired&nbsp;the&nbsp;lock&nbsp;when&nbsp;this&nbsp;method&nbsp;is<br>
+called,&nbsp;a&nbsp;<a href="builtins.html#RuntimeError">RuntimeError</a>&nbsp;is&nbsp;raised.<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;wakes&nbsp;up&nbsp;at&nbsp;most&nbsp;n&nbsp;of&nbsp;the&nbsp;threads&nbsp;waiting&nbsp;for&nbsp;the&nbsp;condition<br>
+variable;&nbsp;it&nbsp;is&nbsp;a&nbsp;no-op&nbsp;if&nbsp;no&nbsp;threads&nbsp;are&nbsp;waiting.</tt></dd></dl>
+
+<dl><dt><a name="Condition-notifyAll"><strong>notifyAll</strong></a>(self)</dt><dd><tt>Wake&nbsp;up&nbsp;all&nbsp;threads&nbsp;waiting&nbsp;on&nbsp;this&nbsp;condition.<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;is&nbsp;deprecated,&nbsp;use&nbsp;<a href="#Condition-notify_all">notify_all</a>()&nbsp;instead.</tt></dd></dl>
+
+<dl><dt><a name="Condition-notify_all"><strong>notify_all</strong></a>(self)</dt><dd><tt>Wake&nbsp;up&nbsp;all&nbsp;threads&nbsp;waiting&nbsp;on&nbsp;this&nbsp;condition.<br>
+&nbsp;<br>
+If&nbsp;the&nbsp;calling&nbsp;thread&nbsp;has&nbsp;not&nbsp;acquired&nbsp;the&nbsp;lock&nbsp;when&nbsp;this&nbsp;method<br>
+is&nbsp;called,&nbsp;a&nbsp;<a href="builtins.html#RuntimeError">RuntimeError</a>&nbsp;is&nbsp;raised.</tt></dd></dl>
+
+<dl><dt><a name="Condition-wait"><strong>wait</strong></a>(self, timeout=None)</dt><dd><tt>Wait&nbsp;until&nbsp;notified&nbsp;or&nbsp;until&nbsp;a&nbsp;timeout&nbsp;occurs.<br>
+&nbsp;<br>
+If&nbsp;the&nbsp;calling&nbsp;thread&nbsp;has&nbsp;not&nbsp;acquired&nbsp;the&nbsp;lock&nbsp;when&nbsp;this&nbsp;method&nbsp;is<br>
+called,&nbsp;a&nbsp;<a href="builtins.html#RuntimeError">RuntimeError</a>&nbsp;is&nbsp;raised.<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;releases&nbsp;the&nbsp;underlying&nbsp;lock,&nbsp;and&nbsp;then&nbsp;blocks&nbsp;until&nbsp;it&nbsp;is<br>
+awakened&nbsp;by&nbsp;a&nbsp;<a href="#Condition-notify">notify</a>()&nbsp;or&nbsp;<a href="#Condition-notify_all">notify_all</a>()&nbsp;call&nbsp;for&nbsp;the&nbsp;same&nbsp;condition<br>
+variable&nbsp;in&nbsp;another&nbsp;thread,&nbsp;or&nbsp;until&nbsp;the&nbsp;optional&nbsp;timeout&nbsp;occurs.&nbsp;Once<br>
+awakened&nbsp;or&nbsp;timed&nbsp;out,&nbsp;it&nbsp;re-acquires&nbsp;the&nbsp;lock&nbsp;and&nbsp;returns.<br>
+&nbsp;<br>
+When&nbsp;the&nbsp;timeout&nbsp;argument&nbsp;is&nbsp;present&nbsp;and&nbsp;not&nbsp;None,&nbsp;it&nbsp;should&nbsp;be&nbsp;a<br>
+floating&nbsp;point&nbsp;number&nbsp;specifying&nbsp;a&nbsp;timeout&nbsp;for&nbsp;the&nbsp;operation&nbsp;in&nbsp;seconds<br>
+(or&nbsp;fractions&nbsp;thereof).<br>
+&nbsp;<br>
+When&nbsp;the&nbsp;underlying&nbsp;lock&nbsp;is&nbsp;an&nbsp;RLock,&nbsp;it&nbsp;is&nbsp;not&nbsp;released&nbsp;using&nbsp;its<br>
+release()&nbsp;method,&nbsp;since&nbsp;this&nbsp;may&nbsp;not&nbsp;actually&nbsp;unlock&nbsp;the&nbsp;lock&nbsp;when&nbsp;it<br>
+was&nbsp;acquired&nbsp;multiple&nbsp;times&nbsp;recursively.&nbsp;Instead,&nbsp;an&nbsp;internal&nbsp;interface<br>
+of&nbsp;the&nbsp;RLock&nbsp;class&nbsp;is&nbsp;used,&nbsp;which&nbsp;really&nbsp;unlocks&nbsp;it&nbsp;even&nbsp;when&nbsp;it&nbsp;has<br>
+been&nbsp;recursively&nbsp;acquired&nbsp;several&nbsp;times.&nbsp;Another&nbsp;internal&nbsp;interface&nbsp;is<br>
+then&nbsp;used&nbsp;to&nbsp;restore&nbsp;the&nbsp;recursion&nbsp;level&nbsp;when&nbsp;the&nbsp;lock&nbsp;is&nbsp;reacquired.</tt></dd></dl>
+
+<dl><dt><a name="Condition-wait_for"><strong>wait_for</strong></a>(self, predicate, timeout=None)</dt><dd><tt>Wait&nbsp;until&nbsp;a&nbsp;condition&nbsp;evaluates&nbsp;to&nbsp;True.<br>
+&nbsp;<br>
+predicate&nbsp;should&nbsp;be&nbsp;a&nbsp;callable&nbsp;which&nbsp;result&nbsp;will&nbsp;be&nbsp;interpreted&nbsp;as&nbsp;a<br>
+boolean&nbsp;value.&nbsp;&nbsp;A&nbsp;timeout&nbsp;may&nbsp;be&nbsp;provided&nbsp;giving&nbsp;the&nbsp;maximum&nbsp;time&nbsp;to<br>
+wait.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Event">class <strong>Event</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Class&nbsp;implementing&nbsp;event&nbsp;objects.<br>
+&nbsp;<br>
+Events&nbsp;manage&nbsp;a&nbsp;flag&nbsp;that&nbsp;can&nbsp;be&nbsp;set&nbsp;to&nbsp;true&nbsp;with&nbsp;the&nbsp;<a href="#Event-set">set</a>()&nbsp;method&nbsp;and&nbsp;reset<br>
+to&nbsp;false&nbsp;with&nbsp;the&nbsp;<a href="#Event-clear">clear</a>()&nbsp;method.&nbsp;The&nbsp;<a href="#Event-wait">wait</a>()&nbsp;method&nbsp;blocks&nbsp;until&nbsp;the&nbsp;flag&nbsp;is<br>
+true.&nbsp;&nbsp;The&nbsp;flag&nbsp;is&nbsp;initially&nbsp;false.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Event-__init__"><strong>__init__</strong></a>(self)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="Event-clear"><strong>clear</strong></a>(self)</dt><dd><tt>Reset&nbsp;the&nbsp;internal&nbsp;flag&nbsp;to&nbsp;false.<br>
+&nbsp;<br>
+Subsequently,&nbsp;threads&nbsp;calling&nbsp;<a href="#Event-wait">wait</a>()&nbsp;will&nbsp;block&nbsp;until&nbsp;<a href="#Event-set">set</a>()&nbsp;is&nbsp;called&nbsp;to<br>
+set&nbsp;the&nbsp;internal&nbsp;flag&nbsp;to&nbsp;true&nbsp;again.</tt></dd></dl>
+
+<dl><dt><a name="Event-isSet"><strong>isSet</strong></a>(self)</dt><dd><tt>Return&nbsp;true&nbsp;if&nbsp;and&nbsp;only&nbsp;if&nbsp;the&nbsp;internal&nbsp;flag&nbsp;is&nbsp;true.<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;is&nbsp;deprecated,&nbsp;use&nbsp;notify_all()&nbsp;instead.</tt></dd></dl>
+
+<dl><dt><a name="Event-is_set"><strong>is_set</strong></a>(self)</dt><dd><tt>Return&nbsp;true&nbsp;if&nbsp;and&nbsp;only&nbsp;if&nbsp;the&nbsp;internal&nbsp;flag&nbsp;is&nbsp;true.</tt></dd></dl>
+
+<dl><dt><a name="Event-set"><strong>set</strong></a>(self)</dt><dd><tt>Set&nbsp;the&nbsp;internal&nbsp;flag&nbsp;to&nbsp;true.<br>
+&nbsp;<br>
+All&nbsp;threads&nbsp;waiting&nbsp;for&nbsp;it&nbsp;to&nbsp;become&nbsp;true&nbsp;are&nbsp;awakened.&nbsp;Threads<br>
+that&nbsp;call&nbsp;<a href="#Event-wait">wait</a>()&nbsp;once&nbsp;the&nbsp;flag&nbsp;is&nbsp;true&nbsp;will&nbsp;not&nbsp;block&nbsp;at&nbsp;all.</tt></dd></dl>
+
+<dl><dt><a name="Event-wait"><strong>wait</strong></a>(self, timeout=None)</dt><dd><tt>Block&nbsp;until&nbsp;the&nbsp;internal&nbsp;flag&nbsp;is&nbsp;true.<br>
+&nbsp;<br>
+If&nbsp;the&nbsp;internal&nbsp;flag&nbsp;is&nbsp;true&nbsp;on&nbsp;entry,&nbsp;return&nbsp;immediately.&nbsp;Otherwise,<br>
+block&nbsp;until&nbsp;another&nbsp;thread&nbsp;calls&nbsp;<a href="#Event-set">set</a>()&nbsp;to&nbsp;set&nbsp;the&nbsp;flag&nbsp;to&nbsp;true,&nbsp;or&nbsp;until<br>
+the&nbsp;optional&nbsp;timeout&nbsp;occurs.<br>
+&nbsp;<br>
+When&nbsp;the&nbsp;timeout&nbsp;argument&nbsp;is&nbsp;present&nbsp;and&nbsp;not&nbsp;None,&nbsp;it&nbsp;should&nbsp;be&nbsp;a<br>
+floating&nbsp;point&nbsp;number&nbsp;specifying&nbsp;a&nbsp;timeout&nbsp;for&nbsp;the&nbsp;operation&nbsp;in&nbsp;seconds<br>
+(or&nbsp;fractions&nbsp;thereof).<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;returns&nbsp;the&nbsp;internal&nbsp;flag&nbsp;on&nbsp;exit,&nbsp;so&nbsp;it&nbsp;will&nbsp;always&nbsp;return<br>
+True&nbsp;except&nbsp;if&nbsp;a&nbsp;timeout&nbsp;is&nbsp;given&nbsp;and&nbsp;the&nbsp;operation&nbsp;times&nbsp;out.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><strong>ExceptHookArgs</strong> = <a name="ExceptHookArgs">class _ExceptHookArgs</a>(<a href="builtins.html#tuple">builtins.tuple</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#ExceptHookArgs">ExceptHookArgs</a>(iterable=(),&nbsp;/)<br>
+&nbsp;<br>
+<a href="#ExceptHookArgs">ExceptHookArgs</a><br>
+&nbsp;<br>
+Type&nbsp;used&nbsp;to&nbsp;pass&nbsp;arguments&nbsp;to&nbsp;threading.excepthook.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="_thread.html#_ExceptHookArgs">_ExceptHookArgs</a></dd>
+<dd><a href="builtins.html#tuple">builtins.tuple</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="_ExceptHookArgs-__reduce__"><strong>__reduce__</strong></a>(...)</dt><dd><tt>Helper&nbsp;for&nbsp;pickle.</tt></dd></dl>
+
+<dl><dt><a name="_ExceptHookArgs-__repr__"><strong>__repr__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<hr>
+Static methods defined here:<br>
+<dl><dt><a name="_ExceptHookArgs-__new__"><strong>__new__</strong></a>(*args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;<a href="builtins.html#object">object</a>.&nbsp;&nbsp;See&nbsp;help(type)&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>exc_traceback</strong></dt>
+<dd><tt>Exception&nbsp;traceback</tt></dd>
+</dl>
+<dl><dt><strong>exc_type</strong></dt>
+<dd><tt>Exception&nbsp;type</tt></dd>
+</dl>
+<dl><dt><strong>exc_value</strong></dt>
+<dd><tt>Exception&nbsp;value</tt></dd>
+</dl>
+<dl><dt><strong>thread</strong></dt>
+<dd><tt>Thread</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__match_args__</strong> = ('exc_type', 'exc_value', 'exc_traceback', 'thread')</dl>
+
+<dl><dt><strong>n_fields</strong> = 4</dl>
+
+<dl><dt><strong>n_sequence_fields</strong> = 4</dl>
+
+<dl><dt><strong>n_unnamed_fields</strong> = 0</dl>
+
+<hr>
+Methods inherited from <a href="builtins.html#tuple">builtins.tuple</a>:<br>
+<dl><dt><a name="_ExceptHookArgs-__add__"><strong>__add__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self+value.</tt></dd></dl>
+
+<dl><dt><a name="_ExceptHookArgs-__contains__"><strong>__contains__</strong></a>(self, key, /)</dt><dd><tt>Return&nbsp;key&nbsp;in&nbsp;self.</tt></dd></dl>
+
+<dl><dt><a name="_ExceptHookArgs-__eq__"><strong>__eq__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self==value.</tt></dd></dl>
+
+<dl><dt><a name="_ExceptHookArgs-__ge__"><strong>__ge__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self&gt;=value.</tt></dd></dl>
+
+<dl><dt><a name="_ExceptHookArgs-__getattribute__"><strong>__getattribute__</strong></a>(self, name, /)</dt><dd><tt>Return&nbsp;getattr(self,&nbsp;name).</tt></dd></dl>
+
+<dl><dt><a name="_ExceptHookArgs-__getitem__"><strong>__getitem__</strong></a>(self, key, /)</dt><dd><tt>Return&nbsp;self[key].</tt></dd></dl>
+
+<dl><dt><a name="_ExceptHookArgs-__getnewargs__"><strong>__getnewargs__</strong></a>(self, /)</dt></dl>
+
+<dl><dt><a name="_ExceptHookArgs-__gt__"><strong>__gt__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self&gt;value.</tt></dd></dl>
+
+<dl><dt><a name="_ExceptHookArgs-__hash__"><strong>__hash__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;hash(self).</tt></dd></dl>
+
+<dl><dt><a name="_ExceptHookArgs-__iter__"><strong>__iter__</strong></a>(self, /)</dt><dd><tt>Implement&nbsp;iter(self).</tt></dd></dl>
+
+<dl><dt><a name="_ExceptHookArgs-__le__"><strong>__le__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self&lt;=value.</tt></dd></dl>
+
+<dl><dt><a name="_ExceptHookArgs-__len__"><strong>__len__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;len(self).</tt></dd></dl>
+
+<dl><dt><a name="_ExceptHookArgs-__lt__"><strong>__lt__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self&lt;value.</tt></dd></dl>
+
+<dl><dt><a name="_ExceptHookArgs-__mul__"><strong>__mul__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self*value.</tt></dd></dl>
+
+<dl><dt><a name="_ExceptHookArgs-__ne__"><strong>__ne__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self!=value.</tt></dd></dl>
+
+<dl><dt><a name="_ExceptHookArgs-__rmul__"><strong>__rmul__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;value*self.</tt></dd></dl>
+
+<dl><dt><a name="_ExceptHookArgs-count"><strong>count</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;number&nbsp;of&nbsp;occurrences&nbsp;of&nbsp;value.</tt></dd></dl>
+
+<dl><dt><a name="_ExceptHookArgs-index"><strong>index</strong></a>(self, value, start=0, stop=9223372036854775807, /)</dt><dd><tt>Return&nbsp;first&nbsp;index&nbsp;of&nbsp;value.<br>
+&nbsp;<br>
+Raises&nbsp;ValueError&nbsp;if&nbsp;the&nbsp;value&nbsp;is&nbsp;not&nbsp;present.</tt></dd></dl>
+
+<hr>
+Class methods inherited from <a href="builtins.html#tuple">builtins.tuple</a>:<br>
+<dl><dt><a name="_ExceptHookArgs-__class_getitem__"><strong>__class_getitem__</strong></a>(...)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>See&nbsp;<a href="https://www.python.org/dev/peps/pep-0585/">PEP&nbsp;585</a></tt></dd></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Semaphore">class <strong>Semaphore</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Semaphore">Semaphore</a>(value=1)<br>
+&nbsp;<br>
+This&nbsp;class&nbsp;implements&nbsp;semaphore&nbsp;objects.<br>
+&nbsp;<br>
+Semaphores&nbsp;manage&nbsp;a&nbsp;counter&nbsp;representing&nbsp;the&nbsp;number&nbsp;of&nbsp;<a href="#Semaphore-release">release</a>()&nbsp;calls&nbsp;minus<br>
+the&nbsp;number&nbsp;of&nbsp;<a href="#Semaphore-acquire">acquire</a>()&nbsp;calls,&nbsp;plus&nbsp;an&nbsp;initial&nbsp;value.&nbsp;The&nbsp;<a href="#Semaphore-acquire">acquire</a>()&nbsp;method<br>
+blocks&nbsp;if&nbsp;necessary&nbsp;until&nbsp;it&nbsp;can&nbsp;return&nbsp;without&nbsp;making&nbsp;the&nbsp;counter<br>
+negative.&nbsp;If&nbsp;not&nbsp;given,&nbsp;value&nbsp;defaults&nbsp;to&nbsp;1.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Semaphore-__enter__"><strong>__enter__</strong></a> = <a href="#Semaphore-acquire">acquire</a>(self, blocking=True, timeout=None)</dt></dl>
+
+<dl><dt><a name="Semaphore-__exit__"><strong>__exit__</strong></a>(self, t, v, tb)</dt></dl>
+
+<dl><dt><a name="Semaphore-__init__"><strong>__init__</strong></a>(self, value=1)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="Semaphore-acquire"><strong>acquire</strong></a>(self, blocking=True, timeout=None)</dt><dd><tt>Acquire&nbsp;a&nbsp;semaphore,&nbsp;decrementing&nbsp;the&nbsp;internal&nbsp;counter&nbsp;by&nbsp;one.<br>
+&nbsp;<br>
+When&nbsp;invoked&nbsp;without&nbsp;arguments:&nbsp;if&nbsp;the&nbsp;internal&nbsp;counter&nbsp;is&nbsp;larger&nbsp;than<br>
+zero&nbsp;on&nbsp;entry,&nbsp;decrement&nbsp;it&nbsp;by&nbsp;one&nbsp;and&nbsp;return&nbsp;immediately.&nbsp;If&nbsp;it&nbsp;is&nbsp;zero<br>
+on&nbsp;entry,&nbsp;block,&nbsp;waiting&nbsp;until&nbsp;some&nbsp;other&nbsp;thread&nbsp;has&nbsp;called&nbsp;<a href="#Semaphore-release">release</a>()&nbsp;to<br>
+make&nbsp;it&nbsp;larger&nbsp;than&nbsp;zero.&nbsp;This&nbsp;is&nbsp;done&nbsp;with&nbsp;proper&nbsp;interlocking&nbsp;so&nbsp;that<br>
+if&nbsp;multiple&nbsp;<a href="#Semaphore-acquire">acquire</a>()&nbsp;calls&nbsp;are&nbsp;blocked,&nbsp;<a href="#Semaphore-release">release</a>()&nbsp;will&nbsp;wake&nbsp;exactly&nbsp;one<br>
+of&nbsp;them&nbsp;up.&nbsp;The&nbsp;implementation&nbsp;may&nbsp;pick&nbsp;one&nbsp;at&nbsp;random,&nbsp;so&nbsp;the&nbsp;order&nbsp;in<br>
+which&nbsp;blocked&nbsp;threads&nbsp;are&nbsp;awakened&nbsp;should&nbsp;not&nbsp;be&nbsp;relied&nbsp;on.&nbsp;There&nbsp;is&nbsp;no<br>
+return&nbsp;value&nbsp;in&nbsp;this&nbsp;case.<br>
+&nbsp;<br>
+When&nbsp;invoked&nbsp;with&nbsp;blocking&nbsp;set&nbsp;to&nbsp;true,&nbsp;do&nbsp;the&nbsp;same&nbsp;thing&nbsp;as&nbsp;when&nbsp;called<br>
+without&nbsp;arguments,&nbsp;and&nbsp;return&nbsp;true.<br>
+&nbsp;<br>
+When&nbsp;invoked&nbsp;with&nbsp;blocking&nbsp;set&nbsp;to&nbsp;false,&nbsp;do&nbsp;not&nbsp;block.&nbsp;If&nbsp;a&nbsp;call&nbsp;without<br>
+an&nbsp;argument&nbsp;would&nbsp;block,&nbsp;return&nbsp;false&nbsp;immediately;&nbsp;otherwise,&nbsp;do&nbsp;the<br>
+same&nbsp;thing&nbsp;as&nbsp;when&nbsp;called&nbsp;without&nbsp;arguments,&nbsp;and&nbsp;return&nbsp;true.<br>
+&nbsp;<br>
+When&nbsp;invoked&nbsp;with&nbsp;a&nbsp;timeout&nbsp;other&nbsp;than&nbsp;None,&nbsp;it&nbsp;will&nbsp;block&nbsp;for&nbsp;at<br>
+most&nbsp;timeout&nbsp;seconds.&nbsp;&nbsp;If&nbsp;acquire&nbsp;does&nbsp;not&nbsp;complete&nbsp;successfully&nbsp;in<br>
+that&nbsp;interval,&nbsp;return&nbsp;false.&nbsp;&nbsp;Return&nbsp;true&nbsp;otherwise.</tt></dd></dl>
+
+<dl><dt><a name="Semaphore-release"><strong>release</strong></a>(self, n=1)</dt><dd><tt>Release&nbsp;a&nbsp;semaphore,&nbsp;incrementing&nbsp;the&nbsp;internal&nbsp;counter&nbsp;by&nbsp;one&nbsp;or&nbsp;more.<br>
+&nbsp;<br>
+When&nbsp;the&nbsp;counter&nbsp;is&nbsp;zero&nbsp;on&nbsp;entry&nbsp;and&nbsp;another&nbsp;thread&nbsp;is&nbsp;waiting&nbsp;for&nbsp;it<br>
+to&nbsp;become&nbsp;larger&nbsp;than&nbsp;zero&nbsp;again,&nbsp;wake&nbsp;up&nbsp;that&nbsp;thread.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Thread">class <strong>Thread</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Thread">Thread</a>(group=None,&nbsp;target=None,&nbsp;name=None,&nbsp;args=(),&nbsp;kwargs=None,&nbsp;*,&nbsp;daemon=None)<br>
+&nbsp;<br>
+A&nbsp;class&nbsp;that&nbsp;represents&nbsp;a&nbsp;thread&nbsp;of&nbsp;control.<br>
+&nbsp;<br>
+This&nbsp;class&nbsp;can&nbsp;be&nbsp;safely&nbsp;subclassed&nbsp;in&nbsp;a&nbsp;limited&nbsp;fashion.&nbsp;There&nbsp;are&nbsp;two&nbsp;ways<br>
+to&nbsp;specify&nbsp;the&nbsp;activity:&nbsp;by&nbsp;passing&nbsp;a&nbsp;callable&nbsp;<a href="builtins.html#object">object</a>&nbsp;to&nbsp;the&nbsp;constructor,&nbsp;or<br>
+by&nbsp;overriding&nbsp;the&nbsp;<a href="#Thread-run">run</a>()&nbsp;method&nbsp;in&nbsp;a&nbsp;subclass.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Thread-__init__"><strong>__init__</strong></a>(self, group=None, target=None, name=None, args=(), kwargs=None, *, daemon=None)</dt><dd><tt>This&nbsp;constructor&nbsp;should&nbsp;always&nbsp;be&nbsp;called&nbsp;with&nbsp;keyword&nbsp;arguments.&nbsp;Arguments&nbsp;are:<br>
+&nbsp;<br>
+*group*&nbsp;should&nbsp;be&nbsp;None;&nbsp;reserved&nbsp;for&nbsp;future&nbsp;extension&nbsp;when&nbsp;a&nbsp;ThreadGroup<br>
+class&nbsp;is&nbsp;implemented.<br>
+&nbsp;<br>
+*target*&nbsp;is&nbsp;the&nbsp;callable&nbsp;<a href="builtins.html#object">object</a>&nbsp;to&nbsp;be&nbsp;invoked&nbsp;by&nbsp;the&nbsp;<a href="#Thread-run">run</a>()<br>
+method.&nbsp;Defaults&nbsp;to&nbsp;None,&nbsp;meaning&nbsp;nothing&nbsp;is&nbsp;called.<br>
+&nbsp;<br>
+*name*&nbsp;is&nbsp;the&nbsp;thread&nbsp;name.&nbsp;By&nbsp;default,&nbsp;a&nbsp;unique&nbsp;name&nbsp;is&nbsp;constructed&nbsp;of<br>
+the&nbsp;form&nbsp;"<a href="#Thread">Thread</a>-N"&nbsp;where&nbsp;N&nbsp;is&nbsp;a&nbsp;small&nbsp;decimal&nbsp;number.<br>
+&nbsp;<br>
+*args*&nbsp;is&nbsp;the&nbsp;argument&nbsp;<a href="builtins.html#tuple">tuple</a>&nbsp;for&nbsp;the&nbsp;target&nbsp;invocation.&nbsp;Defaults&nbsp;to&nbsp;().<br>
+&nbsp;<br>
+*kwargs*&nbsp;is&nbsp;a&nbsp;dictionary&nbsp;of&nbsp;keyword&nbsp;arguments&nbsp;for&nbsp;the&nbsp;target<br>
+invocation.&nbsp;Defaults&nbsp;to&nbsp;{}.<br>
+&nbsp;<br>
+If&nbsp;a&nbsp;subclass&nbsp;overrides&nbsp;the&nbsp;constructor,&nbsp;it&nbsp;must&nbsp;make&nbsp;sure&nbsp;to&nbsp;invoke<br>
+the&nbsp;base&nbsp;class&nbsp;constructor&nbsp;(<a href="#Thread">Thread</a>.<a href="#Thread-__init__">__init__</a>())&nbsp;before&nbsp;doing&nbsp;anything<br>
+else&nbsp;to&nbsp;the&nbsp;thread.</tt></dd></dl>
+
+<dl><dt><a name="Thread-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><a name="Thread-getName"><strong>getName</strong></a>(self)</dt><dd><tt>Return&nbsp;a&nbsp;string&nbsp;used&nbsp;for&nbsp;identification&nbsp;purposes&nbsp;only.<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;is&nbsp;deprecated,&nbsp;use&nbsp;the&nbsp;name&nbsp;attribute&nbsp;instead.</tt></dd></dl>
+
+<dl><dt><a name="Thread-isDaemon"><strong>isDaemon</strong></a>(self)</dt><dd><tt>Return&nbsp;whether&nbsp;this&nbsp;thread&nbsp;is&nbsp;a&nbsp;daemon.<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;is&nbsp;deprecated,&nbsp;use&nbsp;the&nbsp;daemon&nbsp;attribute&nbsp;instead.</tt></dd></dl>
+
+<dl><dt><a name="Thread-is_alive"><strong>is_alive</strong></a>(self)</dt><dd><tt>Return&nbsp;whether&nbsp;the&nbsp;thread&nbsp;is&nbsp;alive.<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;returns&nbsp;True&nbsp;just&nbsp;before&nbsp;the&nbsp;<a href="#Thread-run">run</a>()&nbsp;method&nbsp;starts&nbsp;until&nbsp;just<br>
+after&nbsp;the&nbsp;<a href="#Thread-run">run</a>()&nbsp;method&nbsp;terminates.&nbsp;See&nbsp;also&nbsp;the&nbsp;module&nbsp;function<br>
+<a href="#-enumerate">enumerate</a>().</tt></dd></dl>
+
+<dl><dt><a name="Thread-join"><strong>join</strong></a>(self, timeout=None)</dt><dd><tt>Wait&nbsp;until&nbsp;the&nbsp;thread&nbsp;terminates.<br>
+&nbsp;<br>
+This&nbsp;blocks&nbsp;the&nbsp;calling&nbsp;thread&nbsp;until&nbsp;the&nbsp;thread&nbsp;whose&nbsp;<a href="#Thread-join">join</a>()&nbsp;method&nbsp;is<br>
+called&nbsp;terminates&nbsp;--&nbsp;either&nbsp;normally&nbsp;or&nbsp;through&nbsp;an&nbsp;unhandled&nbsp;exception<br>
+or&nbsp;until&nbsp;the&nbsp;optional&nbsp;timeout&nbsp;occurs.<br>
+&nbsp;<br>
+When&nbsp;the&nbsp;timeout&nbsp;argument&nbsp;is&nbsp;present&nbsp;and&nbsp;not&nbsp;None,&nbsp;it&nbsp;should&nbsp;be&nbsp;a<br>
+floating&nbsp;point&nbsp;number&nbsp;specifying&nbsp;a&nbsp;timeout&nbsp;for&nbsp;the&nbsp;operation&nbsp;in&nbsp;seconds<br>
+(or&nbsp;fractions&nbsp;thereof).&nbsp;As&nbsp;<a href="#Thread-join">join</a>()&nbsp;always&nbsp;returns&nbsp;None,&nbsp;you&nbsp;must&nbsp;call<br>
+<a href="#Thread-is_alive">is_alive</a>()&nbsp;after&nbsp;<a href="#Thread-join">join</a>()&nbsp;to&nbsp;decide&nbsp;whether&nbsp;a&nbsp;timeout&nbsp;happened&nbsp;--&nbsp;if&nbsp;the<br>
+thread&nbsp;is&nbsp;still&nbsp;alive,&nbsp;the&nbsp;<a href="#Thread-join">join</a>()&nbsp;call&nbsp;timed&nbsp;out.<br>
+&nbsp;<br>
+When&nbsp;the&nbsp;timeout&nbsp;argument&nbsp;is&nbsp;not&nbsp;present&nbsp;or&nbsp;None,&nbsp;the&nbsp;operation&nbsp;will<br>
+block&nbsp;until&nbsp;the&nbsp;thread&nbsp;terminates.<br>
+&nbsp;<br>
+A&nbsp;thread&nbsp;can&nbsp;be&nbsp;<a href="#Thread-join">join</a>()ed&nbsp;many&nbsp;times.<br>
+&nbsp;<br>
+<a href="#Thread-join">join</a>()&nbsp;raises&nbsp;a&nbsp;<a href="builtins.html#RuntimeError">RuntimeError</a>&nbsp;if&nbsp;an&nbsp;attempt&nbsp;is&nbsp;made&nbsp;to&nbsp;join&nbsp;the&nbsp;current<br>
+thread&nbsp;as&nbsp;that&nbsp;would&nbsp;cause&nbsp;a&nbsp;deadlock.&nbsp;It&nbsp;is&nbsp;also&nbsp;an&nbsp;error&nbsp;to&nbsp;<a href="#Thread-join">join</a>()&nbsp;a<br>
+thread&nbsp;before&nbsp;it&nbsp;has&nbsp;been&nbsp;started&nbsp;and&nbsp;attempts&nbsp;to&nbsp;do&nbsp;so&nbsp;raises&nbsp;the&nbsp;same<br>
+exception.</tt></dd></dl>
+
+<dl><dt><a name="Thread-run"><strong>run</strong></a>(self)</dt><dd><tt>Method&nbsp;representing&nbsp;the&nbsp;thread's&nbsp;activity.<br>
+&nbsp;<br>
+You&nbsp;may&nbsp;override&nbsp;this&nbsp;method&nbsp;in&nbsp;a&nbsp;subclass.&nbsp;The&nbsp;standard&nbsp;<a href="#Thread-run">run</a>()&nbsp;method<br>
+invokes&nbsp;the&nbsp;callable&nbsp;<a href="builtins.html#object">object</a>&nbsp;passed&nbsp;to&nbsp;the&nbsp;<a href="builtins.html#object">object</a>'s&nbsp;constructor&nbsp;as&nbsp;the<br>
+target&nbsp;argument,&nbsp;if&nbsp;any,&nbsp;with&nbsp;sequential&nbsp;and&nbsp;keyword&nbsp;arguments&nbsp;taken<br>
+from&nbsp;the&nbsp;args&nbsp;and&nbsp;kwargs&nbsp;arguments,&nbsp;respectively.</tt></dd></dl>
+
+<dl><dt><a name="Thread-setDaemon"><strong>setDaemon</strong></a>(self, daemonic)</dt><dd><tt>Set&nbsp;whether&nbsp;this&nbsp;thread&nbsp;is&nbsp;a&nbsp;daemon.<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;is&nbsp;deprecated,&nbsp;use&nbsp;the&nbsp;.daemon&nbsp;property&nbsp;instead.</tt></dd></dl>
+
+<dl><dt><a name="Thread-setName"><strong>setName</strong></a>(self, name)</dt><dd><tt>Set&nbsp;the&nbsp;name&nbsp;string&nbsp;for&nbsp;this&nbsp;thread.<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;is&nbsp;deprecated,&nbsp;use&nbsp;the&nbsp;name&nbsp;attribute&nbsp;instead.</tt></dd></dl>
+
+<dl><dt><a name="Thread-start"><strong>start</strong></a>(self)</dt><dd><tt>Start&nbsp;the&nbsp;thread's&nbsp;activity.<br>
+&nbsp;<br>
+It&nbsp;must&nbsp;be&nbsp;called&nbsp;at&nbsp;most&nbsp;once&nbsp;per&nbsp;thread&nbsp;<a href="builtins.html#object">object</a>.&nbsp;It&nbsp;arranges&nbsp;for&nbsp;the<br>
+<a href="builtins.html#object">object</a>'s&nbsp;<a href="#Thread-run">run</a>()&nbsp;method&nbsp;to&nbsp;be&nbsp;invoked&nbsp;in&nbsp;a&nbsp;separate&nbsp;thread&nbsp;of&nbsp;control.<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;will&nbsp;raise&nbsp;a&nbsp;<a href="builtins.html#RuntimeError">RuntimeError</a>&nbsp;if&nbsp;called&nbsp;more&nbsp;than&nbsp;once&nbsp;on&nbsp;the<br>
+same&nbsp;thread&nbsp;<a href="builtins.html#object">object</a>.</tt></dd></dl>
+
+<hr>
+Readonly properties defined here:<br>
+<dl><dt><strong>ident</strong></dt>
+<dd><tt>Thread&nbsp;identifier&nbsp;of&nbsp;this&nbsp;thread&nbsp;or&nbsp;None&nbsp;if&nbsp;it&nbsp;has&nbsp;not&nbsp;been&nbsp;started.<br>
+&nbsp;<br>
+This&nbsp;is&nbsp;a&nbsp;nonzero&nbsp;integer.&nbsp;See&nbsp;the&nbsp;get_ident()&nbsp;function.&nbsp;Thread<br>
+identifiers&nbsp;may&nbsp;be&nbsp;recycled&nbsp;when&nbsp;a&nbsp;thread&nbsp;exits&nbsp;and&nbsp;another&nbsp;thread&nbsp;is<br>
+created.&nbsp;The&nbsp;identifier&nbsp;is&nbsp;available&nbsp;even&nbsp;after&nbsp;the&nbsp;thread&nbsp;has&nbsp;exited.</tt></dd>
+</dl>
+<dl><dt><strong>native_id</strong></dt>
+<dd><tt>Native&nbsp;integral&nbsp;thread&nbsp;ID&nbsp;of&nbsp;this&nbsp;thread,&nbsp;or&nbsp;None&nbsp;if&nbsp;it&nbsp;has&nbsp;not&nbsp;been&nbsp;started.<br>
+&nbsp;<br>
+This&nbsp;is&nbsp;a&nbsp;non-negative&nbsp;integer.&nbsp;See&nbsp;the&nbsp;get_native_id()&nbsp;function.<br>
+This&nbsp;represents&nbsp;the&nbsp;Thread&nbsp;ID&nbsp;as&nbsp;reported&nbsp;by&nbsp;the&nbsp;kernel.</tt></dd>
+</dl>
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>daemon</strong></dt>
+<dd><tt>A&nbsp;boolean&nbsp;value&nbsp;indicating&nbsp;whether&nbsp;this&nbsp;thread&nbsp;is&nbsp;a&nbsp;daemon&nbsp;thread.<br>
+&nbsp;<br>
+This&nbsp;must&nbsp;be&nbsp;set&nbsp;before&nbsp;start()&nbsp;is&nbsp;called,&nbsp;otherwise&nbsp;RuntimeError&nbsp;is<br>
+raised.&nbsp;Its&nbsp;initial&nbsp;value&nbsp;is&nbsp;inherited&nbsp;from&nbsp;the&nbsp;creating&nbsp;thread;&nbsp;the<br>
+main&nbsp;thread&nbsp;is&nbsp;not&nbsp;a&nbsp;daemon&nbsp;thread&nbsp;and&nbsp;therefore&nbsp;all&nbsp;threads&nbsp;created&nbsp;in<br>
+the&nbsp;main&nbsp;thread&nbsp;default&nbsp;to&nbsp;daemon&nbsp;=&nbsp;False.<br>
+&nbsp;<br>
+The&nbsp;entire&nbsp;Python&nbsp;program&nbsp;exits&nbsp;when&nbsp;only&nbsp;daemon&nbsp;threads&nbsp;are&nbsp;left.</tt></dd>
+</dl>
+<dl><dt><strong>name</strong></dt>
+<dd><tt>A&nbsp;string&nbsp;used&nbsp;for&nbsp;identification&nbsp;purposes&nbsp;only.<br>
+&nbsp;<br>
+It&nbsp;has&nbsp;no&nbsp;semantics.&nbsp;Multiple&nbsp;threads&nbsp;may&nbsp;be&nbsp;given&nbsp;the&nbsp;same&nbsp;name.&nbsp;The<br>
+initial&nbsp;name&nbsp;is&nbsp;set&nbsp;by&nbsp;the&nbsp;constructor.</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><strong>ThreadError</strong> = <a name="ThreadError">class RuntimeError</a>(<a href="builtins.html#Exception">Exception</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Unspecified&nbsp;run-time&nbsp;error.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="builtins.html#RuntimeError">RuntimeError</a></dd>
+<dd><a href="builtins.html#Exception">Exception</a></dd>
+<dd><a href="builtins.html#BaseException">BaseException</a></dd>
+<dd><a href="builtins.html#object">object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="RuntimeError-__init__"><strong>__init__</strong></a>(self, /, *args, **kwargs)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<hr>
+Static methods defined here:<br>
+<dl><dt><a name="RuntimeError-__new__"><strong>__new__</strong></a>(*args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;<a href="builtins.html#object">object</a>.&nbsp;&nbsp;See&nbsp;help(type)&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="builtins.html#BaseException">BaseException</a>:<br>
+<dl><dt><a name="RuntimeError-__delattr__"><strong>__delattr__</strong></a>(self, name, /)</dt><dd><tt>Implement&nbsp;delattr(self,&nbsp;name).</tt></dd></dl>
+
+<dl><dt><a name="RuntimeError-__getattribute__"><strong>__getattribute__</strong></a>(self, name, /)</dt><dd><tt>Return&nbsp;getattr(self,&nbsp;name).</tt></dd></dl>
+
+<dl><dt><a name="RuntimeError-__reduce__"><strong>__reduce__</strong></a>(...)</dt><dd><tt>Helper&nbsp;for&nbsp;pickle.</tt></dd></dl>
+
+<dl><dt><a name="RuntimeError-__repr__"><strong>__repr__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><a name="RuntimeError-__setattr__"><strong>__setattr__</strong></a>(self, name, value, /)</dt><dd><tt>Implement&nbsp;setattr(self,&nbsp;name,&nbsp;value).</tt></dd></dl>
+
+<dl><dt><a name="RuntimeError-__setstate__"><strong>__setstate__</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="RuntimeError-__str__"><strong>__str__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;str(self).</tt></dd></dl>
+
+<dl><dt><a name="RuntimeError-with_traceback"><strong>with_traceback</strong></a>(...)</dt><dd><tt><a href="builtins.html#Exception">Exception</a>.<a href="#ThreadError-with_traceback">with_traceback</a>(tb)&nbsp;--<br>
+set&nbsp;self.<strong>__traceback__</strong>&nbsp;to&nbsp;tb&nbsp;and&nbsp;return&nbsp;self.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="builtins.html#BaseException">BaseException</a>:<br>
+<dl><dt><strong>__cause__</strong></dt>
+<dd><tt>exception&nbsp;cause</tt></dd>
+</dl>
+<dl><dt><strong>__context__</strong></dt>
+<dd><tt>exception&nbsp;context</tt></dd>
+</dl>
+<dl><dt><strong>__dict__</strong></dt>
+</dl>
+<dl><dt><strong>__suppress_context__</strong></dt>
+</dl>
+<dl><dt><strong>__traceback__</strong></dt>
+</dl>
+<dl><dt><strong>args</strong></dt>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Timer">class <strong>Timer</strong></a>(<a href="threading.html#Thread">Thread</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Timer">Timer</a>(interval,&nbsp;function,&nbsp;args=None,&nbsp;kwargs=None)<br>
+&nbsp;<br>
+Call&nbsp;a&nbsp;function&nbsp;after&nbsp;a&nbsp;specified&nbsp;number&nbsp;of&nbsp;seconds:<br>
+&nbsp;<br>
+t&nbsp;=&nbsp;<a href="#Timer">Timer</a>(30.0,&nbsp;f,&nbsp;args=None,&nbsp;kwargs=None)<br>
+t.<a href="#Timer-start">start</a>()<br>
+t.<a href="#Timer-cancel">cancel</a>()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;stop&nbsp;the&nbsp;timer's&nbsp;action&nbsp;if&nbsp;it's&nbsp;still&nbsp;waiting<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="threading.html#Timer">Timer</a></dd>
+<dd><a href="threading.html#Thread">Thread</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Timer-__init__"><strong>__init__</strong></a>(self, interval, function, args=None, kwargs=None)</dt><dd><tt>This&nbsp;constructor&nbsp;should&nbsp;always&nbsp;be&nbsp;called&nbsp;with&nbsp;keyword&nbsp;arguments.&nbsp;Arguments&nbsp;are:<br>
+&nbsp;<br>
+*group*&nbsp;should&nbsp;be&nbsp;None;&nbsp;reserved&nbsp;for&nbsp;future&nbsp;extension&nbsp;when&nbsp;a&nbsp;ThreadGroup<br>
+class&nbsp;is&nbsp;implemented.<br>
+&nbsp;<br>
+*target*&nbsp;is&nbsp;the&nbsp;callable&nbsp;<a href="builtins.html#object">object</a>&nbsp;to&nbsp;be&nbsp;invoked&nbsp;by&nbsp;the&nbsp;<a href="#Timer-run">run</a>()<br>
+method.&nbsp;Defaults&nbsp;to&nbsp;None,&nbsp;meaning&nbsp;nothing&nbsp;is&nbsp;called.<br>
+&nbsp;<br>
+*name*&nbsp;is&nbsp;the&nbsp;thread&nbsp;name.&nbsp;By&nbsp;default,&nbsp;a&nbsp;unique&nbsp;name&nbsp;is&nbsp;constructed&nbsp;of<br>
+the&nbsp;form&nbsp;"<a href="#Thread">Thread</a>-N"&nbsp;where&nbsp;N&nbsp;is&nbsp;a&nbsp;small&nbsp;decimal&nbsp;number.<br>
+&nbsp;<br>
+*args*&nbsp;is&nbsp;the&nbsp;argument&nbsp;<a href="builtins.html#tuple">tuple</a>&nbsp;for&nbsp;the&nbsp;target&nbsp;invocation.&nbsp;Defaults&nbsp;to&nbsp;().<br>
+&nbsp;<br>
+*kwargs*&nbsp;is&nbsp;a&nbsp;dictionary&nbsp;of&nbsp;keyword&nbsp;arguments&nbsp;for&nbsp;the&nbsp;target<br>
+invocation.&nbsp;Defaults&nbsp;to&nbsp;{}.<br>
+&nbsp;<br>
+If&nbsp;a&nbsp;subclass&nbsp;overrides&nbsp;the&nbsp;constructor,&nbsp;it&nbsp;must&nbsp;make&nbsp;sure&nbsp;to&nbsp;invoke<br>
+the&nbsp;base&nbsp;class&nbsp;constructor&nbsp;(<a href="#Thread">Thread</a>.<a href="#Timer-__init__">__init__</a>())&nbsp;before&nbsp;doing&nbsp;anything<br>
+else&nbsp;to&nbsp;the&nbsp;thread.</tt></dd></dl>
+
+<dl><dt><a name="Timer-cancel"><strong>cancel</strong></a>(self)</dt><dd><tt>Stop&nbsp;the&nbsp;timer&nbsp;if&nbsp;it&nbsp;hasn't&nbsp;finished&nbsp;yet.</tt></dd></dl>
+
+<dl><dt><a name="Timer-run"><strong>run</strong></a>(self)</dt><dd><tt>Method&nbsp;representing&nbsp;the&nbsp;thread's&nbsp;activity.<br>
+&nbsp;<br>
+You&nbsp;may&nbsp;override&nbsp;this&nbsp;method&nbsp;in&nbsp;a&nbsp;subclass.&nbsp;The&nbsp;standard&nbsp;<a href="#Timer-run">run</a>()&nbsp;method<br>
+invokes&nbsp;the&nbsp;callable&nbsp;<a href="builtins.html#object">object</a>&nbsp;passed&nbsp;to&nbsp;the&nbsp;<a href="builtins.html#object">object</a>'s&nbsp;constructor&nbsp;as&nbsp;the<br>
+target&nbsp;argument,&nbsp;if&nbsp;any,&nbsp;with&nbsp;sequential&nbsp;and&nbsp;keyword&nbsp;arguments&nbsp;taken<br>
+from&nbsp;the&nbsp;args&nbsp;and&nbsp;kwargs&nbsp;arguments,&nbsp;respectively.</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="threading.html#Thread">Thread</a>:<br>
+<dl><dt><a name="Timer-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><a name="Timer-getName"><strong>getName</strong></a>(self)</dt><dd><tt>Return&nbsp;a&nbsp;string&nbsp;used&nbsp;for&nbsp;identification&nbsp;purposes&nbsp;only.<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;is&nbsp;deprecated,&nbsp;use&nbsp;the&nbsp;name&nbsp;attribute&nbsp;instead.</tt></dd></dl>
+
+<dl><dt><a name="Timer-isDaemon"><strong>isDaemon</strong></a>(self)</dt><dd><tt>Return&nbsp;whether&nbsp;this&nbsp;thread&nbsp;is&nbsp;a&nbsp;daemon.<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;is&nbsp;deprecated,&nbsp;use&nbsp;the&nbsp;daemon&nbsp;attribute&nbsp;instead.</tt></dd></dl>
+
+<dl><dt><a name="Timer-is_alive"><strong>is_alive</strong></a>(self)</dt><dd><tt>Return&nbsp;whether&nbsp;the&nbsp;thread&nbsp;is&nbsp;alive.<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;returns&nbsp;True&nbsp;just&nbsp;before&nbsp;the&nbsp;<a href="#Timer-run">run</a>()&nbsp;method&nbsp;starts&nbsp;until&nbsp;just<br>
+after&nbsp;the&nbsp;<a href="#Timer-run">run</a>()&nbsp;method&nbsp;terminates.&nbsp;See&nbsp;also&nbsp;the&nbsp;module&nbsp;function<br>
+<a href="#-enumerate">enumerate</a>().</tt></dd></dl>
+
+<dl><dt><a name="Timer-join"><strong>join</strong></a>(self, timeout=None)</dt><dd><tt>Wait&nbsp;until&nbsp;the&nbsp;thread&nbsp;terminates.<br>
+&nbsp;<br>
+This&nbsp;blocks&nbsp;the&nbsp;calling&nbsp;thread&nbsp;until&nbsp;the&nbsp;thread&nbsp;whose&nbsp;<a href="#Timer-join">join</a>()&nbsp;method&nbsp;is<br>
+called&nbsp;terminates&nbsp;--&nbsp;either&nbsp;normally&nbsp;or&nbsp;through&nbsp;an&nbsp;unhandled&nbsp;exception<br>
+or&nbsp;until&nbsp;the&nbsp;optional&nbsp;timeout&nbsp;occurs.<br>
+&nbsp;<br>
+When&nbsp;the&nbsp;timeout&nbsp;argument&nbsp;is&nbsp;present&nbsp;and&nbsp;not&nbsp;None,&nbsp;it&nbsp;should&nbsp;be&nbsp;a<br>
+floating&nbsp;point&nbsp;number&nbsp;specifying&nbsp;a&nbsp;timeout&nbsp;for&nbsp;the&nbsp;operation&nbsp;in&nbsp;seconds<br>
+(or&nbsp;fractions&nbsp;thereof).&nbsp;As&nbsp;<a href="#Timer-join">join</a>()&nbsp;always&nbsp;returns&nbsp;None,&nbsp;you&nbsp;must&nbsp;call<br>
+<a href="#Timer-is_alive">is_alive</a>()&nbsp;after&nbsp;<a href="#Timer-join">join</a>()&nbsp;to&nbsp;decide&nbsp;whether&nbsp;a&nbsp;timeout&nbsp;happened&nbsp;--&nbsp;if&nbsp;the<br>
+thread&nbsp;is&nbsp;still&nbsp;alive,&nbsp;the&nbsp;<a href="#Timer-join">join</a>()&nbsp;call&nbsp;timed&nbsp;out.<br>
+&nbsp;<br>
+When&nbsp;the&nbsp;timeout&nbsp;argument&nbsp;is&nbsp;not&nbsp;present&nbsp;or&nbsp;None,&nbsp;the&nbsp;operation&nbsp;will<br>
+block&nbsp;until&nbsp;the&nbsp;thread&nbsp;terminates.<br>
+&nbsp;<br>
+A&nbsp;thread&nbsp;can&nbsp;be&nbsp;<a href="#Timer-join">join</a>()ed&nbsp;many&nbsp;times.<br>
+&nbsp;<br>
+<a href="#Timer-join">join</a>()&nbsp;raises&nbsp;a&nbsp;<a href="builtins.html#RuntimeError">RuntimeError</a>&nbsp;if&nbsp;an&nbsp;attempt&nbsp;is&nbsp;made&nbsp;to&nbsp;join&nbsp;the&nbsp;current<br>
+thread&nbsp;as&nbsp;that&nbsp;would&nbsp;cause&nbsp;a&nbsp;deadlock.&nbsp;It&nbsp;is&nbsp;also&nbsp;an&nbsp;error&nbsp;to&nbsp;<a href="#Timer-join">join</a>()&nbsp;a<br>
+thread&nbsp;before&nbsp;it&nbsp;has&nbsp;been&nbsp;started&nbsp;and&nbsp;attempts&nbsp;to&nbsp;do&nbsp;so&nbsp;raises&nbsp;the&nbsp;same<br>
+exception.</tt></dd></dl>
+
+<dl><dt><a name="Timer-setDaemon"><strong>setDaemon</strong></a>(self, daemonic)</dt><dd><tt>Set&nbsp;whether&nbsp;this&nbsp;thread&nbsp;is&nbsp;a&nbsp;daemon.<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;is&nbsp;deprecated,&nbsp;use&nbsp;the&nbsp;.daemon&nbsp;property&nbsp;instead.</tt></dd></dl>
+
+<dl><dt><a name="Timer-setName"><strong>setName</strong></a>(self, name)</dt><dd><tt>Set&nbsp;the&nbsp;name&nbsp;string&nbsp;for&nbsp;this&nbsp;thread.<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;is&nbsp;deprecated,&nbsp;use&nbsp;the&nbsp;name&nbsp;attribute&nbsp;instead.</tt></dd></dl>
+
+<dl><dt><a name="Timer-start"><strong>start</strong></a>(self)</dt><dd><tt>Start&nbsp;the&nbsp;thread's&nbsp;activity.<br>
+&nbsp;<br>
+It&nbsp;must&nbsp;be&nbsp;called&nbsp;at&nbsp;most&nbsp;once&nbsp;per&nbsp;thread&nbsp;<a href="builtins.html#object">object</a>.&nbsp;It&nbsp;arranges&nbsp;for&nbsp;the<br>
+<a href="builtins.html#object">object</a>'s&nbsp;<a href="#Timer-run">run</a>()&nbsp;method&nbsp;to&nbsp;be&nbsp;invoked&nbsp;in&nbsp;a&nbsp;separate&nbsp;thread&nbsp;of&nbsp;control.<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;will&nbsp;raise&nbsp;a&nbsp;<a href="builtins.html#RuntimeError">RuntimeError</a>&nbsp;if&nbsp;called&nbsp;more&nbsp;than&nbsp;once&nbsp;on&nbsp;the<br>
+same&nbsp;thread&nbsp;<a href="builtins.html#object">object</a>.</tt></dd></dl>
+
+<hr>
+Readonly properties inherited from <a href="threading.html#Thread">Thread</a>:<br>
+<dl><dt><strong>ident</strong></dt>
+<dd><tt>Thread&nbsp;identifier&nbsp;of&nbsp;this&nbsp;thread&nbsp;or&nbsp;None&nbsp;if&nbsp;it&nbsp;has&nbsp;not&nbsp;been&nbsp;started.<br>
+&nbsp;<br>
+This&nbsp;is&nbsp;a&nbsp;nonzero&nbsp;integer.&nbsp;See&nbsp;the&nbsp;get_ident()&nbsp;function.&nbsp;Thread<br>
+identifiers&nbsp;may&nbsp;be&nbsp;recycled&nbsp;when&nbsp;a&nbsp;thread&nbsp;exits&nbsp;and&nbsp;another&nbsp;thread&nbsp;is<br>
+created.&nbsp;The&nbsp;identifier&nbsp;is&nbsp;available&nbsp;even&nbsp;after&nbsp;the&nbsp;thread&nbsp;has&nbsp;exited.</tt></dd>
+</dl>
+<dl><dt><strong>native_id</strong></dt>
+<dd><tt>Native&nbsp;integral&nbsp;thread&nbsp;ID&nbsp;of&nbsp;this&nbsp;thread,&nbsp;or&nbsp;None&nbsp;if&nbsp;it&nbsp;has&nbsp;not&nbsp;been&nbsp;started.<br>
+&nbsp;<br>
+This&nbsp;is&nbsp;a&nbsp;non-negative&nbsp;integer.&nbsp;See&nbsp;the&nbsp;get_native_id()&nbsp;function.<br>
+This&nbsp;represents&nbsp;the&nbsp;Thread&nbsp;ID&nbsp;as&nbsp;reported&nbsp;by&nbsp;the&nbsp;kernel.</tt></dd>
+</dl>
+<hr>
+Data descriptors inherited from <a href="threading.html#Thread">Thread</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>daemon</strong></dt>
+<dd><tt>A&nbsp;boolean&nbsp;value&nbsp;indicating&nbsp;whether&nbsp;this&nbsp;thread&nbsp;is&nbsp;a&nbsp;daemon&nbsp;thread.<br>
+&nbsp;<br>
+This&nbsp;must&nbsp;be&nbsp;set&nbsp;before&nbsp;start()&nbsp;is&nbsp;called,&nbsp;otherwise&nbsp;RuntimeError&nbsp;is<br>
+raised.&nbsp;Its&nbsp;initial&nbsp;value&nbsp;is&nbsp;inherited&nbsp;from&nbsp;the&nbsp;creating&nbsp;thread;&nbsp;the<br>
+main&nbsp;thread&nbsp;is&nbsp;not&nbsp;a&nbsp;daemon&nbsp;thread&nbsp;and&nbsp;therefore&nbsp;all&nbsp;threads&nbsp;created&nbsp;in<br>
+the&nbsp;main&nbsp;thread&nbsp;default&nbsp;to&nbsp;daemon&nbsp;=&nbsp;False.<br>
+&nbsp;<br>
+The&nbsp;entire&nbsp;Python&nbsp;program&nbsp;exits&nbsp;when&nbsp;only&nbsp;daemon&nbsp;threads&nbsp;are&nbsp;left.</tt></dd>
+</dl>
+<dl><dt><strong>name</strong></dt>
+<dd><tt>A&nbsp;string&nbsp;used&nbsp;for&nbsp;identification&nbsp;purposes&nbsp;only.<br>
+&nbsp;<br>
+It&nbsp;has&nbsp;no&nbsp;semantics.&nbsp;Multiple&nbsp;threads&nbsp;may&nbsp;be&nbsp;given&nbsp;the&nbsp;same&nbsp;name.&nbsp;The<br>
+initial&nbsp;name&nbsp;is&nbsp;set&nbsp;by&nbsp;the&nbsp;constructor.</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><strong>local</strong> = <a name="local">class _local</a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Thread">Thread</a>-<a href="#local">local</a>&nbsp;data<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="_local-__delattr__"><strong>__delattr__</strong></a>(self, name, /)</dt><dd><tt>Implement&nbsp;delattr(self,&nbsp;name).</tt></dd></dl>
+
+<dl><dt><a name="_local-__getattribute__"><strong>__getattribute__</strong></a>(self, name, /)</dt><dd><tt>Return&nbsp;getattr(self,&nbsp;name).</tt></dd></dl>
+
+<dl><dt><a name="_local-__setattr__"><strong>__setattr__</strong></a>(self, name, value, /)</dt><dd><tt>Implement&nbsp;setattr(self,&nbsp;name,&nbsp;value).</tt></dd></dl>
+
+<hr>
+Static methods defined here:<br>
+<dl><dt><a name="_local-__new__"><strong>__new__</strong></a>(*args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;<a href="builtins.html#object">object</a>.&nbsp;&nbsp;See&nbsp;help(type)&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-Lock"><strong>Lock</strong></a> = allocate_lock(...)</dt><dd><tt>allocate_lock()&nbsp;-&gt;&nbsp;lock&nbsp;<a href="builtins.html#object">object</a><br>
+(allocate()&nbsp;is&nbsp;an&nbsp;obsolete&nbsp;synonym)<br>
+&nbsp;<br>
+Create&nbsp;a&nbsp;new&nbsp;lock&nbsp;<a href="builtins.html#object">object</a>.&nbsp;See&nbsp;help(type(threading.<a href="#-Lock">Lock</a>()))&nbsp;for<br>
+information&nbsp;about&nbsp;locks.</tt></dd></dl>
+ <dl><dt><a name="-RLock"><strong>RLock</strong></a>(*args, **kwargs)</dt><dd><tt>Factory&nbsp;function&nbsp;that&nbsp;returns&nbsp;a&nbsp;new&nbsp;reentrant&nbsp;lock.<br>
+&nbsp;<br>
+A&nbsp;reentrant&nbsp;lock&nbsp;must&nbsp;be&nbsp;released&nbsp;by&nbsp;the&nbsp;thread&nbsp;that&nbsp;acquired&nbsp;it.&nbsp;Once&nbsp;a<br>
+thread&nbsp;has&nbsp;acquired&nbsp;a&nbsp;reentrant&nbsp;lock,&nbsp;the&nbsp;same&nbsp;thread&nbsp;may&nbsp;acquire&nbsp;it&nbsp;again<br>
+without&nbsp;blocking;&nbsp;the&nbsp;thread&nbsp;must&nbsp;release&nbsp;it&nbsp;once&nbsp;for&nbsp;each&nbsp;time&nbsp;it&nbsp;has<br>
+acquired&nbsp;it.</tt></dd></dl>
+ <dl><dt><a name="-__excepthook__"><strong>__excepthook__</strong></a> = _excepthook(...)</dt><dd><tt><a href="#-excepthook">excepthook</a>(exc_type,&nbsp;exc_value,&nbsp;exc_traceback,&nbsp;thread)<br>
+&nbsp;<br>
+Handle&nbsp;uncaught&nbsp;<a href="#Thread">Thread</a>.run()&nbsp;exception.</tt></dd></dl>
+ <dl><dt><a name="-active_count"><strong>active_count</strong></a>()</dt><dd><tt>Return&nbsp;the&nbsp;number&nbsp;of&nbsp;<a href="#Thread">Thread</a>&nbsp;objects&nbsp;currently&nbsp;alive.<br>
+&nbsp;<br>
+The&nbsp;returned&nbsp;count&nbsp;is&nbsp;equal&nbsp;to&nbsp;the&nbsp;length&nbsp;of&nbsp;the&nbsp;list&nbsp;returned&nbsp;by<br>
+<a href="#-enumerate">enumerate</a>().</tt></dd></dl>
+ <dl><dt><a name="-current_thread"><strong>current_thread</strong></a>()</dt><dd><tt>Return&nbsp;the&nbsp;current&nbsp;<a href="#Thread">Thread</a>&nbsp;<a href="builtins.html#object">object</a>,&nbsp;corresponding&nbsp;to&nbsp;the&nbsp;caller's&nbsp;thread&nbsp;of&nbsp;control.<br>
+&nbsp;<br>
+If&nbsp;the&nbsp;caller's&nbsp;thread&nbsp;of&nbsp;control&nbsp;was&nbsp;not&nbsp;created&nbsp;through&nbsp;the&nbsp;threading<br>
+module,&nbsp;a&nbsp;dummy&nbsp;thread&nbsp;<a href="builtins.html#object">object</a>&nbsp;with&nbsp;limited&nbsp;functionality&nbsp;is&nbsp;returned.</tt></dd></dl>
+ <dl><dt><a name="-enumerate"><strong>enumerate</strong></a>()</dt><dd><tt>Return&nbsp;a&nbsp;list&nbsp;of&nbsp;all&nbsp;<a href="#Thread">Thread</a>&nbsp;objects&nbsp;currently&nbsp;alive.<br>
+&nbsp;<br>
+The&nbsp;list&nbsp;includes&nbsp;daemonic&nbsp;threads,&nbsp;dummy&nbsp;thread&nbsp;objects&nbsp;created&nbsp;by<br>
+<a href="#-current_thread">current_thread</a>(),&nbsp;and&nbsp;the&nbsp;main&nbsp;thread.&nbsp;It&nbsp;excludes&nbsp;terminated&nbsp;threads&nbsp;and<br>
+threads&nbsp;that&nbsp;have&nbsp;not&nbsp;yet&nbsp;been&nbsp;started.</tt></dd></dl>
+ <dl><dt><a name="-excepthook"><strong>excepthook</strong></a> = _excepthook(...)</dt><dd><tt><a href="#-excepthook">excepthook</a>(exc_type,&nbsp;exc_value,&nbsp;exc_traceback,&nbsp;thread)<br>
+&nbsp;<br>
+Handle&nbsp;uncaught&nbsp;<a href="#Thread">Thread</a>.run()&nbsp;exception.</tt></dd></dl>
+ <dl><dt><a name="-get_ident"><strong>get_ident</strong></a>(...)</dt><dd><tt><a href="#-get_ident">get_ident</a>()&nbsp;-&gt;&nbsp;integer<br>
+&nbsp;<br>
+Return&nbsp;a&nbsp;non-zero&nbsp;integer&nbsp;that&nbsp;uniquely&nbsp;identifies&nbsp;the&nbsp;current&nbsp;thread<br>
+amongst&nbsp;other&nbsp;threads&nbsp;that&nbsp;exist&nbsp;simultaneously.<br>
+This&nbsp;may&nbsp;be&nbsp;used&nbsp;to&nbsp;identify&nbsp;per-thread&nbsp;resources.<br>
+Even&nbsp;though&nbsp;on&nbsp;some&nbsp;platforms&nbsp;threads&nbsp;identities&nbsp;may&nbsp;appear&nbsp;to&nbsp;be<br>
+allocated&nbsp;consecutive&nbsp;numbers&nbsp;starting&nbsp;at&nbsp;1,&nbsp;this&nbsp;behavior&nbsp;should&nbsp;not<br>
+be&nbsp;relied&nbsp;upon,&nbsp;and&nbsp;the&nbsp;number&nbsp;should&nbsp;be&nbsp;seen&nbsp;purely&nbsp;as&nbsp;a&nbsp;magic&nbsp;cookie.<br>
+A&nbsp;thread's&nbsp;identity&nbsp;may&nbsp;be&nbsp;reused&nbsp;for&nbsp;another&nbsp;thread&nbsp;after&nbsp;it&nbsp;exits.</tt></dd></dl>
+ <dl><dt><a name="-get_native_id"><strong>get_native_id</strong></a>(...)</dt><dd><tt><a href="#-get_native_id">get_native_id</a>()&nbsp;-&gt;&nbsp;integer<br>
+&nbsp;<br>
+Return&nbsp;a&nbsp;non-negative&nbsp;integer&nbsp;identifying&nbsp;the&nbsp;thread&nbsp;as&nbsp;reported<br>
+by&nbsp;the&nbsp;OS&nbsp;(kernel).&nbsp;This&nbsp;may&nbsp;be&nbsp;used&nbsp;to&nbsp;uniquely&nbsp;identify&nbsp;a<br>
+particular&nbsp;thread&nbsp;within&nbsp;a&nbsp;system.</tt></dd></dl>
+ <dl><dt><a name="-getprofile"><strong>getprofile</strong></a>()</dt><dd><tt>Get&nbsp;the&nbsp;profiler&nbsp;function&nbsp;as&nbsp;set&nbsp;by&nbsp;threading.<a href="#-setprofile">setprofile</a>().</tt></dd></dl>
+ <dl><dt><a name="-gettrace"><strong>gettrace</strong></a>()</dt><dd><tt>Get&nbsp;the&nbsp;trace&nbsp;function&nbsp;as&nbsp;set&nbsp;by&nbsp;threading.<a href="#-settrace">settrace</a>().</tt></dd></dl>
+ <dl><dt><a name="-main_thread"><strong>main_thread</strong></a>()</dt><dd><tt>Return&nbsp;the&nbsp;main&nbsp;thread&nbsp;<a href="builtins.html#object">object</a>.<br>
+&nbsp;<br>
+In&nbsp;normal&nbsp;conditions,&nbsp;the&nbsp;main&nbsp;thread&nbsp;is&nbsp;the&nbsp;thread&nbsp;from&nbsp;which&nbsp;the<br>
+Python&nbsp;interpreter&nbsp;was&nbsp;started.</tt></dd></dl>
+ <dl><dt><a name="-setprofile"><strong>setprofile</strong></a>(func)</dt><dd><tt>Set&nbsp;a&nbsp;profile&nbsp;function&nbsp;for&nbsp;all&nbsp;threads&nbsp;started&nbsp;from&nbsp;the&nbsp;threading&nbsp;module.<br>
+&nbsp;<br>
+The&nbsp;func&nbsp;will&nbsp;be&nbsp;passed&nbsp;to&nbsp;sys.<a href="#-setprofile">setprofile</a>()&nbsp;for&nbsp;each&nbsp;thread,&nbsp;before&nbsp;its<br>
+run()&nbsp;method&nbsp;is&nbsp;called.</tt></dd></dl>
+ <dl><dt><a name="-settrace"><strong>settrace</strong></a>(func)</dt><dd><tt>Set&nbsp;a&nbsp;trace&nbsp;function&nbsp;for&nbsp;all&nbsp;threads&nbsp;started&nbsp;from&nbsp;the&nbsp;threading&nbsp;module.<br>
+&nbsp;<br>
+The&nbsp;func&nbsp;will&nbsp;be&nbsp;passed&nbsp;to&nbsp;sys.<a href="#-settrace">settrace</a>()&nbsp;for&nbsp;each&nbsp;thread,&nbsp;before&nbsp;its&nbsp;run()<br>
+method&nbsp;is&nbsp;called.</tt></dd></dl>
+ <dl><dt><a name="-stack_size"><strong>stack_size</strong></a>(...)</dt><dd><tt><a href="#-stack_size">stack_size</a>([size])&nbsp;-&gt;&nbsp;size<br>
+&nbsp;<br>
+Return&nbsp;the&nbsp;thread&nbsp;stack&nbsp;size&nbsp;used&nbsp;when&nbsp;creating&nbsp;new&nbsp;threads.&nbsp;&nbsp;The<br>
+optional&nbsp;size&nbsp;argument&nbsp;specifies&nbsp;the&nbsp;stack&nbsp;size&nbsp;(in&nbsp;bytes)&nbsp;to&nbsp;be&nbsp;used<br>
+for&nbsp;subsequently&nbsp;created&nbsp;threads,&nbsp;and&nbsp;must&nbsp;be&nbsp;0&nbsp;(use&nbsp;platform&nbsp;or<br>
+configured&nbsp;default)&nbsp;or&nbsp;a&nbsp;positive&nbsp;integer&nbsp;value&nbsp;of&nbsp;at&nbsp;least&nbsp;32,768&nbsp;(32k).<br>
+If&nbsp;changing&nbsp;the&nbsp;thread&nbsp;stack&nbsp;size&nbsp;is&nbsp;unsupported,&nbsp;a&nbsp;<a href="#ThreadError">ThreadError</a><br>
+exception&nbsp;is&nbsp;raised.&nbsp;&nbsp;If&nbsp;the&nbsp;specified&nbsp;size&nbsp;is&nbsp;invalid,&nbsp;a&nbsp;ValueError<br>
+exception&nbsp;is&nbsp;raised,&nbsp;and&nbsp;the&nbsp;stack&nbsp;size&nbsp;is&nbsp;unmodified.&nbsp;&nbsp;32k&nbsp;bytes<br>
+&nbsp;currently&nbsp;the&nbsp;minimum&nbsp;supported&nbsp;stack&nbsp;size&nbsp;value&nbsp;to&nbsp;guarantee<br>
+sufficient&nbsp;stack&nbsp;space&nbsp;for&nbsp;the&nbsp;interpreter&nbsp;itself.<br>
+&nbsp;<br>
+Note&nbsp;that&nbsp;some&nbsp;platforms&nbsp;may&nbsp;have&nbsp;particular&nbsp;restrictions&nbsp;on&nbsp;values&nbsp;for<br>
+the&nbsp;stack&nbsp;size,&nbsp;such&nbsp;as&nbsp;requiring&nbsp;a&nbsp;minimum&nbsp;stack&nbsp;size&nbsp;larger&nbsp;than&nbsp;32&nbsp;KiB&nbsp;or<br>
+requiring&nbsp;allocation&nbsp;in&nbsp;multiples&nbsp;of&nbsp;the&nbsp;system&nbsp;memory&nbsp;page&nbsp;size<br>
+-&nbsp;platform&nbsp;documentation&nbsp;should&nbsp;be&nbsp;referred&nbsp;to&nbsp;for&nbsp;more&nbsp;information<br>
+(4&nbsp;KiB&nbsp;pages&nbsp;are&nbsp;common;&nbsp;using&nbsp;multiples&nbsp;of&nbsp;4096&nbsp;for&nbsp;the&nbsp;stack&nbsp;size&nbsp;is<br>
+the&nbsp;suggested&nbsp;approach&nbsp;in&nbsp;the&nbsp;absence&nbsp;of&nbsp;more&nbsp;specific&nbsp;information).</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>TIMEOUT_MAX</strong> = 4294967.0<br>
+<strong>__all__</strong> = ['get_ident', 'active_count', 'Condition', 'current_thread', 'enumerate', 'main_thread', 'TIMEOUT_MAX', 'Event', 'Lock', 'RLock', 'Semaphore', 'BoundedSemaphore', 'Thread', 'Barrier', 'BrokenBarrierError', 'Timer', 'ThreadError', 'setprofile', 'settrace', 'local', ...]</td></tr></table>
+</body></html>

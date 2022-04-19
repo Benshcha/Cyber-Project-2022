@@ -1,0 +1,2502 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: package mysql.connector</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="mysql.html"><font color="#ffffff">mysql</font></a>.connector</strong></big></big> (version 8.0.28)</font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cgal%5Cappdata%5Clocal%5Cpackages%5Cpythonsoftwarefoundation.python.3.10_qbz5n2kfra8p0%5Clocalcache%5Clocal-packages%5Cpython310%5Csite-packages%5Cmysql%5Cconnector%5C__init__.py">c:\users\gal\appdata\local\packages\pythonsoftwarefoundation.python.3.10_qbz5n2kfra8p0\localcache\local-packages\python310\site-packages\mysql\connector\__init__.py</a></font></td></tr></table>
+    <p><tt>MySQL&nbsp;Connector/Python&nbsp;-&nbsp;MySQL&nbsp;driver&nbsp;written&nbsp;in&nbsp;Python</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Package Contents</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="mysql.connector.abstracts.html">abstracts</a><br>
+<a href="mysql.connector.authentication.html">authentication</a><br>
+<a href="mysql.connector.catch23.html">catch23</a><br>
+<a href="mysql.connector.charsets.html">charsets</a><br>
+<a href="mysql.connector.connection.html">connection</a><br>
+<a href="mysql.connector.connection_cext.html">connection_cext</a><br>
+</td><td width="25%" valign=top><a href="mysql.connector.constants.html">constants</a><br>
+<a href="mysql.connector.conversion.html">conversion</a><br>
+<a href="mysql.connector.cursor.html">cursor</a><br>
+<a href="mysql.connector.cursor_cext.html">cursor_cext</a><br>
+<a href="mysql.connector.custom_types.html">custom_types</a><br>
+<a href="mysql.connector.dbapi.html">dbapi</a><br>
+</td><td width="25%" valign=top><a href="mysql.connector.django.html"><strong>django</strong>&nbsp;(package)</a><br>
+<a href="mysql.connector.errorcode.html">errorcode</a><br>
+<a href="mysql.connector.errors.html">errors</a><br>
+<a href="mysql.connector.fabric.html"><strong>fabric</strong>&nbsp;(package)</a><br>
+<a href="mysql.connector.locales.html"><strong>locales</strong>&nbsp;(package)</a><br>
+<a href="mysql.connector.network.html">network</a><br>
+</td><td width="25%" valign=top><a href="mysql.connector.optionfiles.html">optionfiles</a><br>
+<a href="mysql.connector.pooling.html">pooling</a><br>
+<a href="mysql.connector.protocol.html">protocol</a><br>
+<a href="mysql.connector.utils.html">utils</a><br>
+<a href="mysql.connector.version.html">version</a><br>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#Exception">builtins.Exception</a>(<a href="builtins.html#BaseException">builtins.BaseException</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="mysql.connector.errors.html#Error">mysql.connector.errors.Error</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="mysql.connector.errors.html#DatabaseError">mysql.connector.errors.DatabaseError</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="mysql.connector.errors.html#DataError">mysql.connector.errors.DataError</a>
+</font></dt><dt><font face="helvetica, arial"><a href="mysql.connector.errors.html#IntegrityError">mysql.connector.errors.IntegrityError</a>
+</font></dt><dt><font face="helvetica, arial"><a href="mysql.connector.errors.html#InternalError">mysql.connector.errors.InternalError</a>
+</font></dt><dt><font face="helvetica, arial"><a href="mysql.connector.errors.html#NotSupportedError">mysql.connector.errors.NotSupportedError</a>
+</font></dt><dt><font face="helvetica, arial"><a href="mysql.connector.errors.html#OperationalError">mysql.connector.errors.OperationalError</a>
+</font></dt><dt><font face="helvetica, arial"><a href="mysql.connector.errors.html#ProgrammingError">mysql.connector.errors.ProgrammingError</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="mysql.connector.errors.html#InterfaceError">mysql.connector.errors.InterfaceError</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="mysql.connector.errors.html#Warning">mysql.connector.errors.Warning</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#bytes">builtins.bytes</a>
+</font></dt><dt><font face="helvetica, arial"><a href="datetime.html#date">datetime.date</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="datetime.html#datetime">datetime.datetime</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="datetime.html#time">datetime.time</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="mysql.connector.abstracts.html#MySQLConnectionAbstract">mysql.connector.abstracts.MySQLConnectionAbstract</a>(mysql.connector.abstracts.MySQLConnectionAbstract, <a href="builtins.html#object">builtins.object</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="mysql.connector.connection.html#MySQLConnection">mysql.connector.connection.MySQLConnection</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial">mysql.connector.constants.RefreshOption(<a href="mysql.connector.constants.html#_Constants">mysql.connector.constants._Constants</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="mysql.connector.constants.html#RefreshOption">mysql.connector.constants.RefreshOption</a>(mysql.connector.constants.RefreshOption, <a href="mysql.connector.constants.html#_Constants">mysql.connector.constants._Constants</a>)
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="mysql.connector.constants.html#_Constants">mysql.connector.constants._Constants</a>(<a href="builtins.html#object">builtins.object</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="mysql.connector.constants.html#CharacterSet">mysql.connector.constants.CharacterSet</a>
+</font></dt><dt><font face="helvetica, arial"><a href="mysql.connector.constants.html#FieldType">mysql.connector.constants.FieldType</a>
+</font></dt><dt><font face="helvetica, arial"><a href="mysql.connector.constants.html#RefreshOption">mysql.connector.constants.RefreshOption</a>(mysql.connector.constants.RefreshOption, <a href="mysql.connector.constants.html#_Constants">mysql.connector.constants._Constants</a>)
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="mysql.connector.constants.html#_Flags">mysql.connector.constants._Flags</a>(<a href="mysql.connector.constants.html#_Constants">mysql.connector.constants._Constants</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="mysql.connector.constants.html#ClientFlag">mysql.connector.constants.ClientFlag</a>
+</font></dt><dt><font face="helvetica, arial"><a href="mysql.connector.constants.html#FieldFlag">mysql.connector.constants.FieldFlag</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><strong>Binary</strong> = <a name="Binary">class bytes</a>(<a href="builtins.html#object">object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>bytes(iterable_of_ints)&nbsp;-&gt;&nbsp;bytes<br>
+bytes(string,&nbsp;encoding[,&nbsp;errors])&nbsp;-&gt;&nbsp;bytes<br>
+bytes(bytes_or_buffer)&nbsp;-&gt;&nbsp;immutable&nbsp;copy&nbsp;of&nbsp;bytes_or_buffer<br>
+bytes(int)&nbsp;-&gt;&nbsp;bytes&nbsp;<a href="builtins.html#object">object</a>&nbsp;of&nbsp;size&nbsp;given&nbsp;by&nbsp;the&nbsp;parameter&nbsp;initialized&nbsp;with&nbsp;null&nbsp;bytes<br>
+bytes()&nbsp;-&gt;&nbsp;empty&nbsp;bytes&nbsp;<a href="builtins.html#object">object</a><br>
+&nbsp;<br>
+Construct&nbsp;an&nbsp;immutable&nbsp;array&nbsp;of&nbsp;bytes&nbsp;from:<br>
+&nbsp;&nbsp;-&nbsp;an&nbsp;iterable&nbsp;yielding&nbsp;integers&nbsp;in&nbsp;range(256)<br>
+&nbsp;&nbsp;-&nbsp;a&nbsp;text&nbsp;string&nbsp;encoded&nbsp;using&nbsp;the&nbsp;specified&nbsp;encoding<br>
+&nbsp;&nbsp;-&nbsp;any&nbsp;<a href="builtins.html#object">object</a>&nbsp;implementing&nbsp;the&nbsp;buffer&nbsp;API.<br>
+&nbsp;&nbsp;-&nbsp;an&nbsp;integer<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="bytes-__add__"><strong>__add__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self+value.</tt></dd></dl>
+
+<dl><dt><a name="bytes-__contains__"><strong>__contains__</strong></a>(self, key, /)</dt><dd><tt>Return&nbsp;key&nbsp;in&nbsp;self.</tt></dd></dl>
+
+<dl><dt><a name="bytes-__eq__"><strong>__eq__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self==value.</tt></dd></dl>
+
+<dl><dt><a name="bytes-__ge__"><strong>__ge__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self&gt;=value.</tt></dd></dl>
+
+<dl><dt><a name="bytes-__getattribute__"><strong>__getattribute__</strong></a>(self, name, /)</dt><dd><tt>Return&nbsp;getattr(self,&nbsp;name).</tt></dd></dl>
+
+<dl><dt><a name="bytes-__getitem__"><strong>__getitem__</strong></a>(self, key, /)</dt><dd><tt>Return&nbsp;self[key].</tt></dd></dl>
+
+<dl><dt><a name="bytes-__getnewargs__"><strong>__getnewargs__</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="bytes-__gt__"><strong>__gt__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self&gt;value.</tt></dd></dl>
+
+<dl><dt><a name="bytes-__hash__"><strong>__hash__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;hash(self).</tt></dd></dl>
+
+<dl><dt><a name="bytes-__iter__"><strong>__iter__</strong></a>(self, /)</dt><dd><tt>Implement&nbsp;iter(self).</tt></dd></dl>
+
+<dl><dt><a name="bytes-__le__"><strong>__le__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self&lt;=value.</tt></dd></dl>
+
+<dl><dt><a name="bytes-__len__"><strong>__len__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;len(self).</tt></dd></dl>
+
+<dl><dt><a name="bytes-__lt__"><strong>__lt__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self&lt;value.</tt></dd></dl>
+
+<dl><dt><a name="bytes-__mod__"><strong>__mod__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self%value.</tt></dd></dl>
+
+<dl><dt><a name="bytes-__mul__"><strong>__mul__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self*value.</tt></dd></dl>
+
+<dl><dt><a name="bytes-__ne__"><strong>__ne__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self!=value.</tt></dd></dl>
+
+<dl><dt><a name="bytes-__repr__"><strong>__repr__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><a name="bytes-__rmod__"><strong>__rmod__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;value%self.</tt></dd></dl>
+
+<dl><dt><a name="bytes-__rmul__"><strong>__rmul__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;value*self.</tt></dd></dl>
+
+<dl><dt><a name="bytes-__str__"><strong>__str__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;str(self).</tt></dd></dl>
+
+<dl><dt><a name="bytes-capitalize"><strong>capitalize</strong></a>(...)</dt><dd><tt>B.<a href="#Binary-capitalize">capitalize</a>()&nbsp;-&gt;&nbsp;copy&nbsp;of&nbsp;B<br>
+&nbsp;<br>
+Return&nbsp;a&nbsp;copy&nbsp;of&nbsp;B&nbsp;with&nbsp;only&nbsp;its&nbsp;first&nbsp;character&nbsp;capitalized&nbsp;(ASCII)<br>
+and&nbsp;the&nbsp;rest&nbsp;lower-cased.</tt></dd></dl>
+
+<dl><dt><a name="bytes-center"><strong>center</strong></a>(self, width, fillchar=b' ', /)</dt><dd><tt>Return&nbsp;a&nbsp;centered&nbsp;string&nbsp;of&nbsp;length&nbsp;width.<br>
+&nbsp;<br>
+Padding&nbsp;is&nbsp;done&nbsp;using&nbsp;the&nbsp;specified&nbsp;fill&nbsp;character.</tt></dd></dl>
+
+<dl><dt><a name="bytes-count"><strong>count</strong></a>(...)</dt><dd><tt>B.<a href="#Binary-count">count</a>(sub[,&nbsp;start[,&nbsp;end]])&nbsp;-&gt;&nbsp;int<br>
+&nbsp;<br>
+Return&nbsp;the&nbsp;number&nbsp;of&nbsp;non-overlapping&nbsp;occurrences&nbsp;of&nbsp;subsection&nbsp;sub&nbsp;in<br>
+bytes&nbsp;B[start:end].&nbsp;&nbsp;Optional&nbsp;arguments&nbsp;start&nbsp;and&nbsp;end&nbsp;are&nbsp;interpreted<br>
+as&nbsp;in&nbsp;slice&nbsp;notation.</tt></dd></dl>
+
+<dl><dt><a name="bytes-decode"><strong>decode</strong></a>(self, /, encoding='utf-8', errors='strict')</dt><dd><tt>Decode&nbsp;the&nbsp;bytes&nbsp;using&nbsp;the&nbsp;codec&nbsp;registered&nbsp;for&nbsp;encoding.<br>
+&nbsp;<br>
+encoding<br>
+&nbsp;&nbsp;The&nbsp;encoding&nbsp;with&nbsp;which&nbsp;to&nbsp;decode&nbsp;the&nbsp;bytes.<br>
+errors<br>
+&nbsp;&nbsp;The&nbsp;error&nbsp;handling&nbsp;scheme&nbsp;to&nbsp;use&nbsp;for&nbsp;the&nbsp;handling&nbsp;of&nbsp;decoding&nbsp;errors.<br>
+&nbsp;&nbsp;The&nbsp;default&nbsp;is&nbsp;'strict'&nbsp;meaning&nbsp;that&nbsp;decoding&nbsp;errors&nbsp;raise&nbsp;a<br>
+&nbsp;&nbsp;UnicodeDecodeError.&nbsp;Other&nbsp;possible&nbsp;values&nbsp;are&nbsp;'ignore'&nbsp;and&nbsp;'replace'<br>
+&nbsp;&nbsp;as&nbsp;well&nbsp;as&nbsp;any&nbsp;other&nbsp;name&nbsp;registered&nbsp;with&nbsp;codecs.register_error&nbsp;that<br>
+&nbsp;&nbsp;can&nbsp;handle&nbsp;UnicodeDecodeErrors.</tt></dd></dl>
+
+<dl><dt><a name="bytes-endswith"><strong>endswith</strong></a>(...)</dt><dd><tt>B.<a href="#Binary-endswith">endswith</a>(suffix[,&nbsp;start[,&nbsp;end]])&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Return&nbsp;True&nbsp;if&nbsp;B&nbsp;ends&nbsp;with&nbsp;the&nbsp;specified&nbsp;suffix,&nbsp;False&nbsp;otherwise.<br>
+With&nbsp;optional&nbsp;start,&nbsp;test&nbsp;B&nbsp;beginning&nbsp;at&nbsp;that&nbsp;position.<br>
+With&nbsp;optional&nbsp;end,&nbsp;stop&nbsp;comparing&nbsp;B&nbsp;at&nbsp;that&nbsp;position.<br>
+suffix&nbsp;can&nbsp;also&nbsp;be&nbsp;a&nbsp;tuple&nbsp;of&nbsp;bytes&nbsp;to&nbsp;try.</tt></dd></dl>
+
+<dl><dt><a name="bytes-expandtabs"><strong>expandtabs</strong></a>(self, /, tabsize=8)</dt><dd><tt>Return&nbsp;a&nbsp;copy&nbsp;where&nbsp;all&nbsp;tab&nbsp;characters&nbsp;are&nbsp;expanded&nbsp;using&nbsp;spaces.<br>
+&nbsp;<br>
+If&nbsp;tabsize&nbsp;is&nbsp;not&nbsp;given,&nbsp;a&nbsp;tab&nbsp;size&nbsp;of&nbsp;8&nbsp;characters&nbsp;is&nbsp;assumed.</tt></dd></dl>
+
+<dl><dt><a name="bytes-find"><strong>find</strong></a>(...)</dt><dd><tt>B.<a href="#Binary-find">find</a>(sub[,&nbsp;start[,&nbsp;end]])&nbsp;-&gt;&nbsp;int<br>
+&nbsp;<br>
+Return&nbsp;the&nbsp;lowest&nbsp;index&nbsp;in&nbsp;B&nbsp;where&nbsp;subsection&nbsp;sub&nbsp;is&nbsp;found,<br>
+such&nbsp;that&nbsp;sub&nbsp;is&nbsp;contained&nbsp;within&nbsp;B[start,end].&nbsp;&nbsp;Optional<br>
+arguments&nbsp;start&nbsp;and&nbsp;end&nbsp;are&nbsp;interpreted&nbsp;as&nbsp;in&nbsp;slice&nbsp;notation.<br>
+&nbsp;<br>
+Return&nbsp;-1&nbsp;on&nbsp;failure.</tt></dd></dl>
+
+<dl><dt><a name="bytes-hex"><strong>hex</strong></a>(...)</dt><dd><tt>Create&nbsp;a&nbsp;string&nbsp;of&nbsp;hexadecimal&nbsp;numbers&nbsp;from&nbsp;a&nbsp;bytes&nbsp;<a href="builtins.html#object">object</a>.<br>
+&nbsp;<br>
+&nbsp;&nbsp;sep<br>
+&nbsp;&nbsp;&nbsp;&nbsp;An&nbsp;optional&nbsp;single&nbsp;character&nbsp;or&nbsp;byte&nbsp;to&nbsp;separate&nbsp;hex&nbsp;bytes.<br>
+&nbsp;&nbsp;bytes_per_sep<br>
+&nbsp;&nbsp;&nbsp;&nbsp;How&nbsp;many&nbsp;bytes&nbsp;between&nbsp;separators.&nbsp;&nbsp;Positive&nbsp;values&nbsp;count&nbsp;from&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;right,&nbsp;negative&nbsp;values&nbsp;count&nbsp;from&nbsp;the&nbsp;left.<br>
+&nbsp;<br>
+Example:<br>
+&gt;&gt;&gt;&nbsp;value&nbsp;=&nbsp;b'\xb9\x01\xef'<br>
+&gt;&gt;&gt;&nbsp;value.<a href="#Binary-hex">hex</a>()<br>
+'b901ef'<br>
+&gt;&gt;&gt;&nbsp;value.<a href="#Binary-hex">hex</a>(':')<br>
+'b9:01:ef'<br>
+&gt;&gt;&gt;&nbsp;value.<a href="#Binary-hex">hex</a>(':',&nbsp;2)<br>
+'b9:01ef'<br>
+&gt;&gt;&gt;&nbsp;value.<a href="#Binary-hex">hex</a>(':',&nbsp;-2)<br>
+'b901:ef'</tt></dd></dl>
+
+<dl><dt><a name="bytes-index"><strong>index</strong></a>(...)</dt><dd><tt>B.<a href="#Binary-index">index</a>(sub[,&nbsp;start[,&nbsp;end]])&nbsp;-&gt;&nbsp;int<br>
+&nbsp;<br>
+Return&nbsp;the&nbsp;lowest&nbsp;index&nbsp;in&nbsp;B&nbsp;where&nbsp;subsection&nbsp;sub&nbsp;is&nbsp;found,<br>
+such&nbsp;that&nbsp;sub&nbsp;is&nbsp;contained&nbsp;within&nbsp;B[start,end].&nbsp;&nbsp;Optional<br>
+arguments&nbsp;start&nbsp;and&nbsp;end&nbsp;are&nbsp;interpreted&nbsp;as&nbsp;in&nbsp;slice&nbsp;notation.<br>
+&nbsp;<br>
+Raises&nbsp;ValueError&nbsp;when&nbsp;the&nbsp;subsection&nbsp;is&nbsp;not&nbsp;found.</tt></dd></dl>
+
+<dl><dt><a name="bytes-isalnum"><strong>isalnum</strong></a>(...)</dt><dd><tt>B.<a href="#Binary-isalnum">isalnum</a>()&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Return&nbsp;True&nbsp;if&nbsp;all&nbsp;characters&nbsp;in&nbsp;B&nbsp;are&nbsp;alphanumeric<br>
+and&nbsp;there&nbsp;is&nbsp;at&nbsp;least&nbsp;one&nbsp;character&nbsp;in&nbsp;B,&nbsp;False&nbsp;otherwise.</tt></dd></dl>
+
+<dl><dt><a name="bytes-isalpha"><strong>isalpha</strong></a>(...)</dt><dd><tt>B.<a href="#Binary-isalpha">isalpha</a>()&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Return&nbsp;True&nbsp;if&nbsp;all&nbsp;characters&nbsp;in&nbsp;B&nbsp;are&nbsp;alphabetic<br>
+and&nbsp;there&nbsp;is&nbsp;at&nbsp;least&nbsp;one&nbsp;character&nbsp;in&nbsp;B,&nbsp;False&nbsp;otherwise.</tt></dd></dl>
+
+<dl><dt><a name="bytes-isascii"><strong>isascii</strong></a>(...)</dt><dd><tt>B.<a href="#Binary-isascii">isascii</a>()&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Return&nbsp;True&nbsp;if&nbsp;B&nbsp;is&nbsp;empty&nbsp;or&nbsp;all&nbsp;characters&nbsp;in&nbsp;B&nbsp;are&nbsp;ASCII,<br>
+False&nbsp;otherwise.</tt></dd></dl>
+
+<dl><dt><a name="bytes-isdigit"><strong>isdigit</strong></a>(...)</dt><dd><tt>B.<a href="#Binary-isdigit">isdigit</a>()&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Return&nbsp;True&nbsp;if&nbsp;all&nbsp;characters&nbsp;in&nbsp;B&nbsp;are&nbsp;digits<br>
+and&nbsp;there&nbsp;is&nbsp;at&nbsp;least&nbsp;one&nbsp;character&nbsp;in&nbsp;B,&nbsp;False&nbsp;otherwise.</tt></dd></dl>
+
+<dl><dt><a name="bytes-islower"><strong>islower</strong></a>(...)</dt><dd><tt>B.<a href="#Binary-islower">islower</a>()&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Return&nbsp;True&nbsp;if&nbsp;all&nbsp;cased&nbsp;characters&nbsp;in&nbsp;B&nbsp;are&nbsp;lowercase&nbsp;and&nbsp;there&nbsp;is<br>
+at&nbsp;least&nbsp;one&nbsp;cased&nbsp;character&nbsp;in&nbsp;B,&nbsp;False&nbsp;otherwise.</tt></dd></dl>
+
+<dl><dt><a name="bytes-isspace"><strong>isspace</strong></a>(...)</dt><dd><tt>B.<a href="#Binary-isspace">isspace</a>()&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Return&nbsp;True&nbsp;if&nbsp;all&nbsp;characters&nbsp;in&nbsp;B&nbsp;are&nbsp;whitespace<br>
+and&nbsp;there&nbsp;is&nbsp;at&nbsp;least&nbsp;one&nbsp;character&nbsp;in&nbsp;B,&nbsp;False&nbsp;otherwise.</tt></dd></dl>
+
+<dl><dt><a name="bytes-istitle"><strong>istitle</strong></a>(...)</dt><dd><tt>B.<a href="#Binary-istitle">istitle</a>()&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Return&nbsp;True&nbsp;if&nbsp;B&nbsp;is&nbsp;a&nbsp;titlecased&nbsp;string&nbsp;and&nbsp;there&nbsp;is&nbsp;at&nbsp;least&nbsp;one<br>
+character&nbsp;in&nbsp;B,&nbsp;i.e.&nbsp;uppercase&nbsp;characters&nbsp;may&nbsp;only&nbsp;follow&nbsp;uncased<br>
+characters&nbsp;and&nbsp;lowercase&nbsp;characters&nbsp;only&nbsp;cased&nbsp;ones.&nbsp;Return&nbsp;False<br>
+otherwise.</tt></dd></dl>
+
+<dl><dt><a name="bytes-isupper"><strong>isupper</strong></a>(...)</dt><dd><tt>B.<a href="#Binary-isupper">isupper</a>()&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Return&nbsp;True&nbsp;if&nbsp;all&nbsp;cased&nbsp;characters&nbsp;in&nbsp;B&nbsp;are&nbsp;uppercase&nbsp;and&nbsp;there&nbsp;is<br>
+at&nbsp;least&nbsp;one&nbsp;cased&nbsp;character&nbsp;in&nbsp;B,&nbsp;False&nbsp;otherwise.</tt></dd></dl>
+
+<dl><dt><a name="bytes-join"><strong>join</strong></a>(self, iterable_of_bytes, /)</dt><dd><tt>Concatenate&nbsp;any&nbsp;number&nbsp;of&nbsp;bytes&nbsp;objects.<br>
+&nbsp;<br>
+The&nbsp;bytes&nbsp;whose&nbsp;method&nbsp;is&nbsp;called&nbsp;is&nbsp;inserted&nbsp;in&nbsp;between&nbsp;each&nbsp;pair.<br>
+&nbsp;<br>
+The&nbsp;result&nbsp;is&nbsp;returned&nbsp;as&nbsp;a&nbsp;new&nbsp;bytes&nbsp;<a href="builtins.html#object">object</a>.<br>
+&nbsp;<br>
+Example:&nbsp;b'.'.<a href="#Binary-join">join</a>([b'ab',&nbsp;b'pq',&nbsp;b'rs'])&nbsp;-&gt;&nbsp;b'ab.pq.rs'.</tt></dd></dl>
+
+<dl><dt><a name="bytes-ljust"><strong>ljust</strong></a>(self, width, fillchar=b' ', /)</dt><dd><tt>Return&nbsp;a&nbsp;left-justified&nbsp;string&nbsp;of&nbsp;length&nbsp;width.<br>
+&nbsp;<br>
+Padding&nbsp;is&nbsp;done&nbsp;using&nbsp;the&nbsp;specified&nbsp;fill&nbsp;character.</tt></dd></dl>
+
+<dl><dt><a name="bytes-lower"><strong>lower</strong></a>(...)</dt><dd><tt>B.<a href="#Binary-lower">lower</a>()&nbsp;-&gt;&nbsp;copy&nbsp;of&nbsp;B<br>
+&nbsp;<br>
+Return&nbsp;a&nbsp;copy&nbsp;of&nbsp;B&nbsp;with&nbsp;all&nbsp;ASCII&nbsp;characters&nbsp;converted&nbsp;to&nbsp;lowercase.</tt></dd></dl>
+
+<dl><dt><a name="bytes-lstrip"><strong>lstrip</strong></a>(self, bytes=None, /)</dt><dd><tt>Strip&nbsp;leading&nbsp;bytes&nbsp;contained&nbsp;in&nbsp;the&nbsp;argument.<br>
+&nbsp;<br>
+If&nbsp;the&nbsp;argument&nbsp;is&nbsp;omitted&nbsp;or&nbsp;None,&nbsp;strip&nbsp;leading&nbsp;&nbsp;ASCII&nbsp;whitespace.</tt></dd></dl>
+
+<dl><dt><a name="bytes-partition"><strong>partition</strong></a>(self, sep, /)</dt><dd><tt>Partition&nbsp;the&nbsp;bytes&nbsp;into&nbsp;three&nbsp;parts&nbsp;using&nbsp;the&nbsp;given&nbsp;separator.<br>
+&nbsp;<br>
+This&nbsp;will&nbsp;search&nbsp;for&nbsp;the&nbsp;separator&nbsp;sep&nbsp;in&nbsp;the&nbsp;bytes.&nbsp;If&nbsp;the&nbsp;separator&nbsp;is&nbsp;found,<br>
+returns&nbsp;a&nbsp;3-tuple&nbsp;containing&nbsp;the&nbsp;part&nbsp;before&nbsp;the&nbsp;separator,&nbsp;the&nbsp;separator<br>
+itself,&nbsp;and&nbsp;the&nbsp;part&nbsp;after&nbsp;it.<br>
+&nbsp;<br>
+If&nbsp;the&nbsp;separator&nbsp;is&nbsp;not&nbsp;found,&nbsp;returns&nbsp;a&nbsp;3-tuple&nbsp;containing&nbsp;the&nbsp;original&nbsp;bytes<br>
+<a href="builtins.html#object">object</a>&nbsp;and&nbsp;two&nbsp;empty&nbsp;bytes&nbsp;objects.</tt></dd></dl>
+
+<dl><dt><a name="bytes-removeprefix"><strong>removeprefix</strong></a>(self, prefix, /)</dt><dd><tt>Return&nbsp;a&nbsp;bytes&nbsp;<a href="builtins.html#object">object</a>&nbsp;with&nbsp;the&nbsp;given&nbsp;prefix&nbsp;string&nbsp;removed&nbsp;if&nbsp;present.<br>
+&nbsp;<br>
+If&nbsp;the&nbsp;bytes&nbsp;starts&nbsp;with&nbsp;the&nbsp;prefix&nbsp;string,&nbsp;return&nbsp;bytes[len(prefix):].<br>
+Otherwise,&nbsp;return&nbsp;a&nbsp;copy&nbsp;of&nbsp;the&nbsp;original&nbsp;bytes.</tt></dd></dl>
+
+<dl><dt><a name="bytes-removesuffix"><strong>removesuffix</strong></a>(self, suffix, /)</dt><dd><tt>Return&nbsp;a&nbsp;bytes&nbsp;<a href="builtins.html#object">object</a>&nbsp;with&nbsp;the&nbsp;given&nbsp;suffix&nbsp;string&nbsp;removed&nbsp;if&nbsp;present.<br>
+&nbsp;<br>
+If&nbsp;the&nbsp;bytes&nbsp;ends&nbsp;with&nbsp;the&nbsp;suffix&nbsp;string&nbsp;and&nbsp;that&nbsp;suffix&nbsp;is&nbsp;not&nbsp;empty,<br>
+return&nbsp;bytes[:-len(prefix)].&nbsp;&nbsp;Otherwise,&nbsp;return&nbsp;a&nbsp;copy&nbsp;of&nbsp;the&nbsp;original<br>
+bytes.</tt></dd></dl>
+
+<dl><dt><a name="bytes-replace"><strong>replace</strong></a>(self, old, new, count=-1, /)</dt><dd><tt>Return&nbsp;a&nbsp;copy&nbsp;with&nbsp;all&nbsp;occurrences&nbsp;of&nbsp;substring&nbsp;old&nbsp;replaced&nbsp;by&nbsp;new.<br>
+&nbsp;<br>
+&nbsp;&nbsp;count<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Maximum&nbsp;number&nbsp;of&nbsp;occurrences&nbsp;to&nbsp;replace.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-1&nbsp;(the&nbsp;default&nbsp;value)&nbsp;means&nbsp;replace&nbsp;all&nbsp;occurrences.<br>
+&nbsp;<br>
+If&nbsp;the&nbsp;optional&nbsp;argument&nbsp;count&nbsp;is&nbsp;given,&nbsp;only&nbsp;the&nbsp;first&nbsp;count&nbsp;occurrences&nbsp;are<br>
+replaced.</tt></dd></dl>
+
+<dl><dt><a name="bytes-rfind"><strong>rfind</strong></a>(...)</dt><dd><tt>B.<a href="#Binary-rfind">rfind</a>(sub[,&nbsp;start[,&nbsp;end]])&nbsp;-&gt;&nbsp;int<br>
+&nbsp;<br>
+Return&nbsp;the&nbsp;highest&nbsp;index&nbsp;in&nbsp;B&nbsp;where&nbsp;subsection&nbsp;sub&nbsp;is&nbsp;found,<br>
+such&nbsp;that&nbsp;sub&nbsp;is&nbsp;contained&nbsp;within&nbsp;B[start,end].&nbsp;&nbsp;Optional<br>
+arguments&nbsp;start&nbsp;and&nbsp;end&nbsp;are&nbsp;interpreted&nbsp;as&nbsp;in&nbsp;slice&nbsp;notation.<br>
+&nbsp;<br>
+Return&nbsp;-1&nbsp;on&nbsp;failure.</tt></dd></dl>
+
+<dl><dt><a name="bytes-rindex"><strong>rindex</strong></a>(...)</dt><dd><tt>B.<a href="#Binary-rindex">rindex</a>(sub[,&nbsp;start[,&nbsp;end]])&nbsp;-&gt;&nbsp;int<br>
+&nbsp;<br>
+Return&nbsp;the&nbsp;highest&nbsp;index&nbsp;in&nbsp;B&nbsp;where&nbsp;subsection&nbsp;sub&nbsp;is&nbsp;found,<br>
+such&nbsp;that&nbsp;sub&nbsp;is&nbsp;contained&nbsp;within&nbsp;B[start,end].&nbsp;&nbsp;Optional<br>
+arguments&nbsp;start&nbsp;and&nbsp;end&nbsp;are&nbsp;interpreted&nbsp;as&nbsp;in&nbsp;slice&nbsp;notation.<br>
+&nbsp;<br>
+Raise&nbsp;ValueError&nbsp;when&nbsp;the&nbsp;subsection&nbsp;is&nbsp;not&nbsp;found.</tt></dd></dl>
+
+<dl><dt><a name="bytes-rjust"><strong>rjust</strong></a>(self, width, fillchar=b' ', /)</dt><dd><tt>Return&nbsp;a&nbsp;right-justified&nbsp;string&nbsp;of&nbsp;length&nbsp;width.<br>
+&nbsp;<br>
+Padding&nbsp;is&nbsp;done&nbsp;using&nbsp;the&nbsp;specified&nbsp;fill&nbsp;character.</tt></dd></dl>
+
+<dl><dt><a name="bytes-rpartition"><strong>rpartition</strong></a>(self, sep, /)</dt><dd><tt>Partition&nbsp;the&nbsp;bytes&nbsp;into&nbsp;three&nbsp;parts&nbsp;using&nbsp;the&nbsp;given&nbsp;separator.<br>
+&nbsp;<br>
+This&nbsp;will&nbsp;search&nbsp;for&nbsp;the&nbsp;separator&nbsp;sep&nbsp;in&nbsp;the&nbsp;bytes,&nbsp;starting&nbsp;at&nbsp;the&nbsp;end.&nbsp;If<br>
+the&nbsp;separator&nbsp;is&nbsp;found,&nbsp;returns&nbsp;a&nbsp;3-tuple&nbsp;containing&nbsp;the&nbsp;part&nbsp;before&nbsp;the<br>
+separator,&nbsp;the&nbsp;separator&nbsp;itself,&nbsp;and&nbsp;the&nbsp;part&nbsp;after&nbsp;it.<br>
+&nbsp;<br>
+If&nbsp;the&nbsp;separator&nbsp;is&nbsp;not&nbsp;found,&nbsp;returns&nbsp;a&nbsp;3-tuple&nbsp;containing&nbsp;two&nbsp;empty&nbsp;bytes<br>
+objects&nbsp;and&nbsp;the&nbsp;original&nbsp;bytes&nbsp;<a href="builtins.html#object">object</a>.</tt></dd></dl>
+
+<dl><dt><a name="bytes-rsplit"><strong>rsplit</strong></a>(self, /, sep=None, maxsplit=-1)</dt><dd><tt>Return&nbsp;a&nbsp;list&nbsp;of&nbsp;the&nbsp;sections&nbsp;in&nbsp;the&nbsp;bytes,&nbsp;using&nbsp;sep&nbsp;as&nbsp;the&nbsp;delimiter.<br>
+&nbsp;<br>
+&nbsp;&nbsp;sep<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;delimiter&nbsp;according&nbsp;which&nbsp;to&nbsp;split&nbsp;the&nbsp;bytes.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None&nbsp;(the&nbsp;default&nbsp;value)&nbsp;means&nbsp;split&nbsp;on&nbsp;ASCII&nbsp;whitespace&nbsp;characters<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(space,&nbsp;tab,&nbsp;return,&nbsp;newline,&nbsp;formfeed,&nbsp;vertical&nbsp;tab).<br>
+&nbsp;&nbsp;maxsplit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Maximum&nbsp;number&nbsp;of&nbsp;splits&nbsp;to&nbsp;do.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-1&nbsp;(the&nbsp;default&nbsp;value)&nbsp;means&nbsp;no&nbsp;limit.<br>
+&nbsp;<br>
+Splitting&nbsp;is&nbsp;done&nbsp;starting&nbsp;at&nbsp;the&nbsp;end&nbsp;of&nbsp;the&nbsp;bytes&nbsp;and&nbsp;working&nbsp;to&nbsp;the&nbsp;front.</tt></dd></dl>
+
+<dl><dt><a name="bytes-rstrip"><strong>rstrip</strong></a>(self, bytes=None, /)</dt><dd><tt>Strip&nbsp;trailing&nbsp;bytes&nbsp;contained&nbsp;in&nbsp;the&nbsp;argument.<br>
+&nbsp;<br>
+If&nbsp;the&nbsp;argument&nbsp;is&nbsp;omitted&nbsp;or&nbsp;None,&nbsp;strip&nbsp;trailing&nbsp;ASCII&nbsp;whitespace.</tt></dd></dl>
+
+<dl><dt><a name="bytes-split"><strong>split</strong></a>(self, /, sep=None, maxsplit=-1)</dt><dd><tt>Return&nbsp;a&nbsp;list&nbsp;of&nbsp;the&nbsp;sections&nbsp;in&nbsp;the&nbsp;bytes,&nbsp;using&nbsp;sep&nbsp;as&nbsp;the&nbsp;delimiter.<br>
+&nbsp;<br>
+sep<br>
+&nbsp;&nbsp;The&nbsp;delimiter&nbsp;according&nbsp;which&nbsp;to&nbsp;split&nbsp;the&nbsp;bytes.<br>
+&nbsp;&nbsp;None&nbsp;(the&nbsp;default&nbsp;value)&nbsp;means&nbsp;split&nbsp;on&nbsp;ASCII&nbsp;whitespace&nbsp;characters<br>
+&nbsp;&nbsp;(space,&nbsp;tab,&nbsp;return,&nbsp;newline,&nbsp;formfeed,&nbsp;vertical&nbsp;tab).<br>
+maxsplit<br>
+&nbsp;&nbsp;Maximum&nbsp;number&nbsp;of&nbsp;splits&nbsp;to&nbsp;do.<br>
+&nbsp;&nbsp;-1&nbsp;(the&nbsp;default&nbsp;value)&nbsp;means&nbsp;no&nbsp;limit.</tt></dd></dl>
+
+<dl><dt><a name="bytes-splitlines"><strong>splitlines</strong></a>(self, /, keepends=False)</dt><dd><tt>Return&nbsp;a&nbsp;list&nbsp;of&nbsp;the&nbsp;lines&nbsp;in&nbsp;the&nbsp;bytes,&nbsp;breaking&nbsp;at&nbsp;line&nbsp;boundaries.<br>
+&nbsp;<br>
+Line&nbsp;breaks&nbsp;are&nbsp;not&nbsp;included&nbsp;in&nbsp;the&nbsp;resulting&nbsp;list&nbsp;unless&nbsp;keepends&nbsp;is&nbsp;given&nbsp;and<br>
+true.</tt></dd></dl>
+
+<dl><dt><a name="bytes-startswith"><strong>startswith</strong></a>(...)</dt><dd><tt>B.<a href="#Binary-startswith">startswith</a>(prefix[,&nbsp;start[,&nbsp;end]])&nbsp;-&gt;&nbsp;bool<br>
+&nbsp;<br>
+Return&nbsp;True&nbsp;if&nbsp;B&nbsp;starts&nbsp;with&nbsp;the&nbsp;specified&nbsp;prefix,&nbsp;False&nbsp;otherwise.<br>
+With&nbsp;optional&nbsp;start,&nbsp;test&nbsp;B&nbsp;beginning&nbsp;at&nbsp;that&nbsp;position.<br>
+With&nbsp;optional&nbsp;end,&nbsp;stop&nbsp;comparing&nbsp;B&nbsp;at&nbsp;that&nbsp;position.<br>
+prefix&nbsp;can&nbsp;also&nbsp;be&nbsp;a&nbsp;tuple&nbsp;of&nbsp;bytes&nbsp;to&nbsp;try.</tt></dd></dl>
+
+<dl><dt><a name="bytes-strip"><strong>strip</strong></a>(self, bytes=None, /)</dt><dd><tt>Strip&nbsp;leading&nbsp;and&nbsp;trailing&nbsp;bytes&nbsp;contained&nbsp;in&nbsp;the&nbsp;argument.<br>
+&nbsp;<br>
+If&nbsp;the&nbsp;argument&nbsp;is&nbsp;omitted&nbsp;or&nbsp;None,&nbsp;strip&nbsp;leading&nbsp;and&nbsp;trailing&nbsp;ASCII&nbsp;whitespace.</tt></dd></dl>
+
+<dl><dt><a name="bytes-swapcase"><strong>swapcase</strong></a>(...)</dt><dd><tt>B.<a href="#Binary-swapcase">swapcase</a>()&nbsp;-&gt;&nbsp;copy&nbsp;of&nbsp;B<br>
+&nbsp;<br>
+Return&nbsp;a&nbsp;copy&nbsp;of&nbsp;B&nbsp;with&nbsp;uppercase&nbsp;ASCII&nbsp;characters&nbsp;converted<br>
+to&nbsp;lowercase&nbsp;ASCII&nbsp;and&nbsp;vice&nbsp;versa.</tt></dd></dl>
+
+<dl><dt><a name="bytes-title"><strong>title</strong></a>(...)</dt><dd><tt>B.<a href="#Binary-title">title</a>()&nbsp;-&gt;&nbsp;copy&nbsp;of&nbsp;B<br>
+&nbsp;<br>
+Return&nbsp;a&nbsp;titlecased&nbsp;version&nbsp;of&nbsp;B,&nbsp;i.e.&nbsp;ASCII&nbsp;words&nbsp;start&nbsp;with&nbsp;uppercase<br>
+characters,&nbsp;all&nbsp;remaining&nbsp;cased&nbsp;characters&nbsp;have&nbsp;lowercase.</tt></dd></dl>
+
+<dl><dt><a name="bytes-translate"><strong>translate</strong></a>(self, table, /, delete=b'')</dt><dd><tt>Return&nbsp;a&nbsp;copy&nbsp;with&nbsp;each&nbsp;character&nbsp;mapped&nbsp;by&nbsp;the&nbsp;given&nbsp;translation&nbsp;table.<br>
+&nbsp;<br>
+&nbsp;&nbsp;table<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Translation&nbsp;table,&nbsp;which&nbsp;must&nbsp;be&nbsp;a&nbsp;bytes&nbsp;<a href="builtins.html#object">object</a>&nbsp;of&nbsp;length&nbsp;256.<br>
+&nbsp;<br>
+All&nbsp;characters&nbsp;occurring&nbsp;in&nbsp;the&nbsp;optional&nbsp;argument&nbsp;delete&nbsp;are&nbsp;removed.<br>
+The&nbsp;remaining&nbsp;characters&nbsp;are&nbsp;mapped&nbsp;through&nbsp;the&nbsp;given&nbsp;translation&nbsp;table.</tt></dd></dl>
+
+<dl><dt><a name="bytes-upper"><strong>upper</strong></a>(...)</dt><dd><tt>B.<a href="#Binary-upper">upper</a>()&nbsp;-&gt;&nbsp;copy&nbsp;of&nbsp;B<br>
+&nbsp;<br>
+Return&nbsp;a&nbsp;copy&nbsp;of&nbsp;B&nbsp;with&nbsp;all&nbsp;ASCII&nbsp;characters&nbsp;converted&nbsp;to&nbsp;uppercase.</tt></dd></dl>
+
+<dl><dt><a name="bytes-zfill"><strong>zfill</strong></a>(self, width, /)</dt><dd><tt>Pad&nbsp;a&nbsp;numeric&nbsp;string&nbsp;with&nbsp;zeros&nbsp;on&nbsp;the&nbsp;left,&nbsp;to&nbsp;fill&nbsp;a&nbsp;field&nbsp;of&nbsp;the&nbsp;given&nbsp;width.<br>
+&nbsp;<br>
+The&nbsp;original&nbsp;string&nbsp;is&nbsp;never&nbsp;truncated.</tt></dd></dl>
+
+<hr>
+Class methods defined here:<br>
+<dl><dt><a name="bytes-fromhex"><strong>fromhex</strong></a>(string, /)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Create&nbsp;a&nbsp;bytes&nbsp;<a href="builtins.html#object">object</a>&nbsp;from&nbsp;a&nbsp;string&nbsp;of&nbsp;hexadecimal&nbsp;numbers.<br>
+&nbsp;<br>
+Spaces&nbsp;between&nbsp;two&nbsp;numbers&nbsp;are&nbsp;accepted.<br>
+Example:&nbsp;bytes.<a href="#Binary-fromhex">fromhex</a>('B9&nbsp;01EF')&nbsp;-&gt;&nbsp;b'\\xb9\\x01\\xef'.</tt></dd></dl>
+
+<hr>
+Static methods defined here:<br>
+<dl><dt><a name="bytes-__new__"><strong>__new__</strong></a>(*args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;<a href="builtins.html#object">object</a>.&nbsp;&nbsp;See&nbsp;help(type)&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="bytes-maketrans"><strong>maketrans</strong></a>(frm, to, /)</dt><dd><tt>Return&nbsp;a&nbsp;translation&nbsp;table&nbsp;useable&nbsp;for&nbsp;the&nbsp;bytes&nbsp;or&nbsp;bytearray&nbsp;translate&nbsp;method.<br>
+&nbsp;<br>
+The&nbsp;returned&nbsp;table&nbsp;will&nbsp;be&nbsp;one&nbsp;where&nbsp;each&nbsp;byte&nbsp;in&nbsp;frm&nbsp;is&nbsp;mapped&nbsp;to&nbsp;the&nbsp;byte&nbsp;at<br>
+the&nbsp;same&nbsp;position&nbsp;in&nbsp;to.<br>
+&nbsp;<br>
+The&nbsp;bytes&nbsp;objects&nbsp;frm&nbsp;and&nbsp;to&nbsp;must&nbsp;be&nbsp;of&nbsp;the&nbsp;same&nbsp;length.</tt></dd></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="CharacterSet">class <strong>CharacterSet</strong></a>(<a href="mysql.connector.constants.html#_Constants">_Constants</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>MySQL&nbsp;supported&nbsp;character&nbsp;sets&nbsp;and&nbsp;collations<br>
+&nbsp;<br>
+List&nbsp;of&nbsp;character&nbsp;sets&nbsp;with&nbsp;their&nbsp;collations&nbsp;supported&nbsp;by&nbsp;MySQL.&nbsp;This<br>
+maps&nbsp;to&nbsp;the&nbsp;character&nbsp;set&nbsp;we&nbsp;get&nbsp;from&nbsp;the&nbsp;server&nbsp;within&nbsp;the&nbsp;handshake<br>
+packet.<br>
+&nbsp;<br>
+The&nbsp;list&nbsp;is&nbsp;hardcode&nbsp;so&nbsp;we&nbsp;avoid&nbsp;a&nbsp;database&nbsp;query&nbsp;when&nbsp;getting&nbsp;the<br>
+name&nbsp;of&nbsp;the&nbsp;used&nbsp;character&nbsp;set&nbsp;or&nbsp;collation.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="mysql.connector.constants.html#CharacterSet">CharacterSet</a></dd>
+<dd><a href="mysql.connector.constants.html#_Constants">_Constants</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Class methods defined here:<br>
+<dl><dt><a name="CharacterSet-get_charset_info"><strong>get_charset_info</strong></a>(charset=None, collation=None)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Get&nbsp;character&nbsp;set&nbsp;information&nbsp;using&nbsp;charset&nbsp;name&nbsp;and/or&nbsp;collation<br>
+&nbsp;<br>
+Retrieves&nbsp;character&nbsp;set&nbsp;and&nbsp;collation&nbsp;information&nbsp;given&nbsp;character<br>
+set&nbsp;name&nbsp;and/or&nbsp;a&nbsp;collation&nbsp;name.<br>
+If&nbsp;charset&nbsp;is&nbsp;an&nbsp;integer,&nbsp;it&nbsp;will&nbsp;look&nbsp;up&nbsp;the&nbsp;character&nbsp;set&nbsp;based<br>
+on&nbsp;the&nbsp;MySQL's&nbsp;ID.<br>
+For&nbsp;example:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#CharacterSet-get_charset_info">get_charset_info</a>('utf8',None)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#CharacterSet-get_charset_info">get_charset_info</a>(collation='utf8_general_ci')<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#CharacterSet-get_charset_info">get_charset_info</a>(47)<br>
+&nbsp;<br>
+Raises&nbsp;<a href="#ProgrammingError">ProgrammingError</a>&nbsp;when&nbsp;character&nbsp;set&nbsp;is&nbsp;not&nbsp;supported.<br>
+&nbsp;<br>
+Returns&nbsp;a&nbsp;tuple&nbsp;with&nbsp;(id,&nbsp;characterset&nbsp;name,&nbsp;collation)</tt></dd></dl>
+
+<dl><dt><a name="CharacterSet-get_default_collation"><strong>get_default_collation</strong></a>(charset)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Retrieves&nbsp;the&nbsp;default&nbsp;collation&nbsp;for&nbsp;given&nbsp;character&nbsp;set<br>
+&nbsp;<br>
+Raises&nbsp;<a href="#ProgrammingError">ProgrammingError</a>&nbsp;when&nbsp;character&nbsp;set&nbsp;is&nbsp;not&nbsp;supported.<br>
+&nbsp;<br>
+Returns&nbsp;list&nbsp;(collation,&nbsp;charset,&nbsp;index)</tt></dd></dl>
+
+<dl><dt><a name="CharacterSet-get_desc"><strong>get_desc</strong></a>(name)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Retrieves&nbsp;character&nbsp;set&nbsp;information&nbsp;as&nbsp;string&nbsp;using&nbsp;an&nbsp;ID<br>
+&nbsp;<br>
+Retrieves&nbsp;character&nbsp;set&nbsp;and&nbsp;collation&nbsp;information&nbsp;based&nbsp;on&nbsp;the<br>
+given&nbsp;MySQL&nbsp;ID.<br>
+&nbsp;<br>
+Returns&nbsp;a&nbsp;tuple.</tt></dd></dl>
+
+<dl><dt><a name="CharacterSet-get_info"><strong>get_info</strong></a>(setid)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Retrieves&nbsp;character&nbsp;set&nbsp;information&nbsp;as&nbsp;tuple&nbsp;using&nbsp;an&nbsp;ID<br>
+&nbsp;<br>
+Retrieves&nbsp;character&nbsp;set&nbsp;and&nbsp;collation&nbsp;information&nbsp;based&nbsp;on&nbsp;the<br>
+given&nbsp;MySQL&nbsp;ID.<br>
+&nbsp;<br>
+Raises&nbsp;<a href="#ProgrammingError">ProgrammingError</a>&nbsp;when&nbsp;character&nbsp;set&nbsp;is&nbsp;not&nbsp;supported.<br>
+&nbsp;<br>
+Returns&nbsp;a&nbsp;tuple.</tt></dd></dl>
+
+<dl><dt><a name="CharacterSet-get_supported"><strong>get_supported</strong></a>()<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Retrieves&nbsp;a&nbsp;list&nbsp;with&nbsp;names&nbsp;of&nbsp;all&nbsp;supproted&nbsp;character&nbsp;sets<br>
+&nbsp;<br>
+Returns&nbsp;a&nbsp;tuple.</tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>desc</strong> = [None, ('big5', 'big5_chinese_ci', True), ('latin2', 'latin2_czech_cs', False), ('dec8', 'dec8_swedish_ci', True), ('cp850', 'cp850_general_ci', True), ('latin1', 'latin1_german1_ci', False), ('hp8', 'hp8_english_ci', True), ('koi8r', 'koi8r_general_ci', True), ('latin1', 'latin1_swedish_ci', True), ('latin2', 'latin2_general_ci', True), ('swe7', 'swe7_swedish_ci', True), ('ascii', 'ascii_general_ci', True), ('ujis', 'ujis_japanese_ci', True), ('sjis', 'sjis_japanese_ci', True), ('cp1251', 'cp1251_bulgarian_ci', False), ('latin1', 'latin1_danish_ci', False), ('hebrew', 'hebrew_general_ci', True), None, ('tis620', 'tis620_thai_ci', True), ('euckr', 'euckr_korean_ci', True), ...]</dl>
+
+<dl><dt><strong>slash_charsets</strong> = (1, 13, 28, 84, 87, 88)</dl>
+
+<hr>
+Class methods inherited from <a href="mysql.connector.constants.html#_Constants">_Constants</a>:<br>
+<dl><dt><a name="CharacterSet-get_full_info"><strong>get_full_info</strong></a>()<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>get&nbsp;full&nbsp;information&nbsp;about&nbsp;given&nbsp;constant</tt></dd></dl>
+
+<hr>
+Static methods inherited from <a href="mysql.connector.constants.html#_Constants">_Constants</a>:<br>
+<dl><dt><a name="CharacterSet-__new__"><strong>__new__</strong></a>(cls)</dt><dd><tt>Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;<a href="builtins.html#object">object</a>.&nbsp;&nbsp;See&nbsp;help(type)&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="mysql.connector.constants.html#_Constants">_Constants</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="mysql.connector.constants.html#_Constants">_Constants</a>:<br>
+<dl><dt><strong>prefix</strong> = ''</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="ClientFlag">class <strong>ClientFlag</strong></a>(<a href="mysql.connector.constants.html#_Flags">_Flags</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>MySQL&nbsp;Client&nbsp;Flags<br>
+&nbsp;<br>
+Client&nbsp;options&nbsp;as&nbsp;found&nbsp;in&nbsp;the&nbsp;MySQL&nbsp;sources&nbsp;mysql-src/include/mysql_com.h<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="mysql.connector.constants.html#ClientFlag">ClientFlag</a></dd>
+<dd><a href="mysql.connector.constants.html#_Flags">_Flags</a></dd>
+<dd><a href="mysql.connector.constants.html#_Constants">_Constants</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Class methods defined here:<br>
+<dl><dt><a name="ClientFlag-get_default"><strong>get_default</strong></a>()<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Get&nbsp;the&nbsp;default&nbsp;client&nbsp;options&nbsp;set<br>
+&nbsp;<br>
+Returns&nbsp;a&nbsp;flag&nbsp;with&nbsp;all&nbsp;the&nbsp;default&nbsp;client&nbsp;options&nbsp;set</tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>CAN_HANDLE_EXPIRED_PASSWORDS</strong> = 4194304</dl>
+
+<dl><dt><strong>CLIENT_QUERY_ATTRIBUTES</strong> = 134217728</dl>
+
+<dl><dt><strong>COMPRESS</strong> = 32</dl>
+
+<dl><dt><strong>CONNECT_ARGS</strong> = 1048576</dl>
+
+<dl><dt><strong>CONNECT_WITH_DB</strong> = 8</dl>
+
+<dl><dt><strong>DEPRECATE_EOF</strong> = 16777216</dl>
+
+<dl><dt><strong>FOUND_ROWS</strong> = 2</dl>
+
+<dl><dt><strong>IGNORE_SIGPIPE</strong> = 4096</dl>
+
+<dl><dt><strong>IGNORE_SPACE</strong> = 256</dl>
+
+<dl><dt><strong>INTERACTIVE</strong> = 1024</dl>
+
+<dl><dt><strong>LOCAL_FILES</strong> = 128</dl>
+
+<dl><dt><strong>LONG_FLAG</strong> = 4</dl>
+
+<dl><dt><strong>LONG_PASSWD</strong> = 1</dl>
+
+<dl><dt><strong>MULTI_FACTOR_AUTHENTICATION</strong> = 268435456</dl>
+
+<dl><dt><strong>MULTI_RESULTS</strong> = 131072</dl>
+
+<dl><dt><strong>MULTI_STATEMENTS</strong> = 65536</dl>
+
+<dl><dt><strong>NO_SCHEMA</strong> = 16</dl>
+
+<dl><dt><strong>ODBC</strong> = 64</dl>
+
+<dl><dt><strong>PLUGIN_AUTH</strong> = 524288</dl>
+
+<dl><dt><strong>PLUGIN_AUTH_LENENC_CLIENT_DATA</strong> = 2097152</dl>
+
+<dl><dt><strong>PROTOCOL_41</strong> = 512</dl>
+
+<dl><dt><strong>PS_MULTI_RESULTS</strong> = 262144</dl>
+
+<dl><dt><strong>REMEMBER_OPTIONS</strong> = 2147483648</dl>
+
+<dl><dt><strong>RESERVED</strong> = 16384</dl>
+
+<dl><dt><strong>SECURE_CONNECTION</strong> = 32768</dl>
+
+<dl><dt><strong>SESION_TRACK</strong> = 8388608</dl>
+
+<dl><dt><strong>SSL</strong> = 2048</dl>
+
+<dl><dt><strong>SSL_VERIFY_SERVER_CERT</strong> = 1073741824</dl>
+
+<dl><dt><strong>TRANSACTIONS</strong> = 8192</dl>
+
+<dl><dt><strong>default</strong> = [1, 4, 8, 512, 8192, 32768, 65536, 131072, 1048576]</dl>
+
+<dl><dt><strong>desc</strong> = {'CAN_HANDLE_EXPIRED_PASSWORDS': (4194304, "Don't close the connection for a connection with expired password"), 'CLIENT_QUERY_ATTRIBUTES': (134217728, 'Support optional extension for query parameters'), 'COMPRESS': (32, 'Can use compression protocol'), 'CONNECT_ARGS': (1048576, 'Client supports connection attributes'), 'CONNECT_WITH_DB': (8, 'One can specify db on connect'), 'DEPRECATE_EOF': (16777216, 'Client no longer needs EOF packet'), 'FOUND_ROWS': (2, 'Found instead of affected rows'), 'IGNORE_SIGPIPE': (4096, 'IGNORE sigpipes'), 'IGNORE_SPACE': (256, "Ignore spaces before ''"), 'INTERACTIVE': (1024, 'This is an interactive client'), ...}</dl>
+
+<hr>
+Class methods inherited from <a href="mysql.connector.constants.html#_Flags">_Flags</a>:<br>
+<dl><dt><a name="ClientFlag-get_bit_info"><strong>get_bit_info</strong></a>(value)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Get&nbsp;the&nbsp;name&nbsp;of&nbsp;all&nbsp;bits&nbsp;set<br>
+&nbsp;<br>
+Returns&nbsp;a&nbsp;list&nbsp;of&nbsp;strings.</tt></dd></dl>
+
+<hr>
+Class methods inherited from <a href="mysql.connector.constants.html#_Constants">_Constants</a>:<br>
+<dl><dt><a name="ClientFlag-get_desc"><strong>get_desc</strong></a>(name)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Get&nbsp;description&nbsp;of&nbsp;given&nbsp;constant</tt></dd></dl>
+
+<dl><dt><a name="ClientFlag-get_full_info"><strong>get_full_info</strong></a>()<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>get&nbsp;full&nbsp;information&nbsp;about&nbsp;given&nbsp;constant</tt></dd></dl>
+
+<dl><dt><a name="ClientFlag-get_info"><strong>get_info</strong></a>(setid)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Get&nbsp;information&nbsp;about&nbsp;given&nbsp;constant</tt></dd></dl>
+
+<hr>
+Static methods inherited from <a href="mysql.connector.constants.html#_Constants">_Constants</a>:<br>
+<dl><dt><a name="ClientFlag-__new__"><strong>__new__</strong></a>(cls)</dt><dd><tt>Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;<a href="builtins.html#object">object</a>.&nbsp;&nbsp;See&nbsp;help(type)&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="mysql.connector.constants.html#_Constants">_Constants</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="mysql.connector.constants.html#_Constants">_Constants</a>:<br>
+<dl><dt><strong>prefix</strong> = ''</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="DataError">class <strong>DataError</strong></a>(<a href="mysql.connector.errors.html#DatabaseError">DatabaseError</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#DataError">DataError</a>(msg=None,&nbsp;errno=None,&nbsp;values=None,&nbsp;sqlstate=None)<br>
+&nbsp;<br>
+<a href="builtins.html#Exception">Exception</a>&nbsp;for&nbsp;errors&nbsp;reporting&nbsp;problems&nbsp;with&nbsp;processed&nbsp;data<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="mysql.connector.errors.html#DataError">DataError</a></dd>
+<dd><a href="mysql.connector.errors.html#DatabaseError">DatabaseError</a></dd>
+<dd><a href="mysql.connector.errors.html#Error">Error</a></dd>
+<dd><a href="builtins.html#Exception">builtins.Exception</a></dd>
+<dd><a href="builtins.html#BaseException">builtins.BaseException</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods inherited from <a href="mysql.connector.errors.html#Error">Error</a>:<br>
+<dl><dt><a name="DataError-__init__"><strong>__init__</strong></a>(self, msg=None, errno=None, values=None, sqlstate=None)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="DataError-__str__"><strong>__str__</strong></a>(self)</dt><dd><tt>Return&nbsp;str(self).</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="mysql.connector.errors.html#Error">Error</a>:<br>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Static methods inherited from <a href="builtins.html#Exception">builtins.Exception</a>:<br>
+<dl><dt><a name="DataError-__new__"><strong>__new__</strong></a>(*args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;<a href="builtins.html#object">object</a>.&nbsp;&nbsp;See&nbsp;help(type)&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="builtins.html#BaseException">builtins.BaseException</a>:<br>
+<dl><dt><a name="DataError-__delattr__"><strong>__delattr__</strong></a>(self, name, /)</dt><dd><tt>Implement&nbsp;delattr(self,&nbsp;name).</tt></dd></dl>
+
+<dl><dt><a name="DataError-__getattribute__"><strong>__getattribute__</strong></a>(self, name, /)</dt><dd><tt>Return&nbsp;getattr(self,&nbsp;name).</tt></dd></dl>
+
+<dl><dt><a name="DataError-__reduce__"><strong>__reduce__</strong></a>(...)</dt><dd><tt>Helper&nbsp;for&nbsp;pickle.</tt></dd></dl>
+
+<dl><dt><a name="DataError-__repr__"><strong>__repr__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><a name="DataError-__setattr__"><strong>__setattr__</strong></a>(self, name, value, /)</dt><dd><tt>Implement&nbsp;setattr(self,&nbsp;name,&nbsp;value).</tt></dd></dl>
+
+<dl><dt><a name="DataError-__setstate__"><strong>__setstate__</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="DataError-with_traceback"><strong>with_traceback</strong></a>(...)</dt><dd><tt><a href="builtins.html#Exception">Exception</a>.<a href="#DataError-with_traceback">with_traceback</a>(tb)&nbsp;--<br>
+set&nbsp;self.<strong>__traceback__</strong>&nbsp;to&nbsp;tb&nbsp;and&nbsp;return&nbsp;self.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="builtins.html#BaseException">builtins.BaseException</a>:<br>
+<dl><dt><strong>__cause__</strong></dt>
+<dd><tt>exception&nbsp;cause</tt></dd>
+</dl>
+<dl><dt><strong>__context__</strong></dt>
+<dd><tt>exception&nbsp;context</tt></dd>
+</dl>
+<dl><dt><strong>__dict__</strong></dt>
+</dl>
+<dl><dt><strong>__suppress_context__</strong></dt>
+</dl>
+<dl><dt><strong>__traceback__</strong></dt>
+</dl>
+<dl><dt><strong>args</strong></dt>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="DatabaseError">class <strong>DatabaseError</strong></a>(<a href="mysql.connector.errors.html#Error">Error</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#DatabaseError">DatabaseError</a>(msg=None,&nbsp;errno=None,&nbsp;values=None,&nbsp;sqlstate=None)<br>
+&nbsp;<br>
+<a href="builtins.html#Exception">Exception</a>&nbsp;for&nbsp;errors&nbsp;related&nbsp;to&nbsp;the&nbsp;database<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="mysql.connector.errors.html#DatabaseError">DatabaseError</a></dd>
+<dd><a href="mysql.connector.errors.html#Error">Error</a></dd>
+<dd><a href="builtins.html#Exception">builtins.Exception</a></dd>
+<dd><a href="builtins.html#BaseException">builtins.BaseException</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods inherited from <a href="mysql.connector.errors.html#Error">Error</a>:<br>
+<dl><dt><a name="DatabaseError-__init__"><strong>__init__</strong></a>(self, msg=None, errno=None, values=None, sqlstate=None)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="DatabaseError-__str__"><strong>__str__</strong></a>(self)</dt><dd><tt>Return&nbsp;str(self).</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="mysql.connector.errors.html#Error">Error</a>:<br>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Static methods inherited from <a href="builtins.html#Exception">builtins.Exception</a>:<br>
+<dl><dt><a name="DatabaseError-__new__"><strong>__new__</strong></a>(*args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;<a href="builtins.html#object">object</a>.&nbsp;&nbsp;See&nbsp;help(type)&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="builtins.html#BaseException">builtins.BaseException</a>:<br>
+<dl><dt><a name="DatabaseError-__delattr__"><strong>__delattr__</strong></a>(self, name, /)</dt><dd><tt>Implement&nbsp;delattr(self,&nbsp;name).</tt></dd></dl>
+
+<dl><dt><a name="DatabaseError-__getattribute__"><strong>__getattribute__</strong></a>(self, name, /)</dt><dd><tt>Return&nbsp;getattr(self,&nbsp;name).</tt></dd></dl>
+
+<dl><dt><a name="DatabaseError-__reduce__"><strong>__reduce__</strong></a>(...)</dt><dd><tt>Helper&nbsp;for&nbsp;pickle.</tt></dd></dl>
+
+<dl><dt><a name="DatabaseError-__repr__"><strong>__repr__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><a name="DatabaseError-__setattr__"><strong>__setattr__</strong></a>(self, name, value, /)</dt><dd><tt>Implement&nbsp;setattr(self,&nbsp;name,&nbsp;value).</tt></dd></dl>
+
+<dl><dt><a name="DatabaseError-__setstate__"><strong>__setstate__</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="DatabaseError-with_traceback"><strong>with_traceback</strong></a>(...)</dt><dd><tt><a href="builtins.html#Exception">Exception</a>.<a href="#DatabaseError-with_traceback">with_traceback</a>(tb)&nbsp;--<br>
+set&nbsp;self.<strong>__traceback__</strong>&nbsp;to&nbsp;tb&nbsp;and&nbsp;return&nbsp;self.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="builtins.html#BaseException">builtins.BaseException</a>:<br>
+<dl><dt><strong>__cause__</strong></dt>
+<dd><tt>exception&nbsp;cause</tt></dd>
+</dl>
+<dl><dt><strong>__context__</strong></dt>
+<dd><tt>exception&nbsp;context</tt></dd>
+</dl>
+<dl><dt><strong>__dict__</strong></dt>
+</dl>
+<dl><dt><strong>__suppress_context__</strong></dt>
+</dl>
+<dl><dt><strong>__traceback__</strong></dt>
+</dl>
+<dl><dt><strong>args</strong></dt>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><strong>Date</strong> = <a name="Date">class date</a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="datetime.html#date">date</a>(year,&nbsp;month,&nbsp;day)&nbsp;--&gt;&nbsp;<a href="datetime.html#date">date</a>&nbsp;<a href="builtins.html#object">object</a><br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="date-__add__"><strong>__add__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self+value.</tt></dd></dl>
+
+<dl><dt><a name="date-__eq__"><strong>__eq__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self==value.</tt></dd></dl>
+
+<dl><dt><a name="date-__format__"><strong>__format__</strong></a>(...)</dt><dd><tt>Formats&nbsp;self&nbsp;with&nbsp;strftime.</tt></dd></dl>
+
+<dl><dt><a name="date-__ge__"><strong>__ge__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self&gt;=value.</tt></dd></dl>
+
+<dl><dt><a name="date-__getattribute__"><strong>__getattribute__</strong></a>(self, name, /)</dt><dd><tt>Return&nbsp;getattr(self,&nbsp;name).</tt></dd></dl>
+
+<dl><dt><a name="date-__gt__"><strong>__gt__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self&gt;value.</tt></dd></dl>
+
+<dl><dt><a name="date-__hash__"><strong>__hash__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;hash(self).</tt></dd></dl>
+
+<dl><dt><a name="date-__le__"><strong>__le__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self&lt;=value.</tt></dd></dl>
+
+<dl><dt><a name="date-__lt__"><strong>__lt__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self&lt;value.</tt></dd></dl>
+
+<dl><dt><a name="date-__ne__"><strong>__ne__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self!=value.</tt></dd></dl>
+
+<dl><dt><a name="date-__radd__"><strong>__radd__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;value+self.</tt></dd></dl>
+
+<dl><dt><a name="date-__reduce__"><strong>__reduce__</strong></a>(...)</dt><dd><tt><a href="#Date-__reduce__">__reduce__</a>()&nbsp;-&gt;&nbsp;(cls,&nbsp;state)</tt></dd></dl>
+
+<dl><dt><a name="date-__repr__"><strong>__repr__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><a name="date-__rsub__"><strong>__rsub__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;value-self.</tt></dd></dl>
+
+<dl><dt><a name="date-__str__"><strong>__str__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;str(self).</tt></dd></dl>
+
+<dl><dt><a name="date-__sub__"><strong>__sub__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self-value.</tt></dd></dl>
+
+<dl><dt><a name="date-ctime"><strong>ctime</strong></a>(...)</dt><dd><tt>Return&nbsp;<a href="#Date-ctime">ctime</a>()&nbsp;style&nbsp;string.</tt></dd></dl>
+
+<dl><dt><a name="date-isocalendar"><strong>isocalendar</strong></a>(...)</dt><dd><tt>Return&nbsp;a&nbsp;named&nbsp;tuple&nbsp;containing&nbsp;ISO&nbsp;year,&nbsp;week&nbsp;number,&nbsp;and&nbsp;weekday.</tt></dd></dl>
+
+<dl><dt><a name="date-isoformat"><strong>isoformat</strong></a>(...)</dt><dd><tt>Return&nbsp;string&nbsp;in&nbsp;ISO&nbsp;8601&nbsp;format,&nbsp;YYYY-MM-DD.</tt></dd></dl>
+
+<dl><dt><a name="date-isoweekday"><strong>isoweekday</strong></a>(...)</dt><dd><tt>Return&nbsp;the&nbsp;day&nbsp;of&nbsp;the&nbsp;week&nbsp;represented&nbsp;by&nbsp;the&nbsp;<a href="datetime.html#date">date</a>.<br>
+Monday&nbsp;==&nbsp;1&nbsp;...&nbsp;Sunday&nbsp;==&nbsp;7</tt></dd></dl>
+
+<dl><dt><a name="date-replace"><strong>replace</strong></a>(...)</dt><dd><tt>Return&nbsp;<a href="datetime.html#date">date</a>&nbsp;with&nbsp;new&nbsp;specified&nbsp;fields.</tt></dd></dl>
+
+<dl><dt><a name="date-strftime"><strong>strftime</strong></a>(...)</dt><dd><tt>format&nbsp;-&gt;&nbsp;<a href="#Date-strftime">strftime</a>()&nbsp;style&nbsp;string.</tt></dd></dl>
+
+<dl><dt><a name="date-timetuple"><strong>timetuple</strong></a>(...)</dt><dd><tt>Return&nbsp;time&nbsp;tuple,&nbsp;compatible&nbsp;with&nbsp;time.localtime().</tt></dd></dl>
+
+<dl><dt><a name="date-toordinal"><strong>toordinal</strong></a>(...)</dt><dd><tt>Return&nbsp;proleptic&nbsp;Gregorian&nbsp;ordinal.&nbsp;&nbsp;January&nbsp;1&nbsp;of&nbsp;year&nbsp;1&nbsp;is&nbsp;day&nbsp;1.</tt></dd></dl>
+
+<dl><dt><a name="date-weekday"><strong>weekday</strong></a>(...)</dt><dd><tt>Return&nbsp;the&nbsp;day&nbsp;of&nbsp;the&nbsp;week&nbsp;represented&nbsp;by&nbsp;the&nbsp;<a href="datetime.html#date">date</a>.<br>
+Monday&nbsp;==&nbsp;0&nbsp;...&nbsp;Sunday&nbsp;==&nbsp;6</tt></dd></dl>
+
+<hr>
+Class methods defined here:<br>
+<dl><dt><a name="date-fromisocalendar"><strong>fromisocalendar</strong></a>(...)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>int,&nbsp;int,&nbsp;int&nbsp;-&gt;&nbsp;Construct&nbsp;a&nbsp;<a href="datetime.html#date">date</a>&nbsp;from&nbsp;the&nbsp;ISO&nbsp;year,&nbsp;week&nbsp;number&nbsp;and&nbsp;weekday.<br>
+&nbsp;<br>
+This&nbsp;is&nbsp;the&nbsp;inverse&nbsp;of&nbsp;the&nbsp;<a href="datetime.html#date">date</a>.<a href="#Date-isocalendar">isocalendar</a>()&nbsp;function</tt></dd></dl>
+
+<dl><dt><a name="date-fromisoformat"><strong>fromisoformat</strong></a>(...)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>str&nbsp;-&gt;&nbsp;Construct&nbsp;a&nbsp;<a href="datetime.html#date">date</a>&nbsp;from&nbsp;the&nbsp;output&nbsp;of&nbsp;<a href="datetime.html#date">date</a>.<a href="#Date-isoformat">isoformat</a>()</tt></dd></dl>
+
+<dl><dt><a name="date-fromordinal"><strong>fromordinal</strong></a>(...)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>int&nbsp;-&gt;&nbsp;<a href="datetime.html#date">date</a>&nbsp;corresponding&nbsp;to&nbsp;a&nbsp;proleptic&nbsp;Gregorian&nbsp;ordinal.</tt></dd></dl>
+
+<dl><dt><a name="date-fromtimestamp"><strong>fromtimestamp</strong></a>(timestamp, /)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Create&nbsp;a&nbsp;<a href="datetime.html#date">date</a>&nbsp;from&nbsp;a&nbsp;POSIX&nbsp;timestamp.<br>
+&nbsp;<br>
+The&nbsp;timestamp&nbsp;is&nbsp;a&nbsp;number,&nbsp;e.g.&nbsp;created&nbsp;via&nbsp;time.time(),&nbsp;that&nbsp;is&nbsp;interpreted<br>
+as&nbsp;local&nbsp;time.</tt></dd></dl>
+
+<dl><dt><a name="date-today"><strong>today</strong></a>(...)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Current&nbsp;<a href="datetime.html#date">date</a>&nbsp;or&nbsp;datetime:&nbsp;&nbsp;same&nbsp;as&nbsp;self.<strong>__class__</strong>.<a href="#Date-fromtimestamp">fromtimestamp</a>(time.time()).</tt></dd></dl>
+
+<hr>
+Static methods defined here:<br>
+<dl><dt><a name="date-__new__"><strong>__new__</strong></a>(*args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;<a href="builtins.html#object">object</a>.&nbsp;&nbsp;See&nbsp;help(type)&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>day</strong></dt>
+</dl>
+<dl><dt><strong>month</strong></dt>
+</dl>
+<dl><dt><strong>year</strong></dt>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>max</strong> = datetime.date(9999, 12, 31)</dl>
+
+<dl><dt><strong>min</strong> = datetime.date(1, 1, 1)</dl>
+
+<dl><dt><strong>resolution</strong> = datetime.timedelta(days=1)</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Error">class <strong>Error</strong></a>(<a href="builtins.html#Exception">builtins.Exception</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Error">Error</a>(msg=None,&nbsp;errno=None,&nbsp;values=None,&nbsp;sqlstate=None)<br>
+&nbsp;<br>
+<a href="builtins.html#Exception">Exception</a>&nbsp;that&nbsp;is&nbsp;base&nbsp;class&nbsp;for&nbsp;all&nbsp;other&nbsp;error&nbsp;exceptions<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="mysql.connector.errors.html#Error">Error</a></dd>
+<dd><a href="builtins.html#Exception">builtins.Exception</a></dd>
+<dd><a href="builtins.html#BaseException">builtins.BaseException</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Error-__init__"><strong>__init__</strong></a>(self, msg=None, errno=None, values=None, sqlstate=None)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="Error-__str__"><strong>__str__</strong></a>(self)</dt><dd><tt>Return&nbsp;str(self).</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Static methods inherited from <a href="builtins.html#Exception">builtins.Exception</a>:<br>
+<dl><dt><a name="Error-__new__"><strong>__new__</strong></a>(*args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;<a href="builtins.html#object">object</a>.&nbsp;&nbsp;See&nbsp;help(type)&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="builtins.html#BaseException">builtins.BaseException</a>:<br>
+<dl><dt><a name="Error-__delattr__"><strong>__delattr__</strong></a>(self, name, /)</dt><dd><tt>Implement&nbsp;delattr(self,&nbsp;name).</tt></dd></dl>
+
+<dl><dt><a name="Error-__getattribute__"><strong>__getattribute__</strong></a>(self, name, /)</dt><dd><tt>Return&nbsp;getattr(self,&nbsp;name).</tt></dd></dl>
+
+<dl><dt><a name="Error-__reduce__"><strong>__reduce__</strong></a>(...)</dt><dd><tt>Helper&nbsp;for&nbsp;pickle.</tt></dd></dl>
+
+<dl><dt><a name="Error-__repr__"><strong>__repr__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><a name="Error-__setattr__"><strong>__setattr__</strong></a>(self, name, value, /)</dt><dd><tt>Implement&nbsp;setattr(self,&nbsp;name,&nbsp;value).</tt></dd></dl>
+
+<dl><dt><a name="Error-__setstate__"><strong>__setstate__</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Error-with_traceback"><strong>with_traceback</strong></a>(...)</dt><dd><tt><a href="builtins.html#Exception">Exception</a>.<a href="#Error-with_traceback">with_traceback</a>(tb)&nbsp;--<br>
+set&nbsp;self.<strong>__traceback__</strong>&nbsp;to&nbsp;tb&nbsp;and&nbsp;return&nbsp;self.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="builtins.html#BaseException">builtins.BaseException</a>:<br>
+<dl><dt><strong>__cause__</strong></dt>
+<dd><tt>exception&nbsp;cause</tt></dd>
+</dl>
+<dl><dt><strong>__context__</strong></dt>
+<dd><tt>exception&nbsp;context</tt></dd>
+</dl>
+<dl><dt><strong>__dict__</strong></dt>
+</dl>
+<dl><dt><strong>__suppress_context__</strong></dt>
+</dl>
+<dl><dt><strong>__traceback__</strong></dt>
+</dl>
+<dl><dt><strong>args</strong></dt>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="FieldFlag">class <strong>FieldFlag</strong></a>(<a href="mysql.connector.constants.html#_Flags">_Flags</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>MySQL&nbsp;Field&nbsp;Flags<br>
+&nbsp;<br>
+Field&nbsp;flags&nbsp;as&nbsp;found&nbsp;in&nbsp;MySQL&nbsp;sources&nbsp;mysql-src/include/mysql_com.h<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="mysql.connector.constants.html#FieldFlag">FieldFlag</a></dd>
+<dd><a href="mysql.connector.constants.html#_Flags">_Flags</a></dd>
+<dd><a href="mysql.connector.constants.html#_Constants">_Constants</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>AUTO_INCREMENT</strong> = 512</dl>
+
+<dl><dt><strong>BINARY</strong> = 128</dl>
+
+<dl><dt><strong>BINCMP</strong> = 131072</dl>
+
+<dl><dt><strong>BLOB</strong> = 16</dl>
+
+<dl><dt><strong>ENUM</strong> = 256</dl>
+
+<dl><dt><strong>FIELD_IN_ADD_INDEX</strong> = 1048576</dl>
+
+<dl><dt><strong>FIELD_IN_PART_FUNC</strong> = 524288</dl>
+
+<dl><dt><strong>FIELD_IS_RENAMED</strong> = 2097152</dl>
+
+<dl><dt><strong>GET_FIXED_FIELDS</strong> = 262144</dl>
+
+<dl><dt><strong>GROUP</strong> = 16384</dl>
+
+<dl><dt><strong>MULTIPLE_KEY</strong> = 8</dl>
+
+<dl><dt><strong>NOT_NULL</strong> = 1</dl>
+
+<dl><dt><strong>NO_DEFAULT_VALUE</strong> = 4096</dl>
+
+<dl><dt><strong>NUM</strong> = 16384</dl>
+
+<dl><dt><strong>ON_UPDATE_NOW</strong> = 8192</dl>
+
+<dl><dt><strong>PART_KEY</strong> = 32768</dl>
+
+<dl><dt><strong>PRI_KEY</strong> = 2</dl>
+
+<dl><dt><strong>SET</strong> = 2048</dl>
+
+<dl><dt><strong>TIMESTAMP</strong> = 1024</dl>
+
+<dl><dt><strong>UNIQUE</strong> = 65536</dl>
+
+<dl><dt><strong>UNIQUE_KEY</strong> = 4</dl>
+
+<dl><dt><strong>UNSIGNED</strong> = 32</dl>
+
+<dl><dt><strong>ZEROFILL</strong> = 64</dl>
+
+<dl><dt><strong>desc</strong> = {'AUTO_INCREMENT': (512, 'field is a autoincrement field'), 'BINARY': (128, 'Field is binary  '), 'BINCMP': (131072, 'Intern: Used by sql_yacc'), 'BLOB': (16, 'Field is a blob'), 'ENUM': (256, 'field is an enum'), 'FIELD_IN_ADD_INDEX': (1048576, 'Intern: Field used in ADD INDEX'), 'FIELD_IN_PART_FUNC': (524288, 'Field part of partition func'), 'FIELD_IS_RENAMED': (2097152, 'Intern: Field is being renamed'), 'GET_FIXED_FIELDS': (262144, 'Used to get fields in item tree'), 'GROUP': (16384, 'Intern: Group field'), ...}</dl>
+
+<hr>
+Class methods inherited from <a href="mysql.connector.constants.html#_Flags">_Flags</a>:<br>
+<dl><dt><a name="FieldFlag-get_bit_info"><strong>get_bit_info</strong></a>(value)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Get&nbsp;the&nbsp;name&nbsp;of&nbsp;all&nbsp;bits&nbsp;set<br>
+&nbsp;<br>
+Returns&nbsp;a&nbsp;list&nbsp;of&nbsp;strings.</tt></dd></dl>
+
+<hr>
+Class methods inherited from <a href="mysql.connector.constants.html#_Constants">_Constants</a>:<br>
+<dl><dt><a name="FieldFlag-get_desc"><strong>get_desc</strong></a>(name)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Get&nbsp;description&nbsp;of&nbsp;given&nbsp;constant</tt></dd></dl>
+
+<dl><dt><a name="FieldFlag-get_full_info"><strong>get_full_info</strong></a>()<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>get&nbsp;full&nbsp;information&nbsp;about&nbsp;given&nbsp;constant</tt></dd></dl>
+
+<dl><dt><a name="FieldFlag-get_info"><strong>get_info</strong></a>(setid)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Get&nbsp;information&nbsp;about&nbsp;given&nbsp;constant</tt></dd></dl>
+
+<hr>
+Static methods inherited from <a href="mysql.connector.constants.html#_Constants">_Constants</a>:<br>
+<dl><dt><a name="FieldFlag-__new__"><strong>__new__</strong></a>(cls)</dt><dd><tt>Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;<a href="builtins.html#object">object</a>.&nbsp;&nbsp;See&nbsp;help(type)&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="mysql.connector.constants.html#_Constants">_Constants</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="mysql.connector.constants.html#_Constants">_Constants</a>:<br>
+<dl><dt><strong>prefix</strong> = ''</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="FieldType">class <strong>FieldType</strong></a>(<a href="mysql.connector.constants.html#_Constants">_Constants</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>MySQL&nbsp;Field&nbsp;Types<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="mysql.connector.constants.html#FieldType">FieldType</a></dd>
+<dd><a href="mysql.connector.constants.html#_Constants">_Constants</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Class methods defined here:<br>
+<dl><dt><a name="FieldType-get_binary_types"><strong>get_binary_types</strong></a>()<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Get&nbsp;the&nbsp;list&nbsp;of&nbsp;all&nbsp;binary&nbsp;types</tt></dd></dl>
+
+<dl><dt><a name="FieldType-get_number_types"><strong>get_number_types</strong></a>()<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Get&nbsp;the&nbsp;list&nbsp;of&nbsp;all&nbsp;number&nbsp;types</tt></dd></dl>
+
+<dl><dt><a name="FieldType-get_string_types"><strong>get_string_types</strong></a>()<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Get&nbsp;the&nbsp;list&nbsp;of&nbsp;all&nbsp;string&nbsp;types</tt></dd></dl>
+
+<dl><dt><a name="FieldType-get_timestamp_types"><strong>get_timestamp_types</strong></a>()<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Get&nbsp;the&nbsp;list&nbsp;of&nbsp;all&nbsp;timestamp&nbsp;types</tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>BIT</strong> = 16</dl>
+
+<dl><dt><strong>BLOB</strong> = 252</dl>
+
+<dl><dt><strong>DATE</strong> = 10</dl>
+
+<dl><dt><strong>DATETIME</strong> = 12</dl>
+
+<dl><dt><strong>DECIMAL</strong> = 0</dl>
+
+<dl><dt><strong>DOUBLE</strong> = 5</dl>
+
+<dl><dt><strong>ENUM</strong> = 247</dl>
+
+<dl><dt><strong>FLOAT</strong> = 4</dl>
+
+<dl><dt><strong>GEOMETRY</strong> = 255</dl>
+
+<dl><dt><strong>INT24</strong> = 9</dl>
+
+<dl><dt><strong>JSON</strong> = 245</dl>
+
+<dl><dt><strong>LONG</strong> = 3</dl>
+
+<dl><dt><strong>LONGLONG</strong> = 8</dl>
+
+<dl><dt><strong>LONG_BLOB</strong> = 251</dl>
+
+<dl><dt><strong>MEDIUM_BLOB</strong> = 250</dl>
+
+<dl><dt><strong>NEWDATE</strong> = 14</dl>
+
+<dl><dt><strong>NEWDECIMAL</strong> = 246</dl>
+
+<dl><dt><strong>NULL</strong> = 6</dl>
+
+<dl><dt><strong>SET</strong> = 248</dl>
+
+<dl><dt><strong>SHORT</strong> = 2</dl>
+
+<dl><dt><strong>STRING</strong> = 254</dl>
+
+<dl><dt><strong>TIME</strong> = 11</dl>
+
+<dl><dt><strong>TIMESTAMP</strong> = 7</dl>
+
+<dl><dt><strong>TINY</strong> = 1</dl>
+
+<dl><dt><strong>TINY_BLOB</strong> = 249</dl>
+
+<dl><dt><strong>VARCHAR</strong> = 15</dl>
+
+<dl><dt><strong>VAR_STRING</strong> = 253</dl>
+
+<dl><dt><strong>YEAR</strong> = 13</dl>
+
+<dl><dt><strong>desc</strong> = {'BIT': (16, 'BIT'), 'BLOB': (252, 'BLOB'), 'DATE': (10, 'DATE'), 'DATETIME': (12, 'DATETIME'), 'DECIMAL': (0, 'DECIMAL'), 'DOUBLE': (5, 'DOUBLE'), 'ENUM': (247, 'ENUM'), 'FLOAT': (4, 'FLOAT'), 'GEOMETRY': (255, 'GEOMETRY'), 'INT24': (9, 'INT24'), ...}</dl>
+
+<dl><dt><strong>prefix</strong> = 'FIELD_TYPE_'</dl>
+
+<hr>
+Class methods inherited from <a href="mysql.connector.constants.html#_Constants">_Constants</a>:<br>
+<dl><dt><a name="FieldType-get_desc"><strong>get_desc</strong></a>(name)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Get&nbsp;description&nbsp;of&nbsp;given&nbsp;constant</tt></dd></dl>
+
+<dl><dt><a name="FieldType-get_full_info"><strong>get_full_info</strong></a>()<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>get&nbsp;full&nbsp;information&nbsp;about&nbsp;given&nbsp;constant</tt></dd></dl>
+
+<dl><dt><a name="FieldType-get_info"><strong>get_info</strong></a>(setid)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Get&nbsp;information&nbsp;about&nbsp;given&nbsp;constant</tt></dd></dl>
+
+<hr>
+Static methods inherited from <a href="mysql.connector.constants.html#_Constants">_Constants</a>:<br>
+<dl><dt><a name="FieldType-__new__"><strong>__new__</strong></a>(cls)</dt><dd><tt>Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;<a href="builtins.html#object">object</a>.&nbsp;&nbsp;See&nbsp;help(type)&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="mysql.connector.constants.html#_Constants">_Constants</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="IntegrityError">class <strong>IntegrityError</strong></a>(<a href="mysql.connector.errors.html#DatabaseError">DatabaseError</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#IntegrityError">IntegrityError</a>(msg=None,&nbsp;errno=None,&nbsp;values=None,&nbsp;sqlstate=None)<br>
+&nbsp;<br>
+<a href="builtins.html#Exception">Exception</a>&nbsp;for&nbsp;errors&nbsp;regarding&nbsp;relational&nbsp;integrity<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="mysql.connector.errors.html#IntegrityError">IntegrityError</a></dd>
+<dd><a href="mysql.connector.errors.html#DatabaseError">DatabaseError</a></dd>
+<dd><a href="mysql.connector.errors.html#Error">Error</a></dd>
+<dd><a href="builtins.html#Exception">builtins.Exception</a></dd>
+<dd><a href="builtins.html#BaseException">builtins.BaseException</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods inherited from <a href="mysql.connector.errors.html#Error">Error</a>:<br>
+<dl><dt><a name="IntegrityError-__init__"><strong>__init__</strong></a>(self, msg=None, errno=None, values=None, sqlstate=None)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="IntegrityError-__str__"><strong>__str__</strong></a>(self)</dt><dd><tt>Return&nbsp;str(self).</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="mysql.connector.errors.html#Error">Error</a>:<br>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Static methods inherited from <a href="builtins.html#Exception">builtins.Exception</a>:<br>
+<dl><dt><a name="IntegrityError-__new__"><strong>__new__</strong></a>(*args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;<a href="builtins.html#object">object</a>.&nbsp;&nbsp;See&nbsp;help(type)&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="builtins.html#BaseException">builtins.BaseException</a>:<br>
+<dl><dt><a name="IntegrityError-__delattr__"><strong>__delattr__</strong></a>(self, name, /)</dt><dd><tt>Implement&nbsp;delattr(self,&nbsp;name).</tt></dd></dl>
+
+<dl><dt><a name="IntegrityError-__getattribute__"><strong>__getattribute__</strong></a>(self, name, /)</dt><dd><tt>Return&nbsp;getattr(self,&nbsp;name).</tt></dd></dl>
+
+<dl><dt><a name="IntegrityError-__reduce__"><strong>__reduce__</strong></a>(...)</dt><dd><tt>Helper&nbsp;for&nbsp;pickle.</tt></dd></dl>
+
+<dl><dt><a name="IntegrityError-__repr__"><strong>__repr__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><a name="IntegrityError-__setattr__"><strong>__setattr__</strong></a>(self, name, value, /)</dt><dd><tt>Implement&nbsp;setattr(self,&nbsp;name,&nbsp;value).</tt></dd></dl>
+
+<dl><dt><a name="IntegrityError-__setstate__"><strong>__setstate__</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="IntegrityError-with_traceback"><strong>with_traceback</strong></a>(...)</dt><dd><tt><a href="builtins.html#Exception">Exception</a>.<a href="#IntegrityError-with_traceback">with_traceback</a>(tb)&nbsp;--<br>
+set&nbsp;self.<strong>__traceback__</strong>&nbsp;to&nbsp;tb&nbsp;and&nbsp;return&nbsp;self.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="builtins.html#BaseException">builtins.BaseException</a>:<br>
+<dl><dt><strong>__cause__</strong></dt>
+<dd><tt>exception&nbsp;cause</tt></dd>
+</dl>
+<dl><dt><strong>__context__</strong></dt>
+<dd><tt>exception&nbsp;context</tt></dd>
+</dl>
+<dl><dt><strong>__dict__</strong></dt>
+</dl>
+<dl><dt><strong>__suppress_context__</strong></dt>
+</dl>
+<dl><dt><strong>__traceback__</strong></dt>
+</dl>
+<dl><dt><strong>args</strong></dt>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="InterfaceError">class <strong>InterfaceError</strong></a>(<a href="mysql.connector.errors.html#Error">Error</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#InterfaceError">InterfaceError</a>(msg=None,&nbsp;errno=None,&nbsp;values=None,&nbsp;sqlstate=None)<br>
+&nbsp;<br>
+<a href="builtins.html#Exception">Exception</a>&nbsp;for&nbsp;errors&nbsp;related&nbsp;to&nbsp;the&nbsp;interface<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="mysql.connector.errors.html#InterfaceError">InterfaceError</a></dd>
+<dd><a href="mysql.connector.errors.html#Error">Error</a></dd>
+<dd><a href="builtins.html#Exception">builtins.Exception</a></dd>
+<dd><a href="builtins.html#BaseException">builtins.BaseException</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods inherited from <a href="mysql.connector.errors.html#Error">Error</a>:<br>
+<dl><dt><a name="InterfaceError-__init__"><strong>__init__</strong></a>(self, msg=None, errno=None, values=None, sqlstate=None)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="InterfaceError-__str__"><strong>__str__</strong></a>(self)</dt><dd><tt>Return&nbsp;str(self).</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="mysql.connector.errors.html#Error">Error</a>:<br>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Static methods inherited from <a href="builtins.html#Exception">builtins.Exception</a>:<br>
+<dl><dt><a name="InterfaceError-__new__"><strong>__new__</strong></a>(*args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;<a href="builtins.html#object">object</a>.&nbsp;&nbsp;See&nbsp;help(type)&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="builtins.html#BaseException">builtins.BaseException</a>:<br>
+<dl><dt><a name="InterfaceError-__delattr__"><strong>__delattr__</strong></a>(self, name, /)</dt><dd><tt>Implement&nbsp;delattr(self,&nbsp;name).</tt></dd></dl>
+
+<dl><dt><a name="InterfaceError-__getattribute__"><strong>__getattribute__</strong></a>(self, name, /)</dt><dd><tt>Return&nbsp;getattr(self,&nbsp;name).</tt></dd></dl>
+
+<dl><dt><a name="InterfaceError-__reduce__"><strong>__reduce__</strong></a>(...)</dt><dd><tt>Helper&nbsp;for&nbsp;pickle.</tt></dd></dl>
+
+<dl><dt><a name="InterfaceError-__repr__"><strong>__repr__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><a name="InterfaceError-__setattr__"><strong>__setattr__</strong></a>(self, name, value, /)</dt><dd><tt>Implement&nbsp;setattr(self,&nbsp;name,&nbsp;value).</tt></dd></dl>
+
+<dl><dt><a name="InterfaceError-__setstate__"><strong>__setstate__</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="InterfaceError-with_traceback"><strong>with_traceback</strong></a>(...)</dt><dd><tt><a href="builtins.html#Exception">Exception</a>.<a href="#InterfaceError-with_traceback">with_traceback</a>(tb)&nbsp;--<br>
+set&nbsp;self.<strong>__traceback__</strong>&nbsp;to&nbsp;tb&nbsp;and&nbsp;return&nbsp;self.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="builtins.html#BaseException">builtins.BaseException</a>:<br>
+<dl><dt><strong>__cause__</strong></dt>
+<dd><tt>exception&nbsp;cause</tt></dd>
+</dl>
+<dl><dt><strong>__context__</strong></dt>
+<dd><tt>exception&nbsp;context</tt></dd>
+</dl>
+<dl><dt><strong>__dict__</strong></dt>
+</dl>
+<dl><dt><strong>__suppress_context__</strong></dt>
+</dl>
+<dl><dt><strong>__traceback__</strong></dt>
+</dl>
+<dl><dt><strong>args</strong></dt>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="InternalError">class <strong>InternalError</strong></a>(<a href="mysql.connector.errors.html#DatabaseError">DatabaseError</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#InternalError">InternalError</a>(msg=None,&nbsp;errno=None,&nbsp;values=None,&nbsp;sqlstate=None)<br>
+&nbsp;<br>
+<a href="builtins.html#Exception">Exception</a>&nbsp;for&nbsp;errors&nbsp;internal&nbsp;database&nbsp;errors<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="mysql.connector.errors.html#InternalError">InternalError</a></dd>
+<dd><a href="mysql.connector.errors.html#DatabaseError">DatabaseError</a></dd>
+<dd><a href="mysql.connector.errors.html#Error">Error</a></dd>
+<dd><a href="builtins.html#Exception">builtins.Exception</a></dd>
+<dd><a href="builtins.html#BaseException">builtins.BaseException</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods inherited from <a href="mysql.connector.errors.html#Error">Error</a>:<br>
+<dl><dt><a name="InternalError-__init__"><strong>__init__</strong></a>(self, msg=None, errno=None, values=None, sqlstate=None)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="InternalError-__str__"><strong>__str__</strong></a>(self)</dt><dd><tt>Return&nbsp;str(self).</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="mysql.connector.errors.html#Error">Error</a>:<br>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Static methods inherited from <a href="builtins.html#Exception">builtins.Exception</a>:<br>
+<dl><dt><a name="InternalError-__new__"><strong>__new__</strong></a>(*args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;<a href="builtins.html#object">object</a>.&nbsp;&nbsp;See&nbsp;help(type)&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="builtins.html#BaseException">builtins.BaseException</a>:<br>
+<dl><dt><a name="InternalError-__delattr__"><strong>__delattr__</strong></a>(self, name, /)</dt><dd><tt>Implement&nbsp;delattr(self,&nbsp;name).</tt></dd></dl>
+
+<dl><dt><a name="InternalError-__getattribute__"><strong>__getattribute__</strong></a>(self, name, /)</dt><dd><tt>Return&nbsp;getattr(self,&nbsp;name).</tt></dd></dl>
+
+<dl><dt><a name="InternalError-__reduce__"><strong>__reduce__</strong></a>(...)</dt><dd><tt>Helper&nbsp;for&nbsp;pickle.</tt></dd></dl>
+
+<dl><dt><a name="InternalError-__repr__"><strong>__repr__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><a name="InternalError-__setattr__"><strong>__setattr__</strong></a>(self, name, value, /)</dt><dd><tt>Implement&nbsp;setattr(self,&nbsp;name,&nbsp;value).</tt></dd></dl>
+
+<dl><dt><a name="InternalError-__setstate__"><strong>__setstate__</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="InternalError-with_traceback"><strong>with_traceback</strong></a>(...)</dt><dd><tt><a href="builtins.html#Exception">Exception</a>.<a href="#InternalError-with_traceback">with_traceback</a>(tb)&nbsp;--<br>
+set&nbsp;self.<strong>__traceback__</strong>&nbsp;to&nbsp;tb&nbsp;and&nbsp;return&nbsp;self.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="builtins.html#BaseException">builtins.BaseException</a>:<br>
+<dl><dt><strong>__cause__</strong></dt>
+<dd><tt>exception&nbsp;cause</tt></dd>
+</dl>
+<dl><dt><strong>__context__</strong></dt>
+<dd><tt>exception&nbsp;context</tt></dd>
+</dl>
+<dl><dt><strong>__dict__</strong></dt>
+</dl>
+<dl><dt><strong>__suppress_context__</strong></dt>
+</dl>
+<dl><dt><strong>__traceback__</strong></dt>
+</dl>
+<dl><dt><strong>args</strong></dt>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="MySQLConnection">class <strong>MySQLConnection</strong></a>(<a href="mysql.connector.abstracts.html#MySQLConnectionAbstract">mysql.connector.abstracts.MySQLConnectionAbstract</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#MySQLConnection">MySQLConnection</a>(*args,&nbsp;**kwargs)<br>
+&nbsp;<br>
+Connection&nbsp;to&nbsp;a&nbsp;MySQL&nbsp;Server<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="mysql.connector.connection.html#MySQLConnection">MySQLConnection</a></dd>
+<dd><a href="mysql.connector.abstracts.html#MySQLConnectionAbstract">mysql.connector.abstracts.MySQLConnectionAbstract</a></dd>
+<dd>mysql.connector.abstracts.MySQLConnectionAbstract</dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="MySQLConnection-__init__"><strong>__init__</strong></a>(self, *args, **kwargs)</dt><dd><tt>Initialize</tt></dd></dl>
+
+<dl><dt><a name="MySQLConnection-close"><strong>close</strong></a>(self)</dt><dd><tt>Disconnect&nbsp;from&nbsp;the&nbsp;MySQL&nbsp;server</tt></dd></dl>
+
+<dl><dt><a name="MySQLConnection-cmd_change_user"><strong>cmd_change_user</strong></a>(self, username='', password='', database='', charset=45, password1='', password2='', password3='', oci_config_file='')</dt><dd><tt>Change&nbsp;the&nbsp;current&nbsp;logged&nbsp;in&nbsp;user<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;allows&nbsp;to&nbsp;change&nbsp;the&nbsp;current&nbsp;logged&nbsp;in&nbsp;user&nbsp;information.<br>
+The&nbsp;result&nbsp;is&nbsp;a&nbsp;dictionary&nbsp;with&nbsp;OK&nbsp;packet&nbsp;information.<br>
+&nbsp;<br>
+Returns&nbsp;a&nbsp;dict()</tt></dd></dl>
+
+<dl><dt><a name="MySQLConnection-cmd_debug"><strong>cmd_debug</strong></a>(self)</dt><dd><tt>Send&nbsp;the&nbsp;DEBUG&nbsp;command<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;sends&nbsp;the&nbsp;DEBUG&nbsp;command&nbsp;to&nbsp;the&nbsp;MySQL&nbsp;server,&nbsp;which<br>
+requires&nbsp;the&nbsp;MySQL&nbsp;user&nbsp;to&nbsp;have&nbsp;SUPER&nbsp;privilege.&nbsp;The&nbsp;output&nbsp;will&nbsp;go<br>
+to&nbsp;the&nbsp;MySQL&nbsp;server&nbsp;error&nbsp;log&nbsp;and&nbsp;the&nbsp;result&nbsp;of&nbsp;this&nbsp;method&nbsp;is&nbsp;a<br>
+dictionary&nbsp;with&nbsp;EOF&nbsp;packet&nbsp;information.<br>
+&nbsp;<br>
+Returns&nbsp;a&nbsp;dict()</tt></dd></dl>
+
+<dl><dt><a name="MySQLConnection-cmd_init_db"><strong>cmd_init_db</strong></a>(self, database)</dt><dd><tt>Change&nbsp;the&nbsp;current&nbsp;database<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;changes&nbsp;the&nbsp;current&nbsp;(default)&nbsp;database&nbsp;by&nbsp;sending&nbsp;the<br>
+INIT_DB&nbsp;command.&nbsp;The&nbsp;result&nbsp;is&nbsp;a&nbsp;dictionary&nbsp;containing&nbsp;the&nbsp;OK&nbsp;packet<br>
+information.<br>
+&nbsp;<br>
+Returns&nbsp;a&nbsp;dict()</tt></dd></dl>
+
+<dl><dt><a name="MySQLConnection-cmd_ping"><strong>cmd_ping</strong></a>(self)</dt><dd><tt>Send&nbsp;the&nbsp;PING&nbsp;command<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;sends&nbsp;the&nbsp;PING&nbsp;command&nbsp;to&nbsp;the&nbsp;MySQL&nbsp;server.&nbsp;It&nbsp;is&nbsp;used&nbsp;to<br>
+check&nbsp;if&nbsp;the&nbsp;the&nbsp;connection&nbsp;is&nbsp;still&nbsp;valid.&nbsp;The&nbsp;result&nbsp;of&nbsp;this<br>
+method&nbsp;is&nbsp;dictionary&nbsp;with&nbsp;OK&nbsp;packet&nbsp;information.<br>
+&nbsp;<br>
+Returns&nbsp;a&nbsp;dict()</tt></dd></dl>
+
+<dl><dt><a name="MySQLConnection-cmd_process_kill"><strong>cmd_process_kill</strong></a>(self, mysql_pid)</dt><dd><tt>Kill&nbsp;a&nbsp;MySQL&nbsp;process<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;send&nbsp;the&nbsp;PROCESS_KILL&nbsp;command&nbsp;to&nbsp;the&nbsp;server&nbsp;along&nbsp;with<br>
+the&nbsp;process&nbsp;ID.&nbsp;The&nbsp;result&nbsp;is&nbsp;a&nbsp;dictionary&nbsp;with&nbsp;the&nbsp;OK&nbsp;packet<br>
+information.<br>
+&nbsp;<br>
+Returns&nbsp;a&nbsp;dict()</tt></dd></dl>
+
+<dl><dt><a name="MySQLConnection-cmd_query"><strong>cmd_query</strong></a>(self, query, raw=False, buffered=False, raw_as_string=False)</dt><dd><tt>Send&nbsp;a&nbsp;query&nbsp;to&nbsp;the&nbsp;MySQL&nbsp;server<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;send&nbsp;the&nbsp;query&nbsp;to&nbsp;the&nbsp;MySQL&nbsp;server&nbsp;and&nbsp;returns&nbsp;the&nbsp;result.<br>
+&nbsp;<br>
+If&nbsp;there&nbsp;was&nbsp;a&nbsp;text&nbsp;result,&nbsp;a&nbsp;tuple&nbsp;will&nbsp;be&nbsp;returned&nbsp;consisting&nbsp;of<br>
+the&nbsp;number&nbsp;of&nbsp;columns&nbsp;and&nbsp;a&nbsp;list&nbsp;containing&nbsp;information&nbsp;about&nbsp;these<br>
+columns.<br>
+&nbsp;<br>
+When&nbsp;the&nbsp;query&nbsp;doesn't&nbsp;return&nbsp;a&nbsp;text&nbsp;result,&nbsp;the&nbsp;OK&nbsp;or&nbsp;EOF&nbsp;packet<br>
+information&nbsp;as&nbsp;dictionary&nbsp;will&nbsp;be&nbsp;returned.&nbsp;In&nbsp;case&nbsp;the&nbsp;result&nbsp;was<br>
+an&nbsp;error,&nbsp;exception&nbsp;errors.<a href="#Error">Error</a>&nbsp;will&nbsp;be&nbsp;raised.<br>
+&nbsp;<br>
+Returns&nbsp;a&nbsp;tuple()</tt></dd></dl>
+
+<dl><dt><a name="MySQLConnection-cmd_query_iter"><strong>cmd_query_iter</strong></a>(self, statements)</dt><dd><tt>Send&nbsp;one&nbsp;or&nbsp;more&nbsp;statements&nbsp;to&nbsp;the&nbsp;MySQL&nbsp;server<br>
+&nbsp;<br>
+Similar&nbsp;to&nbsp;the&nbsp;cmd_query&nbsp;method,&nbsp;but&nbsp;instead&nbsp;returns&nbsp;a&nbsp;generator<br>
+<a href="builtins.html#object">object</a>&nbsp;to&nbsp;iterate&nbsp;through&nbsp;results.&nbsp;It&nbsp;sends&nbsp;the&nbsp;statements&nbsp;to&nbsp;the<br>
+MySQL&nbsp;server&nbsp;and&nbsp;through&nbsp;the&nbsp;iterator&nbsp;you&nbsp;can&nbsp;get&nbsp;the&nbsp;results.<br>
+&nbsp;<br>
+statement&nbsp;=&nbsp;'SELECT&nbsp;1;&nbsp;INSERT&nbsp;INTO&nbsp;t1&nbsp;VALUES&nbsp;();&nbsp;SELECT&nbsp;2'<br>
+for&nbsp;result&nbsp;in&nbsp;cnx.<a href="#MySQLConnection-cmd_query">cmd_query</a>(statement,&nbsp;iterate=True):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;'columns'&nbsp;in&nbsp;result:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;columns&nbsp;=&nbsp;result['columns']<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rows&nbsp;=&nbsp;cnx.<a href="#MySQLConnection-get_rows">get_rows</a>()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;else:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;do&nbsp;something&nbsp;useful&nbsp;with&nbsp;INSERT&nbsp;result<br>
+&nbsp;<br>
+Returns&nbsp;a&nbsp;generator.</tt></dd></dl>
+
+<dl><dt><a name="MySQLConnection-cmd_quit"><strong>cmd_quit</strong></a>(self)</dt><dd><tt>Close&nbsp;the&nbsp;current&nbsp;connection&nbsp;with&nbsp;the&nbsp;server<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;sends&nbsp;the&nbsp;QUIT&nbsp;command&nbsp;to&nbsp;the&nbsp;MySQL&nbsp;server,&nbsp;closing&nbsp;the<br>
+current&nbsp;connection.&nbsp;Since&nbsp;the&nbsp;no&nbsp;response&nbsp;can&nbsp;be&nbsp;returned&nbsp;to&nbsp;the<br>
+client,&nbsp;<a href="#MySQLConnection-cmd_quit">cmd_quit</a>()&nbsp;will&nbsp;return&nbsp;the&nbsp;packet&nbsp;it&nbsp;send.<br>
+&nbsp;<br>
+Returns&nbsp;a&nbsp;str()</tt></dd></dl>
+
+<dl><dt><a name="MySQLConnection-cmd_refresh"><strong>cmd_refresh</strong></a>(self, options)</dt><dd><tt>Send&nbsp;the&nbsp;Refresh&nbsp;command&nbsp;to&nbsp;the&nbsp;MySQL&nbsp;server<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;sends&nbsp;the&nbsp;Refresh&nbsp;command&nbsp;to&nbsp;the&nbsp;MySQL&nbsp;server.&nbsp;The&nbsp;options<br>
+argument&nbsp;should&nbsp;be&nbsp;a&nbsp;bitwise&nbsp;value&nbsp;using&nbsp;constants.<a href="#RefreshOption">RefreshOption</a>.<br>
+Usage&nbsp;example:<br>
+&nbsp;<a href="#RefreshOption">RefreshOption</a>&nbsp;=&nbsp;mysql.connector.<a href="#RefreshOption">RefreshOption</a><br>
+&nbsp;refresh&nbsp;=&nbsp;<a href="#RefreshOption">RefreshOption</a>.LOG&nbsp;|&nbsp;<a href="#RefreshOption">RefreshOption</a>.THREADS<br>
+&nbsp;cnx.<a href="#MySQLConnection-cmd_refresh">cmd_refresh</a>(refresh)<br>
+&nbsp;<br>
+The&nbsp;result&nbsp;is&nbsp;a&nbsp;dictionary&nbsp;with&nbsp;the&nbsp;OK&nbsp;packet&nbsp;information.<br>
+&nbsp;<br>
+Returns&nbsp;a&nbsp;dict()</tt></dd></dl>
+
+<dl><dt><a name="MySQLConnection-cmd_reset_connection"><strong>cmd_reset_connection</strong></a>(self)</dt><dd><tt>Resets&nbsp;the&nbsp;session&nbsp;state&nbsp;without&nbsp;re-authenticating<br>
+&nbsp;<br>
+Works&nbsp;only&nbsp;for&nbsp;MySQL&nbsp;server&nbsp;5.7.3&nbsp;or&nbsp;later.<br>
+The&nbsp;result&nbsp;is&nbsp;a&nbsp;dictionary&nbsp;with&nbsp;OK&nbsp;packet&nbsp;information.<br>
+&nbsp;<br>
+Returns&nbsp;a&nbsp;dict()</tt></dd></dl>
+
+<dl><dt><a name="MySQLConnection-cmd_shutdown"><strong>cmd_shutdown</strong></a>(self, shutdown_type=None)</dt><dd><tt>Shut&nbsp;down&nbsp;the&nbsp;MySQL&nbsp;Server<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;sends&nbsp;the&nbsp;SHUTDOWN&nbsp;command&nbsp;to&nbsp;the&nbsp;MySQL&nbsp;server&nbsp;and&nbsp;is&nbsp;only<br>
+possible&nbsp;if&nbsp;the&nbsp;current&nbsp;user&nbsp;has&nbsp;SUPER&nbsp;privileges.&nbsp;The&nbsp;result&nbsp;is&nbsp;a<br>
+dictionary&nbsp;containing&nbsp;the&nbsp;OK&nbsp;packet&nbsp;information.<br>
+&nbsp;<br>
+Note:&nbsp;Most&nbsp;applications&nbsp;and&nbsp;scripts&nbsp;do&nbsp;not&nbsp;the&nbsp;SUPER&nbsp;privilege.<br>
+&nbsp;<br>
+Returns&nbsp;a&nbsp;dict()</tt></dd></dl>
+
+<dl><dt><a name="MySQLConnection-cmd_statistics"><strong>cmd_statistics</strong></a>(self)</dt><dd><tt>Send&nbsp;the&nbsp;statistics&nbsp;command&nbsp;to&nbsp;the&nbsp;MySQL&nbsp;Server<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;sends&nbsp;the&nbsp;STATISTICS&nbsp;command&nbsp;to&nbsp;the&nbsp;MySQL&nbsp;server.&nbsp;The<br>
+result&nbsp;is&nbsp;a&nbsp;dictionary&nbsp;with&nbsp;various&nbsp;statistical&nbsp;information.<br>
+&nbsp;<br>
+Returns&nbsp;a&nbsp;dict()</tt></dd></dl>
+
+<dl><dt><a name="MySQLConnection-cmd_stmt_close"><strong>cmd_stmt_close</strong></a>(self, statement_id)</dt><dd><tt>Deallocate&nbsp;a&nbsp;prepared&nbsp;MySQL&nbsp;statement<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;deallocates&nbsp;the&nbsp;prepared&nbsp;statement&nbsp;using&nbsp;the<br>
+statement_id.&nbsp;Note&nbsp;that&nbsp;the&nbsp;MySQL&nbsp;server&nbsp;does&nbsp;not&nbsp;return<br>
+anything.</tt></dd></dl>
+
+<dl><dt><a name="MySQLConnection-cmd_stmt_execute"><strong>cmd_stmt_execute</strong></a>(self, statement_id, data=(), parameters=(), flags=0)</dt><dd><tt>Execute&nbsp;a&nbsp;prepared&nbsp;MySQL&nbsp;statement</tt></dd></dl>
+
+<dl><dt><a name="MySQLConnection-cmd_stmt_fetch"><strong>cmd_stmt_fetch</strong></a>(self, statement_id, rows=1)</dt><dd><tt>Fetch&nbsp;a&nbsp;MySQL&nbsp;statement&nbsp;Result&nbsp;Set<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;will&nbsp;send&nbsp;the&nbsp;FETCH&nbsp;command&nbsp;to&nbsp;MySQL&nbsp;together&nbsp;with&nbsp;the<br>
+given&nbsp;statement&nbsp;id&nbsp;and&nbsp;the&nbsp;number&nbsp;of&nbsp;rows&nbsp;to&nbsp;fetch.</tt></dd></dl>
+
+<dl><dt><a name="MySQLConnection-cmd_stmt_prepare"><strong>cmd_stmt_prepare</strong></a>(self, statement)</dt><dd><tt>Prepare&nbsp;a&nbsp;MySQL&nbsp;statement<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;will&nbsp;send&nbsp;the&nbsp;PREPARE&nbsp;command&nbsp;to&nbsp;MySQL&nbsp;together&nbsp;with&nbsp;the<br>
+given&nbsp;statement.<br>
+&nbsp;<br>
+Returns&nbsp;a&nbsp;dict()</tt></dd></dl>
+
+<dl><dt><a name="MySQLConnection-cmd_stmt_reset"><strong>cmd_stmt_reset</strong></a>(self, statement_id)</dt><dd><tt>Reset&nbsp;data&nbsp;for&nbsp;prepared&nbsp;statement&nbsp;sent&nbsp;as&nbsp;long&nbsp;data<br>
+&nbsp;<br>
+The&nbsp;result&nbsp;is&nbsp;a&nbsp;dictionary&nbsp;with&nbsp;OK&nbsp;packet&nbsp;information.<br>
+&nbsp;<br>
+Returns&nbsp;a&nbsp;dict()</tt></dd></dl>
+
+<dl><dt><a name="MySQLConnection-cmd_stmt_send_long_data"><strong>cmd_stmt_send_long_data</strong></a>(self, statement_id, param_id, data)</dt><dd><tt>Send&nbsp;data&nbsp;for&nbsp;a&nbsp;column<br>
+&nbsp;<br>
+This&nbsp;methods&nbsp;send&nbsp;data&nbsp;for&nbsp;a&nbsp;column&nbsp;(for&nbsp;example&nbsp;BLOB)&nbsp;for&nbsp;statement<br>
+identified&nbsp;by&nbsp;statement_id.&nbsp;The&nbsp;param_id&nbsp;indicate&nbsp;which&nbsp;parameter<br>
+the&nbsp;data&nbsp;belongs&nbsp;too.<br>
+The&nbsp;data&nbsp;argument&nbsp;should&nbsp;be&nbsp;a&nbsp;file-like&nbsp;<a href="builtins.html#object">object</a>.<br>
+&nbsp;<br>
+Since&nbsp;MySQL&nbsp;does&nbsp;not&nbsp;send&nbsp;anything&nbsp;back,&nbsp;no&nbsp;error&nbsp;is&nbsp;raised.&nbsp;When<br>
+the&nbsp;MySQL&nbsp;server&nbsp;is&nbsp;not&nbsp;reachable,&nbsp;an&nbsp;<a href="#OperationalError">OperationalError</a>&nbsp;is&nbsp;raised.<br>
+&nbsp;<br>
+cmd_stmt_send_long_data&nbsp;should&nbsp;be&nbsp;called&nbsp;before&nbsp;cmd_stmt_execute.<br>
+&nbsp;<br>
+The&nbsp;total&nbsp;bytes&nbsp;send&nbsp;is&nbsp;returned.<br>
+&nbsp;<br>
+Returns&nbsp;int.</tt></dd></dl>
+
+<dl><dt><a name="MySQLConnection-commit"><strong>commit</strong></a>(self)</dt><dd><tt>Commit&nbsp;current&nbsp;transaction</tt></dd></dl>
+
+<dl><dt><a name="MySQLConnection-consume_results"><strong>consume_results</strong></a>(self)</dt><dd><tt>Consume&nbsp;results</tt></dd></dl>
+
+<dl><dt><a name="MySQLConnection-cursor"><strong>cursor</strong></a>(self, buffered=None, raw=None, prepared=None, cursor_class=None, dictionary=None, named_tuple=None)</dt><dd><tt>Instantiates&nbsp;and&nbsp;returns&nbsp;a&nbsp;cursor<br>
+&nbsp;<br>
+By&nbsp;default,&nbsp;MySQLCursor&nbsp;is&nbsp;returned.&nbsp;Depending&nbsp;on&nbsp;the&nbsp;options<br>
+while&nbsp;connecting,&nbsp;a&nbsp;buffered&nbsp;and/or&nbsp;raw&nbsp;cursor&nbsp;is&nbsp;instantiated<br>
+instead.&nbsp;Also&nbsp;depending&nbsp;upon&nbsp;the&nbsp;cursor&nbsp;options,&nbsp;rows&nbsp;can&nbsp;be<br>
+returned&nbsp;as&nbsp;dictionary&nbsp;or&nbsp;named&nbsp;tuple.<br>
+&nbsp;<br>
+Dictionary&nbsp;and&nbsp;namedtuple&nbsp;based&nbsp;cursors&nbsp;are&nbsp;available&nbsp;with&nbsp;buffered<br>
+output&nbsp;but&nbsp;not&nbsp;raw.<br>
+&nbsp;<br>
+It&nbsp;is&nbsp;possible&nbsp;to&nbsp;also&nbsp;give&nbsp;a&nbsp;custom&nbsp;cursor&nbsp;through&nbsp;the<br>
+cursor_class&nbsp;parameter,&nbsp;but&nbsp;it&nbsp;needs&nbsp;to&nbsp;be&nbsp;a&nbsp;subclass&nbsp;of<br>
+mysql.connector.cursor.CursorBase.<br>
+&nbsp;<br>
+Raises&nbsp;<a href="#ProgrammingError">ProgrammingError</a>&nbsp;when&nbsp;cursor_class&nbsp;is&nbsp;not&nbsp;a&nbsp;subclass&nbsp;of<br>
+CursorBase.&nbsp;Raises&nbsp;ValueError&nbsp;when&nbsp;cursor&nbsp;is&nbsp;not&nbsp;available.<br>
+&nbsp;<br>
+Returns&nbsp;a&nbsp;cursor-<a href="builtins.html#object">object</a></tt></dd></dl>
+
+<dl><dt><a name="MySQLConnection-disconnect"><strong>disconnect</strong></a> = <a href="#MySQLConnection-close">close</a>(self)</dt></dl>
+
+<dl><dt><a name="MySQLConnection-get_row"><strong>get_row</strong></a>(self, binary=False, columns=None, raw=None)</dt><dd><tt>Get&nbsp;the&nbsp;next&nbsp;rows&nbsp;returned&nbsp;by&nbsp;the&nbsp;MySQL&nbsp;server<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;gets&nbsp;one&nbsp;row&nbsp;from&nbsp;the&nbsp;result&nbsp;set&nbsp;after&nbsp;sending,&nbsp;for<br>
+example,&nbsp;the&nbsp;query&nbsp;command.&nbsp;The&nbsp;result&nbsp;is&nbsp;a&nbsp;tuple&nbsp;consisting&nbsp;of&nbsp;the<br>
+row&nbsp;and&nbsp;the&nbsp;EOF&nbsp;packet.<br>
+If&nbsp;no&nbsp;row&nbsp;was&nbsp;available&nbsp;in&nbsp;the&nbsp;result&nbsp;set,&nbsp;the&nbsp;row&nbsp;data&nbsp;will&nbsp;be&nbsp;None.<br>
+&nbsp;<br>
+Returns&nbsp;a&nbsp;tuple.</tt></dd></dl>
+
+<dl><dt><a name="MySQLConnection-get_rows"><strong>get_rows</strong></a>(self, count=None, binary=False, columns=None, raw=None, prep_stmt=None)</dt><dd><tt>Get&nbsp;all&nbsp;rows&nbsp;returned&nbsp;by&nbsp;the&nbsp;MySQL&nbsp;server<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;gets&nbsp;all&nbsp;rows&nbsp;returned&nbsp;by&nbsp;the&nbsp;MySQL&nbsp;server&nbsp;after&nbsp;sending,<br>
+for&nbsp;example,&nbsp;the&nbsp;query&nbsp;command.&nbsp;The&nbsp;result&nbsp;is&nbsp;a&nbsp;tuple&nbsp;consisting&nbsp;of<br>
+a&nbsp;list&nbsp;of&nbsp;rows&nbsp;and&nbsp;the&nbsp;EOF&nbsp;packet.<br>
+&nbsp;<br>
+Returns&nbsp;a&nbsp;tuple()</tt></dd></dl>
+
+<dl><dt><a name="MySQLConnection-handle_unread_result"><strong>handle_unread_result</strong></a>(self)</dt><dd><tt>Check&nbsp;whether&nbsp;there&nbsp;is&nbsp;an&nbsp;unread&nbsp;result</tt></dd></dl>
+
+<dl><dt><a name="MySQLConnection-info_query"><strong>info_query</strong></a>(self, query)</dt><dd><tt>Send&nbsp;a&nbsp;query&nbsp;which&nbsp;only&nbsp;returns&nbsp;1&nbsp;row</tt></dd></dl>
+
+<dl><dt><a name="MySQLConnection-is_connected"><strong>is_connected</strong></a>(self)</dt><dd><tt>Reports&nbsp;whether&nbsp;the&nbsp;connection&nbsp;to&nbsp;MySQL&nbsp;Server&nbsp;is&nbsp;available<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;checks&nbsp;whether&nbsp;the&nbsp;connection&nbsp;to&nbsp;MySQL&nbsp;is&nbsp;available.<br>
+It&nbsp;is&nbsp;similar&nbsp;to&nbsp;<a href="#MySQLConnection-ping">ping</a>(),&nbsp;but&nbsp;unlike&nbsp;the&nbsp;<a href="#MySQLConnection-ping">ping</a>()-method,&nbsp;either&nbsp;True<br>
+or&nbsp;False&nbsp;is&nbsp;returned&nbsp;and&nbsp;no&nbsp;exception&nbsp;is&nbsp;raised.<br>
+&nbsp;<br>
+Returns&nbsp;True&nbsp;or&nbsp;False.</tt></dd></dl>
+
+<dl><dt><a name="MySQLConnection-ping"><strong>ping</strong></a>(self, reconnect=False, attempts=1, delay=0)</dt><dd><tt>Check&nbsp;availability&nbsp;of&nbsp;the&nbsp;MySQL&nbsp;server<br>
+&nbsp;<br>
+When&nbsp;reconnect&nbsp;is&nbsp;set&nbsp;to&nbsp;True,&nbsp;one&nbsp;or&nbsp;more&nbsp;attempts&nbsp;are&nbsp;made&nbsp;to&nbsp;try<br>
+to&nbsp;reconnect&nbsp;to&nbsp;the&nbsp;MySQL&nbsp;server&nbsp;using&nbsp;the&nbsp;<a href="#MySQLConnection-reconnect">reconnect</a>()-method.<br>
+&nbsp;<br>
+delay&nbsp;is&nbsp;the&nbsp;number&nbsp;of&nbsp;seconds&nbsp;to&nbsp;wait&nbsp;between&nbsp;each&nbsp;retry.<br>
+&nbsp;<br>
+When&nbsp;the&nbsp;connection&nbsp;is&nbsp;not&nbsp;available,&nbsp;an&nbsp;<a href="#InterfaceError">InterfaceError</a>&nbsp;is&nbsp;raised.&nbsp;Use<br>
+the&nbsp;<a href="#MySQLConnection-is_connected">is_connected</a>()-method&nbsp;if&nbsp;you&nbsp;just&nbsp;want&nbsp;to&nbsp;check&nbsp;the&nbsp;connection<br>
+without&nbsp;raising&nbsp;an&nbsp;error.<br>
+&nbsp;<br>
+Raises&nbsp;<a href="#InterfaceError">InterfaceError</a>&nbsp;on&nbsp;errors.</tt></dd></dl>
+
+<dl><dt><a name="MySQLConnection-reconnect"><strong>reconnect</strong></a>(self, attempts=1, delay=0)</dt><dd><tt>Attempt&nbsp;to&nbsp;reconnect&nbsp;to&nbsp;the&nbsp;MySQL&nbsp;server<br>
+&nbsp;<br>
+The&nbsp;argument&nbsp;attempts&nbsp;should&nbsp;be&nbsp;the&nbsp;number&nbsp;of&nbsp;times&nbsp;a&nbsp;reconnect<br>
+is&nbsp;tried.&nbsp;The&nbsp;delay&nbsp;argument&nbsp;is&nbsp;the&nbsp;number&nbsp;of&nbsp;seconds&nbsp;to&nbsp;wait&nbsp;between<br>
+each&nbsp;retry.<br>
+&nbsp;<br>
+You&nbsp;may&nbsp;want&nbsp;to&nbsp;set&nbsp;the&nbsp;number&nbsp;of&nbsp;attempts&nbsp;higher&nbsp;and&nbsp;use&nbsp;delay&nbsp;when<br>
+you&nbsp;expect&nbsp;the&nbsp;MySQL&nbsp;server&nbsp;to&nbsp;be&nbsp;down&nbsp;for&nbsp;maintenance&nbsp;or&nbsp;when&nbsp;you<br>
+expect&nbsp;the&nbsp;network&nbsp;to&nbsp;be&nbsp;temporary&nbsp;unavailable.<br>
+&nbsp;<br>
+Raises&nbsp;<a href="#InterfaceError">InterfaceError</a>&nbsp;on&nbsp;errors.</tt></dd></dl>
+
+<dl><dt><a name="MySQLConnection-reset_session"><strong>reset_session</strong></a>(self, user_variables=None, session_variables=None)</dt><dd><tt>Clears&nbsp;the&nbsp;current&nbsp;active&nbsp;session<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;resets&nbsp;the&nbsp;session&nbsp;state,&nbsp;if&nbsp;the&nbsp;MySQL&nbsp;server&nbsp;is&nbsp;5.7.3<br>
+or&nbsp;later&nbsp;active&nbsp;session&nbsp;will&nbsp;be&nbsp;reset&nbsp;without&nbsp;re-authenticating.<br>
+For&nbsp;other&nbsp;server&nbsp;versions&nbsp;session&nbsp;will&nbsp;be&nbsp;reset&nbsp;by&nbsp;re-authenticating.<br>
+&nbsp;<br>
+It&nbsp;is&nbsp;possible&nbsp;to&nbsp;provide&nbsp;a&nbsp;sequence&nbsp;of&nbsp;variables&nbsp;and&nbsp;their&nbsp;values&nbsp;to<br>
+be&nbsp;set&nbsp;after&nbsp;clearing&nbsp;the&nbsp;session.&nbsp;This&nbsp;is&nbsp;possible&nbsp;for&nbsp;both&nbsp;user<br>
+defined&nbsp;variables&nbsp;and&nbsp;session&nbsp;variables.<br>
+This&nbsp;method&nbsp;takes&nbsp;two&nbsp;arguments&nbsp;user_variables&nbsp;and&nbsp;session_variables<br>
+which&nbsp;are&nbsp;dictionaries.<br>
+&nbsp;<br>
+Raises&nbsp;<a href="#OperationalError">OperationalError</a>&nbsp;if&nbsp;not&nbsp;connected,&nbsp;<a href="#InternalError">InternalError</a>&nbsp;if&nbsp;there&nbsp;are<br>
+unread&nbsp;results&nbsp;and&nbsp;<a href="#InterfaceError">InterfaceError</a>&nbsp;on&nbsp;errors.</tt></dd></dl>
+
+<dl><dt><a name="MySQLConnection-rollback"><strong>rollback</strong></a>(self)</dt><dd><tt>Rollback&nbsp;current&nbsp;transaction</tt></dd></dl>
+
+<dl><dt><a name="MySQLConnection-set_allow_local_infile_in_path"><strong>set_allow_local_infile_in_path</strong></a>(self, path)</dt><dd><tt>set&nbsp;local_infile_in_path<br>
+&nbsp;<br>
+Set&nbsp;allow_local_infile_in_path.</tt></dd></dl>
+
+<dl><dt><a name="MySQLConnection-shutdown"><strong>shutdown</strong></a>(self)</dt><dd><tt>Shut&nbsp;down&nbsp;connection&nbsp;to&nbsp;MySQL&nbsp;Server.</tt></dd></dl>
+
+<hr>
+Readonly properties defined here:<br>
+<dl><dt><strong>connection_id</strong></dt>
+<dd><tt>MySQL&nbsp;connection&nbsp;ID</tt></dd>
+</dl>
+<dl><dt><strong>in_transaction</strong></dt>
+<dd><tt>MySQL&nbsp;session&nbsp;has&nbsp;started&nbsp;a&nbsp;transaction</tt></dd>
+</dl>
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>database</strong></dt>
+<dd><tt>Get&nbsp;the&nbsp;current&nbsp;database</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__abstractmethods__</strong> = frozenset()</dl>
+
+<hr>
+Methods inherited from <a href="mysql.connector.abstracts.html#MySQLConnectionAbstract">mysql.connector.abstracts.MySQLConnectionAbstract</a>:<br>
+<dl><dt><a name="MySQLConnection-__enter__"><strong>__enter__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="MySQLConnection-__exit__"><strong>__exit__</strong></a>(self, exc_type, exc_value, traceback)</dt></dl>
+
+<dl><dt><a name="MySQLConnection-cmd_process_info"><strong>cmd_process_info</strong></a>(self)</dt><dd><tt>Get&nbsp;the&nbsp;process&nbsp;list&nbsp;of&nbsp;the&nbsp;MySQL&nbsp;Server<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;is&nbsp;a&nbsp;placeholder&nbsp;to&nbsp;notify&nbsp;that&nbsp;the&nbsp;PROCESS_INFO&nbsp;command<br>
+is&nbsp;not&nbsp;supported&nbsp;by&nbsp;raising&nbsp;the&nbsp;<a href="#NotSupportedError">NotSupportedError</a>.&nbsp;The&nbsp;command<br>
+"SHOW&nbsp;PROCESSLIST"&nbsp;should&nbsp;be&nbsp;send&nbsp;using&nbsp;the&nbsp;<a href="#MySQLConnection-cmd_query">cmd_query</a>()-method&nbsp;or<br>
+using&nbsp;the&nbsp;INFORMATION_SCHEMA&nbsp;database.<br>
+&nbsp;<br>
+Raises&nbsp;<a href="#NotSupportedError">NotSupportedError</a>&nbsp;exception</tt></dd></dl>
+
+<dl><dt><a name="MySQLConnection-config"><strong>config</strong></a>(self, **kwargs)</dt><dd><tt>Configure&nbsp;the&nbsp;MySQL&nbsp;Connection<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;allows&nbsp;you&nbsp;to&nbsp;configure&nbsp;the&nbsp;<a href="#MySQLConnection">MySQLConnection</a>&nbsp;instance.<br>
+&nbsp;<br>
+Raises&nbsp;on&nbsp;errors.</tt></dd></dl>
+
+<dl><dt><a name="MySQLConnection-connect"><strong>connect</strong></a>(self, **kwargs)</dt><dd><tt>Connect&nbsp;to&nbsp;the&nbsp;MySQL&nbsp;server<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;sets&nbsp;up&nbsp;the&nbsp;connection&nbsp;to&nbsp;the&nbsp;MySQL&nbsp;server.&nbsp;If&nbsp;no<br>
+arguments&nbsp;are&nbsp;given,&nbsp;it&nbsp;will&nbsp;use&nbsp;the&nbsp;already&nbsp;configured&nbsp;or&nbsp;default<br>
+values.</tt></dd></dl>
+
+<dl><dt><a name="MySQLConnection-get_server_info"><strong>get_server_info</strong></a>(self)</dt><dd><tt>Get&nbsp;the&nbsp;original&nbsp;MySQL&nbsp;version&nbsp;information<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;returns&nbsp;the&nbsp;original&nbsp;MySQL&nbsp;server&nbsp;as&nbsp;text.&nbsp;If&nbsp;not<br>
+previously&nbsp;connected,&nbsp;it&nbsp;will&nbsp;return&nbsp;None.<br>
+&nbsp;<br>
+Returns&nbsp;a&nbsp;string&nbsp;or&nbsp;None.</tt></dd></dl>
+
+<dl><dt><a name="MySQLConnection-get_server_version"><strong>get_server_version</strong></a>(self)</dt><dd><tt>Get&nbsp;the&nbsp;MySQL&nbsp;version<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;returns&nbsp;the&nbsp;MySQL&nbsp;server&nbsp;version&nbsp;as&nbsp;a&nbsp;tuple.&nbsp;If&nbsp;not<br>
+previously&nbsp;connected,&nbsp;it&nbsp;will&nbsp;return&nbsp;None.<br>
+&nbsp;<br>
+Returns&nbsp;a&nbsp;tuple&nbsp;or&nbsp;None.</tt></dd></dl>
+
+<dl><dt><a name="MySQLConnection-isset_client_flag"><strong>isset_client_flag</strong></a>(self, flag)</dt><dd><tt>Check&nbsp;if&nbsp;a&nbsp;client&nbsp;flag&nbsp;is&nbsp;set</tt></dd></dl>
+
+<dl><dt><a name="MySQLConnection-set_charset_collation"><strong>set_charset_collation</strong></a>(self, charset=None, collation=None)</dt><dd><tt>Sets&nbsp;the&nbsp;character&nbsp;set&nbsp;and&nbsp;collation&nbsp;for&nbsp;the&nbsp;current&nbsp;connection<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;sets&nbsp;the&nbsp;character&nbsp;set&nbsp;and&nbsp;collation&nbsp;to&nbsp;be&nbsp;used&nbsp;for<br>
+the&nbsp;current&nbsp;connection.&nbsp;The&nbsp;charset&nbsp;argument&nbsp;can&nbsp;be&nbsp;either&nbsp;the<br>
+name&nbsp;of&nbsp;a&nbsp;character&nbsp;set&nbsp;as&nbsp;a&nbsp;string,&nbsp;or&nbsp;the&nbsp;numerical&nbsp;equivalent<br>
+as&nbsp;defined&nbsp;in&nbsp;constants.<a href="#CharacterSet">CharacterSet</a>.<br>
+&nbsp;<br>
+When&nbsp;the&nbsp;collation&nbsp;is&nbsp;not&nbsp;given,&nbsp;the&nbsp;default&nbsp;will&nbsp;be&nbsp;looked&nbsp;up&nbsp;and<br>
+used.<br>
+&nbsp;<br>
+For&nbsp;example,&nbsp;the&nbsp;following&nbsp;will&nbsp;set&nbsp;the&nbsp;collation&nbsp;for&nbsp;the&nbsp;latin1<br>
+character&nbsp;set&nbsp;to&nbsp;latin1_general_ci:<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;set_charset('latin1','latin1_general_ci')</tt></dd></dl>
+
+<dl><dt><a name="MySQLConnection-set_client_flags"><strong>set_client_flags</strong></a>(self, flags)</dt><dd><tt>Set&nbsp;the&nbsp;client&nbsp;flags<br>
+&nbsp;<br>
+The&nbsp;flags-argument&nbsp;can&nbsp;be&nbsp;either&nbsp;an&nbsp;int&nbsp;or&nbsp;a&nbsp;list&nbsp;(or&nbsp;tuple)&nbsp;of<br>
+<a href="#ClientFlag">ClientFlag</a>-values.&nbsp;If&nbsp;it&nbsp;is&nbsp;an&nbsp;integer,&nbsp;it&nbsp;will&nbsp;set&nbsp;client_flags<br>
+to&nbsp;flags&nbsp;as&nbsp;is.<br>
+If&nbsp;flags&nbsp;is&nbsp;a&nbsp;list&nbsp;(or&nbsp;tuple),&nbsp;each&nbsp;flag&nbsp;will&nbsp;be&nbsp;set&nbsp;or&nbsp;unset<br>
+when&nbsp;it's&nbsp;negative.<br>
+&nbsp;<br>
+<a href="#MySQLConnection-set_client_flags">set_client_flags</a>([<a href="#ClientFlag">ClientFlag</a>.FOUND_ROWS,-<a href="#ClientFlag">ClientFlag</a>.LONG_FLAG])<br>
+&nbsp;<br>
+Raises&nbsp;<a href="#ProgrammingError">ProgrammingError</a>&nbsp;when&nbsp;the&nbsp;flags&nbsp;argument&nbsp;is&nbsp;not&nbsp;a&nbsp;set&nbsp;or<br>
+an&nbsp;integer&nbsp;bigger&nbsp;than&nbsp;0.<br>
+&nbsp;<br>
+Returns&nbsp;self.<strong>client_flags</strong></tt></dd></dl>
+
+<dl><dt><a name="MySQLConnection-set_converter_class"><strong>set_converter_class</strong></a>(self, convclass)</dt><dd><tt>Set&nbsp;the&nbsp;converter&nbsp;class&nbsp;to&nbsp;be&nbsp;used.&nbsp;This&nbsp;should&nbsp;be&nbsp;a&nbsp;class&nbsp;overloading<br>
+methods&nbsp;and&nbsp;members&nbsp;of&nbsp;conversion.MySQLConverter.</tt></dd></dl>
+
+<dl><dt><a name="MySQLConnection-set_login"><strong>set_login</strong></a>(self, username=None, password=None)</dt><dd><tt>Set&nbsp;login&nbsp;information&nbsp;for&nbsp;MySQL<br>
+&nbsp;<br>
+Set&nbsp;the&nbsp;username&nbsp;and/or&nbsp;password&nbsp;for&nbsp;the&nbsp;user&nbsp;connecting&nbsp;to<br>
+the&nbsp;MySQL&nbsp;Server.</tt></dd></dl>
+
+<dl><dt><a name="MySQLConnection-set_unicode"><strong>set_unicode</strong></a>(self, value=True)</dt><dd><tt>Toggle&nbsp;unicode&nbsp;mode<br>
+&nbsp;<br>
+Set&nbsp;whether&nbsp;we&nbsp;return&nbsp;string&nbsp;fields&nbsp;as&nbsp;unicode&nbsp;or&nbsp;not.<br>
+Default&nbsp;is&nbsp;True.</tt></dd></dl>
+
+<dl><dt><a name="MySQLConnection-start_transaction"><strong>start_transaction</strong></a>(self, consistent_snapshot=False, isolation_level=None, readonly=None)</dt><dd><tt>Start&nbsp;a&nbsp;transaction<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;explicitly&nbsp;starts&nbsp;a&nbsp;transaction&nbsp;sending&nbsp;the<br>
+START&nbsp;TRANSACTION&nbsp;statement&nbsp;to&nbsp;the&nbsp;MySQL&nbsp;server.&nbsp;You&nbsp;can&nbsp;optionally<br>
+set&nbsp;whether&nbsp;there&nbsp;should&nbsp;be&nbsp;a&nbsp;consistent&nbsp;snapshot,&nbsp;which<br>
+isolation&nbsp;level&nbsp;you&nbsp;need&nbsp;or&nbsp;which&nbsp;access&nbsp;mode&nbsp;i.e.&nbsp;READ&nbsp;ONLY&nbsp;or<br>
+READ&nbsp;WRITE.<br>
+&nbsp;<br>
+For&nbsp;example,&nbsp;to&nbsp;start&nbsp;a&nbsp;transaction&nbsp;with&nbsp;isolation&nbsp;level&nbsp;SERIALIZABLE,<br>
+you&nbsp;would&nbsp;do&nbsp;the&nbsp;following:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;cnx&nbsp;=&nbsp;mysql.connector.<a href="#MySQLConnection-connect">connect</a>(..)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;cnx.<a href="#MySQLConnection-start_transaction">start_transaction</a>(isolation_level='SERIALIZABLE')<br>
+&nbsp;<br>
+Raises&nbsp;<a href="#ProgrammingError">ProgrammingError</a>&nbsp;when&nbsp;a&nbsp;transaction&nbsp;is&nbsp;already&nbsp;in&nbsp;progress<br>
+and&nbsp;when&nbsp;ValueError&nbsp;when&nbsp;isolation_level&nbsp;specifies&nbsp;an&nbsp;Unknown<br>
+level.</tt></dd></dl>
+
+<hr>
+Readonly properties inherited from <a href="mysql.connector.abstracts.html#MySQLConnectionAbstract">mysql.connector.abstracts.MySQLConnectionAbstract</a>:<br>
+<dl><dt><strong>can_consume_results</strong></dt>
+<dd><tt>Returns&nbsp;whether&nbsp;to&nbsp;consume&nbsp;results</tt></dd>
+</dl>
+<dl><dt><strong>charset</strong></dt>
+<dd><tt>Returns&nbsp;the&nbsp;character&nbsp;set&nbsp;for&nbsp;current&nbsp;connection<br>
+&nbsp;<br>
+This&nbsp;property&nbsp;returns&nbsp;the&nbsp;character&nbsp;set&nbsp;name&nbsp;of&nbsp;the&nbsp;current&nbsp;connection.<br>
+The&nbsp;server&nbsp;is&nbsp;queried&nbsp;when&nbsp;the&nbsp;connection&nbsp;is&nbsp;active.&nbsp;If&nbsp;not&nbsp;connected,<br>
+the&nbsp;configured&nbsp;character&nbsp;set&nbsp;name&nbsp;is&nbsp;returned.<br>
+&nbsp;<br>
+Returns&nbsp;a&nbsp;string.</tt></dd>
+</dl>
+<dl><dt><strong>collation</strong></dt>
+<dd><tt>Returns&nbsp;the&nbsp;collation&nbsp;for&nbsp;current&nbsp;connection<br>
+&nbsp;<br>
+This&nbsp;property&nbsp;returns&nbsp;the&nbsp;collation&nbsp;name&nbsp;of&nbsp;the&nbsp;current&nbsp;connection.<br>
+The&nbsp;server&nbsp;is&nbsp;queried&nbsp;when&nbsp;the&nbsp;connection&nbsp;is&nbsp;active.&nbsp;If&nbsp;not&nbsp;connected,<br>
+the&nbsp;configured&nbsp;collation&nbsp;name&nbsp;is&nbsp;returned.<br>
+&nbsp;<br>
+Returns&nbsp;a&nbsp;string.</tt></dd>
+</dl>
+<dl><dt><strong>python_charset</strong></dt>
+<dd><tt>Returns&nbsp;the&nbsp;Python&nbsp;character&nbsp;set&nbsp;for&nbsp;current&nbsp;connection<br>
+&nbsp;<br>
+This&nbsp;property&nbsp;returns&nbsp;the&nbsp;character&nbsp;set&nbsp;name&nbsp;of&nbsp;the&nbsp;current&nbsp;connection.<br>
+Note&nbsp;that,&nbsp;unlike&nbsp;property&nbsp;charset,&nbsp;this&nbsp;checks&nbsp;if&nbsp;the&nbsp;previously&nbsp;set<br>
+character&nbsp;set&nbsp;is&nbsp;supported&nbsp;by&nbsp;Python&nbsp;and&nbsp;if&nbsp;not,&nbsp;it&nbsp;returns&nbsp;the<br>
+equivalent&nbsp;character&nbsp;set&nbsp;that&nbsp;Python&nbsp;supports.<br>
+&nbsp;<br>
+Returns&nbsp;a&nbsp;string.</tt></dd>
+</dl>
+<dl><dt><strong>server_host</strong></dt>
+<dd><tt>MySQL&nbsp;server&nbsp;IP&nbsp;address&nbsp;or&nbsp;name</tt></dd>
+</dl>
+<dl><dt><strong>server_port</strong></dt>
+<dd><tt>MySQL&nbsp;server&nbsp;TCP/IP&nbsp;port</tt></dd>
+</dl>
+<dl><dt><strong>unix_socket</strong></dt>
+<dd><tt>MySQL&nbsp;Unix&nbsp;socket&nbsp;file&nbsp;location</tt></dd>
+</dl>
+<dl><dt><strong>user</strong></dt>
+<dd><tt>User&nbsp;used&nbsp;while&nbsp;connecting&nbsp;to&nbsp;MySQL</tt></dd>
+</dl>
+<hr>
+Data descriptors inherited from <a href="mysql.connector.abstracts.html#MySQLConnectionAbstract">mysql.connector.abstracts.MySQLConnectionAbstract</a>:<br>
+<dl><dt><strong>autocommit</strong></dt>
+<dd><tt>Get&nbsp;whether&nbsp;autocommit&nbsp;is&nbsp;on&nbsp;or&nbsp;off</tt></dd>
+</dl>
+<dl><dt><strong>get_warnings</strong></dt>
+<dd><tt>Get&nbsp;whether&nbsp;this&nbsp;connection&nbsp;retrieves&nbsp;warnings&nbsp;automatically<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;returns&nbsp;whether&nbsp;this&nbsp;connection&nbsp;retrieves&nbsp;warnings<br>
+automatically.<br>
+&nbsp;<br>
+Returns&nbsp;True,&nbsp;or&nbsp;False&nbsp;when&nbsp;warnings&nbsp;are&nbsp;not&nbsp;retrieved.</tt></dd>
+</dl>
+<dl><dt><strong>raise_on_warnings</strong></dt>
+<dd><tt>Get&nbsp;whether&nbsp;this&nbsp;connection&nbsp;raises&nbsp;an&nbsp;error&nbsp;on&nbsp;warnings<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;returns&nbsp;whether&nbsp;this&nbsp;connection&nbsp;will&nbsp;raise&nbsp;errors&nbsp;when<br>
+MySQL&nbsp;reports&nbsp;warnings.<br>
+&nbsp;<br>
+Returns&nbsp;True&nbsp;or&nbsp;False.</tt></dd>
+</dl>
+<dl><dt><strong>sql_mode</strong></dt>
+<dd><tt>Get&nbsp;the&nbsp;SQL&nbsp;mode</tt></dd>
+</dl>
+<dl><dt><strong>time_zone</strong></dt>
+<dd><tt>Get&nbsp;the&nbsp;current&nbsp;time&nbsp;zone</tt></dd>
+</dl>
+<dl><dt><strong>unread_result</strong></dt>
+<dd><tt>Get&nbsp;whether&nbsp;there&nbsp;is&nbsp;an&nbsp;unread&nbsp;result<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;is&nbsp;used&nbsp;by&nbsp;cursors&nbsp;to&nbsp;check&nbsp;whether&nbsp;another&nbsp;cursor&nbsp;still<br>
+needs&nbsp;to&nbsp;retrieve&nbsp;its&nbsp;result&nbsp;set.<br>
+&nbsp;<br>
+Returns&nbsp;True,&nbsp;or&nbsp;False&nbsp;when&nbsp;there&nbsp;is&nbsp;no&nbsp;unread&nbsp;result.</tt></dd>
+</dl>
+<hr>
+Data descriptors inherited from mysql.connector.abstracts.MySQLConnectionAbstract:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="NotSupportedError">class <strong>NotSupportedError</strong></a>(<a href="mysql.connector.errors.html#DatabaseError">DatabaseError</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#NotSupportedError">NotSupportedError</a>(msg=None,&nbsp;errno=None,&nbsp;values=None,&nbsp;sqlstate=None)<br>
+&nbsp;<br>
+<a href="builtins.html#Exception">Exception</a>&nbsp;for&nbsp;errors&nbsp;when&nbsp;an&nbsp;unsupported&nbsp;database&nbsp;feature&nbsp;was&nbsp;used<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="mysql.connector.errors.html#NotSupportedError">NotSupportedError</a></dd>
+<dd><a href="mysql.connector.errors.html#DatabaseError">DatabaseError</a></dd>
+<dd><a href="mysql.connector.errors.html#Error">Error</a></dd>
+<dd><a href="builtins.html#Exception">builtins.Exception</a></dd>
+<dd><a href="builtins.html#BaseException">builtins.BaseException</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods inherited from <a href="mysql.connector.errors.html#Error">Error</a>:<br>
+<dl><dt><a name="NotSupportedError-__init__"><strong>__init__</strong></a>(self, msg=None, errno=None, values=None, sqlstate=None)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="NotSupportedError-__str__"><strong>__str__</strong></a>(self)</dt><dd><tt>Return&nbsp;str(self).</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="mysql.connector.errors.html#Error">Error</a>:<br>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Static methods inherited from <a href="builtins.html#Exception">builtins.Exception</a>:<br>
+<dl><dt><a name="NotSupportedError-__new__"><strong>__new__</strong></a>(*args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;<a href="builtins.html#object">object</a>.&nbsp;&nbsp;See&nbsp;help(type)&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="builtins.html#BaseException">builtins.BaseException</a>:<br>
+<dl><dt><a name="NotSupportedError-__delattr__"><strong>__delattr__</strong></a>(self, name, /)</dt><dd><tt>Implement&nbsp;delattr(self,&nbsp;name).</tt></dd></dl>
+
+<dl><dt><a name="NotSupportedError-__getattribute__"><strong>__getattribute__</strong></a>(self, name, /)</dt><dd><tt>Return&nbsp;getattr(self,&nbsp;name).</tt></dd></dl>
+
+<dl><dt><a name="NotSupportedError-__reduce__"><strong>__reduce__</strong></a>(...)</dt><dd><tt>Helper&nbsp;for&nbsp;pickle.</tt></dd></dl>
+
+<dl><dt><a name="NotSupportedError-__repr__"><strong>__repr__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><a name="NotSupportedError-__setattr__"><strong>__setattr__</strong></a>(self, name, value, /)</dt><dd><tt>Implement&nbsp;setattr(self,&nbsp;name,&nbsp;value).</tt></dd></dl>
+
+<dl><dt><a name="NotSupportedError-__setstate__"><strong>__setstate__</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="NotSupportedError-with_traceback"><strong>with_traceback</strong></a>(...)</dt><dd><tt><a href="builtins.html#Exception">Exception</a>.<a href="#NotSupportedError-with_traceback">with_traceback</a>(tb)&nbsp;--<br>
+set&nbsp;self.<strong>__traceback__</strong>&nbsp;to&nbsp;tb&nbsp;and&nbsp;return&nbsp;self.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="builtins.html#BaseException">builtins.BaseException</a>:<br>
+<dl><dt><strong>__cause__</strong></dt>
+<dd><tt>exception&nbsp;cause</tt></dd>
+</dl>
+<dl><dt><strong>__context__</strong></dt>
+<dd><tt>exception&nbsp;context</tt></dd>
+</dl>
+<dl><dt><strong>__dict__</strong></dt>
+</dl>
+<dl><dt><strong>__suppress_context__</strong></dt>
+</dl>
+<dl><dt><strong>__traceback__</strong></dt>
+</dl>
+<dl><dt><strong>args</strong></dt>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="OperationalError">class <strong>OperationalError</strong></a>(<a href="mysql.connector.errors.html#DatabaseError">DatabaseError</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#OperationalError">OperationalError</a>(msg=None,&nbsp;errno=None,&nbsp;values=None,&nbsp;sqlstate=None)<br>
+&nbsp;<br>
+<a href="builtins.html#Exception">Exception</a>&nbsp;for&nbsp;errors&nbsp;related&nbsp;to&nbsp;the&nbsp;database's&nbsp;operation<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="mysql.connector.errors.html#OperationalError">OperationalError</a></dd>
+<dd><a href="mysql.connector.errors.html#DatabaseError">DatabaseError</a></dd>
+<dd><a href="mysql.connector.errors.html#Error">Error</a></dd>
+<dd><a href="builtins.html#Exception">builtins.Exception</a></dd>
+<dd><a href="builtins.html#BaseException">builtins.BaseException</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods inherited from <a href="mysql.connector.errors.html#Error">Error</a>:<br>
+<dl><dt><a name="OperationalError-__init__"><strong>__init__</strong></a>(self, msg=None, errno=None, values=None, sqlstate=None)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="OperationalError-__str__"><strong>__str__</strong></a>(self)</dt><dd><tt>Return&nbsp;str(self).</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="mysql.connector.errors.html#Error">Error</a>:<br>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Static methods inherited from <a href="builtins.html#Exception">builtins.Exception</a>:<br>
+<dl><dt><a name="OperationalError-__new__"><strong>__new__</strong></a>(*args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;<a href="builtins.html#object">object</a>.&nbsp;&nbsp;See&nbsp;help(type)&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="builtins.html#BaseException">builtins.BaseException</a>:<br>
+<dl><dt><a name="OperationalError-__delattr__"><strong>__delattr__</strong></a>(self, name, /)</dt><dd><tt>Implement&nbsp;delattr(self,&nbsp;name).</tt></dd></dl>
+
+<dl><dt><a name="OperationalError-__getattribute__"><strong>__getattribute__</strong></a>(self, name, /)</dt><dd><tt>Return&nbsp;getattr(self,&nbsp;name).</tt></dd></dl>
+
+<dl><dt><a name="OperationalError-__reduce__"><strong>__reduce__</strong></a>(...)</dt><dd><tt>Helper&nbsp;for&nbsp;pickle.</tt></dd></dl>
+
+<dl><dt><a name="OperationalError-__repr__"><strong>__repr__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><a name="OperationalError-__setattr__"><strong>__setattr__</strong></a>(self, name, value, /)</dt><dd><tt>Implement&nbsp;setattr(self,&nbsp;name,&nbsp;value).</tt></dd></dl>
+
+<dl><dt><a name="OperationalError-__setstate__"><strong>__setstate__</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="OperationalError-with_traceback"><strong>with_traceback</strong></a>(...)</dt><dd><tt><a href="builtins.html#Exception">Exception</a>.<a href="#OperationalError-with_traceback">with_traceback</a>(tb)&nbsp;--<br>
+set&nbsp;self.<strong>__traceback__</strong>&nbsp;to&nbsp;tb&nbsp;and&nbsp;return&nbsp;self.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="builtins.html#BaseException">builtins.BaseException</a>:<br>
+<dl><dt><strong>__cause__</strong></dt>
+<dd><tt>exception&nbsp;cause</tt></dd>
+</dl>
+<dl><dt><strong>__context__</strong></dt>
+<dd><tt>exception&nbsp;context</tt></dd>
+</dl>
+<dl><dt><strong>__dict__</strong></dt>
+</dl>
+<dl><dt><strong>__suppress_context__</strong></dt>
+</dl>
+<dl><dt><strong>__traceback__</strong></dt>
+</dl>
+<dl><dt><strong>args</strong></dt>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="ProgrammingError">class <strong>ProgrammingError</strong></a>(<a href="mysql.connector.errors.html#DatabaseError">DatabaseError</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#ProgrammingError">ProgrammingError</a>(msg=None,&nbsp;errno=None,&nbsp;values=None,&nbsp;sqlstate=None)<br>
+&nbsp;<br>
+<a href="builtins.html#Exception">Exception</a>&nbsp;for&nbsp;errors&nbsp;programming&nbsp;errors<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="mysql.connector.errors.html#ProgrammingError">ProgrammingError</a></dd>
+<dd><a href="mysql.connector.errors.html#DatabaseError">DatabaseError</a></dd>
+<dd><a href="mysql.connector.errors.html#Error">Error</a></dd>
+<dd><a href="builtins.html#Exception">builtins.Exception</a></dd>
+<dd><a href="builtins.html#BaseException">builtins.BaseException</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods inherited from <a href="mysql.connector.errors.html#Error">Error</a>:<br>
+<dl><dt><a name="ProgrammingError-__init__"><strong>__init__</strong></a>(self, msg=None, errno=None, values=None, sqlstate=None)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="ProgrammingError-__str__"><strong>__str__</strong></a>(self)</dt><dd><tt>Return&nbsp;str(self).</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="mysql.connector.errors.html#Error">Error</a>:<br>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Static methods inherited from <a href="builtins.html#Exception">builtins.Exception</a>:<br>
+<dl><dt><a name="ProgrammingError-__new__"><strong>__new__</strong></a>(*args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;<a href="builtins.html#object">object</a>.&nbsp;&nbsp;See&nbsp;help(type)&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="builtins.html#BaseException">builtins.BaseException</a>:<br>
+<dl><dt><a name="ProgrammingError-__delattr__"><strong>__delattr__</strong></a>(self, name, /)</dt><dd><tt>Implement&nbsp;delattr(self,&nbsp;name).</tt></dd></dl>
+
+<dl><dt><a name="ProgrammingError-__getattribute__"><strong>__getattribute__</strong></a>(self, name, /)</dt><dd><tt>Return&nbsp;getattr(self,&nbsp;name).</tt></dd></dl>
+
+<dl><dt><a name="ProgrammingError-__reduce__"><strong>__reduce__</strong></a>(...)</dt><dd><tt>Helper&nbsp;for&nbsp;pickle.</tt></dd></dl>
+
+<dl><dt><a name="ProgrammingError-__repr__"><strong>__repr__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><a name="ProgrammingError-__setattr__"><strong>__setattr__</strong></a>(self, name, value, /)</dt><dd><tt>Implement&nbsp;setattr(self,&nbsp;name,&nbsp;value).</tt></dd></dl>
+
+<dl><dt><a name="ProgrammingError-__setstate__"><strong>__setstate__</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ProgrammingError-with_traceback"><strong>with_traceback</strong></a>(...)</dt><dd><tt><a href="builtins.html#Exception">Exception</a>.<a href="#ProgrammingError-with_traceback">with_traceback</a>(tb)&nbsp;--<br>
+set&nbsp;self.<strong>__traceback__</strong>&nbsp;to&nbsp;tb&nbsp;and&nbsp;return&nbsp;self.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="builtins.html#BaseException">builtins.BaseException</a>:<br>
+<dl><dt><strong>__cause__</strong></dt>
+<dd><tt>exception&nbsp;cause</tt></dd>
+</dl>
+<dl><dt><strong>__context__</strong></dt>
+<dd><tt>exception&nbsp;context</tt></dd>
+</dl>
+<dl><dt><strong>__dict__</strong></dt>
+</dl>
+<dl><dt><strong>__suppress_context__</strong></dt>
+</dl>
+<dl><dt><strong>__traceback__</strong></dt>
+</dl>
+<dl><dt><strong>args</strong></dt>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="RefreshOption">class <strong>RefreshOption</strong></a>(RefreshOption, <a href="mysql.connector.constants.html#_Constants">_Constants</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>MySQL&nbsp;Refresh&nbsp;command&nbsp;options<br>
+&nbsp;<br>
+Options&nbsp;used&nbsp;when&nbsp;sending&nbsp;the&nbsp;COM_REFRESH&nbsp;server&nbsp;command.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="mysql.connector.constants.html#RefreshOption">RefreshOption</a></dd>
+<dd>RefreshOption</dd>
+<dd><a href="mysql.connector.constants.html#_Constants">_Constants</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>GRANT</strong> = 1</dl>
+
+<dl><dt><strong>HOST</strong> = 8</dl>
+
+<dl><dt><strong>LOG</strong> = 2</dl>
+
+<dl><dt><strong>REPLICA</strong> = 64</dl>
+
+<dl><dt><strong>STATUS</strong> = 16</dl>
+
+<dl><dt><strong>TABLES</strong> = 4</dl>
+
+<dl><dt><strong>THREADS</strong> = 32</dl>
+
+<dl><dt><strong>desc</strong> = {'GRANT': (1, 'Refresh grant tables'), 'HOST': (8, 'Flush host cache'), 'LOG': (2, 'Start on new log file'), 'REPLICA': (64, 'Reset source info and restart replica thread'), 'SLAVE': (64, 'Deprecated option; use REPLICA instead.'), 'STATUS': (16, 'Flush status variables'), 'TABLES': (4, 'close all tables'), 'THREADS': (32, 'Flush thread cache')}</dl>
+
+<hr>
+Class methods inherited from <a href="mysql.connector.constants.html#_Constants">_Constants</a>:<br>
+<dl><dt><a name="RefreshOption-get_desc"><strong>get_desc</strong></a>(name)<font color="#909090"><font face="helvetica, arial"> from <a href="mysql.connector.constants.html#RefreshOption_meta">mysql.connector.constants.RefreshOption_meta</a></font></font></dt><dd><tt>Get&nbsp;description&nbsp;of&nbsp;given&nbsp;constant</tt></dd></dl>
+
+<dl><dt><a name="RefreshOption-get_full_info"><strong>get_full_info</strong></a>()<font color="#909090"><font face="helvetica, arial"> from <a href="mysql.connector.constants.html#RefreshOption_meta">mysql.connector.constants.RefreshOption_meta</a></font></font></dt><dd><tt>get&nbsp;full&nbsp;information&nbsp;about&nbsp;given&nbsp;constant</tt></dd></dl>
+
+<dl><dt><a name="RefreshOption-get_info"><strong>get_info</strong></a>(setid)<font color="#909090"><font face="helvetica, arial"> from <a href="mysql.connector.constants.html#RefreshOption_meta">mysql.connector.constants.RefreshOption_meta</a></font></font></dt><dd><tt>Get&nbsp;information&nbsp;about&nbsp;given&nbsp;constant</tt></dd></dl>
+
+<hr>
+Static methods inherited from <a href="mysql.connector.constants.html#_Constants">_Constants</a>:<br>
+<dl><dt><a name="RefreshOption-__new__"><strong>__new__</strong></a>(cls)</dt><dd><tt>Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;<a href="builtins.html#object">object</a>.&nbsp;&nbsp;See&nbsp;help(type)&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="mysql.connector.constants.html#_Constants">_Constants</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="mysql.connector.constants.html#_Constants">_Constants</a>:<br>
+<dl><dt><strong>prefix</strong> = ''</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><strong>Time</strong> = <a name="Time">class time</a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>time([hour[,&nbsp;minute[,&nbsp;second[,&nbsp;microsecond[,&nbsp;tzinfo]]]]])&nbsp;--&gt;&nbsp;a&nbsp;time&nbsp;<a href="builtins.html#object">object</a><br>
+&nbsp;<br>
+All&nbsp;arguments&nbsp;are&nbsp;optional.&nbsp;tzinfo&nbsp;may&nbsp;be&nbsp;None,&nbsp;or&nbsp;an&nbsp;instance&nbsp;of<br>
+a&nbsp;tzinfo&nbsp;subclass.&nbsp;The&nbsp;remaining&nbsp;arguments&nbsp;may&nbsp;be&nbsp;ints.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="time-__eq__"><strong>__eq__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self==value.</tt></dd></dl>
+
+<dl><dt><a name="time-__format__"><strong>__format__</strong></a>(...)</dt><dd><tt>Formats&nbsp;self&nbsp;with&nbsp;strftime.</tt></dd></dl>
+
+<dl><dt><a name="time-__ge__"><strong>__ge__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self&gt;=value.</tt></dd></dl>
+
+<dl><dt><a name="time-__getattribute__"><strong>__getattribute__</strong></a>(self, name, /)</dt><dd><tt>Return&nbsp;getattr(self,&nbsp;name).</tt></dd></dl>
+
+<dl><dt><a name="time-__gt__"><strong>__gt__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self&gt;value.</tt></dd></dl>
+
+<dl><dt><a name="time-__hash__"><strong>__hash__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;hash(self).</tt></dd></dl>
+
+<dl><dt><a name="time-__le__"><strong>__le__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self&lt;=value.</tt></dd></dl>
+
+<dl><dt><a name="time-__lt__"><strong>__lt__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self&lt;value.</tt></dd></dl>
+
+<dl><dt><a name="time-__ne__"><strong>__ne__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self!=value.</tt></dd></dl>
+
+<dl><dt><a name="time-__reduce__"><strong>__reduce__</strong></a>(...)</dt><dd><tt><a href="#Time-__reduce__">__reduce__</a>()&nbsp;-&gt;&nbsp;(cls,&nbsp;state)</tt></dd></dl>
+
+<dl><dt><a name="time-__reduce_ex__"><strong>__reduce_ex__</strong></a>(...)</dt><dd><tt><a href="#Time-__reduce_ex__">__reduce_ex__</a>(proto)&nbsp;-&gt;&nbsp;(cls,&nbsp;state)</tt></dd></dl>
+
+<dl><dt><a name="time-__repr__"><strong>__repr__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><a name="time-__str__"><strong>__str__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;str(self).</tt></dd></dl>
+
+<dl><dt><a name="time-dst"><strong>dst</strong></a>(...)</dt><dd><tt>Return&nbsp;self.<strong>tzinfo</strong>.<a href="#Time-dst">dst</a>(self).</tt></dd></dl>
+
+<dl><dt><a name="time-isoformat"><strong>isoformat</strong></a>(...)</dt><dd><tt>Return&nbsp;string&nbsp;in&nbsp;ISO&nbsp;8601&nbsp;format,&nbsp;[HH[:MM[:SS[.mmm[uuu]]]]][+HH:MM].<br>
+&nbsp;<br>
+The&nbsp;optional&nbsp;argument&nbsp;timespec&nbsp;specifies&nbsp;the&nbsp;number&nbsp;of&nbsp;additional&nbsp;terms<br>
+of&nbsp;the&nbsp;time&nbsp;to&nbsp;include.&nbsp;Valid&nbsp;options&nbsp;are&nbsp;'auto',&nbsp;'hours',&nbsp;'minutes',<br>
+'seconds',&nbsp;'milliseconds'&nbsp;and&nbsp;'microseconds'.</tt></dd></dl>
+
+<dl><dt><a name="time-replace"><strong>replace</strong></a>(...)</dt><dd><tt>Return&nbsp;time&nbsp;with&nbsp;new&nbsp;specified&nbsp;fields.</tt></dd></dl>
+
+<dl><dt><a name="time-strftime"><strong>strftime</strong></a>(...)</dt><dd><tt>format&nbsp;-&gt;&nbsp;<a href="#Time-strftime">strftime</a>()&nbsp;style&nbsp;string.</tt></dd></dl>
+
+<dl><dt><a name="time-tzname"><strong>tzname</strong></a>(...)</dt><dd><tt>Return&nbsp;self.<strong>tzinfo</strong>.<a href="#Time-tzname">tzname</a>(self).</tt></dd></dl>
+
+<dl><dt><a name="time-utcoffset"><strong>utcoffset</strong></a>(...)</dt><dd><tt>Return&nbsp;self.<strong>tzinfo</strong>.<a href="#Time-utcoffset">utcoffset</a>(self).</tt></dd></dl>
+
+<hr>
+Class methods defined here:<br>
+<dl><dt><a name="time-fromisoformat"><strong>fromisoformat</strong></a>(...)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>string&nbsp;-&gt;&nbsp;time&nbsp;from&nbsp;time.<a href="#Time-isoformat">isoformat</a>()&nbsp;output</tt></dd></dl>
+
+<hr>
+Static methods defined here:<br>
+<dl><dt><a name="time-__new__"><strong>__new__</strong></a>(*args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;<a href="builtins.html#object">object</a>.&nbsp;&nbsp;See&nbsp;help(type)&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>fold</strong></dt>
+</dl>
+<dl><dt><strong>hour</strong></dt>
+</dl>
+<dl><dt><strong>microsecond</strong></dt>
+</dl>
+<dl><dt><strong>minute</strong></dt>
+</dl>
+<dl><dt><strong>second</strong></dt>
+</dl>
+<dl><dt><strong>tzinfo</strong></dt>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>max</strong> = datetime.time(23, 59, 59, 999999)</dl>
+
+<dl><dt><strong>min</strong> = datetime.time(0, 0)</dl>
+
+<dl><dt><strong>resolution</strong> = datetime.timedelta(microseconds=1)</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><strong>Timestamp</strong> = <a name="Timestamp">class datetime</a>(<a href="datetime.html#date">date</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>datetime(year,&nbsp;month,&nbsp;day[,&nbsp;hour[,&nbsp;minute[,&nbsp;second[,&nbsp;microsecond[,tzinfo]]]]])<br>
+&nbsp;<br>
+The&nbsp;year,&nbsp;month&nbsp;and&nbsp;day&nbsp;arguments&nbsp;are&nbsp;required.&nbsp;tzinfo&nbsp;may&nbsp;be&nbsp;None,&nbsp;or&nbsp;an<br>
+instance&nbsp;of&nbsp;a&nbsp;tzinfo&nbsp;subclass.&nbsp;The&nbsp;remaining&nbsp;arguments&nbsp;may&nbsp;be&nbsp;ints.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="datetime.html#datetime">datetime</a></dd>
+<dd><a href="datetime.html#date">date</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="datetime-__add__"><strong>__add__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self+value.</tt></dd></dl>
+
+<dl><dt><a name="datetime-__eq__"><strong>__eq__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self==value.</tt></dd></dl>
+
+<dl><dt><a name="datetime-__ge__"><strong>__ge__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self&gt;=value.</tt></dd></dl>
+
+<dl><dt><a name="datetime-__getattribute__"><strong>__getattribute__</strong></a>(self, name, /)</dt><dd><tt>Return&nbsp;getattr(self,&nbsp;name).</tt></dd></dl>
+
+<dl><dt><a name="datetime-__gt__"><strong>__gt__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self&gt;value.</tt></dd></dl>
+
+<dl><dt><a name="datetime-__hash__"><strong>__hash__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;hash(self).</tt></dd></dl>
+
+<dl><dt><a name="datetime-__le__"><strong>__le__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self&lt;=value.</tt></dd></dl>
+
+<dl><dt><a name="datetime-__lt__"><strong>__lt__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self&lt;value.</tt></dd></dl>
+
+<dl><dt><a name="datetime-__ne__"><strong>__ne__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self!=value.</tt></dd></dl>
+
+<dl><dt><a name="datetime-__radd__"><strong>__radd__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;value+self.</tt></dd></dl>
+
+<dl><dt><a name="datetime-__reduce__"><strong>__reduce__</strong></a>(...)</dt><dd><tt><a href="#Timestamp-__reduce__">__reduce__</a>()&nbsp;-&gt;&nbsp;(cls,&nbsp;state)</tt></dd></dl>
+
+<dl><dt><a name="datetime-__reduce_ex__"><strong>__reduce_ex__</strong></a>(...)</dt><dd><tt><a href="#Timestamp-__reduce_ex__">__reduce_ex__</a>(proto)&nbsp;-&gt;&nbsp;(cls,&nbsp;state)</tt></dd></dl>
+
+<dl><dt><a name="datetime-__repr__"><strong>__repr__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><a name="datetime-__rsub__"><strong>__rsub__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;value-self.</tt></dd></dl>
+
+<dl><dt><a name="datetime-__str__"><strong>__str__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;str(self).</tt></dd></dl>
+
+<dl><dt><a name="datetime-__sub__"><strong>__sub__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self-value.</tt></dd></dl>
+
+<dl><dt><a name="datetime-astimezone"><strong>astimezone</strong></a>(...)</dt><dd><tt>tz&nbsp;-&gt;&nbsp;convert&nbsp;to&nbsp;local&nbsp;time&nbsp;in&nbsp;new&nbsp;timezone&nbsp;tz</tt></dd></dl>
+
+<dl><dt><a name="datetime-ctime"><strong>ctime</strong></a>(...)</dt><dd><tt>Return&nbsp;<a href="#Timestamp-ctime">ctime</a>()&nbsp;style&nbsp;string.</tt></dd></dl>
+
+<dl><dt><a name="datetime-date"><strong>date</strong></a>(...)</dt><dd><tt>Return&nbsp;<a href="datetime.html#date">date</a>&nbsp;<a href="builtins.html#object">object</a>&nbsp;with&nbsp;same&nbsp;year,&nbsp;month&nbsp;and&nbsp;day.</tt></dd></dl>
+
+<dl><dt><a name="datetime-dst"><strong>dst</strong></a>(...)</dt><dd><tt>Return&nbsp;self.<strong>tzinfo</strong>.<a href="#Timestamp-dst">dst</a>(self).</tt></dd></dl>
+
+<dl><dt><a name="datetime-isoformat"><strong>isoformat</strong></a>(...)</dt><dd><tt>[sep]&nbsp;-&gt;&nbsp;string&nbsp;in&nbsp;ISO&nbsp;8601&nbsp;format,&nbsp;YYYY-MM-DDT[HH[:MM[:SS[.mmm[uuu]]]]][+HH:MM].<br>
+sep&nbsp;is&nbsp;used&nbsp;to&nbsp;separate&nbsp;the&nbsp;year&nbsp;from&nbsp;the&nbsp;time,&nbsp;and&nbsp;defaults&nbsp;to&nbsp;'T'.<br>
+The&nbsp;optional&nbsp;argument&nbsp;timespec&nbsp;specifies&nbsp;the&nbsp;number&nbsp;of&nbsp;additional&nbsp;terms<br>
+of&nbsp;the&nbsp;time&nbsp;to&nbsp;include.&nbsp;Valid&nbsp;options&nbsp;are&nbsp;'auto',&nbsp;'hours',&nbsp;'minutes',<br>
+'seconds',&nbsp;'milliseconds'&nbsp;and&nbsp;'microseconds'.</tt></dd></dl>
+
+<dl><dt><a name="datetime-replace"><strong>replace</strong></a>(...)</dt><dd><tt>Return&nbsp;datetime&nbsp;with&nbsp;new&nbsp;specified&nbsp;fields.</tt></dd></dl>
+
+<dl><dt><a name="datetime-time"><strong>time</strong></a>(...)</dt><dd><tt>Return&nbsp;time&nbsp;<a href="builtins.html#object">object</a>&nbsp;with&nbsp;same&nbsp;time&nbsp;but&nbsp;with&nbsp;tzinfo=None.</tt></dd></dl>
+
+<dl><dt><a name="datetime-timestamp"><strong>timestamp</strong></a>(...)</dt><dd><tt>Return&nbsp;POSIX&nbsp;timestamp&nbsp;as&nbsp;float.</tt></dd></dl>
+
+<dl><dt><a name="datetime-timetuple"><strong>timetuple</strong></a>(...)</dt><dd><tt>Return&nbsp;time&nbsp;tuple,&nbsp;compatible&nbsp;with&nbsp;time.localtime().</tt></dd></dl>
+
+<dl><dt><a name="datetime-timetz"><strong>timetz</strong></a>(...)</dt><dd><tt>Return&nbsp;time&nbsp;<a href="builtins.html#object">object</a>&nbsp;with&nbsp;same&nbsp;time&nbsp;and&nbsp;tzinfo.</tt></dd></dl>
+
+<dl><dt><a name="datetime-tzname"><strong>tzname</strong></a>(...)</dt><dd><tt>Return&nbsp;self.<strong>tzinfo</strong>.<a href="#Timestamp-tzname">tzname</a>(self).</tt></dd></dl>
+
+<dl><dt><a name="datetime-utcoffset"><strong>utcoffset</strong></a>(...)</dt><dd><tt>Return&nbsp;self.<strong>tzinfo</strong>.<a href="#Timestamp-utcoffset">utcoffset</a>(self).</tt></dd></dl>
+
+<dl><dt><a name="datetime-utctimetuple"><strong>utctimetuple</strong></a>(...)</dt><dd><tt>Return&nbsp;UTC&nbsp;time&nbsp;tuple,&nbsp;compatible&nbsp;with&nbsp;time.localtime().</tt></dd></dl>
+
+<hr>
+Class methods defined here:<br>
+<dl><dt><a name="datetime-combine"><strong>combine</strong></a>(...)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt><a href="datetime.html#date">date</a>,&nbsp;time&nbsp;-&gt;&nbsp;datetime&nbsp;with&nbsp;same&nbsp;<a href="datetime.html#date">date</a>&nbsp;and&nbsp;time&nbsp;fields</tt></dd></dl>
+
+<dl><dt><a name="datetime-fromisoformat"><strong>fromisoformat</strong></a>(...)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>string&nbsp;-&gt;&nbsp;datetime&nbsp;from&nbsp;datetime.<a href="#Timestamp-isoformat">isoformat</a>()&nbsp;output</tt></dd></dl>
+
+<dl><dt><a name="datetime-fromtimestamp"><strong>fromtimestamp</strong></a>(...)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>timestamp[,&nbsp;tz]&nbsp;-&gt;&nbsp;tz's&nbsp;local&nbsp;time&nbsp;from&nbsp;POSIX&nbsp;timestamp.</tt></dd></dl>
+
+<dl><dt><a name="datetime-now"><strong>now</strong></a>(tz=None)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Returns&nbsp;new&nbsp;datetime&nbsp;<a href="builtins.html#object">object</a>&nbsp;representing&nbsp;current&nbsp;time&nbsp;local&nbsp;to&nbsp;tz.<br>
+&nbsp;<br>
+&nbsp;&nbsp;tz<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Timezone&nbsp;<a href="builtins.html#object">object</a>.<br>
+&nbsp;<br>
+If&nbsp;no&nbsp;tz&nbsp;is&nbsp;specified,&nbsp;uses&nbsp;local&nbsp;timezone.</tt></dd></dl>
+
+<dl><dt><a name="datetime-strptime"><strong>strptime</strong></a>(...)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>string,&nbsp;format&nbsp;-&gt;&nbsp;new&nbsp;datetime&nbsp;parsed&nbsp;from&nbsp;a&nbsp;string&nbsp;(like&nbsp;time.<a href="#Timestamp-strptime">strptime</a>()).</tt></dd></dl>
+
+<dl><dt><a name="datetime-utcfromtimestamp"><strong>utcfromtimestamp</strong></a>(...)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Construct&nbsp;a&nbsp;naive&nbsp;UTC&nbsp;datetime&nbsp;from&nbsp;a&nbsp;POSIX&nbsp;timestamp.</tt></dd></dl>
+
+<dl><dt><a name="datetime-utcnow"><strong>utcnow</strong></a>(...)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Return&nbsp;a&nbsp;new&nbsp;datetime&nbsp;representing&nbsp;UTC&nbsp;day&nbsp;and&nbsp;time.</tt></dd></dl>
+
+<hr>
+Static methods defined here:<br>
+<dl><dt><a name="datetime-__new__"><strong>__new__</strong></a>(*args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;<a href="builtins.html#object">object</a>.&nbsp;&nbsp;See&nbsp;help(type)&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>fold</strong></dt>
+</dl>
+<dl><dt><strong>hour</strong></dt>
+</dl>
+<dl><dt><strong>microsecond</strong></dt>
+</dl>
+<dl><dt><strong>minute</strong></dt>
+</dl>
+<dl><dt><strong>second</strong></dt>
+</dl>
+<dl><dt><strong>tzinfo</strong></dt>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>max</strong> = datetime.datetime(9999, 12, 31, 23, 59, 59, 999999)</dl>
+
+<dl><dt><strong>min</strong> = datetime.datetime(1, 1, 1, 0, 0)</dl>
+
+<dl><dt><strong>resolution</strong> = datetime.timedelta(microseconds=1)</dl>
+
+<hr>
+Methods inherited from <a href="datetime.html#date">date</a>:<br>
+<dl><dt><a name="datetime-__format__"><strong>__format__</strong></a>(...)</dt><dd><tt>Formats&nbsp;self&nbsp;with&nbsp;strftime.</tt></dd></dl>
+
+<dl><dt><a name="datetime-isocalendar"><strong>isocalendar</strong></a>(...)</dt><dd><tt>Return&nbsp;a&nbsp;named&nbsp;tuple&nbsp;containing&nbsp;ISO&nbsp;year,&nbsp;week&nbsp;number,&nbsp;and&nbsp;weekday.</tt></dd></dl>
+
+<dl><dt><a name="datetime-isoweekday"><strong>isoweekday</strong></a>(...)</dt><dd><tt>Return&nbsp;the&nbsp;day&nbsp;of&nbsp;the&nbsp;week&nbsp;represented&nbsp;by&nbsp;the&nbsp;<a href="datetime.html#date">date</a>.<br>
+Monday&nbsp;==&nbsp;1&nbsp;...&nbsp;Sunday&nbsp;==&nbsp;7</tt></dd></dl>
+
+<dl><dt><a name="datetime-strftime"><strong>strftime</strong></a>(...)</dt><dd><tt>format&nbsp;-&gt;&nbsp;<a href="#Timestamp-strftime">strftime</a>()&nbsp;style&nbsp;string.</tt></dd></dl>
+
+<dl><dt><a name="datetime-toordinal"><strong>toordinal</strong></a>(...)</dt><dd><tt>Return&nbsp;proleptic&nbsp;Gregorian&nbsp;ordinal.&nbsp;&nbsp;January&nbsp;1&nbsp;of&nbsp;year&nbsp;1&nbsp;is&nbsp;day&nbsp;1.</tt></dd></dl>
+
+<dl><dt><a name="datetime-weekday"><strong>weekday</strong></a>(...)</dt><dd><tt>Return&nbsp;the&nbsp;day&nbsp;of&nbsp;the&nbsp;week&nbsp;represented&nbsp;by&nbsp;the&nbsp;<a href="datetime.html#date">date</a>.<br>
+Monday&nbsp;==&nbsp;0&nbsp;...&nbsp;Sunday&nbsp;==&nbsp;6</tt></dd></dl>
+
+<hr>
+Class methods inherited from <a href="datetime.html#date">date</a>:<br>
+<dl><dt><a name="datetime-fromisocalendar"><strong>fromisocalendar</strong></a>(...)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>int,&nbsp;int,&nbsp;int&nbsp;-&gt;&nbsp;Construct&nbsp;a&nbsp;<a href="datetime.html#date">date</a>&nbsp;from&nbsp;the&nbsp;ISO&nbsp;year,&nbsp;week&nbsp;number&nbsp;and&nbsp;weekday.<br>
+&nbsp;<br>
+This&nbsp;is&nbsp;the&nbsp;inverse&nbsp;of&nbsp;the&nbsp;<a href="datetime.html#date">date</a>.<a href="#Timestamp-isocalendar">isocalendar</a>()&nbsp;function</tt></dd></dl>
+
+<dl><dt><a name="datetime-fromordinal"><strong>fromordinal</strong></a>(...)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>int&nbsp;-&gt;&nbsp;<a href="datetime.html#date">date</a>&nbsp;corresponding&nbsp;to&nbsp;a&nbsp;proleptic&nbsp;Gregorian&nbsp;ordinal.</tt></dd></dl>
+
+<dl><dt><a name="datetime-today"><strong>today</strong></a>(...)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Current&nbsp;<a href="datetime.html#date">date</a>&nbsp;or&nbsp;datetime:&nbsp;&nbsp;same&nbsp;as&nbsp;self.<strong>__class__</strong>.<a href="#Timestamp-fromtimestamp">fromtimestamp</a>(time.<a href="#Timestamp-time">time</a>()).</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="datetime.html#date">date</a>:<br>
+<dl><dt><strong>day</strong></dt>
+</dl>
+<dl><dt><strong>month</strong></dt>
+</dl>
+<dl><dt><strong>year</strong></dt>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Warning">class <strong>Warning</strong></a>(<a href="builtins.html#Exception">builtins.Exception</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="builtins.html#Exception">Exception</a>&nbsp;for&nbsp;important&nbsp;warnings<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="mysql.connector.errors.html#Warning">Warning</a></dd>
+<dd><a href="builtins.html#Exception">builtins.Exception</a></dd>
+<dd><a href="builtins.html#BaseException">builtins.BaseException</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Methods inherited from <a href="builtins.html#Exception">builtins.Exception</a>:<br>
+<dl><dt><a name="Warning-__init__"><strong>__init__</strong></a>(self, /, *args, **kwargs)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<hr>
+Static methods inherited from <a href="builtins.html#Exception">builtins.Exception</a>:<br>
+<dl><dt><a name="Warning-__new__"><strong>__new__</strong></a>(*args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;<a href="builtins.html#object">object</a>.&nbsp;&nbsp;See&nbsp;help(type)&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="builtins.html#BaseException">builtins.BaseException</a>:<br>
+<dl><dt><a name="Warning-__delattr__"><strong>__delattr__</strong></a>(self, name, /)</dt><dd><tt>Implement&nbsp;delattr(self,&nbsp;name).</tt></dd></dl>
+
+<dl><dt><a name="Warning-__getattribute__"><strong>__getattribute__</strong></a>(self, name, /)</dt><dd><tt>Return&nbsp;getattr(self,&nbsp;name).</tt></dd></dl>
+
+<dl><dt><a name="Warning-__reduce__"><strong>__reduce__</strong></a>(...)</dt><dd><tt>Helper&nbsp;for&nbsp;pickle.</tt></dd></dl>
+
+<dl><dt><a name="Warning-__repr__"><strong>__repr__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><a name="Warning-__setattr__"><strong>__setattr__</strong></a>(self, name, value, /)</dt><dd><tt>Implement&nbsp;setattr(self,&nbsp;name,&nbsp;value).</tt></dd></dl>
+
+<dl><dt><a name="Warning-__setstate__"><strong>__setstate__</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Warning-__str__"><strong>__str__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;str(self).</tt></dd></dl>
+
+<dl><dt><a name="Warning-with_traceback"><strong>with_traceback</strong></a>(...)</dt><dd><tt><a href="builtins.html#Exception">Exception</a>.<a href="#Warning-with_traceback">with_traceback</a>(tb)&nbsp;--<br>
+set&nbsp;self.<strong>__traceback__</strong>&nbsp;to&nbsp;tb&nbsp;and&nbsp;return&nbsp;self.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="builtins.html#BaseException">builtins.BaseException</a>:<br>
+<dl><dt><strong>__cause__</strong></dt>
+<dd><tt>exception&nbsp;cause</tt></dd>
+</dl>
+<dl><dt><strong>__context__</strong></dt>
+<dd><tt>exception&nbsp;context</tt></dd>
+</dl>
+<dl><dt><strong>__dict__</strong></dt>
+</dl>
+<dl><dt><strong>__suppress_context__</strong></dt>
+</dl>
+<dl><dt><strong>__traceback__</strong></dt>
+</dl>
+<dl><dt><strong>args</strong></dt>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-Connect"><strong>Connect</strong></a> = connect(*args, **kwargs)</dt><dd><tt>Create&nbsp;or&nbsp;get&nbsp;a&nbsp;MySQL&nbsp;connection&nbsp;<a href="builtins.html#object">object</a><br>
+&nbsp;<br>
+In&nbsp;its&nbsp;simpliest&nbsp;form,&nbsp;<a href="#-Connect">Connect</a>()&nbsp;will&nbsp;open&nbsp;a&nbsp;connection&nbsp;to&nbsp;a<br>
+MySQL&nbsp;server&nbsp;and&nbsp;return&nbsp;a&nbsp;<a href="#MySQLConnection">MySQLConnection</a>&nbsp;<a href="builtins.html#object">object</a>.<br>
+&nbsp;<br>
+When&nbsp;any&nbsp;connection&nbsp;pooling&nbsp;arguments&nbsp;are&nbsp;given,&nbsp;for&nbsp;example&nbsp;pool_name<br>
+or&nbsp;pool_size,&nbsp;a&nbsp;pool&nbsp;is&nbsp;created&nbsp;or&nbsp;a&nbsp;previously&nbsp;one&nbsp;is&nbsp;used&nbsp;to&nbsp;return<br>
+a&nbsp;PooledMySQLConnection.<br>
+&nbsp;<br>
+Returns&nbsp;<a href="#MySQLConnection">MySQLConnection</a>&nbsp;or&nbsp;PooledMySQLConnection.</tt></dd></dl>
+ <dl><dt><a name="-DateFromTicks"><strong>DateFromTicks</strong></a>(ticks)</dt></dl>
+ <dl><dt><a name="-TimeFromTicks"><strong>TimeFromTicks</strong></a>(ticks)</dt></dl>
+ <dl><dt><a name="-TimestampFromTicks"><strong>TimestampFromTicks</strong></a>(ticks)</dt></dl>
+ <dl><dt><a name="-connect"><strong>connect</strong></a>(*args, **kwargs)</dt><dd><tt>Create&nbsp;or&nbsp;get&nbsp;a&nbsp;MySQL&nbsp;connection&nbsp;<a href="builtins.html#object">object</a><br>
+&nbsp;<br>
+In&nbsp;its&nbsp;simpliest&nbsp;form,&nbsp;<a href="#-Connect">Connect</a>()&nbsp;will&nbsp;open&nbsp;a&nbsp;connection&nbsp;to&nbsp;a<br>
+MySQL&nbsp;server&nbsp;and&nbsp;return&nbsp;a&nbsp;<a href="#MySQLConnection">MySQLConnection</a>&nbsp;<a href="builtins.html#object">object</a>.<br>
+&nbsp;<br>
+When&nbsp;any&nbsp;connection&nbsp;pooling&nbsp;arguments&nbsp;are&nbsp;given,&nbsp;for&nbsp;example&nbsp;pool_name<br>
+or&nbsp;pool_size,&nbsp;a&nbsp;pool&nbsp;is&nbsp;created&nbsp;or&nbsp;a&nbsp;previously&nbsp;one&nbsp;is&nbsp;used&nbsp;to&nbsp;return<br>
+a&nbsp;PooledMySQLConnection.<br>
+&nbsp;<br>
+Returns&nbsp;<a href="#MySQLConnection">MySQLConnection</a>&nbsp;or&nbsp;PooledMySQLConnection.</tt></dd></dl>
+ <dl><dt><a name="-custom_error_exception"><strong>custom_error_exception</strong></a>(error=None, exception=None)</dt><dd><tt>Define&nbsp;custom&nbsp;exceptions&nbsp;for&nbsp;MySQL&nbsp;server&nbsp;errors<br>
+&nbsp;<br>
+This&nbsp;function&nbsp;defines&nbsp;custom&nbsp;exceptions&nbsp;for&nbsp;MySQL&nbsp;server&nbsp;errors&nbsp;and<br>
+returns&nbsp;the&nbsp;current&nbsp;set&nbsp;customizations.<br>
+&nbsp;<br>
+If&nbsp;error&nbsp;is&nbsp;a&nbsp;MySQL&nbsp;Server&nbsp;error&nbsp;number,&nbsp;then&nbsp;you&nbsp;have&nbsp;to&nbsp;pass&nbsp;also&nbsp;the<br>
+exception&nbsp;class.<br>
+&nbsp;<br>
+The&nbsp;error&nbsp;argument&nbsp;can&nbsp;also&nbsp;be&nbsp;a&nbsp;dictionary&nbsp;in&nbsp;which&nbsp;case&nbsp;the&nbsp;key&nbsp;is<br>
+the&nbsp;server&nbsp;error&nbsp;number,&nbsp;and&nbsp;value&nbsp;the&nbsp;exception&nbsp;to&nbsp;be&nbsp;raised.<br>
+&nbsp;<br>
+If&nbsp;none&nbsp;of&nbsp;the&nbsp;arguments&nbsp;are&nbsp;given,&nbsp;then&nbsp;<a href="#-custom_error_exception">custom_error_exception</a>()&nbsp;will<br>
+simply&nbsp;return&nbsp;the&nbsp;current&nbsp;set&nbsp;customizations.<br>
+&nbsp;<br>
+To&nbsp;reset&nbsp;the&nbsp;customizations,&nbsp;simply&nbsp;supply&nbsp;an&nbsp;empty&nbsp;dictionary.<br>
+&nbsp;<br>
+Examples:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;mysql.connector<br>
+&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;mysql.connector&nbsp;import&nbsp;errorcode<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;Server&nbsp;error&nbsp;1028&nbsp;should&nbsp;raise&nbsp;a&nbsp;<a href="#DatabaseError">DatabaseError</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;mysql.connector.<a href="#-custom_error_exception">custom_error_exception</a>(<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1028,&nbsp;mysql.connector.<a href="#DatabaseError">DatabaseError</a>)<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;Or&nbsp;using&nbsp;a&nbsp;dictionary:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;mysql.connector.<a href="#-custom_error_exception">custom_error_exception</a>({<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1028:&nbsp;mysql.connector.<a href="#DatabaseError">DatabaseError</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1029:&nbsp;mysql.connector.<a href="#OperationalError">OperationalError</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;Reset<br>
+&nbsp;&nbsp;&nbsp;&nbsp;mysql.connector.<a href="#-custom_error_exception">custom_error_exception</a>({})<br>
+&nbsp;<br>
+Returns&nbsp;a&nbsp;dictionary.</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>BINARY</strong> = &lt;mysql.connector.dbapi._DBAPITypeObject object&gt;<br>
+<strong>DATETIME</strong> = &lt;mysql.connector.dbapi._DBAPITypeObject object&gt;<br>
+<strong>HAVE_CEXT</strong> = False<br>
+<strong>NUMBER</strong> = &lt;mysql.connector.dbapi._DBAPITypeObject object&gt;<br>
+<strong>ROWID</strong> = &lt;mysql.connector.dbapi._DBAPITypeObject object&gt;<br>
+<strong>STRING</strong> = &lt;mysql.connector.dbapi._DBAPITypeObject object&gt;<br>
+<strong>__all__</strong> = ['MySQLConnection', 'Connect', 'custom_error_exception', 'FieldType', 'FieldFlag', 'ClientFlag', 'CharacterSet', 'RefreshOption', 'HAVE_CEXT', 'Error', 'Warning', 'InterfaceError', 'DatabaseError', 'NotSupportedError', 'DataError', 'IntegrityError', 'ProgrammingError', 'OperationalError', 'InternalError', 'connect', ...]<br>
+<strong>__version_info__</strong> = (8, 0, 28, '', 1)<br>
+<strong>apilevel</strong> = '2.0'<br>
+<strong>paramstyle</strong> = 'pyformat'<br>
+<strong>threadsafety</strong> = 1</td></tr></table>
+</body></html>

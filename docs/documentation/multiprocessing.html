@@ -1,0 +1,451 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: package multiprocessing</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>multiprocessing</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:c%3A%5Cprogram%20files%5Cwindowsapps%5Cpythonsoftwarefoundation.python.3.10_3.10.1264.0_x64__qbz5n2kfra8p0%5Clib%5Cmultiprocessing%5C__init__.py">c:\program files\windowsapps\pythonsoftwarefoundation.python.3.10_3.10.1264.0_x64__qbz5n2kfra8p0\lib\multiprocessing\__init__.py</a><br><a href="https://docs.python.org/3.10/library/multiprocessing.html">Module Reference</a></font></td></tr></table>
+    <p><tt>#&nbsp;Package&nbsp;analogous&nbsp;to&nbsp;'threading.py'&nbsp;but&nbsp;using&nbsp;processes<br>
+#<br>
+#&nbsp;multiprocessing/__init__.py<br>
+#<br>
+#&nbsp;This&nbsp;package&nbsp;is&nbsp;intended&nbsp;to&nbsp;duplicate&nbsp;the&nbsp;functionality&nbsp;(and&nbsp;much&nbsp;of<br>
+#&nbsp;the&nbsp;API)&nbsp;of&nbsp;threading.py&nbsp;but&nbsp;uses&nbsp;processes&nbsp;instead&nbsp;of&nbsp;threads.&nbsp;&nbsp;A<br>
+#&nbsp;subpackage&nbsp;'multiprocessing.dummy'&nbsp;has&nbsp;the&nbsp;same&nbsp;API&nbsp;but&nbsp;is&nbsp;a&nbsp;simple<br>
+#&nbsp;wrapper&nbsp;for&nbsp;'threading'.<br>
+#<br>
+#&nbsp;Copyright&nbsp;(c)&nbsp;2006-2008,&nbsp;R&nbsp;Oudkerk<br>
+#&nbsp;Licensed&nbsp;to&nbsp;PSF&nbsp;under&nbsp;a&nbsp;Contributor&nbsp;Agreement.<br>
+#</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Package Contents</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="multiprocessing.connection.html">connection</a><br>
+<a href="multiprocessing.context.html">context</a><br>
+<a href="multiprocessing.dummy.html"><strong>dummy</strong>&nbsp;(package)</a><br>
+<a href="multiprocessing.forkserver.html">forkserver</a><br>
+<a href="multiprocessing.heap.html">heap</a><br>
+<a href="multiprocessing.managers.html">managers</a><br>
+</td><td width="25%" valign=top><a href="multiprocessing.pool.html">pool</a><br>
+<a href="multiprocessing.popen_fork.html">popen_fork</a><br>
+<a href="multiprocessing.popen_forkserver.html">popen_forkserver</a><br>
+<a href="multiprocessing.popen_spawn_posix.html">popen_spawn_posix</a><br>
+<a href="multiprocessing.popen_spawn_win32.html">popen_spawn_win32</a><br>
+<a href="multiprocessing.process.html">process</a><br>
+</td><td width="25%" valign=top><a href="multiprocessing.queues.html">queues</a><br>
+<a href="multiprocessing.reduction.html">reduction</a><br>
+<a href="multiprocessing.resource_sharer.html">resource_sharer</a><br>
+<a href="multiprocessing.resource_tracker.html">resource_tracker</a><br>
+<a href="multiprocessing.shared_memory.html">shared_memory</a><br>
+<a href="multiprocessing.sharedctypes.html">sharedctypes</a><br>
+</td><td width="25%" valign=top><a href="multiprocessing.spawn.html">spawn</a><br>
+<a href="multiprocessing.synchronize.html">synchronize</a><br>
+<a href="multiprocessing.util.html">util</a><br>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#Exception">builtins.Exception</a>(<a href="builtins.html#BaseException">builtins.BaseException</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="multiprocessing.context.html#ProcessError">multiprocessing.context.ProcessError</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="multiprocessing.context.html#AuthenticationError">multiprocessing.context.AuthenticationError</a>
+</font></dt><dt><font face="helvetica, arial"><a href="multiprocessing.context.html#BufferTooShort">multiprocessing.context.BufferTooShort</a>
+</font></dt><dt><font face="helvetica, arial"><a href="multiprocessing.context.html#TimeoutError">multiprocessing.context.TimeoutError</a>
+</font></dt></dl>
+</dd>
+</dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="multiprocessing.process.html#BaseProcess">multiprocessing.process.BaseProcess</a>(<a href="builtins.html#object">builtins.object</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="multiprocessing.context.html#Process">multiprocessing.context.Process</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="AuthenticationError">class <strong>AuthenticationError</strong></a>(<a href="multiprocessing.context.html#ProcessError">ProcessError</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="multiprocessing.context.html#AuthenticationError">AuthenticationError</a></dd>
+<dd><a href="multiprocessing.context.html#ProcessError">ProcessError</a></dd>
+<dd><a href="builtins.html#Exception">builtins.Exception</a></dd>
+<dd><a href="builtins.html#BaseException">builtins.BaseException</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Data descriptors inherited from <a href="multiprocessing.context.html#ProcessError">ProcessError</a>:<br>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Methods inherited from <a href="builtins.html#Exception">builtins.Exception</a>:<br>
+<dl><dt><a name="AuthenticationError-__init__"><strong>__init__</strong></a>(self, /, *args, **kwargs)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<hr>
+Static methods inherited from <a href="builtins.html#Exception">builtins.Exception</a>:<br>
+<dl><dt><a name="AuthenticationError-__new__"><strong>__new__</strong></a>(*args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;object.&nbsp;&nbsp;See&nbsp;help(type)&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="builtins.html#BaseException">builtins.BaseException</a>:<br>
+<dl><dt><a name="AuthenticationError-__delattr__"><strong>__delattr__</strong></a>(self, name, /)</dt><dd><tt>Implement&nbsp;delattr(self,&nbsp;name).</tt></dd></dl>
+
+<dl><dt><a name="AuthenticationError-__getattribute__"><strong>__getattribute__</strong></a>(self, name, /)</dt><dd><tt>Return&nbsp;getattr(self,&nbsp;name).</tt></dd></dl>
+
+<dl><dt><a name="AuthenticationError-__reduce__"><strong>__reduce__</strong></a>(...)</dt><dd><tt>Helper&nbsp;for&nbsp;pickle.</tt></dd></dl>
+
+<dl><dt><a name="AuthenticationError-__repr__"><strong>__repr__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><a name="AuthenticationError-__setattr__"><strong>__setattr__</strong></a>(self, name, value, /)</dt><dd><tt>Implement&nbsp;setattr(self,&nbsp;name,&nbsp;value).</tt></dd></dl>
+
+<dl><dt><a name="AuthenticationError-__setstate__"><strong>__setstate__</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="AuthenticationError-__str__"><strong>__str__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;str(self).</tt></dd></dl>
+
+<dl><dt><a name="AuthenticationError-with_traceback"><strong>with_traceback</strong></a>(...)</dt><dd><tt><a href="builtins.html#Exception">Exception</a>.<a href="#AuthenticationError-with_traceback">with_traceback</a>(tb)&nbsp;--<br>
+set&nbsp;self.<strong>__traceback__</strong>&nbsp;to&nbsp;tb&nbsp;and&nbsp;return&nbsp;self.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="builtins.html#BaseException">builtins.BaseException</a>:<br>
+<dl><dt><strong>__cause__</strong></dt>
+<dd><tt>exception&nbsp;cause</tt></dd>
+</dl>
+<dl><dt><strong>__context__</strong></dt>
+<dd><tt>exception&nbsp;context</tt></dd>
+</dl>
+<dl><dt><strong>__dict__</strong></dt>
+</dl>
+<dl><dt><strong>__suppress_context__</strong></dt>
+</dl>
+<dl><dt><strong>__traceback__</strong></dt>
+</dl>
+<dl><dt><strong>args</strong></dt>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="BufferTooShort">class <strong>BufferTooShort</strong></a>(<a href="multiprocessing.context.html#ProcessError">ProcessError</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="multiprocessing.context.html#BufferTooShort">BufferTooShort</a></dd>
+<dd><a href="multiprocessing.context.html#ProcessError">ProcessError</a></dd>
+<dd><a href="builtins.html#Exception">builtins.Exception</a></dd>
+<dd><a href="builtins.html#BaseException">builtins.BaseException</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Data descriptors inherited from <a href="multiprocessing.context.html#ProcessError">ProcessError</a>:<br>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Methods inherited from <a href="builtins.html#Exception">builtins.Exception</a>:<br>
+<dl><dt><a name="BufferTooShort-__init__"><strong>__init__</strong></a>(self, /, *args, **kwargs)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<hr>
+Static methods inherited from <a href="builtins.html#Exception">builtins.Exception</a>:<br>
+<dl><dt><a name="BufferTooShort-__new__"><strong>__new__</strong></a>(*args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;object.&nbsp;&nbsp;See&nbsp;help(type)&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="builtins.html#BaseException">builtins.BaseException</a>:<br>
+<dl><dt><a name="BufferTooShort-__delattr__"><strong>__delattr__</strong></a>(self, name, /)</dt><dd><tt>Implement&nbsp;delattr(self,&nbsp;name).</tt></dd></dl>
+
+<dl><dt><a name="BufferTooShort-__getattribute__"><strong>__getattribute__</strong></a>(self, name, /)</dt><dd><tt>Return&nbsp;getattr(self,&nbsp;name).</tt></dd></dl>
+
+<dl><dt><a name="BufferTooShort-__reduce__"><strong>__reduce__</strong></a>(...)</dt><dd><tt>Helper&nbsp;for&nbsp;pickle.</tt></dd></dl>
+
+<dl><dt><a name="BufferTooShort-__repr__"><strong>__repr__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><a name="BufferTooShort-__setattr__"><strong>__setattr__</strong></a>(self, name, value, /)</dt><dd><tt>Implement&nbsp;setattr(self,&nbsp;name,&nbsp;value).</tt></dd></dl>
+
+<dl><dt><a name="BufferTooShort-__setstate__"><strong>__setstate__</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="BufferTooShort-__str__"><strong>__str__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;str(self).</tt></dd></dl>
+
+<dl><dt><a name="BufferTooShort-with_traceback"><strong>with_traceback</strong></a>(...)</dt><dd><tt><a href="builtins.html#Exception">Exception</a>.<a href="#BufferTooShort-with_traceback">with_traceback</a>(tb)&nbsp;--<br>
+set&nbsp;self.<strong>__traceback__</strong>&nbsp;to&nbsp;tb&nbsp;and&nbsp;return&nbsp;self.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="builtins.html#BaseException">builtins.BaseException</a>:<br>
+<dl><dt><strong>__cause__</strong></dt>
+<dd><tt>exception&nbsp;cause</tt></dd>
+</dl>
+<dl><dt><strong>__context__</strong></dt>
+<dd><tt>exception&nbsp;context</tt></dd>
+</dl>
+<dl><dt><strong>__dict__</strong></dt>
+</dl>
+<dl><dt><strong>__suppress_context__</strong></dt>
+</dl>
+<dl><dt><strong>__traceback__</strong></dt>
+</dl>
+<dl><dt><strong>args</strong></dt>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Process">class <strong>Process</strong></a>(<a href="multiprocessing.process.html#BaseProcess">multiprocessing.process.BaseProcess</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Process">Process</a>(group=None,&nbsp;target=None,&nbsp;name=None,&nbsp;args=(),&nbsp;kwargs={},&nbsp;*,&nbsp;daemon=None)<br>
+&nbsp;<br>
+<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="multiprocessing.context.html#Process">Process</a></dd>
+<dd><a href="multiprocessing.process.html#BaseProcess">multiprocessing.process.BaseProcess</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods inherited from <a href="multiprocessing.process.html#BaseProcess">multiprocessing.process.BaseProcess</a>:<br>
+<dl><dt><a name="Process-__init__"><strong>__init__</strong></a>(self, group=None, target=None, name=None, args=(), kwargs={}, *, daemon=None)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="Process-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><a name="Process-close"><strong>close</strong></a>(self)</dt><dd><tt>Close&nbsp;the&nbsp;<a href="#Process">Process</a>&nbsp;object.<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;releases&nbsp;resources&nbsp;held&nbsp;by&nbsp;the&nbsp;<a href="#Process">Process</a>&nbsp;object.&nbsp;&nbsp;It&nbsp;is<br>
+an&nbsp;error&nbsp;to&nbsp;call&nbsp;this&nbsp;method&nbsp;if&nbsp;the&nbsp;child&nbsp;process&nbsp;is&nbsp;still&nbsp;running.</tt></dd></dl>
+
+<dl><dt><a name="Process-is_alive"><strong>is_alive</strong></a>(self)</dt><dd><tt>Return&nbsp;whether&nbsp;process&nbsp;is&nbsp;alive</tt></dd></dl>
+
+<dl><dt><a name="Process-join"><strong>join</strong></a>(self, timeout=None)</dt><dd><tt>Wait&nbsp;until&nbsp;child&nbsp;process&nbsp;terminates</tt></dd></dl>
+
+<dl><dt><a name="Process-kill"><strong>kill</strong></a>(self)</dt><dd><tt>Terminate&nbsp;process;&nbsp;sends&nbsp;SIGKILL&nbsp;signal&nbsp;or&nbsp;uses&nbsp;TerminateProcess()</tt></dd></dl>
+
+<dl><dt><a name="Process-run"><strong>run</strong></a>(self)</dt><dd><tt>Method&nbsp;to&nbsp;be&nbsp;run&nbsp;in&nbsp;sub-process;&nbsp;can&nbsp;be&nbsp;overridden&nbsp;in&nbsp;sub-class</tt></dd></dl>
+
+<dl><dt><a name="Process-start"><strong>start</strong></a>(self)</dt><dd><tt>Start&nbsp;child&nbsp;process</tt></dd></dl>
+
+<dl><dt><a name="Process-terminate"><strong>terminate</strong></a>(self)</dt><dd><tt>Terminate&nbsp;process;&nbsp;sends&nbsp;SIGTERM&nbsp;signal&nbsp;or&nbsp;uses&nbsp;TerminateProcess()</tt></dd></dl>
+
+<hr>
+Readonly properties inherited from <a href="multiprocessing.process.html#BaseProcess">multiprocessing.process.BaseProcess</a>:<br>
+<dl><dt><strong>exitcode</strong></dt>
+<dd><tt>Return&nbsp;exit&nbsp;code&nbsp;of&nbsp;process&nbsp;or&nbsp;`None`&nbsp;if&nbsp;it&nbsp;has&nbsp;yet&nbsp;to&nbsp;stop</tt></dd>
+</dl>
+<dl><dt><strong>ident</strong></dt>
+<dd><tt>Return&nbsp;identifier&nbsp;(PID)&nbsp;of&nbsp;process&nbsp;or&nbsp;`None`&nbsp;if&nbsp;it&nbsp;has&nbsp;yet&nbsp;to&nbsp;start</tt></dd>
+</dl>
+<dl><dt><strong>pid</strong></dt>
+<dd><tt>Return&nbsp;identifier&nbsp;(PID)&nbsp;of&nbsp;process&nbsp;or&nbsp;`None`&nbsp;if&nbsp;it&nbsp;has&nbsp;yet&nbsp;to&nbsp;start</tt></dd>
+</dl>
+<dl><dt><strong>sentinel</strong></dt>
+<dd><tt>Return&nbsp;a&nbsp;file&nbsp;descriptor&nbsp;(Unix)&nbsp;or&nbsp;handle&nbsp;(Windows)&nbsp;suitable&nbsp;for<br>
+waiting&nbsp;for&nbsp;process&nbsp;termination.</tt></dd>
+</dl>
+<hr>
+Data descriptors inherited from <a href="multiprocessing.process.html#BaseProcess">multiprocessing.process.BaseProcess</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>authkey</strong></dt>
+</dl>
+<dl><dt><strong>daemon</strong></dt>
+<dd><tt>Return&nbsp;whether&nbsp;process&nbsp;is&nbsp;a&nbsp;daemon</tt></dd>
+</dl>
+<dl><dt><strong>name</strong></dt>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="ProcessError">class <strong>ProcessError</strong></a>(<a href="builtins.html#Exception">builtins.Exception</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="multiprocessing.context.html#ProcessError">ProcessError</a></dd>
+<dd><a href="builtins.html#Exception">builtins.Exception</a></dd>
+<dd><a href="builtins.html#BaseException">builtins.BaseException</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Methods inherited from <a href="builtins.html#Exception">builtins.Exception</a>:<br>
+<dl><dt><a name="ProcessError-__init__"><strong>__init__</strong></a>(self, /, *args, **kwargs)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<hr>
+Static methods inherited from <a href="builtins.html#Exception">builtins.Exception</a>:<br>
+<dl><dt><a name="ProcessError-__new__"><strong>__new__</strong></a>(*args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;object.&nbsp;&nbsp;See&nbsp;help(type)&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="builtins.html#BaseException">builtins.BaseException</a>:<br>
+<dl><dt><a name="ProcessError-__delattr__"><strong>__delattr__</strong></a>(self, name, /)</dt><dd><tt>Implement&nbsp;delattr(self,&nbsp;name).</tt></dd></dl>
+
+<dl><dt><a name="ProcessError-__getattribute__"><strong>__getattribute__</strong></a>(self, name, /)</dt><dd><tt>Return&nbsp;getattr(self,&nbsp;name).</tt></dd></dl>
+
+<dl><dt><a name="ProcessError-__reduce__"><strong>__reduce__</strong></a>(...)</dt><dd><tt>Helper&nbsp;for&nbsp;pickle.</tt></dd></dl>
+
+<dl><dt><a name="ProcessError-__repr__"><strong>__repr__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><a name="ProcessError-__setattr__"><strong>__setattr__</strong></a>(self, name, value, /)</dt><dd><tt>Implement&nbsp;setattr(self,&nbsp;name,&nbsp;value).</tt></dd></dl>
+
+<dl><dt><a name="ProcessError-__setstate__"><strong>__setstate__</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ProcessError-__str__"><strong>__str__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;str(self).</tt></dd></dl>
+
+<dl><dt><a name="ProcessError-with_traceback"><strong>with_traceback</strong></a>(...)</dt><dd><tt><a href="builtins.html#Exception">Exception</a>.<a href="#ProcessError-with_traceback">with_traceback</a>(tb)&nbsp;--<br>
+set&nbsp;self.<strong>__traceback__</strong>&nbsp;to&nbsp;tb&nbsp;and&nbsp;return&nbsp;self.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="builtins.html#BaseException">builtins.BaseException</a>:<br>
+<dl><dt><strong>__cause__</strong></dt>
+<dd><tt>exception&nbsp;cause</tt></dd>
+</dl>
+<dl><dt><strong>__context__</strong></dt>
+<dd><tt>exception&nbsp;context</tt></dd>
+</dl>
+<dl><dt><strong>__dict__</strong></dt>
+</dl>
+<dl><dt><strong>__suppress_context__</strong></dt>
+</dl>
+<dl><dt><strong>__traceback__</strong></dt>
+</dl>
+<dl><dt><strong>args</strong></dt>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="TimeoutError">class <strong>TimeoutError</strong></a>(<a href="multiprocessing.context.html#ProcessError">ProcessError</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="multiprocessing.context.html#TimeoutError">TimeoutError</a></dd>
+<dd><a href="multiprocessing.context.html#ProcessError">ProcessError</a></dd>
+<dd><a href="builtins.html#Exception">builtins.Exception</a></dd>
+<dd><a href="builtins.html#BaseException">builtins.BaseException</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Data descriptors inherited from <a href="multiprocessing.context.html#ProcessError">ProcessError</a>:<br>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Methods inherited from <a href="builtins.html#Exception">builtins.Exception</a>:<br>
+<dl><dt><a name="TimeoutError-__init__"><strong>__init__</strong></a>(self, /, *args, **kwargs)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<hr>
+Static methods inherited from <a href="builtins.html#Exception">builtins.Exception</a>:<br>
+<dl><dt><a name="TimeoutError-__new__"><strong>__new__</strong></a>(*args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;object.&nbsp;&nbsp;See&nbsp;help(type)&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="builtins.html#BaseException">builtins.BaseException</a>:<br>
+<dl><dt><a name="TimeoutError-__delattr__"><strong>__delattr__</strong></a>(self, name, /)</dt><dd><tt>Implement&nbsp;delattr(self,&nbsp;name).</tt></dd></dl>
+
+<dl><dt><a name="TimeoutError-__getattribute__"><strong>__getattribute__</strong></a>(self, name, /)</dt><dd><tt>Return&nbsp;getattr(self,&nbsp;name).</tt></dd></dl>
+
+<dl><dt><a name="TimeoutError-__reduce__"><strong>__reduce__</strong></a>(...)</dt><dd><tt>Helper&nbsp;for&nbsp;pickle.</tt></dd></dl>
+
+<dl><dt><a name="TimeoutError-__repr__"><strong>__repr__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><a name="TimeoutError-__setattr__"><strong>__setattr__</strong></a>(self, name, value, /)</dt><dd><tt>Implement&nbsp;setattr(self,&nbsp;name,&nbsp;value).</tt></dd></dl>
+
+<dl><dt><a name="TimeoutError-__setstate__"><strong>__setstate__</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TimeoutError-__str__"><strong>__str__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;str(self).</tt></dd></dl>
+
+<dl><dt><a name="TimeoutError-with_traceback"><strong>with_traceback</strong></a>(...)</dt><dd><tt><a href="builtins.html#Exception">Exception</a>.<a href="#TimeoutError-with_traceback">with_traceback</a>(tb)&nbsp;--<br>
+set&nbsp;self.<strong>__traceback__</strong>&nbsp;to&nbsp;tb&nbsp;and&nbsp;return&nbsp;self.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="builtins.html#BaseException">builtins.BaseException</a>:<br>
+<dl><dt><strong>__cause__</strong></dt>
+<dd><tt>exception&nbsp;cause</tt></dd>
+</dl>
+<dl><dt><strong>__context__</strong></dt>
+<dd><tt>exception&nbsp;context</tt></dd>
+</dl>
+<dl><dt><strong>__dict__</strong></dt>
+</dl>
+<dl><dt><strong>__suppress_context__</strong></dt>
+</dl>
+<dl><dt><strong>__traceback__</strong></dt>
+</dl>
+<dl><dt><strong>args</strong></dt>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-Array"><strong>Array</strong></a>(typecode_or_type, size_or_initializer, *, lock=True)<font color="#909090"><font face="helvetica, arial"> method of <a href="multiprocessing.context.html#DefaultContext">multiprocessing.context.DefaultContext</a> instance</font></font></dt><dd><tt>Returns&nbsp;a&nbsp;synchronized&nbsp;shared&nbsp;array</tt></dd></dl>
+ <dl><dt><a name="-Barrier"><strong>Barrier</strong></a>(parties, action=None, timeout=None)<font color="#909090"><font face="helvetica, arial"> method of <a href="multiprocessing.context.html#DefaultContext">multiprocessing.context.DefaultContext</a> instance</font></font></dt><dd><tt>Returns&nbsp;a&nbsp;barrier&nbsp;object</tt></dd></dl>
+ <dl><dt><a name="-BoundedSemaphore"><strong>BoundedSemaphore</strong></a>(value=1)<font color="#909090"><font face="helvetica, arial"> method of <a href="multiprocessing.context.html#DefaultContext">multiprocessing.context.DefaultContext</a> instance</font></font></dt><dd><tt>Returns&nbsp;a&nbsp;bounded&nbsp;semaphore&nbsp;object</tt></dd></dl>
+ <dl><dt><a name="-Condition"><strong>Condition</strong></a>(lock=None)<font color="#909090"><font face="helvetica, arial"> method of <a href="multiprocessing.context.html#DefaultContext">multiprocessing.context.DefaultContext</a> instance</font></font></dt><dd><tt>Returns&nbsp;a&nbsp;condition&nbsp;object</tt></dd></dl>
+ <dl><dt><a name="-Event"><strong>Event</strong></a>()<font color="#909090"><font face="helvetica, arial"> method of <a href="multiprocessing.context.html#DefaultContext">multiprocessing.context.DefaultContext</a> instance</font></font></dt><dd><tt>Returns&nbsp;an&nbsp;event&nbsp;object</tt></dd></dl>
+ <dl><dt><a name="-JoinableQueue"><strong>JoinableQueue</strong></a>(maxsize=0)<font color="#909090"><font face="helvetica, arial"> method of <a href="multiprocessing.context.html#DefaultContext">multiprocessing.context.DefaultContext</a> instance</font></font></dt><dd><tt>Returns&nbsp;a&nbsp;queue&nbsp;object</tt></dd></dl>
+ <dl><dt><a name="-Lock"><strong>Lock</strong></a>()<font color="#909090"><font face="helvetica, arial"> method of <a href="multiprocessing.context.html#DefaultContext">multiprocessing.context.DefaultContext</a> instance</font></font></dt><dd><tt>Returns&nbsp;a&nbsp;non-recursive&nbsp;lock&nbsp;object</tt></dd></dl>
+ <dl><dt><a name="-Manager"><strong>Manager</strong></a>()<font color="#909090"><font face="helvetica, arial"> method of <a href="multiprocessing.context.html#DefaultContext">multiprocessing.context.DefaultContext</a> instance</font></font></dt><dd><tt>Returns&nbsp;a&nbsp;manager&nbsp;associated&nbsp;with&nbsp;a&nbsp;running&nbsp;server&nbsp;process<br>
+&nbsp;<br>
+The&nbsp;managers&nbsp;methods&nbsp;such&nbsp;as&nbsp;`<a href="#-Lock">Lock</a>()`,&nbsp;`<a href="#-Condition">Condition</a>()`&nbsp;and&nbsp;`<a href="#-Queue">Queue</a>()`<br>
+can&nbsp;be&nbsp;used&nbsp;to&nbsp;create&nbsp;shared&nbsp;objects.</tt></dd></dl>
+ <dl><dt><a name="-Pipe"><strong>Pipe</strong></a>(duplex=True)<font color="#909090"><font face="helvetica, arial"> method of <a href="multiprocessing.context.html#DefaultContext">multiprocessing.context.DefaultContext</a> instance</font></font></dt><dd><tt>Returns&nbsp;two&nbsp;connection&nbsp;object&nbsp;connected&nbsp;by&nbsp;a&nbsp;pipe</tt></dd></dl>
+ <dl><dt><a name="-Pool"><strong>Pool</strong></a>(processes=None, initializer=None, initargs=(), maxtasksperchild=None)<font color="#909090"><font face="helvetica, arial"> method of <a href="multiprocessing.context.html#DefaultContext">multiprocessing.context.DefaultContext</a> instance</font></font></dt><dd><tt>Returns&nbsp;a&nbsp;process&nbsp;pool&nbsp;object</tt></dd></dl>
+ <dl><dt><a name="-Queue"><strong>Queue</strong></a>(maxsize=0)<font color="#909090"><font face="helvetica, arial"> method of <a href="multiprocessing.context.html#DefaultContext">multiprocessing.context.DefaultContext</a> instance</font></font></dt><dd><tt>Returns&nbsp;a&nbsp;queue&nbsp;object</tt></dd></dl>
+ <dl><dt><a name="-RLock"><strong>RLock</strong></a>()<font color="#909090"><font face="helvetica, arial"> method of <a href="multiprocessing.context.html#DefaultContext">multiprocessing.context.DefaultContext</a> instance</font></font></dt><dd><tt>Returns&nbsp;a&nbsp;recursive&nbsp;lock&nbsp;object</tt></dd></dl>
+ <dl><dt><a name="-RawArray"><strong>RawArray</strong></a>(typecode_or_type, size_or_initializer)<font color="#909090"><font face="helvetica, arial"> method of <a href="multiprocessing.context.html#DefaultContext">multiprocessing.context.DefaultContext</a> instance</font></font></dt><dd><tt>Returns&nbsp;a&nbsp;shared&nbsp;array</tt></dd></dl>
+ <dl><dt><a name="-RawValue"><strong>RawValue</strong></a>(typecode_or_type, *args)<font color="#909090"><font face="helvetica, arial"> method of <a href="multiprocessing.context.html#DefaultContext">multiprocessing.context.DefaultContext</a> instance</font></font></dt><dd><tt>Returns&nbsp;a&nbsp;shared&nbsp;object</tt></dd></dl>
+ <dl><dt><a name="-Semaphore"><strong>Semaphore</strong></a>(value=1)<font color="#909090"><font face="helvetica, arial"> method of <a href="multiprocessing.context.html#DefaultContext">multiprocessing.context.DefaultContext</a> instance</font></font></dt><dd><tt>Returns&nbsp;a&nbsp;semaphore&nbsp;object</tt></dd></dl>
+ <dl><dt><a name="-SimpleQueue"><strong>SimpleQueue</strong></a>()<font color="#909090"><font face="helvetica, arial"> method of <a href="multiprocessing.context.html#DefaultContext">multiprocessing.context.DefaultContext</a> instance</font></font></dt><dd><tt>Returns&nbsp;a&nbsp;queue&nbsp;object</tt></dd></dl>
+ <dl><dt><a name="-Value"><strong>Value</strong></a>(typecode_or_type, *args, lock=True)<font color="#909090"><font face="helvetica, arial"> method of <a href="multiprocessing.context.html#DefaultContext">multiprocessing.context.DefaultContext</a> instance</font></font></dt><dd><tt>Returns&nbsp;a&nbsp;synchronized&nbsp;shared&nbsp;object</tt></dd></dl>
+ <dl><dt><a name="-active_children"><strong>active_children</strong></a>()</dt><dd><tt>Return&nbsp;list&nbsp;of&nbsp;process&nbsp;objects&nbsp;corresponding&nbsp;to&nbsp;live&nbsp;child&nbsp;processes</tt></dd></dl>
+ <dl><dt><a name="-allow_connection_pickling"><strong>allow_connection_pickling</strong></a>()<font color="#909090"><font face="helvetica, arial"> method of <a href="multiprocessing.context.html#DefaultContext">multiprocessing.context.DefaultContext</a> instance</font></font></dt><dd><tt>Install&nbsp;support&nbsp;for&nbsp;sending&nbsp;connections&nbsp;and&nbsp;sockets<br>
+between&nbsp;processes</tt></dd></dl>
+ <dl><dt><a name="-cpu_count"><strong>cpu_count</strong></a>()<font color="#909090"><font face="helvetica, arial"> method of <a href="multiprocessing.context.html#DefaultContext">multiprocessing.context.DefaultContext</a> instance</font></font></dt><dd><tt>Returns&nbsp;the&nbsp;number&nbsp;of&nbsp;CPUs&nbsp;in&nbsp;the&nbsp;system</tt></dd></dl>
+ <dl><dt><a name="-current_process"><strong>current_process</strong></a>()</dt><dd><tt>Return&nbsp;process&nbsp;object&nbsp;representing&nbsp;the&nbsp;current&nbsp;process</tt></dd></dl>
+ <dl><dt><a name="-freeze_support"><strong>freeze_support</strong></a>()<font color="#909090"><font face="helvetica, arial"> method of <a href="multiprocessing.context.html#DefaultContext">multiprocessing.context.DefaultContext</a> instance</font></font></dt><dd><tt>Check&nbsp;whether&nbsp;this&nbsp;is&nbsp;a&nbsp;fake&nbsp;forked&nbsp;process&nbsp;in&nbsp;a&nbsp;frozen&nbsp;executable.<br>
+If&nbsp;so&nbsp;then&nbsp;run&nbsp;code&nbsp;specified&nbsp;by&nbsp;commandline&nbsp;and&nbsp;exit.</tt></dd></dl>
+ <dl><dt><a name="-get_all_start_methods"><strong>get_all_start_methods</strong></a>()<font color="#909090"><font face="helvetica, arial"> method of <a href="multiprocessing.context.html#DefaultContext">multiprocessing.context.DefaultContext</a> instance</font></font></dt></dl>
+ <dl><dt><a name="-get_context"><strong>get_context</strong></a>(method=None)<font color="#909090"><font face="helvetica, arial"> method of <a href="multiprocessing.context.html#DefaultContext">multiprocessing.context.DefaultContext</a> instance</font></font></dt></dl>
+ <dl><dt><a name="-get_logger"><strong>get_logger</strong></a>()<font color="#909090"><font face="helvetica, arial"> method of <a href="multiprocessing.context.html#DefaultContext">multiprocessing.context.DefaultContext</a> instance</font></font></dt><dd><tt>Return&nbsp;package&nbsp;logger&nbsp;--&nbsp;if&nbsp;it&nbsp;does&nbsp;not&nbsp;already&nbsp;exist&nbsp;then<br>
+it&nbsp;is&nbsp;created.</tt></dd></dl>
+ <dl><dt><a name="-get_start_method"><strong>get_start_method</strong></a>(allow_none=False)<font color="#909090"><font face="helvetica, arial"> method of <a href="multiprocessing.context.html#DefaultContext">multiprocessing.context.DefaultContext</a> instance</font></font></dt></dl>
+ <dl><dt><a name="-log_to_stderr"><strong>log_to_stderr</strong></a>(level=None)<font color="#909090"><font face="helvetica, arial"> method of <a href="multiprocessing.context.html#DefaultContext">multiprocessing.context.DefaultContext</a> instance</font></font></dt><dd><tt>Turn&nbsp;on&nbsp;logging&nbsp;and&nbsp;add&nbsp;a&nbsp;handler&nbsp;which&nbsp;prints&nbsp;to&nbsp;stderr</tt></dd></dl>
+ <dl><dt><a name="-parent_process"><strong>parent_process</strong></a>()</dt><dd><tt>Return&nbsp;process&nbsp;object&nbsp;representing&nbsp;the&nbsp;parent&nbsp;process</tt></dd></dl>
+ <dl><dt><a name="-set_executable"><strong>set_executable</strong></a>(executable)<font color="#909090"><font face="helvetica, arial"> method of <a href="multiprocessing.context.html#DefaultContext">multiprocessing.context.DefaultContext</a> instance</font></font></dt><dd><tt>Sets&nbsp;the&nbsp;path&nbsp;to&nbsp;a&nbsp;python.exe&nbsp;or&nbsp;pythonw.exe&nbsp;binary&nbsp;used&nbsp;to&nbsp;run<br>
+child&nbsp;processes&nbsp;instead&nbsp;of&nbsp;sys.executable&nbsp;when&nbsp;using&nbsp;the&nbsp;'spawn'<br>
+start&nbsp;method.&nbsp;&nbsp;Useful&nbsp;for&nbsp;people&nbsp;embedding&nbsp;Python.</tt></dd></dl>
+ <dl><dt><a name="-set_forkserver_preload"><strong>set_forkserver_preload</strong></a>(module_names)<font color="#909090"><font face="helvetica, arial"> method of <a href="multiprocessing.context.html#DefaultContext">multiprocessing.context.DefaultContext</a> instance</font></font></dt><dd><tt>Set&nbsp;list&nbsp;of&nbsp;module&nbsp;names&nbsp;to&nbsp;try&nbsp;to&nbsp;load&nbsp;in&nbsp;forkserver&nbsp;process.<br>
+This&nbsp;is&nbsp;really&nbsp;just&nbsp;a&nbsp;hint.</tt></dd></dl>
+ <dl><dt><a name="-set_start_method"><strong>set_start_method</strong></a>(method, force=False)<font color="#909090"><font face="helvetica, arial"> method of <a href="multiprocessing.context.html#DefaultContext">multiprocessing.context.DefaultContext</a> instance</font></font></dt></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__all__</strong> = ['Array', 'AuthenticationError', 'Barrier', 'BoundedSemaphore', 'BufferTooShort', 'Condition', 'Event', 'JoinableQueue', 'Lock', 'Manager', 'Pipe', 'Pool', 'Process', 'ProcessError', 'Queue', 'RLock', 'RawArray', 'RawValue', 'Semaphore', 'SimpleQueue', ...]</td></tr></table>
+</body></html>
