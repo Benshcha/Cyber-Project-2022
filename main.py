@@ -476,6 +476,7 @@ class Client(HTTP.GeneralClient):
     
     def close(self):
         self._open = False
+        self.stream.shutdown(socket.SHUT_WR)
         self.stream.close()
     
     def isOpen(self):
@@ -496,7 +497,7 @@ class Client(HTTP.GeneralClient):
                         self.close()
                     except Exception:
                         pass
-                    break
+                    return 
                     # continue
 
                 packet = self.parseHttpPacket(packetByteData)
@@ -508,7 +509,7 @@ class Client(HTTP.GeneralClient):
                         Actions[command](packet)
                         if packet.getHeader('Connection') != 'keep-alive':
                             self.close()
-                            break
+                            return
                     else:
                         logger.error(f"command {command} is not supported!")
                 else:
@@ -570,7 +571,7 @@ class Server:
         self.consoleThread.start()
 
         self.context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
-        self.context.load_cert_chain(certfile="https/cert.pem", keyfile="https/key.pem")
+        self.context.load_cert_chain(certfile="https/servercert.pem", keyfile="https/serverkey.pem")
 
         self.bindSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         ADDR = ('', port)
