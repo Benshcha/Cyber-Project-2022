@@ -34,6 +34,7 @@ class Client(HTTP.GeneralClient):
     """
     def __init__(self, *args, server):
         super().__init__(*args)
+        self._open = True
         self.thread = threading.Thread(target=self.manage)
         self.server = server
         self.UpdateCode = None
@@ -58,6 +59,7 @@ class Client(HTTP.GeneralClient):
 
         Args:
             packet (HTTP.Packet): POST Request packet
+
         """
         file = packet.filename
         resp = None
@@ -117,8 +119,7 @@ class Client(HTTP.GeneralClient):
             changes (tuple): the changes the client requested (command, change data)
 
         Returns:
-            dict: {'code': error code, 'data': relevent response data}
-        """
+            dict: {'code': error code, 'data': relevent response data}"""
         resp = SQL.Request('id', 'notebookPath', table="notebooks", where="code='%s'" % notebookCode, singleton=True)
 
         if len(resp) == 0:
@@ -138,8 +139,7 @@ class Client(HTTP.GeneralClient):
             file (str, optional): The name of the notebook file from the post request. Defaults to "".
 
         Returns:
-            dict: {'code': error code, 'data': relevent response data}
-        """
+            dict: {'code': error code, 'data': relevent response data}"""
         user_auth = self.getUserAuth(packet)
 
         notebookCode = ""
@@ -474,9 +474,15 @@ class Client(HTTP.GeneralClient):
             
         return packet
     
+    def close(self):
+        self._open = False
+        self.stream.close()
+    
+    def isOpen(self):
+        return self._open
+
     def manage(self):
-        """Manage packet and its response
-        """
+        """Manage packet and its response"""
         # Define all actions
         Actions = {"GET": self.getResponse, "POST": self.postResponse, "HEAD": self.headResponse}
         
@@ -487,7 +493,7 @@ class Client(HTTP.GeneralClient):
                     logger.info(f'Recieved empty packet from {self.addr}')
                     try:
                         self.stream.send(b'\r\n')
-                        self.stream.close()
+                        self.close()
                     except Exception:
                         pass
                     break
@@ -501,7 +507,7 @@ class Client(HTTP.GeneralClient):
                     if command in Actions:
                         Actions[command](packet)
                         if packet.getHeader('Connection') != 'keep-alive':
-                            self.stream.close()
+                            self.close()
                             break
                     else:
                         logger.error(f"command {command} is not supported!")
@@ -514,11 +520,9 @@ class Client(HTTP.GeneralClient):
                     fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
                     
                     raise
-                # except SQL.connector.Error as e:
-                #     logger.error(f"sql line from {self.addr} was: {SQL.cursor.statement} ")
                 except ConnectionAbortedError as e:
                     logger.error(f"connection aborted with {self.addr}!")
-                    self.stream.close()
+                    self.close()
                     return 1
                 except HTTP.ParsingError as e:
                     logger.error(f"{e}", exc_info=True)
@@ -545,11 +549,19 @@ class Server:
         while True:
             try:
                 if not self.ClientUpdateQueue.empty():
-                    change = self.ClientUpdateQueue.get()
-                    while len(self.onlineClients[change.NotebookID]) != 0:
-                        client = self.onlineClients[change.NotebookID].pop()
-                        logger.info(f"sending {client.addr} update")
-                        client.SendPacket(HTTP.Packet(change, {"Server-Timing": "miss, db;dur=53, app;dur=47.2"}, filename="/UPDATE", dataType="text/json"))
+                    nbID, changes = self.ClientUpdateQueue.get()
+                    while len(self.onlineClients[nbID]) != 0:
+                        client = self.onlineClients[nbID].pop()
+                        logger.info(f"sending {client.addr} updates")
+                        try:
+                            changes = json.dumps([str(change) for change in changes])
+                            if client.isOpen():
+                                client.SendPacket(HTTP.Packet(changes, filename="/UPDATE", dataType="text/json"))
+
+                        except Exception as e:
+                            logger.error(f"{client.addr} was disconnected: {e}", exc_info=True)
+                            self.onlineClients[nbID].append(client)
+                            break
             except Exception as e:
                 logger.error(e, exc_info=True)
 
@@ -653,22 +665,32 @@ class Notebook:
     def UpdateNotebook(self):
         """Main loop for the public notebook updates
         """
+        sentUpdates = True
         while True:
             try:
                 if not self.Queue.empty():
-                    change = self.Queue.get()
-                    if change == "stop":
+                    sentUpdates = False
+
+                    changes = self.Queue.get()
+                    if changes == "stop":
                         return
                     sqlResp = self.SQL.Request("currentGroupID", table="notebooks", where=f"id={self.id}", singleton=True)
                     currentGroupNumber = sqlResp['currentGroupID']
-                    change = self.ChangeNotebook(self.path, currentGroupNumber, change, self.SQL)
-                    self.sendChanges(change)
+                    changesList = []
+                    for change in changes:
+                        changesList.append(self.ChangeNotebook(self.path, currentGroupNumber, change, self.SQL))
+
+                elif not sentUpdates:
+                    self.sendChanges(changesList)
+                    sentUpdates = True
             except Exception as e:
                 logger.error(f"{e}", exc_info=True)
 
-    def sendChanges(self, changeTuple):
-        change = Change(*changeTuple, self.id)
-        self.ClientUpdateQueue.put(change)
+    def sendChanges(self, changeTupleList):
+        changeList = []
+        for changeTuple in changeTupleList:
+            changeList.append(Change(*changeTuple, self.id))
+        self.ClientUpdateQueue.put((self.id, changeList))
 
     ns = "{http://www.w3.org/2000/svg}"
 
@@ -732,7 +754,7 @@ def GenerateNotebookCode() -> str:
         str: code
     """
     keys = CodeEncryptionKey()
-    code = hashlib.md5(next(keys)).hexdigest()
+    code = hashlib.md5(next(keys)).hexdigest()[:5]
     return code
 
 def UpdateOpenNotebooksLoop(child_conn, ClientUpdateQueue: mp.Queue):
@@ -740,10 +762,10 @@ def UpdateOpenNotebooksLoop(child_conn, ClientUpdateQueue: mp.Queue):
 
     Args:
         child_conn (Connection): child connection to the update pipe
-        ClientUpdateQueue (mp.Queue): Queue for the client updates
-    """
+        ClientUpdateQueue (mp.Queue): Queue for the client updates"""
+
     # Main function for the update process
-    OpenNotebooks = {}
+    OpenNotebooks: dict[str, Notebook] = {}
     changesList = []
     connectedClients = {}
 
@@ -761,19 +783,17 @@ def UpdateOpenNotebooksLoop(child_conn, ClientUpdateQueue: mp.Queue):
 
                 NotebookID, NotebookPath, NBchanges = msg
                 if NotebookID not in OpenNotebooks:
-                    newNotebook: Notebook = Notebook(NotebookID, updateNBSQL, ClientUpdateQueue).setPath(NotebookPath)
-                    newNotebook.start()
-                    for change in NBchanges:
-                        newNotebook.addChanges(change)
-                        
-                    OpenNotebooks[NotebookID] = newNotebook
+                    notebook = Notebook(NotebookID, updateNBSQL, ClientUpdateQueue).setPath(NotebookPath)
+                    notebook.start()
+
+                    OpenNotebooks[NotebookID] = notebook
                 else:
                     notebook = OpenNotebooks[NotebookID]
                     if not notebook.hasPath():
                         notebook.setPath(NotebookPath)
                         notebook.start()
-                    for change in NBchanges:
-                        notebook.addChanges(change)
+
+                notebook.addChanges(NBchanges)
 
         except Exception as e:
             logger.error(f"{e}\n{traceback.format_exc()}")

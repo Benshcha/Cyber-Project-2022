@@ -197,6 +197,11 @@ function SaveCurrentNotebook(nb) {
 	} else {
 		addedurl = `${currentNotebook}`;
 	}
+	while (!checkingUpdates) {
+		setTimeout(() => {
+			console.log("waiting...");
+		}, 10);
+	}
 	var resp = $.ajax({
 		url: `/SAVE/${addedurl}`,
 		type: "POST",
@@ -440,6 +445,7 @@ function checkUpdates(code) {
 	if (checkingUpdates) {
 		return;
 	}
+	console.log("Sent request to check for updates");
 
 	checkingUpdates = true;
 	// create random id code
@@ -454,24 +460,30 @@ function checkUpdates(code) {
 			if (resp.status == 200) {
 				let data = JSON.parse(resp.responseText);
 				console.log("Recieved Update!");
-				if (data["command"] == "a") {
-					let newGroup = draw.svg(data["data"]);
+				for (let i = 0; i < data.length; i++) {
+					changeData = JSON.parse(data[i]);
+					if (changeData["command"] == "a") {
+						let newGroup = draw.svg(changeData["data"]);
 
-					// Remove groups we know are not updated to the server
-					let groups = $("#drawingSvg g");
-					if (groups.length > 0) {
-						for (let i = 0; i < groups.length; i++) {
-							let g = groups[i];
-							if (g.id == "") {
-								g.remove();
+						// Remove groups we know are not updated to the server
+						let groups = $("#drawingSvg g");
+						if (groups.length > 0) {
+							for (let i = 0; i < groups.length; i++) {
+								let g = groups[i];
+								if (g.id == "") {
+									g.remove();
+								}
 							}
 						}
+					} else if (changeData["command"] == "e") {
+						console.log(
+							"Recieved Erase! erasing group " +
+								changeData["data"]
+						);
+						$(
+							`${changeData["data"]["type"]}#${changeData["data"]["id"]}`
+						).remove();
 					}
-				} else if (data["command"] == "e") {
-					console.log(
-						"Recieved Erase! erasing group " + data["data"]
-					);
-					$(`${data["data"]["type"]}#${data["data"]["id"]}`).remove();
 				}
 			} else if (resp.status == 400) {
 				console.log("Update failed: Bad Request");

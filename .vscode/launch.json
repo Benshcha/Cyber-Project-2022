@@ -15,14 +15,14 @@
             "name": "Python: main *without save",
             "type": "python",
             "request": "launch",
-            "program": "main.py",
+            "program": "E:/GitHub/Cyber-Project-2022/main.py",
             "console": "integratedTerminal",
         },
         {
             "name": "Python: main",
             "type": "python",
             "request": "launch",
-            "program": "main.py",
+            "program": "E:/GitHub/Cyber-Project-2022/main.py",
             "console": "integratedTerminal",
             "postDebugTask": "Save DB",
         }

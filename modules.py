@@ -179,7 +179,10 @@ class GeneralClient:
     
     def SendPacket(self, packet: Packet):
         byteString = packet.toBytes()
-        self.stream.send(byteString)
+        try:
+            self.stream.send(byteString)
+        except Exception as e:
+            raise Exception(e, f"{type(self.stream)=}")
         return byteString
 
     @staticmethod
