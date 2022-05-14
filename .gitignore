@@ -1,2 +1,5 @@
-logs/
-dbconfig.json
+*
+!.gitignore
+!.gitattributes
+!docs
+!README.md
