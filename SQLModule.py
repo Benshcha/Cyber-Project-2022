@@ -25,14 +25,12 @@ class SQLClass:
     """
     ## SQL Method wrapper class
     """
-    dbconfig = {
-            "host": "localhost",
-            "username": "Benshcha",
-            "password": "XunxuoTable70705",
-            "database": "CyberProject2022",
-            "pool_name": "updateNotebooks",
-            "autocommit": True,
-        }
+    
+    with open('dbconfig.json') as FILE:
+        dbconfig = json.load(FILE)
+
+    if dbconfig['autocommit'] == "True":
+        dbconfig['autocommit'] = True
 
     pool = pooling.MySQLConnectionPool(pool_size=2, **dbconfig)
 
