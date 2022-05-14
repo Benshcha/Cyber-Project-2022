@@ -17,12 +17,11 @@ There should be a json file called `dbconfig.json` with the configiration of the
     "username": "Benshcha",
     "password": "Super secure and secret password",
     "database": "CyberProject2022",
-    
-    // must be set to these values:
     "pool_name": "updateNotebooks",
     "autocommit": "True"
 }
 ```
+While the values `pool_name` and `autocommit` must be set to those exact values.
 
 ## Closing the server safely
 
