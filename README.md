@@ -2,7 +2,7 @@
 
 ## Documentation
 
-Documentation is inside [/docs/documentation](https://benshcha.github.io/Cyber-Project-2022/docs/main.html) folder.  
+Documentation is inside [/docs/documentation](https://benshcha.github.io/Cyber-Project-2022/docs/documentation/main.html) folder.  
 It is reccomended to run the command `python -m pydoc -b` inside the related enviorment in order to read the documentation properly
 
 ## Running the server
