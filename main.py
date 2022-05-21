@@ -15,7 +15,7 @@ import modules as HTTP
 from modules import colorText
 from os.path import join
 import os, sys
-import json, random
+import json
 import traceback, hashlib, time
 import multiprocessing as mp
 import xml.etree.ElementTree as ET

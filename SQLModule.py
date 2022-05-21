@@ -3,7 +3,6 @@ import mysql.connector.pooling as pooling
 import json
 from typing import Any
 
-from numpy import insert
 from config import logger, jsonFiles
 
 class SQLException(Exception):

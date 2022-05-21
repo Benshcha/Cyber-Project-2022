@@ -1,6 +1,5 @@
 from Ex5 import *
 import socket, threading, os
-import numpy as np
 
 def manageFileRequest(ClientSocket, filename, key):
     if not os.path.exists(filename):
