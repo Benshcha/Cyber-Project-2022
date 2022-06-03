@@ -457,6 +457,7 @@ function checkUpdates(code) {
 		data: { code: code },
 		accepts: "text/json",
 		complete: function (resp) {
+			checkingUpdates = false;
 			if (resp.status == 200) {
 				let data = JSON.parse(resp.responseText);
 				console.log("Recieved Update!");
@@ -488,7 +489,6 @@ function checkUpdates(code) {
 			} else if (resp.status == 400) {
 				console.log("Update failed: Bad Request");
 			}
-			checkingUpdates = false;
 		},
 	});
 }

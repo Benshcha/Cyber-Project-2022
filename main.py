@@ -555,9 +555,9 @@ class Server:
                         client = self.onlineClients[nbID].pop()
                         logger.info(f"sending {client.addr} updates")
                         try:
-                            changes = json.dumps([str(change) for change in changes])
+                            changesStr = json.dumps([str(change) for change in changes])
                             if client.isOpen():
-                                client.SendPacket(HTTP.Packet(changes, filename="/UPDATE", dataType="text/json"))
+                                client.SendPacket(HTTP.Packet(changesStr, filename="/UPDATE", dataType="text/json"))
 
                         except Exception as e:
                             logger.error(f"{client.addr} was disconnected: {e}", exc_info=True)
