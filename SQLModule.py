@@ -15,6 +15,8 @@ def SQLFunction(instance, func):
             return func(*args, **kwargs)
         except Exception as e:
             if isinstance(e, connector.errors.Error):
+                # if isinstance(e, connector.errors.OperationalError):
+                    
                 raise SQLException(e, instance.cursor.statement)
             else:
                 raise e

@@ -171,8 +171,7 @@ function createNotebook(newTitle, newDescription, newGroupID) {
 		`SAVENEWNB`,
 		"text/json",
 		JSON.stringify({
-			// svgData: draw.svg(),
-			svgData: "",
+			svgData: draw.svg(),
 			title: newTitle,
 			description: newDescription,
 			currentGroupID: newGroupID,
@@ -188,19 +187,25 @@ function createNotebook(newTitle, newDescription, newGroupID) {
 
 function SaveCurrentNotebook(nb) {
 	let attrcode = attr["nb"];
+	let cd = undefined;
 
 	// var count = 0;
 	if (attrcode != undefined) {
 		addedurl = `?nb=${attrcode}`;
+		cd = attrcode;
 	} else if (nbcode != null) {
 		addedurl = `?nb=${nbcode}`;
+		cd = nbcode;
 	} else {
 		addedurl = `${currentNotebook}`;
 	}
-	while (!checkingUpdates) {
+	timesToWait = 5;
+	while (!checkingUpdates && timesToWait > 0 && cd != undefined) {
+		checkUpdates();
 		setTimeout(() => {
 			console.log("waiting...");
 		}, 10);
+		timesToWait--;
 	}
 	var resp = $.ajax({
 		url: `/SAVE/${addedurl}`,
@@ -416,6 +421,7 @@ $(document).ready(function () {
 });
 
 function checkGlobaly() {
+	console.log("Checking for updates");
 	if (attr["nb"] != undefined) {
 		checkUpdates(attr["nb"]);
 	} else if (nbcode != null) {
